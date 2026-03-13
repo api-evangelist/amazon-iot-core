@@ -1,0 +1,167 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.apievangelist.com/amazon-iot-core/thing-definition",
+  "title": "Amazon IoT Core Thing Definition",
+  "description": "Schema defining the structure of an Amazon IoT Core thing resource, including attributes, thing type, thing group membership, certificates, and shadow state.",
+  "type": "object",
+  "required": [
+    "thingName"
+  ],
+  "properties": {
+    "thingName": {
+      "type": "string",
+      "description": "The name of the thing.",
+      "minLength": 1,
+      "maxLength": 128,
+      "pattern": "^[a-zA-Z0-9:_-]+$"
+    },
+    "thingId": {
+      "type": "string",
+      "description": "The unique identifier of the thing."
+    },
+    "thingArn": {
+      "type": "string",
+      "description": "The ARN of the thing."
+    },
+    "thingTypeName": {
+      "type": "string",
+      "description": "The name of the thing type, if assigned."
+    },
+    "attributes": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      },
+      "description": "A list of thing attributes as name-value pairs."
+    },
+    "version": {
+      "type": "integer",
+      "description": "The current version of the thing record."
+    },
+    "billingGroupName": {
+      "type": "string",
+      "description": "The name of the billing group the thing belongs to."
+    },
+    "defaultClientId": {
+      "type": "string",
+      "description": "The default MQTT client ID."
+    },
+    "shadow": {
+      "$ref": "#/$defs/Shadow"
+    },
+    "certificates": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/Certificate"
+      },
+      "description": "Certificates attached to the thing."
+    },
+    "policies": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/Policy"
+      },
+      "description": "Policies attached to the thing's certificates."
+    },
+    "thingGroups": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "The thing groups the thing belongs to."
+    }
+  },
+  "$defs": {
+    "Shadow": {
+      "type": "object",
+      "description": "The device shadow state for the thing.",
+      "properties": {
+        "state": {
+          "type": "object",
+          "properties": {
+            "desired": {
+              "type": "object",
+              "additionalProperties": true,
+              "description": "The desired state of the thing."
+            },
+            "reported": {
+              "type": "object",
+              "additionalProperties": true,
+              "description": "The reported state of the thing."
+            },
+            "delta": {
+              "type": "object",
+              "additionalProperties": true,
+              "description": "The difference between desired and reported state."
+            }
+          }
+        },
+        "metadata": {
+          "type": "object",
+          "description": "Metadata about the shadow state."
+        },
+        "version": {
+          "type": "integer",
+          "description": "The shadow version."
+        },
+        "timestamp": {
+          "type": "integer",
+          "description": "The shadow timestamp."
+        }
+      }
+    },
+    "Certificate": {
+      "type": "object",
+      "description": "An X.509 certificate for device authentication.",
+      "properties": {
+        "certificateId": {
+          "type": "string",
+          "description": "The unique identifier of the certificate."
+        },
+        "certificateArn": {
+          "type": "string",
+          "description": "The ARN of the certificate."
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "ACTIVE",
+            "INACTIVE",
+            "REVOKED",
+            "PENDING_TRANSFER",
+            "REGISTER_INACTIVE",
+            "PENDING_ACTIVATION"
+          ],
+          "description": "The status of the certificate."
+        },
+        "creationDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "The date the certificate was created."
+        }
+      }
+    },
+    "Policy": {
+      "type": "object",
+      "description": "An IoT policy that defines allowed operations.",
+      "properties": {
+        "policyName": {
+          "type": "string",
+          "description": "The name of the policy."
+        },
+        "policyArn": {
+          "type": "string",
+          "description": "The ARN of the policy."
+        },
+        "policyDocument": {
+          "type": "string",
+          "description": "The JSON document that describes the policy."
+        },
+        "defaultVersionId": {
+          "type": "string",
+          "description": "The default version of the policy."
+        }
+      }
+    }
+  }
+}

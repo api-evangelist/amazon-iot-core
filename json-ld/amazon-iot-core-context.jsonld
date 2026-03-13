@@ -1,0 +1,188 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "iot": "https://docs.aws.amazon.com/iot/latest/apireference/",
+    "aws": "https://aws.amazon.com/",
+    "schema": "https://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "dcterms": "http://purl.org/dc/terms/",
+
+    "Thing": {
+      "@id": "iot:API_DescribeThing",
+      "@context": {
+        "thingName": {
+          "@id": "schema:name",
+          "@type": "xsd:string"
+        },
+        "thingId": {
+          "@id": "schema:identifier",
+          "@type": "xsd:string"
+        },
+        "thingArn": {
+          "@id": "iot:thingArn",
+          "@type": "xsd:string"
+        },
+        "thingTypeName": {
+          "@id": "iot:thingTypeName",
+          "@type": "xsd:string"
+        },
+        "attributes": {
+          "@id": "iot:thingAttributes",
+          "@container": "@index"
+        },
+        "version": {
+          "@id": "schema:version",
+          "@type": "xsd:integer"
+        },
+        "defaultClientId": {
+          "@id": "iot:defaultClientId",
+          "@type": "xsd:string"
+        }
+      }
+    },
+
+    "ThingType": {
+      "@id": "iot:API_DescribeThingType",
+      "@context": {
+        "thingTypeName": {
+          "@id": "schema:name",
+          "@type": "xsd:string"
+        },
+        "thingTypeId": {
+          "@id": "schema:identifier",
+          "@type": "xsd:string"
+        },
+        "thingTypeArn": {
+          "@id": "iot:thingTypeArn",
+          "@type": "xsd:string"
+        },
+        "thingTypeProperties": {
+          "@id": "iot:thingTypeProperties",
+          "@type": "iot:ThingTypeProperties"
+        }
+      }
+    },
+
+    "Certificate": {
+      "@id": "iot:API_DescribeCertificate",
+      "@context": {
+        "certificateId": {
+          "@id": "schema:identifier",
+          "@type": "xsd:string"
+        },
+        "certificateArn": {
+          "@id": "iot:certificateArn",
+          "@type": "xsd:string"
+        },
+        "status": {
+          "@id": "iot:certificateStatus",
+          "@type": "xsd:string"
+        },
+        "creationDate": {
+          "@id": "schema:dateCreated",
+          "@type": "xsd:dateTime"
+        }
+      }
+    },
+
+    "Policy": {
+      "@id": "iot:API_GetPolicy",
+      "@context": {
+        "policyName": {
+          "@id": "schema:name",
+          "@type": "xsd:string"
+        },
+        "policyArn": {
+          "@id": "iot:policyArn",
+          "@type": "xsd:string"
+        },
+        "policyDocument": {
+          "@id": "iot:policyDocument",
+          "@type": "xsd:string"
+        },
+        "defaultVersionId": {
+          "@id": "iot:defaultVersionId",
+          "@type": "xsd:string"
+        }
+      }
+    },
+
+    "Shadow": {
+      "@id": "iot:DeviceShadow",
+      "@context": {
+        "state": {
+          "@id": "iot:shadowState",
+          "@type": "iot:ShadowState"
+        },
+        "metadata": {
+          "@id": "iot:shadowMetadata",
+          "@type": "iot:ShadowMetadata"
+        },
+        "version": {
+          "@id": "schema:version",
+          "@type": "xsd:integer"
+        },
+        "timestamp": {
+          "@id": "iot:shadowTimestamp",
+          "@type": "xsd:integer"
+        }
+      }
+    },
+
+    "TopicRule": {
+      "@id": "iot:API_GetTopicRule",
+      "@context": {
+        "ruleName": {
+          "@id": "schema:name",
+          "@type": "xsd:string"
+        },
+        "sql": {
+          "@id": "iot:ruleSql",
+          "@type": "xsd:string"
+        },
+        "description": {
+          "@id": "schema:description",
+          "@type": "xsd:string"
+        },
+        "actions": {
+          "@id": "iot:ruleActions",
+          "@container": "@list"
+        },
+        "ruleDisabled": {
+          "@id": "iot:ruleDisabled",
+          "@type": "xsd:boolean"
+        }
+      }
+    },
+
+    "Job": {
+      "@id": "iot:API_DescribeJob",
+      "@context": {
+        "jobId": {
+          "@id": "schema:identifier",
+          "@type": "xsd:string"
+        },
+        "jobArn": {
+          "@id": "iot:jobArn",
+          "@type": "xsd:string"
+        },
+        "status": {
+          "@id": "iot:jobStatus",
+          "@type": "xsd:string"
+        },
+        "description": {
+          "@id": "schema:description",
+          "@type": "xsd:string"
+        },
+        "targets": {
+          "@id": "iot:jobTargets",
+          "@container": "@list"
+        },
+        "createdAt": {
+          "@id": "schema:dateCreated",
+          "@type": "xsd:dateTime"
+        }
+      }
+    }
+  }
+}

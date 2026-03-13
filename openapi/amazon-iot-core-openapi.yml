@@ -1,0 +1,188 @@
+openapi: 3.1.0
+info:
+  title: Amazon IoT Core API
+  description: >-
+    The Amazon IoT Core API enables programmatic management of IoT resources
+    including things, thing types, thing groups, certificates, policies,
+    rules, jobs, and device shadows for connecting and managing IoT devices
+    at scale.
+  version: '2015-05-28'
+  contact:
+    name: AWS Support
+    url: https://aws.amazon.com/premiumsupport/
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0.html
+  x-logo:
+    url: https://a0.awsstatic.com/libra-css/images/logos/aws_logo_smile_1200x630.png
+servers:
+  - url: https://iot.{region}.amazonaws.com
+    description: Amazon IoT Core regional endpoint
+    variables:
+      region:
+        default: us-east-1
+        description: AWS region
+        enum:
+          - us-east-1
+          - us-east-2
+          - us-west-1
+          - us-west-2
+          - eu-west-1
+          - eu-west-2
+          - eu-west-3
+          - eu-central-1
+          - ap-northeast-1
+          - ap-northeast-2
+          - ap-southeast-1
+          - ap-southeast-2
+          - ap-south-1
+          - sa-east-1
+          - ca-central-1
+security:
+  - sigv4: []
+tags:
+  - name: Things
+    description: Operations for managing IoT things and thing types
+  - name: Certificates
+    description: Operations for managing device certificates
+  - name: Policies
+    description: Operations for managing IoT policies
+  - name: Rules
+    description: Operations for managing IoT rules engine rules
+  - name: Jobs
+    description: Operations for managing IoT device jobs
+  - name: Shadows
+    description: Operations for managing device shadows
+paths:
+  /things:
+    get:
+      operationId: ListThings
+      summary: List IoT things
+      description: Lists the things registered in your AWS account.
+      tags:
+        - Things
+      parameters:
+        - name: maxResults
+          in: query
+          schema:
+            type: integer
+        - name: nextToken
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: List of things
+        '400':
+          description: Bad request
+  /things/{thingName}:
+    get:
+      operationId: DescribeThing
+      summary: Describe a thing
+      description: Gets information about the specified thing.
+      tags:
+        - Things
+      parameters:
+        - name: thingName
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Thing details
+        '404':
+          description: Thing not found
+    put:
+      operationId: CreateThing
+      summary: Create a thing
+      description: Creates a thing record in the registry.
+      tags:
+        - Things
+      parameters:
+        - name: thingName
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Thing created
+    delete:
+      operationId: DeleteThing
+      summary: Delete a thing
+      description: Deletes the specified thing from the registry.
+      tags:
+        - Things
+      parameters:
+        - name: thingName
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Thing deleted
+  /certificates:
+    get:
+      operationId: ListCertificates
+      summary: List certificates
+      description: Lists the certificates registered in your AWS account.
+      tags:
+        - Certificates
+      responses:
+        '200':
+          description: List of certificates
+  /policies:
+    get:
+      operationId: ListPolicies
+      summary: List IoT policies
+      description: Lists your IoT policies.
+      tags:
+        - Policies
+      responses:
+        '200':
+          description: List of policies
+  /rules:
+    get:
+      operationId: ListTopicRules
+      summary: List topic rules
+      description: Lists the rules for the specific topic.
+      tags:
+        - Rules
+      responses:
+        '200':
+          description: List of rules
+  /jobs:
+    get:
+      operationId: ListJobs
+      summary: List jobs
+      description: Lists IoT jobs.
+      tags:
+        - Jobs
+      responses:
+        '200':
+          description: List of jobs
+  /things/{thingName}/shadow:
+    get:
+      operationId: GetThingShadow
+      summary: Get thing shadow
+      description: Gets the shadow for the specified thing.
+      tags:
+        - Shadows
+      parameters:
+        - name: thingName
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Thing shadow
+components:
+  securitySchemes:
+    sigv4:
+      type: apiKey
+      name: Authorization
+      in: header
+      description: AWS Signature Version 4 authentication
