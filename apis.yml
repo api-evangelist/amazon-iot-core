@@ -14,7 +14,7 @@ tags:
 - Rules Engine
 - AWS
 created: '2024-01-15'
-modified: '2026-03-13'
+modified: '2026-03-16'
 apis:
 - name: Amazon IoT Core API
   description: The Amazon IoT Core API provides programmatic access to manage IoT things, certificates, policies, rules, device shadows, and MQTT message broker configurations for connecting and managing IoT devices at scale.
