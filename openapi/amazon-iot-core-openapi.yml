@@ -57,7 +57,7 @@ paths:
   /things:
     get:
       operationId: ListThings
-      summary: List IoT things
+      summary: Amazon IoT Core List IoT things
       description: Lists the things registered in your AWS account.
       tags:
         - Things
@@ -78,7 +78,7 @@ paths:
   /things/{thingName}:
     get:
       operationId: DescribeThing
-      summary: Describe a thing
+      summary: Amazon IoT Core Describe a thing
       description: Gets information about the specified thing.
       tags:
         - Things
@@ -95,7 +95,7 @@ paths:
           description: Thing not found
     put:
       operationId: CreateThing
-      summary: Create a thing
+      summary: Amazon IoT Core Create a thing
       description: Creates a thing record in the registry.
       tags:
         - Things
@@ -110,7 +110,7 @@ paths:
           description: Thing created
     delete:
       operationId: DeleteThing
-      summary: Delete a thing
+      summary: Amazon IoT Core Delete a thing
       description: Deletes the specified thing from the registry.
       tags:
         - Things
@@ -126,7 +126,7 @@ paths:
   /certificates:
     get:
       operationId: ListCertificates
-      summary: List certificates
+      summary: Amazon IoT Core List certificates
       description: Lists the certificates registered in your AWS account.
       tags:
         - Certificates
@@ -136,7 +136,7 @@ paths:
   /policies:
     get:
       operationId: ListPolicies
-      summary: List IoT policies
+      summary: Amazon IoT Core List IoT policies
       description: Lists your IoT policies.
       tags:
         - Policies
@@ -146,7 +146,7 @@ paths:
   /rules:
     get:
       operationId: ListTopicRules
-      summary: List topic rules
+      summary: Amazon IoT Core List topic rules
       description: Lists the rules for the specific topic.
       tags:
         - Rules
@@ -156,7 +156,7 @@ paths:
   /jobs:
     get:
       operationId: ListJobs
-      summary: List jobs
+      summary: Amazon IoT Core List jobs
       description: Lists IoT jobs.
       tags:
         - Jobs
@@ -166,7 +166,7 @@ paths:
   /things/{thingName}/shadow:
     get:
       operationId: GetThingShadow
-      summary: Get thing shadow
+      summary: Amazon IoT Core Get thing shadow
       description: Gets the shadow for the specified thing.
       tags:
         - Shadows
