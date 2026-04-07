@@ -41,18 +41,18 @@ servers:
 security:
   - sigv4: []
 tags:
-  - name: Things
-    description: Operations for managing IoT things and thing types
   - name: Certificates
     description: Operations for managing device certificates
+  - name: Jobs
+    description: Operations for managing IoT device jobs
   - name: Policies
     description: Operations for managing IoT policies
   - name: Rules
     description: Operations for managing IoT rules engine rules
-  - name: Jobs
-    description: Operations for managing IoT device jobs
   - name: Shadows
     description: Operations for managing device shadows
+  - name: Things
+    description: Operations for managing IoT things and thing types
 paths:
   /things:
     get:
