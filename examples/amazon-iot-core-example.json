@@ -1,0 +1,21 @@
+{
+  "thingName": "example-resource",
+  "thingId": "id-abc123",
+  "thingArn": "arn:aws:iot:us-east-1:123456789012:thing/example",
+  "thingTypeName": "example-resource",
+  "attributes": {},
+  "version": 80,
+  "billingGroupName": "example-resource",
+  "defaultClientId": "id-abc123",
+  "shadow": "example-value",
+  "certificates": [
+    "example-value",
+    "example-value"
+  ],
+  "policies": [
+    "example-value"
+  ],
+  "thingGroups": [
+    "example-value"
+  ]
+}

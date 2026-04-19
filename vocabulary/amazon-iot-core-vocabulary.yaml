@@ -1,0 +1,67 @@
+vocabulary: "1.0.0"
+info:
+  provider: Amazon IoT Core
+  description: Vocabulary for Amazon IoT Core covering all API resources and operations.
+  created: "2026-04-19"
+  modified: "2026-04-19"
+operational:
+  apis:
+    - namespace: iot-core
+      version: "2024-01-01"
+      baseUrl: https://iot.amazonaws.com
+      status: active
+  resources:
+    - name: resources
+      api: iot-core
+      actions: [list, create, delete, get, update]
+  actions:
+    - name: list
+      methods: [GET]
+      pattern: read
+    - name: create
+      methods: [POST]
+      pattern: write
+    - name: get
+      methods: [GET]
+      pattern: read
+    - name: update
+      methods: [PUT, PATCH]
+      pattern: write
+    - name: delete
+      methods: [DELETE]
+      pattern: destructive
+  authentication:
+    schemes:
+      - type: AWS Signature Version 4
+        placement: header
+capability:
+  workflows:
+    - name: Iot Device Connectivity
+      file: capabilities/iot-device-connectivity.yaml
+      apis: [iot-core]
+      toolCount: 8
+      personas: [IoT Developer, Solutions Architect]
+  personas:
+    - id: primary-persona
+      name: IoT Developer
+      description: Manages Amazon IoT Core resources and operations
+  domains:
+    - name: IoT
+      description: Managed cloud service for IoT device connectivity and message routing.
+  namespaces:
+    - name: iot-core
+      type: consumed
+    - name: iot-device-connectivity-api
+      type: rest
+      port: 8080
+    - name: iot-device-connectivity-mcp
+      type: mcp
+      port: 9090
+  binds:
+    - AWS_ACCESS_KEY_ID
+    - AWS_SECRET_ACCESS_KEY
+crossReference:
+  - resource: resources
+    operations: [listthings, creatething, deletething, getthing]
+    workflows: [Iot Device Connectivity]
+    personas: [IoT Developer, Solutions Architect]

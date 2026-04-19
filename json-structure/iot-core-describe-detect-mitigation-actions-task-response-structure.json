@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-iot-core/refs/heads/main/json-structure/iot-core-describe-detect-mitigation-actions-task-response-structure.json",
+  "name": "DescribeDetectMitigationActionsTaskResponse",
+  "description": "DescribeDetectMitigationActionsTaskResponse schema",
+  "type": "object",
+  "properties": {
+    "taskSummary": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DetectMitigationActionsTaskSummary"
+        },
+        {
+          "description": " The description of a task. "
+        }
+      ]
+    }
+  }
+}

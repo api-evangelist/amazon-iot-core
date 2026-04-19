@@ -1,0 +1,8 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-iot-core/refs/heads/main/json-structure/iot-core-clear-default-authorizer-response-structure.json",
+  "name": "ClearDefaultAuthorizerResponse",
+  "description": "ClearDefaultAuthorizerResponse schema",
+  "type": "object",
+  "properties": {}
+}
