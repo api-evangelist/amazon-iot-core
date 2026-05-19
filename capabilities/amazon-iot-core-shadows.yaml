@@ -1,0 +1,81 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Amazon IoT Core API — Shadows
+  description: 'Amazon IoT Core API — Shadows. 1 operations. Lead operation: Amazon IoT Core Get thing shadow. Self-contained
+    Naftiko capability covering one Amazon Iot Core business surface.'
+  tags:
+  - Amazon Iot Core
+  - Shadows
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    AMAZON_IOT_CORE_API_KEY: AMAZON_IOT_CORE_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: amazon-iot-core-shadows
+    baseUri: https://iot.{region}.amazonaws.com
+    description: Amazon IoT Core API — Shadows business capability. Self-contained, no shared references.
+    resources:
+    - name: things-thingName-shadow
+      path: /things/{thingName}/shadow
+      operations:
+      - name: getthingshadow
+        method: GET
+        description: Amazon IoT Core Get thing shadow
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: thingName
+          in: path
+          type: string
+          required: true
+    authentication:
+      type: apikey
+      key: Authorization
+      value: '{{env.AMAZON_IOT_CORE_API_KEY}}'
+      placement: header
+  exposes:
+  - type: rest
+    namespace: amazon-iot-core-shadows-rest
+    port: 8080
+    description: REST adapter for Amazon IoT Core API — Shadows. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/things/{thingname}/shadow
+      name: things-thingname-shadow
+      description: REST surface for things-thingName-shadow.
+      operations:
+      - method: GET
+        name: getthingshadow
+        description: Amazon IoT Core Get thing shadow
+        call: amazon-iot-core-shadows.getthingshadow
+        with:
+          thingName: rest.thingName
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: amazon-iot-core-shadows-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Amazon IoT Core API — Shadows. One tool per consumed operation, routed inline through this
+      capability's consumes block.
+    tools:
+    - name: amazon-iot-core-get-thing
+      description: Amazon IoT Core Get thing shadow
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: amazon-iot-core-shadows.getthingshadow
+      with:
+        thingName: tools.thingName
+      outputParameters:
+      - type: object
+        mapping: $.

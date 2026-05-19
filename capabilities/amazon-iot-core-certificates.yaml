@@ -1,0 +1,72 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Amazon IoT Core API — Certificates
+  description: 'Amazon IoT Core API — Certificates. 1 operations. Lead operation: Amazon IoT Core List certificates. Self-contained
+    Naftiko capability covering one Amazon Iot Core business surface.'
+  tags:
+  - Amazon Iot Core
+  - Certificates
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    AMAZON_IOT_CORE_API_KEY: AMAZON_IOT_CORE_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: amazon-iot-core-certificates
+    baseUri: https://iot.{region}.amazonaws.com
+    description: Amazon IoT Core API — Certificates business capability. Self-contained, no shared references.
+    resources:
+    - name: certificates
+      path: /certificates
+      operations:
+      - name: listcertificates
+        method: GET
+        description: Amazon IoT Core List certificates
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    authentication:
+      type: apikey
+      key: Authorization
+      value: '{{env.AMAZON_IOT_CORE_API_KEY}}'
+      placement: header
+  exposes:
+  - type: rest
+    namespace: amazon-iot-core-certificates-rest
+    port: 8080
+    description: REST adapter for Amazon IoT Core API — Certificates. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/certificates
+      name: certificates
+      description: REST surface for certificates.
+      operations:
+      - method: GET
+        name: listcertificates
+        description: Amazon IoT Core List certificates
+        call: amazon-iot-core-certificates.listcertificates
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: amazon-iot-core-certificates-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Amazon IoT Core API — Certificates. One tool per consumed operation, routed inline through
+      this capability's consumes block.
+    tools:
+    - name: amazon-iot-core-list-certificates
+      description: Amazon IoT Core List certificates
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: amazon-iot-core-certificates.listcertificates
+      outputParameters:
+      - type: object
+        mapping: $.

@@ -1,0 +1,72 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Amazon IoT Core API — Rules
+  description: 'Amazon IoT Core API — Rules. 1 operations. Lead operation: Amazon IoT Core List topic rules. Self-contained
+    Naftiko capability covering one Amazon Iot Core business surface.'
+  tags:
+  - Amazon Iot Core
+  - Rules
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    AMAZON_IOT_CORE_API_KEY: AMAZON_IOT_CORE_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: amazon-iot-core-rules
+    baseUri: https://iot.{region}.amazonaws.com
+    description: Amazon IoT Core API — Rules business capability. Self-contained, no shared references.
+    resources:
+    - name: rules
+      path: /rules
+      operations:
+      - name: listtopicrules
+        method: GET
+        description: Amazon IoT Core List topic rules
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    authentication:
+      type: apikey
+      key: Authorization
+      value: '{{env.AMAZON_IOT_CORE_API_KEY}}'
+      placement: header
+  exposes:
+  - type: rest
+    namespace: amazon-iot-core-rules-rest
+    port: 8080
+    description: REST adapter for Amazon IoT Core API — Rules. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/rules
+      name: rules
+      description: REST surface for rules.
+      operations:
+      - method: GET
+        name: listtopicrules
+        description: Amazon IoT Core List topic rules
+        call: amazon-iot-core-rules.listtopicrules
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: amazon-iot-core-rules-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Amazon IoT Core API — Rules. One tool per consumed operation, routed inline through this
+      capability's consumes block.
+    tools:
+    - name: amazon-iot-core-list-topic
+      description: Amazon IoT Core List topic rules
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: amazon-iot-core-rules.listtopicrules
+      outputParameters:
+      - type: object
+        mapping: $.
