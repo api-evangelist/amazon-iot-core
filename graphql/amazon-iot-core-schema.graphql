@@ -1,0 +1,1116 @@
+"""
+AWS IoT Core GraphQL Schema
+Derived from the AWS IoT Core REST API (https://docs.aws.amazon.com/iot/latest/apireference/)
+Covers device connectivity, thing management, certificates, policies, rules, shadows, jobs, fleets, and security.
+"""
+
+scalar AWSDateTime
+scalar AWSJSON
+scalar AWSTimestamp
+
+# ─── Things ───────────────────────────────────────────────────────────────────
+
+type Thing {
+  thingName: String!
+  thingArn: String
+  thingId: String
+  thingTypeName: String
+  attributes: [ThingAttribute]
+  version: Int
+  billingGroupName: String
+  details: ThingDetails
+}
+
+type ThingDetails {
+  thingName: String!
+  thingArn: String
+  thingId: String
+  thingTypeName: String
+  attributes: [ThingAttribute]
+  version: Int
+  defaultClientId: String
+}
+
+type ThingType {
+  thingTypeName: String!
+  thingTypeArn: String
+  thingTypeId: String
+  thingTypeProperties: ThingTypeProperties
+  thingTypeMetadata: ThingTypeMetadata
+}
+
+type ThingTypeProperties {
+  thingTypeDescription: String
+  searchableAttributes: [String]
+}
+
+type ThingTypeMetadata {
+  deprecated: Boolean
+  deprecationDate: AWSDateTime
+  creationDate: AWSDateTime
+}
+
+type ThingGroup {
+  thingGroupName: String!
+  thingGroupArn: String
+  thingGroupId: String
+  version: Int
+  details: ThingGroupDetails
+}
+
+type ThingGroupDetails {
+  thingGroupName: String!
+  thingGroupArn: String
+  thingGroupId: String
+  thingGroupDescription: String
+  attributes: [ThingAttribute]
+  parentGroupName: String
+  rootToParentThingGroups: [GroupNameAndArn]
+  version: Int
+}
+
+type GroupNameAndArn {
+  groupName: String
+  groupArn: String
+}
+
+type ThingAttribute {
+  key: String!
+  value: String
+}
+
+# ─── Certificates ─────────────────────────────────────────────────────────────
+
+type Certificate {
+  certificateId: String!
+  certificateArn: String
+  status: CertificateStatus
+  creationDate: AWSDateTime
+}
+
+type CertificateDetails {
+  certificateId: String!
+  certificateArn: String
+  certificatePem: String
+  status: CertificateStatus
+  creationDate: AWSDateTime
+  lastModifiedDate: AWSDateTime
+  ownedBy: String
+  previousOwnedBy: String
+  transferData: TransferData
+  validity: CertificateValidity
+  caCertificateId: String
+}
+
+enum CertificateStatus {
+  ACTIVE
+  INACTIVE
+  REVOKED
+  PENDING_TRANSFER
+  REGISTER_INACTIVE
+  PENDING_ACTIVATION
+}
+
+type TransferData {
+  transferMessage: String
+  rejectReason: String
+  transferDate: AWSDateTime
+  acceptDate: AWSDateTime
+  rejectDate: AWSDateTime
+}
+
+type CertificateValidity {
+  notBefore: AWSDateTime
+  notAfter: AWSDateTime
+}
+
+# ─── Policies ─────────────────────────────────────────────────────────────────
+
+type Policy {
+  policyName: String!
+  policyArn: String
+}
+
+type PolicyDetails {
+  policyName: String!
+  policyArn: String
+  policyDocument: String
+  defaultVersionId: String
+}
+
+type PolicyVersion {
+  versionId: String!
+  isDefaultVersion: Boolean
+  createDate: AWSDateTime
+  document: String
+}
+
+# ─── Principals & Attachments ─────────────────────────────────────────────────
+
+type Principal {
+  principalArn: String!
+  principalType: String
+}
+
+type Attachment {
+  thingName: String
+  principalArn: String
+  policyName: String
+  createdAt: AWSDateTime
+}
+
+# ─── Device Shadows ───────────────────────────────────────────────────────────
+
+type Shadow {
+  thingName: String!
+  shadowName: String
+  payload: AWSJSON
+  version: Int
+  timestamp: AWSTimestamp
+}
+
+type ShadowDetails {
+  thingName: String!
+  shadowName: String
+  state: ShadowState
+  metadata: AWSJSON
+  version: Int
+  timestamp: AWSTimestamp
+}
+
+type ShadowState {
+  desired: Desired
+  reported: Reported
+  delta: Delta
+}
+
+type Desired {
+  document: AWSJSON
+}
+
+type Reported {
+  document: AWSJSON
+}
+
+type Delta {
+  document: AWSJSON
+}
+
+type NamedShadow {
+  shadowName: String!
+  thingName: String!
+}
+
+type NamedShadowDetails {
+  shadowName: String!
+  thingName: String!
+  state: ShadowState
+  metadata: AWSJSON
+  version: Int
+  timestamp: AWSTimestamp
+}
+
+# ─── Messaging ────────────────────────────────────────────────────────────────
+
+type Message {
+  topic: String!
+  payload: String
+  qos: Int
+  retain: Boolean
+}
+
+type MessageDetails {
+  topic: String!
+  payload: String
+  qos: Int
+  retain: Boolean
+  timestamp: AWSTimestamp
+  clientId: String
+}
+
+type MessageBroker {
+  endpoint: String!
+  protocol: String
+  port: Int
+}
+
+# ─── Topics & Rules ───────────────────────────────────────────────────────────
+
+type Topic {
+  topicPattern: String!
+  description: String
+}
+
+type TopicDetails {
+  topicPattern: String!
+  description: String
+  qos: Int
+}
+
+type TopicRule {
+  ruleName: String!
+  topicPattern: String
+  description: String
+  createdAt: AWSDateTime
+  actions: [RuleAction]
+  errorAction: RuleAction
+  awsIotSqlVersion: String
+  sql: String
+  ruleDisabled: Boolean
+}
+
+type TopicRuleDestination {
+  arn: String!
+  status: String
+  statusReason: String
+  createdAt: AWSDateTime
+  lastUpdatedAt: AWSDateTime
+  httpUrlProperties: HttpUrlDestinationProperties
+  vpcProperties: VpcDestinationProperties
+}
+
+type HttpUrlDestinationProperties {
+  confirmationUrl: String
+}
+
+type VpcDestinationProperties {
+  subnetIds: [String]
+  securityGroups: [String]
+  vpcId: String
+  roleArn: String
+}
+
+type RuleAction {
+  sns: SNSAction
+  sqs: SQSAction
+  dynamoDB: DynamoDBAction
+  lambda: LambdaAction
+  s3: S3Action
+  iotAnalytics: IoTAnalyticsAction
+  republish: RepublishAction
+  kinesis: KinesisAction
+  firehose: FirehoseAction
+  cloudwatchMetric: CloudwatchMetricAction
+}
+
+type SNSAction {
+  targetArn: String!
+  roleArn: String!
+  messageFormat: String
+}
+
+type SQSAction {
+  queueUrl: String!
+  roleArn: String!
+  useBase64: Boolean
+}
+
+type DynamoDBAction {
+  tableName: String!
+  roleArn: String!
+  hashKeyField: String
+  hashKeyValue: String
+  rangeKeyField: String
+  rangeKeyValue: String
+  payloadField: String
+}
+
+type LambdaAction {
+  functionArn: String!
+}
+
+type S3Action {
+  bucketName: String!
+  key: String!
+  roleArn: String!
+  cannedAcl: String
+}
+
+type IoTAnalyticsAction {
+  channelArn: String
+  channelName: String
+  roleArn: String
+  batchMode: Boolean
+}
+
+type RepublishAction {
+  roleArn: String!
+  topic: String!
+  qos: Int
+}
+
+type KinesisAction {
+  roleArn: String!
+  streamName: String!
+  partitionKey: String
+}
+
+type FirehoseAction {
+  roleArn: String!
+  deliveryStreamName: String!
+  separator: String
+  batchMode: Boolean
+}
+
+type CloudwatchMetricAction {
+  roleArn: String!
+  metricNamespace: String!
+  metricName: String!
+  metricValue: String!
+  metricUnit: String!
+  metricTimestamp: String
+}
+
+# ─── Jobs ─────────────────────────────────────────────────────────────────────
+
+type Job {
+  jobId: String!
+  jobArn: String
+  status: JobStatus
+  targetSelection: String
+  targets: [String]
+  description: String
+  createdAt: AWSDateTime
+  lastUpdatedAt: AWSDateTime
+  completedAt: AWSDateTime
+}
+
+type JobDetails {
+  jobId: String!
+  jobArn: String
+  status: JobStatus
+  targetSelection: String
+  targets: [String]
+  description: String
+  document: JobDocument
+  presignedUrlConfig: PresignedUrlConfig
+  jobExecutionsRolloutConfig: JobExecutionsRolloutConfig
+  abortConfig: AbortConfig
+  timeoutConfig: TimeoutConfig
+  createdAt: AWSDateTime
+  lastUpdatedAt: AWSDateTime
+  completedAt: AWSDateTime
+}
+
+enum JobStatus {
+  IN_PROGRESS
+  CANCELED
+  COMPLETED
+  DELETION_IN_PROGRESS
+  SCHEDULED
+}
+
+type JobExecution {
+  jobId: String!
+  thingName: String!
+  status: JobExecutionStatus
+  statusDetails: AWSJSON
+  queuedAt: AWSDateTime
+  startedAt: AWSDateTime
+  lastUpdatedAt: AWSDateTime
+  executionNumber: Int
+  versionNumber: Int
+  approximateSecondsBeforeTimedOut: Int
+}
+
+enum JobExecutionStatus {
+  QUEUED
+  IN_PROGRESS
+  FAILED
+  SUCCESS
+  CANCELED
+  TIMED_OUT
+  REJECTED
+  REMOVED
+}
+
+type JobDocument {
+  document: String
+  documentSource: String
+}
+
+type PresignedUrlConfig {
+  roleArn: String
+  expiresInSec: Int
+}
+
+type JobExecutionsRolloutConfig {
+  maximumPerMinute: Int
+  exponentialRate: ExponentialRolloutRate
+}
+
+type ExponentialRolloutRate {
+  baseRatePerMinute: Int
+  incrementFactor: Float
+  rateIncreaseCriteria: RateIncreaseCriteria
+}
+
+type RateIncreaseCriteria {
+  numberOfNotifiedThings: Int
+  numberOfSucceededThings: Int
+}
+
+type AbortConfig {
+  criteriaList: [AbortCriteria]
+}
+
+type AbortCriteria {
+  failureType: String
+  action: String
+  thresholdPercentage: Float
+  minNumberOfExecutedThings: Int
+}
+
+type TimeoutConfig {
+  inProgressTimeoutInMinutes: Int
+}
+
+# ─── Fleet & Indexing ─────────────────────────────────────────────────────────
+
+type Fleet {
+  fleetMetricName: String!
+  fleetMetricArn: String
+  description: String
+  queryString: String
+  aggregationType: AggregationType
+  period: Int
+  createdAt: AWSDateTime
+  lastModifiedAt: AWSDateTime
+}
+
+type FleetDetails {
+  fleetMetricName: String!
+  fleetMetricArn: String
+  description: String
+  queryString: String
+  aggregationType: AggregationType
+  aggregationField: String
+  period: Int
+  unit: String
+  createdAt: AWSDateTime
+  lastModifiedAt: AWSDateTime
+  indexName: String
+  queryVersion: String
+}
+
+type AggregationType {
+  name: String
+  values: [String]
+}
+
+type IndexSearch {
+  thingName: String
+  thingId: String
+  thingTypeName: String
+  thingGroupNames: [String]
+  attributes: [ThingAttribute]
+  shadow: AWSJSON
+  connectivity: ThingConnectivity
+}
+
+type ThingConnectivity {
+  connected: Boolean
+  timestamp: AWSTimestamp
+  disconnectReason: String
+}
+
+type SearchIndex {
+  indexName: String!
+  status: String
+  schema: String
+}
+
+# ─── Authorizers ──────────────────────────────────────────────────────────────
+
+type Authorizer {
+  authorizerName: String!
+  authorizerArn: String
+}
+
+type AuthorizerDetails {
+  authorizerName: String!
+  authorizerArn: String
+  authorizerFunctionArn: String
+  tokenKeyName: String
+  tokenSigningPublicKeys: AWSJSON
+  status: String
+  creationDate: AWSDateTime
+  lastModifiedDate: AWSDateTime
+  signingDisabled: Boolean
+  enableCachingForHttp: Boolean
+}
+
+# ─── Security Profiles ────────────────────────────────────────────────────────
+
+type SecurityProfile {
+  securityProfileName: String!
+  securityProfileArn: String
+}
+
+type SecurityProfileDetails {
+  securityProfileName: String!
+  securityProfileArn: String
+  securityProfileDescription: String
+  behaviors: [Behavior]
+  alertTargets: AWSJSON
+  additionalMetricsToRetain: [MetricToRetain]
+  version: Int
+  creationDate: AWSDateTime
+  lastModifiedDate: AWSDateTime
+}
+
+type Behavior {
+  name: String!
+  metric: String
+  metricDimension: MetricDimension
+  criteria: BehaviorCriteria
+  suppressAlerts: Boolean
+}
+
+type MetricDimension {
+  dimensionName: String!
+  operator: String
+}
+
+type BehaviorCriteria {
+  comparisonOperator: String
+  value: MetricValue
+  durationSeconds: Int
+  consecutiveDatapointsToAlarm: Int
+  consecutiveDatapointsToClear: Int
+  statisticalThreshold: StatisticalThreshold
+  mlDetectionConfig: MachineLearningDetectionConfig
+}
+
+type MetricValue {
+  count: Int
+  cidrs: [String]
+  ports: [Int]
+  number: Float
+  numbers: [Float]
+  strings: [String]
+}
+
+type StatisticalThreshold {
+  statistic: String
+}
+
+type MachineLearningDetectionConfig {
+  confidenceLevel: String
+}
+
+type Metric {
+  metricName: String!
+  metricArn: String
+  metricType: String
+}
+
+type MetricToRetain {
+  metric: String!
+  metricDimension: MetricDimension
+}
+
+# ─── Audit ────────────────────────────────────────────────────────────────────
+
+type Audit {
+  taskId: String!
+  taskType: String
+  taskStatus: String
+  scheduledAuditName: String
+  auditStartTime: AWSDateTime
+  auditEndTime: AWSDateTime
+}
+
+type AuditTask {
+  taskId: String!
+  taskType: String
+  taskStatus: String
+  taskStartTime: AWSDateTime
+  taskStatistics: AuditTaskStatistics
+  scheduledAuditName: String
+  auditDetails: AWSJSON
+}
+
+type AuditTaskStatistics {
+  totalChecks: Int
+  inProgressChecks: Int
+  waitingForDataCollectionChecks: Int
+  compliantChecks: Int
+  nonCompliantChecks: Int
+  failedChecks: Int
+  canceledChecks: Int
+}
+
+type AuditFinding {
+  findingId: String!
+  taskId: String
+  checkName: String
+  taskStartTime: AWSDateTime
+  findingTime: AWSDateTime
+  severity: String
+  nonCompliantResource: AWSJSON
+  relatedResources: [AWSJSON]
+  reasonForNonCompliance: String
+  reasonForNonComplianceCode: String
+  isSuppressed: Boolean
+}
+
+# ─── Mitigation ───────────────────────────────────────────────────────────────
+
+type Mitigation {
+  taskId: String!
+  target: AWSJSON
+  auditCheckToActionsMapping: AWSJSON
+  startTime: AWSDateTime
+  endTime: AWSDateTime
+  taskStatus: String
+}
+
+type MitigationAction {
+  actionName: String!
+  actionId: String
+  roleArn: String
+  actionParams: MitigationActionParams
+  creationDate: AWSDateTime
+  lastModifiedDate: AWSDateTime
+}
+
+type MitigationActionParams {
+  updateDeviceCertificateParams: UpdateDeviceCertificateParams
+  updateCACertificateParams: UpdateCACertificateParams
+  addThingsToThingGroupParams: AddThingsToThingGroupParams
+  replaceDefaultPolicyVersionParams: ReplaceDefaultPolicyVersionParams
+  enableIoTLoggingParams: EnableIoTLoggingParams
+  publishFindingToSnsParams: PublishFindingToSnsParams
+}
+
+type UpdateDeviceCertificateParams {
+  action: String!
+}
+
+type UpdateCACertificateParams {
+  action: String!
+}
+
+type AddThingsToThingGroupParams {
+  thingGroupNames: [String!]!
+  overrideDynamicGroups: Boolean
+}
+
+type ReplaceDefaultPolicyVersionParams {
+  templateName: String!
+}
+
+type EnableIoTLoggingParams {
+  roleArnForLogging: String!
+  logLevel: String!
+}
+
+type PublishFindingToSnsParams {
+  topicArn: String!
+}
+
+# ─── CA Certificates ──────────────────────────────────────────────────────────
+
+type CA {
+  certificateId: String!
+  certificateArn: String
+  status: String
+  autoRegistrationStatus: String
+  creationDate: AWSDateTime
+  lastModifiedDate: AWSDateTime
+  ownedBy: String
+  validity: CertificateValidity
+  generationId: String
+}
+
+# ─── Provisioning ─────────────────────────────────────────────────────────────
+
+type ProvisioningTemplate {
+  templateArn: String!
+  templateName: String!
+  description: String
+  creationDate: AWSDateTime
+  lastModifiedDate: AWSDateTime
+  defaultVersionId: Int
+  templateBody: String
+  enabled: Boolean
+  provisioningRoleArn: String
+  preProvisioningHook: ProvisioningHook
+  type: String
+}
+
+type ProvisioningHook {
+  payloadVersion: String
+  targetArn: String!
+}
+
+# ─── Auth / Tokens ────────────────────────────────────────────────────────────
+
+type APIKey {
+  keyId: String!
+  keyArn: String
+  status: String
+  createdAt: AWSDateTime
+}
+
+type Token {
+  token: String!
+  expiresAt: AWSDateTime
+  credentialProvider: String
+}
+
+type Webhook {
+  webhookId: String!
+  url: String!
+  events: [String]
+  status: String
+  createdAt: AWSDateTime
+  lastModifiedAt: AWSDateTime
+}
+
+# ─── Queries ──────────────────────────────────────────────────────────────────
+
+type Query {
+  # Things
+  getThing(thingName: String!): ThingDetails
+  listThings(attributeName: String, attributeValue: String, thingTypeName: String, maxResults: Int, nextToken: String): ThingList
+  listThingTypes(thingTypeName: String, maxResults: Int, nextToken: String): ThingTypeList
+  getThingType(thingTypeName: String!): ThingType
+  listThingGroups(parentGroup: String, namePrefixFilter: String, maxResults: Int, nextToken: String): ThingGroupList
+  describeThingGroup(thingGroupName: String!): ThingGroupDetails
+
+  # Certificates
+  describeCertificate(certificateId: String!): CertificateDetails
+  listCertificates(pageSize: Int, marker: String, ascendingOrder: Boolean): CertificateList
+
+  # Policies
+  getPolicy(policyName: String!): PolicyDetails
+  listPolicies(marker: String, pageSize: Int, ascendingOrder: Boolean): PolicyList
+  getPolicyVersion(policyName: String!, policyVersionId: String!): PolicyVersion
+  listPolicyVersions(policyName: String!): PolicyVersionList
+
+  # Shadows
+  getThingShadow(thingName: String!, shadowName: String): ShadowDetails
+  listNamedShadowsForThing(thingName: String!, pageSize: Int, nextToken: String): NamedShadowList
+
+  # Rules
+  getTopicRule(ruleName: String!): TopicRule
+  listTopicRules(topic: String, maxResults: Int, nextToken: String, ruleDisabled: Boolean): TopicRuleList
+  getTopicRuleDestination(arn: String!): TopicRuleDestination
+  listTopicRuleDestinations(maxResults: Int, nextToken: String): TopicRuleDestinationList
+
+  # Jobs
+  describeJob(jobId: String!): JobDetails
+  listJobs(status: JobStatus, targetSelection: String, maxResults: Int, nextToken: String): JobList
+  describeJobExecution(jobId: String!, thingName: String!, executionNumber: Int): JobExecution
+  listJobExecutionsForJob(jobId: String!, status: JobExecutionStatus, maxResults: Int, nextToken: String): JobExecutionList
+  listJobExecutionsForThing(thingName: String!, status: JobExecutionStatus, maxResults: Int, nextToken: String): JobExecutionList
+
+  # Fleet / Indexing
+  describeFleetMetric(metricName: String!): FleetDetails
+  listFleetMetrics(maxResults: Int, nextToken: String): FleetList
+  searchIndex(indexName: String, queryString: String!, queryVersion: String, maxResults: Int, nextToken: String): SearchIndexResult
+  describeIndex(indexName: String!): SearchIndex
+
+  # Authorizers
+  describeAuthorizer(authorizerName: String!): AuthorizerDetails
+  listAuthorizers(pageSize: Int, marker: String, ascendingOrder: Boolean, status: String): AuthorizerList
+
+  # Security Profiles
+  describeSecurityProfile(securityProfileName: String!): SecurityProfileDetails
+  listSecurityProfiles(maxResults: Int, nextToken: String, dimensionName: String, metricName: String): SecurityProfileList
+
+  # Audit
+  describeAuditTask(taskId: String!): AuditTask
+  listAuditTasks(startTime: AWSDateTime!, endTime: AWSDateTime!, taskType: String, taskStatus: String, maxResults: Int, nextToken: String): AuditTaskList
+  listAuditFindings(taskId: String, checkName: String, maxResults: Int, nextToken: String): AuditFindingList
+
+  # Mitigation
+  describeMitigationAction(actionName: String!): MitigationAction
+  listMitigationActions(actionType: String, maxResults: Int, nextToken: String): MitigationActionList
+
+  # CA Certs
+  describeCACertificate(certificateId: String!): CA
+  listCACertificates(pageSize: Int, marker: String, ascendingOrder: Boolean): CAList
+
+  # Provisioning
+  describeProvisioningTemplate(templateName: String!): ProvisioningTemplate
+  listProvisioningTemplates(maxResults: Int, nextToken: String): ProvisioningTemplateList
+}
+
+# ─── Mutations ────────────────────────────────────────────────────────────────
+
+type Mutation {
+  # Things
+  createThing(thingName: String!, thingTypeName: String, attributes: [ThingAttributeInput]): Thing
+  deleteThing(thingName: String!, expectedVersion: Int): Boolean
+  updateThing(thingName: String!, thingTypeName: String, attributes: [ThingAttributeInput], removeThingType: Boolean, expectedVersion: Int): Boolean
+  addThingToThingGroup(thingGroupName: String!, thingName: String!): Boolean
+  removeThingFromThingGroup(thingGroupName: String!, thingName: String!): Boolean
+
+  # Certificates
+  createCertificateFromCsr(certificateSigningRequest: String!, setAsActive: Boolean): CertificateDetails
+  registerCertificate(certificatePem: String!, status: CertificateStatus): Certificate
+  updateCertificate(certificateId: String!, newStatus: CertificateStatus!): Boolean
+  deleteCertificate(certificateId: String!, forceDelete: Boolean): Boolean
+
+  # Policies
+  createPolicy(policyName: String!, policyDocument: String!): PolicyDetails
+  deletePolicy(policyName: String!): Boolean
+  createPolicyVersion(policyName: String!, policyDocument: String!, setAsDefault: Boolean): PolicyVersion
+  attachPolicy(policyName: String!, target: String!): Boolean
+  detachPolicy(policyName: String!, target: String!): Boolean
+
+  # Shadows
+  updateThingShadow(thingName: String!, shadowName: String, payload: AWSJSON!): ShadowDetails
+  deleteThingShadow(thingName: String!, shadowName: String): Shadow
+
+  # Rules
+  createTopicRule(ruleName: String!, topicRulePayload: TopicRulePayloadInput!): Boolean
+  deleteTopicRule(ruleName: String!): Boolean
+  enableTopicRule(ruleName: String!): Boolean
+  disableTopicRule(ruleName: String!): Boolean
+
+  # Jobs
+  createJob(jobId: String!, targets: [String!]!, documentSource: String, document: String, description: String): Job
+  cancelJob(jobId: String!, reasonCode: String, comment: String, force: Boolean): Job
+  deleteJob(jobId: String!, force: Boolean): Boolean
+
+  # Fleet Metrics
+  createFleetMetric(metricName: String!, queryString: String!, aggregationType: AggregationTypeInput!, period: Int!, aggregationField: String!, indexName: String): Fleet
+  deleteFleetMetric(metricName: String!): Boolean
+
+  # Security Profiles
+  createSecurityProfile(securityProfileName: String!, securityProfileDescription: String, behaviors: [BehaviorInput]): SecurityProfileDetails
+  deleteSecurityProfile(securityProfileName: String!, expectedVersion: Int): Boolean
+
+  # Mitigation Actions
+  createMitigationAction(actionName: String!, roleArn: String!, actionParams: MitigationActionParamsInput!): MitigationAction
+  deleteMitigationAction(actionName: String!): Boolean
+
+  # Provisioning Templates
+  createProvisioningTemplate(templateName: String!, templateBody: String!, provisioningRoleArn: String!, enabled: Boolean): ProvisioningTemplate
+  deleteProvisioningTemplate(templateName: String!): Boolean
+}
+
+# ─── Input Types ──────────────────────────────────────────────────────────────
+
+input ThingAttributeInput {
+  key: String!
+  value: String
+}
+
+input TopicRulePayloadInput {
+  sql: String!
+  description: String
+  actions: [RuleActionInput!]!
+  ruleDisabled: Boolean
+  awsIotSqlVersion: String
+  errorAction: RuleActionInput
+}
+
+input RuleActionInput {
+  sns: SNSActionInput
+  sqs: SQSActionInput
+  dynamoDB: DynamoDBActionInput
+  lambda: LambdaActionInput
+  s3: S3ActionInput
+  iotAnalytics: IoTAnalyticsActionInput
+}
+
+input SNSActionInput {
+  targetArn: String!
+  roleArn: String!
+  messageFormat: String
+}
+
+input SQSActionInput {
+  queueUrl: String!
+  roleArn: String!
+  useBase64: Boolean
+}
+
+input DynamoDBActionInput {
+  tableName: String!
+  roleArn: String!
+  hashKeyField: String
+  hashKeyValue: String
+  rangeKeyField: String
+  rangeKeyValue: String
+}
+
+input LambdaActionInput {
+  functionArn: String!
+}
+
+input S3ActionInput {
+  bucketName: String!
+  key: String!
+  roleArn: String!
+}
+
+input IoTAnalyticsActionInput {
+  channelName: String
+  roleArn: String
+  batchMode: Boolean
+}
+
+input AggregationTypeInput {
+  name: String!
+  values: [String]
+}
+
+input BehaviorInput {
+  name: String!
+  metric: String
+  criteria: BehaviorCriteriaInput
+}
+
+input BehaviorCriteriaInput {
+  comparisonOperator: String
+  durationSeconds: Int
+  consecutiveDatapointsToAlarm: Int
+  consecutiveDatapointsToClear: Int
+}
+
+input MitigationActionParamsInput {
+  updateDeviceCertificateParams: UpdateDeviceCertificateParamsInput
+  addThingsToThingGroupParams: AddThingsToThingGroupParamsInput
+  replaceDefaultPolicyVersionParams: ReplaceDefaultPolicyVersionParamsInput
+  enableIoTLoggingParams: EnableIoTLoggingParamsInput
+  publishFindingToSnsParams: PublishFindingToSnsParamsInput
+}
+
+input UpdateDeviceCertificateParamsInput {
+  action: String!
+}
+
+input AddThingsToThingGroupParamsInput {
+  thingGroupNames: [String!]!
+  overrideDynamicGroups: Boolean
+}
+
+input ReplaceDefaultPolicyVersionParamsInput {
+  templateName: String!
+}
+
+input EnableIoTLoggingParamsInput {
+  roleArnForLogging: String!
+  logLevel: String!
+}
+
+input PublishFindingToSnsParamsInput {
+  topicArn: String!
+}
+
+# ─── List / Connection Types ──────────────────────────────────────────────────
+
+type ThingList {
+  things: [Thing]
+  nextToken: String
+}
+
+type ThingTypeList {
+  thingTypes: [ThingType]
+  nextToken: String
+}
+
+type ThingGroupList {
+  thingGroups: [GroupNameAndArn]
+  nextToken: String
+}
+
+type CertificateList {
+  certificates: [Certificate]
+  nextMarker: String
+}
+
+type PolicyList {
+  policies: [Policy]
+  nextMarker: String
+}
+
+type PolicyVersionList {
+  policyVersions: [PolicyVersion]
+}
+
+type NamedShadowList {
+  results: [String]
+  nextToken: String
+  timestamp: AWSTimestamp
+}
+
+type TopicRuleList {
+  rules: [TopicRuleListItem]
+  nextToken: String
+}
+
+type TopicRuleListItem {
+  ruleArn: String
+  ruleName: String
+  topicPattern: String
+  createdAt: AWSDateTime
+  ruleDisabled: Boolean
+}
+
+type TopicRuleDestinationList {
+  destinationSummaries: [TopicRuleDestination]
+  nextToken: String
+}
+
+type JobList {
+  jobs: [Job]
+  nextToken: String
+}
+
+type JobExecutionList {
+  executionSummaries: [JobExecution]
+  nextToken: String
+}
+
+type FleetList {
+  fleetMetrics: [Fleet]
+  nextToken: String
+}
+
+type SearchIndexResult {
+  nextToken: String
+  things: [IndexSearch]
+  thingGroups: [ThingGroup]
+}
+
+type AuthorizerList {
+  authorizers: [Authorizer]
+  nextMarker: String
+}
+
+type SecurityProfileList {
+  securityProfileIdentifiers: [SecurityProfile]
+  nextToken: String
+}
+
+type AuditTaskList {
+  tasks: [Audit]
+  nextToken: String
+}
+
+type AuditFindingList {
+  findings: [AuditFinding]
+  nextToken: String
+}
+
+type MitigationActionList {
+  actionIdentifiers: [MitigationAction]
+  nextToken: String
+}
+
+type CAList {
+  certificates: [CA]
+  nextMarker: String
+}
+
+type ProvisioningTemplateList {
+  templates: [ProvisioningTemplate]
+  nextToken: String
+}
