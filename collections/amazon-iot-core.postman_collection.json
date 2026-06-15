@@ -1,0 +1,1046 @@
+{
+  "item": [
+    {
+      "id": "5489f0c2-a836-40cb-a052-c636f4466401",
+      "name": "Certificates",
+      "description": {
+        "content": "Operations for managing device certificates",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "70e62082-49f7-444e-893d-873c757c4988",
+          "name": "Amazon IoT Core List certificates",
+          "request": {
+            "name": "Amazon IoT Core List certificates",
+            "description": {
+              "content": "Lists the certificates registered in your AWS account.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "certificates"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,eu-west-1,eu-west-2,eu-west-3,eu-central-1,ap-northeast-1,ap-northeast-2,ap-southeast-1,ap-southeast-2,ap-south-1,sa-east-1,ca-central-1)",
+                  "type": "any",
+                  "value": "{{region}}",
+                  "key": "region"
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e6589448-040d-4a0d-a5da-eb3500d2ddab",
+              "name": "List of certificates",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "certificates"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,eu-west-1,eu-west-2,eu-west-3,eu-central-1,ap-northeast-1,ap-northeast-2,ap-southeast-1,ap-southeast-2,ap-south-1,sa-east-1,ca-central-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "129333fa-e259-44ba-9f9d-337906615a66",
+      "name": "Jobs",
+      "description": {
+        "content": "Operations for managing IoT device jobs",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "cedbac16-6f00-42b8-8dae-ac0b4a902e95",
+          "name": "Amazon IoT Core List jobs",
+          "request": {
+            "name": "Amazon IoT Core List jobs",
+            "description": {
+              "content": "Lists IoT jobs.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "jobs"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,eu-west-1,eu-west-2,eu-west-3,eu-central-1,ap-northeast-1,ap-northeast-2,ap-southeast-1,ap-southeast-2,ap-south-1,sa-east-1,ca-central-1)",
+                  "type": "any",
+                  "value": "{{region}}",
+                  "key": "region"
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ae1950b6-dd56-4378-a3cc-f0d2490621c1",
+              "name": "List of jobs",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "jobs"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,eu-west-1,eu-west-2,eu-west-3,eu-central-1,ap-northeast-1,ap-northeast-2,ap-southeast-1,ap-southeast-2,ap-south-1,sa-east-1,ca-central-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "b0d1c65a-e75b-4c76-948e-d400ab276ccd",
+      "name": "Policies",
+      "description": {
+        "content": "Operations for managing IoT policies",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "4dd9a305-c4f2-4a05-a323-678deb2a5ee3",
+          "name": "Amazon IoT Core List IoT policies",
+          "request": {
+            "name": "Amazon IoT Core List IoT policies",
+            "description": {
+              "content": "Lists your IoT policies.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "policies"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,eu-west-1,eu-west-2,eu-west-3,eu-central-1,ap-northeast-1,ap-northeast-2,ap-southeast-1,ap-southeast-2,ap-south-1,sa-east-1,ca-central-1)",
+                  "type": "any",
+                  "value": "{{region}}",
+                  "key": "region"
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "bdded4a6-50eb-4794-b78a-8f5c1644ea5d",
+              "name": "List of policies",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "policies"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,eu-west-1,eu-west-2,eu-west-3,eu-central-1,ap-northeast-1,ap-northeast-2,ap-southeast-1,ap-southeast-2,ap-south-1,sa-east-1,ca-central-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "3804c80b-0aa8-4367-8887-332a1dc62966",
+      "name": "Rules",
+      "description": {
+        "content": "Operations for managing IoT rules engine rules",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "5d989fac-7906-4857-999c-ab6caf1071b3",
+          "name": "Amazon IoT Core List topic rules",
+          "request": {
+            "name": "Amazon IoT Core List topic rules",
+            "description": {
+              "content": "Lists the rules for the specific topic.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "rules"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,eu-west-1,eu-west-2,eu-west-3,eu-central-1,ap-northeast-1,ap-northeast-2,ap-southeast-1,ap-southeast-2,ap-south-1,sa-east-1,ca-central-1)",
+                  "type": "any",
+                  "value": "{{region}}",
+                  "key": "region"
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "3372d13c-9a4a-4055-a23c-3ea5202dfffd",
+              "name": "List of rules",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "rules"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,eu-west-1,eu-west-2,eu-west-3,eu-central-1,ap-northeast-1,ap-northeast-2,ap-southeast-1,ap-southeast-2,ap-south-1,sa-east-1,ca-central-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "80e61727-92c8-4484-a7fb-649a09d080a5",
+      "name": "Shadows",
+      "description": {
+        "content": "Operations for managing device shadows",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "0717fdad-8aed-4796-98aa-54e68e9a5fcb",
+          "name": "Amazon IoT Core Get thing shadow",
+          "request": {
+            "name": "Amazon IoT Core Get thing shadow",
+            "description": {
+              "content": "Gets the shadow for the specified thing.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "things",
+                ":thingName",
+                "shadow"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "thingName",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,eu-west-1,eu-west-2,eu-west-3,eu-central-1,ap-northeast-1,ap-northeast-2,ap-southeast-1,ap-southeast-2,ap-south-1,sa-east-1,ca-central-1)",
+                  "type": "any",
+                  "value": "{{region}}",
+                  "key": "region"
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "534e2b6d-1274-4e52-b864-b0b52684e0db",
+              "name": "Thing shadow",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "things",
+                    ":thingName",
+                    "shadow"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "thingName",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,eu-west-1,eu-west-2,eu-west-3,eu-central-1,ap-northeast-1,ap-northeast-2,ap-southeast-1,ap-southeast-2,ap-south-1,sa-east-1,ca-central-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "a8ca0b69-e57e-42c4-b05c-eb6cef7158c3",
+      "name": "Things",
+      "description": {
+        "content": "Operations for managing IoT things and thing types",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "5874bae8-a53f-4236-ad00-f039d6a024db",
+          "name": "Amazon IoT Core List IoT things",
+          "request": {
+            "name": "Amazon IoT Core List IoT things",
+            "description": {
+              "content": "Lists the things registered in your AWS account.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "things"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "maxResults",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "nextToken",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "description": "AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,eu-west-1,eu-west-2,eu-west-3,eu-central-1,ap-northeast-1,ap-northeast-2,ap-southeast-1,ap-southeast-2,ap-south-1,sa-east-1,ca-central-1)",
+                  "type": "any",
+                  "value": "{{region}}",
+                  "key": "region"
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "8bb4ce33-c35c-4b42-9e2e-072d088a8ac5",
+              "name": "List of things",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "things"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "maxResults",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "nextToken",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,eu-west-1,eu-west-2,eu-west-3,eu-central-1,ap-northeast-1,ap-northeast-2,ap-southeast-1,ap-southeast-2,ap-south-1,sa-east-1,ca-central-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "c4ccec82-ded2-4850-8101-2115ad61c460",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "things"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "maxResults",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "nextToken",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,eu-west-1,eu-west-2,eu-west-3,eu-central-1,ap-northeast-1,ap-northeast-2,ap-southeast-1,ap-southeast-2,ap-south-1,sa-east-1,ca-central-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "729d27b1-e957-4787-a3e2-b2e319d9bd25",
+          "name": "Amazon IoT Core Describe a thing",
+          "request": {
+            "name": "Amazon IoT Core Describe a thing",
+            "description": {
+              "content": "Gets information about the specified thing.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "things",
+                ":thingName"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "thingName",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,eu-west-1,eu-west-2,eu-west-3,eu-central-1,ap-northeast-1,ap-northeast-2,ap-southeast-1,ap-southeast-2,ap-south-1,sa-east-1,ca-central-1)",
+                  "type": "any",
+                  "value": "{{region}}",
+                  "key": "region"
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "6b1f6bfd-6110-4002-9eb9-91da1035df55",
+              "name": "Thing details",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "things",
+                    ":thingName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "thingName",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,eu-west-1,eu-west-2,eu-west-3,eu-central-1,ap-northeast-1,ap-northeast-2,ap-southeast-1,ap-southeast-2,ap-south-1,sa-east-1,ca-central-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "077af201-55b8-4b63-ac17-6f34cdc1eca6",
+              "name": "Thing not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "things",
+                    ":thingName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "thingName",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,eu-west-1,eu-west-2,eu-west-3,eu-central-1,ap-northeast-1,ap-northeast-2,ap-southeast-1,ap-southeast-2,ap-south-1,sa-east-1,ca-central-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "fdbb5781-299e-410f-a109-538cd5d121dd",
+          "name": "Amazon IoT Core Create a thing",
+          "request": {
+            "name": "Amazon IoT Core Create a thing",
+            "description": {
+              "content": "Creates a thing record in the registry.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "things",
+                ":thingName"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "thingName",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,eu-west-1,eu-west-2,eu-west-3,eu-central-1,ap-northeast-1,ap-northeast-2,ap-southeast-1,ap-southeast-2,ap-south-1,sa-east-1,ca-central-1)",
+                  "type": "any",
+                  "value": "{{region}}",
+                  "key": "region"
+                }
+              ]
+            },
+            "method": "PUT",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "0111d665-511d-40bd-a70f-aa32a4a4c397",
+              "name": "Thing created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "things",
+                    ":thingName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "thingName",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,eu-west-1,eu-west-2,eu-west-3,eu-central-1,ap-northeast-1,ap-northeast-2,ap-southeast-1,ap-southeast-2,ap-south-1,sa-east-1,ca-central-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "041e783b-2049-4fa1-bf12-9a67faf54b30",
+          "name": "Amazon IoT Core Delete a thing",
+          "request": {
+            "name": "Amazon IoT Core Delete a thing",
+            "description": {
+              "content": "Deletes the specified thing from the registry.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "things",
+                ":thingName"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "thingName",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,eu-west-1,eu-west-2,eu-west-3,eu-central-1,ap-northeast-1,ap-northeast-2,ap-southeast-1,ap-southeast-2,ap-south-1,sa-east-1,ca-central-1)",
+                  "type": "any",
+                  "value": "{{region}}",
+                  "key": "region"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "6f52046a-ae32-417f-9e78-d6bb220106e6",
+              "name": "Thing deleted",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "things",
+                    ":thingName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "thingName",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,eu-west-1,eu-west-2,eu-west-3,eu-central-1,ap-northeast-1,ap-northeast-2,ap-southeast-1,ap-southeast-2,ap-south-1,sa-east-1,ca-central-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,eu-west-1,eu-west-2,eu-west-3,eu-central-1,ap-northeast-1,ap-northeast-2,ap-southeast-1,ap-southeast-2,ap-south-1,sa-east-1,ca-central-1)",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "us-east-1",
+      "key": "region"
+    },
+    {
+      "type": "string",
+      "value": "https://iot.{{region}}.amazonaws.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "0276d705-3bc7-474f-a116-025fad08c53f",
+    "name": "Amazon IoT Core API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Amazon IoT Core API enables programmatic management of IoT resources including things, thing types, thing groups, certificates, policies, rules, jobs, and device shadows for connecting and managing IoT devices at scale.\n\nContact Support:\n Name: AWS Support",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,205 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Amazon IoT Core API",
+    "version": "2015-05-28"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Things",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Amazon IoT Core List IoT things",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://iot.{region}.amazonaws.com/things",
+            "params": [
+              {
+                "name": "maxResults",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "nextToken",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Lists the things registered in your AWS account."
+        },
+        {
+          "info": {
+            "name": "Amazon IoT Core Describe a thing",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://iot.{region}.amazonaws.com/things/:thingName",
+            "params": [
+              {
+                "name": "thingName",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Gets information about the specified thing."
+        },
+        {
+          "info": {
+            "name": "Amazon IoT Core Create a thing",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://iot.{region}.amazonaws.com/things/:thingName",
+            "params": [
+              {
+                "name": "thingName",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Creates a thing record in the registry."
+        },
+        {
+          "info": {
+            "name": "Amazon IoT Core Delete a thing",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://iot.{region}.amazonaws.com/things/:thingName",
+            "params": [
+              {
+                "name": "thingName",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Deletes the specified thing from the registry."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Certificates",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Amazon IoT Core List certificates",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://iot.{region}.amazonaws.com/certificates"
+          },
+          "docs": "Lists the certificates registered in your AWS account."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Policies",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Amazon IoT Core List IoT policies",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://iot.{region}.amazonaws.com/policies"
+          },
+          "docs": "Lists your IoT policies."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Rules",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Amazon IoT Core List topic rules",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://iot.{region}.amazonaws.com/rules"
+          },
+          "docs": "Lists the rules for the specific topic."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Jobs",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Amazon IoT Core List jobs",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://iot.{region}.amazonaws.com/jobs"
+          },
+          "docs": "Lists IoT jobs."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Shadows",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Amazon IoT Core Get thing shadow",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://iot.{region}.amazonaws.com/things/:thingName/shadow",
+            "params": [
+              {
+                "name": "thingName",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Gets the shadow for the specified thing."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
