@@ -5,7 +5,7 @@ description: AWS IoT Core is a managed cloud service that lets connected devices
   billions of devices and trillions of messages, routing those messages to AWS endpoints
   and other devices reliably and securely.
 type: Index
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 tags:
 - AWS
 - Device Management
