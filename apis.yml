@@ -41,6 +41,14 @@ apis:
   - url: graphql/amazon-iot-core-graphql.md
     type: GraphQL
 common:
+- type: TrustCenter
+  url: security/amazon-iot-core-trust-center.yml
+- type: VulnerabilityDisclosure
+  url: security/amazon-iot-core-vulnerability-disclosure.yml
+- type: DomainSecurity
+  url: security/amazon-iot-core-domain-security.yml
+- type: Authentication
+  url: authentication/amazon-iot-core-authentication.yml
 - type: Portal
   url: https://aws.amazon.com/iot-core/
 - type: Website
