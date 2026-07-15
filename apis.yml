@@ -41,6 +41,8 @@ apis:
   - url: graphql/amazon-iot-core-graphql.md
     type: GraphQL
 common:
+- type: AgenticAccess
+  url: agentic-access/amazon-iot-core-agentic-access.yml
 - type: TrustCenter
   url: security/amazon-iot-core-trust-center.yml
 - type: VulnerabilityDisclosure
