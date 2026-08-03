@@ -1,0 +1,3388 @@
+{
+  "info": {
+    "_postman_id": "f39bb46a-a767-4131-82e2-230b8d249eb5",
+    "name": "AWS IoT Accept Certificate Transfer Role Aliases API",
+    "description": "<fullname>IoT</fullname> <p>IoT provides secure, bi-directional communication between Internet-connected devices (such as sensors, actuators, embedded devices, or smart appliances) and the Amazon Web Services cloud. You can discover your custom IoT-Data endpoint to communicate with, configure rules for data processing and integration with other services, organize resources associated with each device (Registry), configure logging, and create and manage policies and credentials to authenticate devices.</p> <p>The service endpoints that expose this API are listed in <a href=\"https://docs.aws.amazon.com/general/latest/gr/iot-core.html\">Amazon Web Services IoT Core Endpoints and Quotas</a>. You must use the endpoint for the region that has the resources you want to access.</p> <p>The service name used by <a href=\"https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html\">Amazon Web Services Signature Version 4</a> to sign the request is: <i>execute-api</i>.</p> <p>For more information about how IoT works, see the <a href=\"https://docs.aws.amazon.com/iot/latest/developerguide/aws-iot-how-it-works.html\">Developer Guide</a>.</p> <p>For information about how to use the credentials provider for IoT, see <a href=\"https://docs.aws.amazon.com/iot/latest/developerguide/authorizing-direct-aws.html\">Authorizing Direct Calls to Amazon Web Services Services</a>.</p>\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:32:53.000Z",
+    "updatedAt": "2026-07-28T10:32:54.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-f39bb46a-a767-4131-82e2-230b8d249eb5"
+  },
+  "item": [
+    {
+      "name": "role-aliases",
+      "item": [
+        {
+          "name": "{roleAlias}",
+          "item": [
+            {
+              "name": "Amazon IoT Core Create Role Alias",
+              "id": "59223ff0-852c-481d-b1b8-58f474ea6699",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"roleArn\": \"<string>\",\n  \"credentialDurationSeconds\": \"<integer>\",\n  \"tags\": [\n    {\n      \"Key\": \"Z-\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \".NpZ@_-N\",\n      \"Value\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/role-aliases/:roleAlias",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "role-aliases",
+                    ":roleAlias"
+                  ],
+                  "variable": [
+                    {
+                      "id": "0df6141a-0cea-44ed-98c1-42ae9d15b7bd",
+                      "key": "roleAlias",
+                      "value": "1D-3",
+                      "description": "(Required) The role alias that points to a role ARN. This allows you to change the role without having to update the device."
+                    }
+                  ]
+                },
+                "description": "<p>Creates a role alias.</p> <p>Requires permission to access the <a href=\"https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions\">CreateRoleAlias</a> action.</p>"
+              },
+              "response": [
+                {
+                  "id": "501934c7-972b-4a40-93eb-f2ee907ed3a1",
+                  "name": "Success",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"roleArn\": \"<string>\",\n  \"credentialDurationSeconds\": \"<integer>\",\n  \"tags\": [\n    {\n      \"Key\": \"Z-\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \".NpZ@_-N\",\n      \"Value\": \"<string>\"\n    }\n  ]\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/role-aliases/:roleAlias",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "role-aliases",
+                        ":roleAlias"
+                      ],
+                      "variable": [
+                        {
+                          "key": "roleAlias"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"roleAlias\": \"-T=01i@cDC\",\n  \"roleAliasArn\": \"<string>\"\n}",
+                  "createdAt": "2026-07-28T10:32:54.000Z",
+                  "updatedAt": "2026-07-28T10:32:54.000Z",
+                  "uid": "35240-501934c7-972b-4a40-93eb-f2ee907ed3a1"
+                },
+                {
+                  "id": "d4f67822-cb71-486f-88b0-5cd3e0055b24",
+                  "name": "ResourceAlreadyExistsException",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"roleArn\": \"<string>\",\n  \"credentialDurationSeconds\": \"<integer>\",\n  \"tags\": [\n    {\n      \"Key\": \"Z-\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \".NpZ@_-N\",\n      \"Value\": \"<string>\"\n    }\n  ]\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/role-aliases/:roleAlias",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "role-aliases",
+                        ":roleAlias"
+                      ],
+                      "variable": [
+                        {
+                          "key": "roleAlias"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:32:54.000Z",
+                  "updatedAt": "2026-07-28T10:32:54.000Z",
+                  "uid": "35240-d4f67822-cb71-486f-88b0-5cd3e0055b24"
+                },
+                {
+                  "id": "75a8d031-692f-49a2-953a-802b21352e7c",
+                  "name": "InvalidRequestException",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"roleArn\": \"<string>\",\n  \"credentialDurationSeconds\": \"<integer>\",\n  \"tags\": [\n    {\n      \"Key\": \"Z-\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \".NpZ@_-N\",\n      \"Value\": \"<string>\"\n    }\n  ]\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/role-aliases/:roleAlias",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "role-aliases",
+                        ":roleAlias"
+                      ],
+                      "variable": [
+                        {
+                          "key": "roleAlias"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:32:54.000Z",
+                  "updatedAt": "2026-07-28T10:32:54.000Z",
+                  "uid": "35240-75a8d031-692f-49a2-953a-802b21352e7c"
+                },
+                {
+                  "id": "893a956b-c288-439f-a12e-c694a6f00b7a",
+                  "name": "LimitExceededException",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"roleArn\": \"<string>\",\n  \"credentialDurationSeconds\": \"<integer>\",\n  \"tags\": [\n    {\n      \"Key\": \"Z-\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \".NpZ@_-N\",\n      \"Value\": \"<string>\"\n    }\n  ]\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/role-aliases/:roleAlias",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "role-aliases",
+                        ":roleAlias"
+                      ],
+                      "variable": [
+                        {
+                          "key": "roleAlias"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:32:54.000Z",
+                  "updatedAt": "2026-07-28T10:32:54.000Z",
+                  "uid": "35240-893a956b-c288-439f-a12e-c694a6f00b7a"
+                },
+                {
+                  "id": "221477e5-268c-4822-a839-46b70dc1472d",
+                  "name": "ThrottlingException",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"roleArn\": \"<string>\",\n  \"credentialDurationSeconds\": \"<integer>\",\n  \"tags\": [\n    {\n      \"Key\": \"Z-\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \".NpZ@_-N\",\n      \"Value\": \"<string>\"\n    }\n  ]\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/role-aliases/:roleAlias",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "role-aliases",
+                        ":roleAlias"
+                      ],
+                      "variable": [
+                        {
+                          "key": "roleAlias"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:32:54.000Z",
+                  "updatedAt": "2026-07-28T10:32:54.000Z",
+                  "uid": "35240-221477e5-268c-4822-a839-46b70dc1472d"
+                },
+                {
+                  "id": "b5ca44a1-6100-4e44-ad8c-70008226a60b",
+                  "name": "UnauthorizedException",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"roleArn\": \"<string>\",\n  \"credentialDurationSeconds\": \"<integer>\",\n  \"tags\": [\n    {\n      \"Key\": \"Z-\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \".NpZ@_-N\",\n      \"Value\": \"<string>\"\n    }\n  ]\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/role-aliases/:roleAlias",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "role-aliases",
+                        ":roleAlias"
+                      ],
+                      "variable": [
+                        {
+                          "key": "roleAlias"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:32:54.000Z",
+                  "updatedAt": "2026-07-28T10:32:54.000Z",
+                  "uid": "35240-b5ca44a1-6100-4e44-ad8c-70008226a60b"
+                },
+                {
+                  "id": "f062d276-53de-4cd0-a72c-891fcec69b76",
+                  "name": "ServiceUnavailableException",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"roleArn\": \"<string>\",\n  \"credentialDurationSeconds\": \"<integer>\",\n  \"tags\": [\n    {\n      \"Key\": \"Z-\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \".NpZ@_-N\",\n      \"Value\": \"<string>\"\n    }\n  ]\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/role-aliases/:roleAlias",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "role-aliases",
+                        ":roleAlias"
+                      ],
+                      "variable": [
+                        {
+                          "key": "roleAlias"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:32:54.000Z",
+                  "updatedAt": "2026-07-28T10:32:54.000Z",
+                  "uid": "35240-f062d276-53de-4cd0-a72c-891fcec69b76"
+                },
+                {
+                  "id": "d464a037-25d1-4c5d-a591-b7826df5ebc2",
+                  "name": "InternalFailureException",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"roleArn\": \"<string>\",\n  \"credentialDurationSeconds\": \"<integer>\",\n  \"tags\": [\n    {\n      \"Key\": \"Z-\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \".NpZ@_-N\",\n      \"Value\": \"<string>\"\n    }\n  ]\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/role-aliases/:roleAlias",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "role-aliases",
+                        ":roleAlias"
+                      ],
+                      "variable": [
+                        {
+                          "key": "roleAlias"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:32:54.000Z",
+                  "updatedAt": "2026-07-28T10:32:54.000Z",
+                  "uid": "35240-d464a037-25d1-4c5d-a591-b7826df5ebc2"
+                }
+              ],
+              "createdAt": "2026-07-28T10:32:54.000Z",
+              "updatedAt": "2026-07-28T10:32:54.000Z",
+              "uid": "35240-59223ff0-852c-481d-b1b8-58f474ea6699"
+            },
+            {
+              "name": "Amazon IoT Core Delete Role Alias",
+              "id": "f1123a05-bb85-4314-8b43-fe441d3a430d",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "DELETE",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/role-aliases/:roleAlias",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "role-aliases",
+                    ":roleAlias"
+                  ],
+                  "variable": [
+                    {
+                      "id": "081f028c-8a5b-4dcd-ab36-73139edef7c7",
+                      "key": "roleAlias",
+                      "value": "1D-3",
+                      "description": "(Required) The role alias to delete."
+                    }
+                  ]
+                },
+                "description": "<p>Deletes a role alias</p> <p>Requires permission to access the <a href=\"https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions\">DeleteRoleAlias</a> action.</p>"
+              },
+              "response": [
+                {
+                  "id": "a8e8c3a5-ff5e-4339-9eeb-adb6dce8e4fa",
+                  "name": "Success",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/role-aliases/:roleAlias",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "role-aliases",
+                        ":roleAlias"
+                      ],
+                      "variable": [
+                        {
+                          "key": "roleAlias"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:32:54.000Z",
+                  "updatedAt": "2026-07-28T10:32:54.000Z",
+                  "uid": "35240-a8e8c3a5-ff5e-4339-9eeb-adb6dce8e4fa"
+                },
+                {
+                  "id": "e0d0b1bb-04d5-43fe-ac6a-b28c603d2f50",
+                  "name": "DeleteConflictException",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/role-aliases/:roleAlias",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "role-aliases",
+                        ":roleAlias"
+                      ],
+                      "variable": [
+                        {
+                          "key": "roleAlias"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:32:54.000Z",
+                  "updatedAt": "2026-07-28T10:32:54.000Z",
+                  "uid": "35240-e0d0b1bb-04d5-43fe-ac6a-b28c603d2f50"
+                },
+                {
+                  "id": "478c1520-7dd9-4607-980e-df2cf8538f5f",
+                  "name": "InvalidRequestException",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/role-aliases/:roleAlias",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "role-aliases",
+                        ":roleAlias"
+                      ],
+                      "variable": [
+                        {
+                          "key": "roleAlias"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:32:54.000Z",
+                  "updatedAt": "2026-07-28T10:32:54.000Z",
+                  "uid": "35240-478c1520-7dd9-4607-980e-df2cf8538f5f"
+                },
+                {
+                  "id": "9b782a92-0f74-4a13-8f12-5125a3b2c26c",
+                  "name": "ThrottlingException",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/role-aliases/:roleAlias",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "role-aliases",
+                        ":roleAlias"
+                      ],
+                      "variable": [
+                        {
+                          "key": "roleAlias"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:32:54.000Z",
+                  "updatedAt": "2026-07-28T10:32:54.000Z",
+                  "uid": "35240-9b782a92-0f74-4a13-8f12-5125a3b2c26c"
+                },
+                {
+                  "id": "3cdee2b2-c2cc-4000-be26-fd6e05b0085b",
+                  "name": "UnauthorizedException",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/role-aliases/:roleAlias",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "role-aliases",
+                        ":roleAlias"
+                      ],
+                      "variable": [
+                        {
+                          "key": "roleAlias"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:32:54.000Z",
+                  "updatedAt": "2026-07-28T10:32:54.000Z",
+                  "uid": "35240-3cdee2b2-c2cc-4000-be26-fd6e05b0085b"
+                },
+                {
+                  "id": "ea9ea531-8b03-4183-a94f-773a8691ebf4",
+                  "name": "ServiceUnavailableException",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/role-aliases/:roleAlias",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "role-aliases",
+                        ":roleAlias"
+                      ],
+                      "variable": [
+                        {
+                          "key": "roleAlias"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:32:54.000Z",
+                  "updatedAt": "2026-07-28T10:32:54.000Z",
+                  "uid": "35240-ea9ea531-8b03-4183-a94f-773a8691ebf4"
+                },
+                {
+                  "id": "7ddb62da-3a3b-4158-b38c-e5f373a7004e",
+                  "name": "InternalFailureException",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/role-aliases/:roleAlias",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "role-aliases",
+                        ":roleAlias"
+                      ],
+                      "variable": [
+                        {
+                          "key": "roleAlias"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:32:54.000Z",
+                  "updatedAt": "2026-07-28T10:32:54.000Z",
+                  "uid": "35240-7ddb62da-3a3b-4158-b38c-e5f373a7004e"
+                },
+                {
+                  "id": "6cb72edc-ba4c-4a40-8ada-4ebe0568fdf1",
+                  "name": "ResourceNotFoundException",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/role-aliases/:roleAlias",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "role-aliases",
+                        ":roleAlias"
+                      ],
+                      "variable": [
+                        {
+                          "key": "roleAlias"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:32:54.000Z",
+                  "updatedAt": "2026-07-28T10:32:54.000Z",
+                  "uid": "35240-6cb72edc-ba4c-4a40-8ada-4ebe0568fdf1"
+                }
+              ],
+              "createdAt": "2026-07-28T10:32:54.000Z",
+              "updatedAt": "2026-07-28T10:32:54.000Z",
+              "uid": "35240-f1123a05-bb85-4314-8b43-fe441d3a430d"
+            },
+            {
+              "name": "Amazon IoT Core Describe Role Alias",
+              "id": "b307575b-2223-47ba-b7e0-eed039316a06",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/role-aliases/:roleAlias",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "role-aliases",
+                    ":roleAlias"
+                  ],
+                  "variable": [
+                    {
+                      "id": "7868df8f-91b1-415b-8dc3-02eddf0e1eef",
+                      "key": "roleAlias",
+                      "value": "1D-3",
+                      "description": "(Required) The role alias to describe."
+                    }
+                  ]
+                },
+                "description": "<p>Describes a role alias.</p> <p>Requires permission to access the <a href=\"https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions\">DescribeRoleAlias</a> action.</p>"
+              },
+              "response": [
+                {
+                  "id": "f4f3ef18-0d8c-4cc9-87b9-2b9c1277c796",
+                  "name": "Success",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/role-aliases/:roleAlias",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "role-aliases",
+                        ":roleAlias"
+                      ],
+                      "variable": [
+                        {
+                          "key": "roleAlias"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"roleAliasDescription\": {\n    \"roleAlias\": \"D\",\n    \"roleAliasArn\": \"<string>\",\n    \"roleArn\": \"<string>\",\n    \"owner\": \"942910780209\",\n    \"credentialDurationSeconds\": \"<integer>\",\n    \"creationDate\": \"<dateTime>\",\n    \"lastModifiedDate\": \"<dateTime>\"\n  }\n}",
+                  "createdAt": "2026-07-28T10:32:54.000Z",
+                  "updatedAt": "2026-07-28T10:32:54.000Z",
+                  "uid": "35240-f4f3ef18-0d8c-4cc9-87b9-2b9c1277c796"
+                },
+                {
+                  "id": "d12a2e40-bf82-4226-a66d-95fd9963893e",
+                  "name": "InvalidRequestException",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/role-aliases/:roleAlias",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "role-aliases",
+                        ":roleAlias"
+                      ],
+                      "variable": [
+                        {
+                          "key": "roleAlias"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:32:54.000Z",
+                  "updatedAt": "2026-07-28T10:32:54.000Z",
+                  "uid": "35240-d12a2e40-bf82-4226-a66d-95fd9963893e"
+                },
+                {
+                  "id": "cac0b0d9-54e2-4a24-8063-1b9805cc7021",
+                  "name": "ThrottlingException",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/role-aliases/:roleAlias",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "role-aliases",
+                        ":roleAlias"
+                      ],
+                      "variable": [
+                        {
+                          "key": "roleAlias"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:32:54.000Z",
+                  "updatedAt": "2026-07-28T10:32:54.000Z",
+                  "uid": "35240-cac0b0d9-54e2-4a24-8063-1b9805cc7021"
+                },
+                {
+                  "id": "980f7c55-9d89-419d-a706-cd50a710b9dd",
+                  "name": "UnauthorizedException",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/role-aliases/:roleAlias",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "role-aliases",
+                        ":roleAlias"
+                      ],
+                      "variable": [
+                        {
+                          "key": "roleAlias"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:32:54.000Z",
+                  "updatedAt": "2026-07-28T10:32:54.000Z",
+                  "uid": "35240-980f7c55-9d89-419d-a706-cd50a710b9dd"
+                },
+                {
+                  "id": "8918836e-28cf-44e8-bdbe-db4757475fa9",
+                  "name": "ServiceUnavailableException",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/role-aliases/:roleAlias",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "role-aliases",
+                        ":roleAlias"
+                      ],
+                      "variable": [
+                        {
+                          "key": "roleAlias"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:32:54.000Z",
+                  "updatedAt": "2026-07-28T10:32:54.000Z",
+                  "uid": "35240-8918836e-28cf-44e8-bdbe-db4757475fa9"
+                },
+                {
+                  "id": "39333b72-d048-4d7d-80d0-4ea2407070cc",
+                  "name": "InternalFailureException",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/role-aliases/:roleAlias",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "role-aliases",
+                        ":roleAlias"
+                      ],
+                      "variable": [
+                        {
+                          "key": "roleAlias"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:32:54.000Z",
+                  "updatedAt": "2026-07-28T10:32:54.000Z",
+                  "uid": "35240-39333b72-d048-4d7d-80d0-4ea2407070cc"
+                },
+                {
+                  "id": "56f03cd2-5d23-411b-9ee9-ee98bb69c3dc",
+                  "name": "ResourceNotFoundException",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/role-aliases/:roleAlias",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "role-aliases",
+                        ":roleAlias"
+                      ],
+                      "variable": [
+                        {
+                          "key": "roleAlias"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:32:54.000Z",
+                  "updatedAt": "2026-07-28T10:32:54.000Z",
+                  "uid": "35240-56f03cd2-5d23-411b-9ee9-ee98bb69c3dc"
+                }
+              ],
+              "createdAt": "2026-07-28T10:32:54.000Z",
+              "updatedAt": "2026-07-28T10:32:54.000Z",
+              "uid": "35240-b307575b-2223-47ba-b7e0-eed039316a06"
+            },
+            {
+              "name": "Amazon IoT Core Update Role Alias",
+              "id": "63ada9bb-814f-4874-b786-dcb79438e7d2",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"roleArn\": \"<string>\",\n  \"credentialDurationSeconds\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/role-aliases/:roleAlias",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "role-aliases",
+                    ":roleAlias"
+                  ],
+                  "variable": [
+                    {
+                      "id": "0bc0045e-c103-4b7b-9e7c-bf5974ccdbbd",
+                      "key": "roleAlias",
+                      "value": "1D-3",
+                      "description": "(Required) The role alias to update."
+                    }
+                  ]
+                },
+                "description": "<p>Updates a role alias.</p> <p>Requires permission to access the <a href=\"https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions\">UpdateRoleAlias</a> action.</p>"
+              },
+              "response": [
+                {
+                  "id": "86fb2677-d14e-4276-91b5-103787a00e8a",
+                  "name": "Success",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"roleArn\": \"<string>\",\n  \"credentialDurationSeconds\": \"<integer>\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/role-aliases/:roleAlias",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "role-aliases",
+                        ":roleAlias"
+                      ],
+                      "variable": [
+                        {
+                          "key": "roleAlias"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"roleAlias\": \"-T=01i@cDC\",\n  \"roleAliasArn\": \"<string>\"\n}",
+                  "createdAt": "2026-07-28T10:32:54.000Z",
+                  "updatedAt": "2026-07-28T10:32:54.000Z",
+                  "uid": "35240-86fb2677-d14e-4276-91b5-103787a00e8a"
+                },
+                {
+                  "id": "fbd08267-fe3b-454f-ac5b-35d1aa03da61",
+                  "name": "ResourceNotFoundException",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"roleArn\": \"<string>\",\n  \"credentialDurationSeconds\": \"<integer>\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/role-aliases/:roleAlias",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "role-aliases",
+                        ":roleAlias"
+                      ],
+                      "variable": [
+                        {
+                          "key": "roleAlias"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:32:54.000Z",
+                  "updatedAt": "2026-07-28T10:32:54.000Z",
+                  "uid": "35240-fbd08267-fe3b-454f-ac5b-35d1aa03da61"
+                },
+                {
+                  "id": "7aede591-8a55-4621-9bef-c583c80fa4cd",
+                  "name": "InvalidRequestException",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"roleArn\": \"<string>\",\n  \"credentialDurationSeconds\": \"<integer>\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/role-aliases/:roleAlias",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "role-aliases",
+                        ":roleAlias"
+                      ],
+                      "variable": [
+                        {
+                          "key": "roleAlias"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:32:54.000Z",
+                  "updatedAt": "2026-07-28T10:32:54.000Z",
+                  "uid": "35240-7aede591-8a55-4621-9bef-c583c80fa4cd"
+                },
+                {
+                  "id": "7ecaa791-45a8-4b6e-8000-ed09c45e91ec",
+                  "name": "ThrottlingException",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"roleArn\": \"<string>\",\n  \"credentialDurationSeconds\": \"<integer>\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/role-aliases/:roleAlias",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "role-aliases",
+                        ":roleAlias"
+                      ],
+                      "variable": [
+                        {
+                          "key": "roleAlias"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:32:54.000Z",
+                  "updatedAt": "2026-07-28T10:32:54.000Z",
+                  "uid": "35240-7ecaa791-45a8-4b6e-8000-ed09c45e91ec"
+                },
+                {
+                  "id": "69f512a3-c9c8-4711-8bb4-01486620de00",
+                  "name": "UnauthorizedException",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"roleArn\": \"<string>\",\n  \"credentialDurationSeconds\": \"<integer>\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/role-aliases/:roleAlias",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "role-aliases",
+                        ":roleAlias"
+                      ],
+                      "variable": [
+                        {
+                          "key": "roleAlias"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:32:54.000Z",
+                  "updatedAt": "2026-07-28T10:32:54.000Z",
+                  "uid": "35240-69f512a3-c9c8-4711-8bb4-01486620de00"
+                },
+                {
+                  "id": "822dfd70-c10f-4350-aa31-7401ee0472ff",
+                  "name": "ServiceUnavailableException",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"roleArn\": \"<string>\",\n  \"credentialDurationSeconds\": \"<integer>\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/role-aliases/:roleAlias",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "role-aliases",
+                        ":roleAlias"
+                      ],
+                      "variable": [
+                        {
+                          "key": "roleAlias"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:32:54.000Z",
+                  "updatedAt": "2026-07-28T10:32:54.000Z",
+                  "uid": "35240-822dfd70-c10f-4350-aa31-7401ee0472ff"
+                },
+                {
+                  "id": "2f1db2cc-9c44-49e9-ae66-e60584b9af96",
+                  "name": "InternalFailureException",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"roleArn\": \"<string>\",\n  \"credentialDurationSeconds\": \"<integer>\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/role-aliases/:roleAlias",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "role-aliases",
+                        ":roleAlias"
+                      ],
+                      "variable": [
+                        {
+                          "key": "roleAlias"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:32:54.000Z",
+                  "updatedAt": "2026-07-28T10:32:54.000Z",
+                  "uid": "35240-2f1db2cc-9c44-49e9-ae66-e60584b9af96"
+                }
+              ],
+              "createdAt": "2026-07-28T10:32:54.000Z",
+              "updatedAt": "2026-07-28T10:32:54.000Z",
+              "uid": "35240-63ada9bb-814f-4874-b786-dcb79438e7d2"
+            }
+          ],
+          "id": "499e8933-5c45-4f74-97ba-c1e28c27fd0f",
+          "createdAt": "2026-07-28T10:32:54.000Z",
+          "updatedAt": "2026-07-28T10:32:54.000Z",
+          "uid": "35240-499e8933-5c45-4f74-97ba-c1e28c27fd0f"
+        },
+        {
+          "name": "Amazon IoT Core List Role Aliases",
+          "id": "642d92df-e39f-4a68-ab4e-d9030120d5b3",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/role-aliases?pageSize=<integer>&marker=y3TRizv==&isAscendingOrder=<boolean>",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "role-aliases"
+              ],
+              "query": [
+                {
+                  "description": "The maximum number of results to return at one time.",
+                  "key": "pageSize",
+                  "value": "<integer>"
+                },
+                {
+                  "description": "A marker used to get the next set of results.",
+                  "key": "marker",
+                  "value": "y3TRizv=="
+                },
+                {
+                  "description": "Return the list of role aliases in ascending alphabetical order.",
+                  "key": "isAscendingOrder",
+                  "value": "<boolean>"
+                }
+              ]
+            },
+            "description": "<p>Lists the role aliases registered in your account.</p> <p>Requires permission to access the <a href=\"https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions\">ListRoleAliases</a> action.</p>"
+          },
+          "response": [
+            {
+              "id": "0727e96d-cadf-48b0-989e-a2e1cd14dc53",
+              "name": "Success",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/role-aliases?pageSize=<integer>&marker=y3TRizv==&isAscendingOrder=<boolean>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "role-aliases"
+                  ],
+                  "query": [
+                    {
+                      "description": "The maximum number of results to return at one time.",
+                      "key": "pageSize",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "A marker used to get the next set of results.",
+                      "key": "marker",
+                      "value": "y3TRizv=="
+                    },
+                    {
+                      "description": "Return the list of role aliases in ascending alphabetical order.",
+                      "key": "isAscendingOrder",
+                      "value": "<boolean>"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"roleAliases\": [\n    \"aDJ2wex=\",\n    \"hO0K3dTm8yC\"\n  ],\n  \"nextMarker\": \"6\"\n}",
+              "createdAt": "2026-07-28T10:32:54.000Z",
+              "updatedAt": "2026-07-28T10:32:54.000Z",
+              "uid": "35240-0727e96d-cadf-48b0-989e-a2e1cd14dc53"
+            },
+            {
+              "id": "4f56246d-43cd-460c-9a53-f7abc055aab3",
+              "name": "InvalidRequestException",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/role-aliases?pageSize=<integer>&marker=y3TRizv==&isAscendingOrder=<boolean>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "role-aliases"
+                  ],
+                  "query": [
+                    {
+                      "description": "The maximum number of results to return at one time.",
+                      "key": "pageSize",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "A marker used to get the next set of results.",
+                      "key": "marker",
+                      "value": "y3TRizv=="
+                    },
+                    {
+                      "description": "Return the list of role aliases in ascending alphabetical order.",
+                      "key": "isAscendingOrder",
+                      "value": "<boolean>"
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:32:54.000Z",
+              "updatedAt": "2026-07-28T10:32:54.000Z",
+              "uid": "35240-4f56246d-43cd-460c-9a53-f7abc055aab3"
+            },
+            {
+              "id": "74f668fe-907b-47f4-bcb6-62ba861f706b",
+              "name": "ThrottlingException",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/role-aliases?pageSize=<integer>&marker=y3TRizv==&isAscendingOrder=<boolean>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "role-aliases"
+                  ],
+                  "query": [
+                    {
+                      "description": "The maximum number of results to return at one time.",
+                      "key": "pageSize",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "A marker used to get the next set of results.",
+                      "key": "marker",
+                      "value": "y3TRizv=="
+                    },
+                    {
+                      "description": "Return the list of role aliases in ascending alphabetical order.",
+                      "key": "isAscendingOrder",
+                      "value": "<boolean>"
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:32:54.000Z",
+              "updatedAt": "2026-07-28T10:32:54.000Z",
+              "uid": "35240-74f668fe-907b-47f4-bcb6-62ba861f706b"
+            },
+            {
+              "id": "1e93636c-5ae8-499d-920d-23eb262dd780",
+              "name": "UnauthorizedException",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/role-aliases?pageSize=<integer>&marker=y3TRizv==&isAscendingOrder=<boolean>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "role-aliases"
+                  ],
+                  "query": [
+                    {
+                      "description": "The maximum number of results to return at one time.",
+                      "key": "pageSize",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "A marker used to get the next set of results.",
+                      "key": "marker",
+                      "value": "y3TRizv=="
+                    },
+                    {
+                      "description": "Return the list of role aliases in ascending alphabetical order.",
+                      "key": "isAscendingOrder",
+                      "value": "<boolean>"
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:32:54.000Z",
+              "updatedAt": "2026-07-28T10:32:54.000Z",
+              "uid": "35240-1e93636c-5ae8-499d-920d-23eb262dd780"
+            },
+            {
+              "id": "a61aeec0-fd32-4e54-9def-acd4851ef678",
+              "name": "ServiceUnavailableException",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/role-aliases?pageSize=<integer>&marker=y3TRizv==&isAscendingOrder=<boolean>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "role-aliases"
+                  ],
+                  "query": [
+                    {
+                      "description": "The maximum number of results to return at one time.",
+                      "key": "pageSize",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "A marker used to get the next set of results.",
+                      "key": "marker",
+                      "value": "y3TRizv=="
+                    },
+                    {
+                      "description": "Return the list of role aliases in ascending alphabetical order.",
+                      "key": "isAscendingOrder",
+                      "value": "<boolean>"
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:32:54.000Z",
+              "updatedAt": "2026-07-28T10:32:54.000Z",
+              "uid": "35240-a61aeec0-fd32-4e54-9def-acd4851ef678"
+            },
+            {
+              "id": "1f91fd68-cc73-4b49-bfd0-4fe545e201b4",
+              "name": "InternalFailureException",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/role-aliases?pageSize=<integer>&marker=y3TRizv==&isAscendingOrder=<boolean>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "role-aliases"
+                  ],
+                  "query": [
+                    {
+                      "description": "The maximum number of results to return at one time.",
+                      "key": "pageSize",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "A marker used to get the next set of results.",
+                      "key": "marker",
+                      "value": "y3TRizv=="
+                    },
+                    {
+                      "description": "Return the list of role aliases in ascending alphabetical order.",
+                      "key": "isAscendingOrder",
+                      "value": "<boolean>"
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:32:54.000Z",
+              "updatedAt": "2026-07-28T10:32:54.000Z",
+              "uid": "35240-1f91fd68-cc73-4b49-bfd0-4fe545e201b4"
+            }
+          ],
+          "createdAt": "2026-07-28T10:32:54.000Z",
+          "updatedAt": "2026-07-28T10:32:54.000Z",
+          "uid": "35240-642d92df-e39f-4a68-ab4e-d9030120d5b3"
+        }
+      ],
+      "id": "14a54aaa-8c93-4b70-9160-46176690a199",
+      "createdAt": "2026-07-28T10:32:54.000Z",
+      "updatedAt": "2026-07-28T10:32:54.000Z",
+      "uid": "35240-14a54aaa-8c93-4b70-9160-46176690a199"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "http://iot.{{region}}.amazonaws.com"
+    }
+  ]
+}

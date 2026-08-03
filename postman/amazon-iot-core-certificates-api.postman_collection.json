@@ -1,0 +1,3341 @@
+{
+  "info": {
+    "_postman_id": "ca8f3418-415b-4cde-aec5-d768ecfeed9d",
+    "name": "AWS IoT Accept Certificate Transfer Certificates API",
+    "description": "<fullname>IoT</fullname> <p>IoT provides secure, bi-directional communication between Internet-connected devices (such as sensors, actuators, embedded devices, or smart appliances) and the Amazon Web Services cloud. You can discover your custom IoT-Data endpoint to communicate with, configure rules for data processing and integration with other services, organize resources associated with each device (Registry), configure logging, and create and manage policies and credentials to authenticate devices.</p> <p>The service endpoints that expose this API are listed in <a href=\"https://docs.aws.amazon.com/general/latest/gr/iot-core.html\">Amazon Web Services IoT Core Endpoints and Quotas</a>. You must use the endpoint for the region that has the resources you want to access.</p> <p>The service name used by <a href=\"https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html\">Amazon Web Services Signature Version 4</a> to sign the request is: <i>execute-api</i>.</p> <p>For more information about how IoT works, see the <a href=\"https://docs.aws.amazon.com/iot/latest/developerguide/aws-iot-how-it-works.html\">Developer Guide</a>.</p> <p>For information about how to use the credentials provider for IoT, see <a href=\"https://docs.aws.amazon.com/iot/latest/developerguide/authorizing-direct-aws.html\">Authorizing Direct Calls to Amazon Web Services Services</a>.</p>\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:30:43.000Z",
+    "updatedAt": "2026-07-28T10:30:43.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-ca8f3418-415b-4cde-aec5-d768ecfeed9d"
+  },
+  "item": [
+    {
+      "name": "certificates",
+      "item": [
+        {
+          "name": "{certificateId}",
+          "item": [
+            {
+              "name": "Amazon IoT Core Delete Certificate",
+              "id": "f570e19c-044c-4147-b5ff-8b3935b751ae",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "DELETE",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/certificates/:certificateId?forceDelete=<boolean>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "certificates",
+                    ":certificateId"
+                  ],
+                  "query": [
+                    {
+                      "description": "Forces the deletion of a certificate if it is inactive and is not attached to an IoT thing.",
+                      "key": "forceDelete",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "id": "9aa82318-ceab-4311-b460-07ddd10ed1fe",
+                      "key": "certificateId",
+                      "value": "fDfDfDfDfDfDfDfDfDfDfDfDfDfDfDfDfDfDfDfDfDfDfDfDfDfDfDfDfDfDfDfD",
+                      "description": "(Required) The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)"
+                    }
+                  ]
+                },
+                "description": "<p>Deletes the specified certificate.</p> <p>A certificate cannot be deleted if it has a policy or IoT thing attached to it or if its status is set to ACTIVE. To delete a certificate, first use the <a>DetachPolicy</a> action to detach all policies. Next, use the <a>UpdateCertificate</a> action to set the certificate to the INACTIVE status.</p> <p>Requires permission to access the <a href=\"https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions\">DeleteCertificate</a> action.</p>"
+              },
+              "response": [
+                {
+                  "id": "9d6ec36f-421f-4766-8e31-e64ab427a3ca",
+                  "name": "Success",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/certificates/:certificateId?forceDelete=<boolean>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "certificates",
+                        ":certificateId"
+                      ],
+                      "query": [
+                        {
+                          "description": "Forces the deletion of a certificate if it is inactive and is not attached to an IoT thing.",
+                          "key": "forceDelete",
+                          "value": "<boolean>"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "certificateId"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-07-28T10:30:43.000Z",
+                  "updatedAt": "2026-07-28T10:30:43.000Z",
+                  "uid": "35240-9d6ec36f-421f-4766-8e31-e64ab427a3ca"
+                },
+                {
+                  "id": "b88287e9-b104-4e5b-8ef3-3eef31fac96c",
+                  "name": "CertificateStateException",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/certificates/:certificateId?forceDelete=<boolean>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "certificates",
+                        ":certificateId"
+                      ],
+                      "query": [
+                        {
+                          "description": "Forces the deletion of a certificate if it is inactive and is not attached to an IoT thing.",
+                          "key": "forceDelete",
+                          "value": "<boolean>"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "certificateId"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:30:43.000Z",
+                  "updatedAt": "2026-07-28T10:30:43.000Z",
+                  "uid": "35240-b88287e9-b104-4e5b-8ef3-3eef31fac96c"
+                },
+                {
+                  "id": "1c23eca9-d4a6-4951-b8c4-ea081c13d431",
+                  "name": "DeleteConflictException",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/certificates/:certificateId?forceDelete=<boolean>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "certificates",
+                        ":certificateId"
+                      ],
+                      "query": [
+                        {
+                          "description": "Forces the deletion of a certificate if it is inactive and is not attached to an IoT thing.",
+                          "key": "forceDelete",
+                          "value": "<boolean>"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "certificateId"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:30:43.000Z",
+                  "updatedAt": "2026-07-28T10:30:43.000Z",
+                  "uid": "35240-1c23eca9-d4a6-4951-b8c4-ea081c13d431"
+                },
+                {
+                  "id": "a2572c25-be53-40cc-8798-a1afbb1a9454",
+                  "name": "InvalidRequestException",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/certificates/:certificateId?forceDelete=<boolean>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "certificates",
+                        ":certificateId"
+                      ],
+                      "query": [
+                        {
+                          "description": "Forces the deletion of a certificate if it is inactive and is not attached to an IoT thing.",
+                          "key": "forceDelete",
+                          "value": "<boolean>"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "certificateId"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:30:43.000Z",
+                  "updatedAt": "2026-07-28T10:30:43.000Z",
+                  "uid": "35240-a2572c25-be53-40cc-8798-a1afbb1a9454"
+                },
+                {
+                  "id": "af67cc3e-18ff-4f83-8c4a-7b3b79b6d948",
+                  "name": "ThrottlingException",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/certificates/:certificateId?forceDelete=<boolean>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "certificates",
+                        ":certificateId"
+                      ],
+                      "query": [
+                        {
+                          "description": "Forces the deletion of a certificate if it is inactive and is not attached to an IoT thing.",
+                          "key": "forceDelete",
+                          "value": "<boolean>"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "certificateId"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:30:43.000Z",
+                  "updatedAt": "2026-07-28T10:30:43.000Z",
+                  "uid": "35240-af67cc3e-18ff-4f83-8c4a-7b3b79b6d948"
+                },
+                {
+                  "id": "b798550e-ced8-47bd-8f36-12ddd4f660fc",
+                  "name": "UnauthorizedException",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/certificates/:certificateId?forceDelete=<boolean>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "certificates",
+                        ":certificateId"
+                      ],
+                      "query": [
+                        {
+                          "description": "Forces the deletion of a certificate if it is inactive and is not attached to an IoT thing.",
+                          "key": "forceDelete",
+                          "value": "<boolean>"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "certificateId"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:30:43.000Z",
+                  "updatedAt": "2026-07-28T10:30:43.000Z",
+                  "uid": "35240-b798550e-ced8-47bd-8f36-12ddd4f660fc"
+                },
+                {
+                  "id": "18b69180-b000-4f0f-a196-7f4343cd2087",
+                  "name": "ServiceUnavailableException",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/certificates/:certificateId?forceDelete=<boolean>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "certificates",
+                        ":certificateId"
+                      ],
+                      "query": [
+                        {
+                          "description": "Forces the deletion of a certificate if it is inactive and is not attached to an IoT thing.",
+                          "key": "forceDelete",
+                          "value": "<boolean>"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "certificateId"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:30:43.000Z",
+                  "updatedAt": "2026-07-28T10:30:43.000Z",
+                  "uid": "35240-18b69180-b000-4f0f-a196-7f4343cd2087"
+                },
+                {
+                  "id": "ad0f109e-16cf-4203-ae6a-6bf507eed809",
+                  "name": "InternalFailureException",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/certificates/:certificateId?forceDelete=<boolean>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "certificates",
+                        ":certificateId"
+                      ],
+                      "query": [
+                        {
+                          "description": "Forces the deletion of a certificate if it is inactive and is not attached to an IoT thing.",
+                          "key": "forceDelete",
+                          "value": "<boolean>"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "certificateId"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:30:43.000Z",
+                  "updatedAt": "2026-07-28T10:30:43.000Z",
+                  "uid": "35240-ad0f109e-16cf-4203-ae6a-6bf507eed809"
+                },
+                {
+                  "id": "685421ac-8e17-48ab-8767-f8ae47e17a3d",
+                  "name": "ResourceNotFoundException",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/certificates/:certificateId?forceDelete=<boolean>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "certificates",
+                        ":certificateId"
+                      ],
+                      "query": [
+                        {
+                          "description": "Forces the deletion of a certificate if it is inactive and is not attached to an IoT thing.",
+                          "key": "forceDelete",
+                          "value": "<boolean>"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "certificateId"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:30:43.000Z",
+                  "updatedAt": "2026-07-28T10:30:43.000Z",
+                  "uid": "35240-685421ac-8e17-48ab-8767-f8ae47e17a3d"
+                }
+              ],
+              "createdAt": "2026-07-28T10:30:43.000Z",
+              "updatedAt": "2026-07-28T10:30:43.000Z",
+              "uid": "35240-f570e19c-044c-4147-b5ff-8b3935b751ae"
+            },
+            {
+              "name": "Amazon IoT Core Describe Certificate",
+              "id": "91511c6e-0ff6-4d89-ba16-3f724faea60e",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/certificates/:certificateId",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "certificates",
+                    ":certificateId"
+                  ],
+                  "variable": [
+                    {
+                      "id": "5a34d868-047c-4482-bc3d-e562fb7dadb3",
+                      "key": "certificateId",
+                      "value": "fDfDfDfDfDfDfDfDfDfDfDfDfDfDfDfDfDfDfDfDfDfDfDfDfDfDfDfDfDfDfDfD",
+                      "description": "(Required) The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)"
+                    }
+                  ]
+                },
+                "description": "<p>Gets information about the specified certificate.</p> <p>Requires permission to access the <a href=\"https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions\">DescribeCertificate</a> action.</p>"
+              },
+              "response": [
+                {
+                  "id": "d9a552d1-df1a-4e5b-b01d-1da8f9f8f36f",
+                  "name": "Success",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/certificates/:certificateId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "certificates",
+                        ":certificateId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "certificateId"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"certificateDescription\": {\n    \"certificateArn\": \"<string>\",\n    \"certificateId\": \"cEbcEbcEbcEbcEbcEbcEbcEbcEbcEbcEbcEbcEbcEbcEbcEbcEbcEbcEbcEbcEbc\",\n    \"caCertificateId\": \"006f62006f62006f62006f62006f62006f62006f62006f62006f62006f62006f\",\n    \"status\": \"ACTIVE\",\n    \"certificatePem\": \"\\fWbl\u205f\u2007;L\",\n    \"ownedBy\": \"569292566569\",\n    \"previousOwnedBy\": \"347377534737\",\n    \"creationDate\": \"<dateTime>\",\n    \"lastModifiedDate\": \"<dateTime>\",\n    \"customerVersion\": \"<integer>\",\n    \"transferData\": {\n      \"transferMessage\": \"0\u2007DA\",\n      \"rejectReason\": \"\u1680&\u1680C\",\n      \"transferDate\": \"<dateTime>\",\n      \"acceptDate\": \"<dateTime>\",\n      \"rejectDate\": \"<dateTime>\"\n    },\n    \"generationId\": \"<string>\",\n    \"validity\": {\n      \"notBefore\": \"<dateTime>\",\n      \"notAfter\": \"<dateTime>\"\n    },\n    \"certificateMode\": \"DEFAULT\"\n  }\n}",
+                  "createdAt": "2026-07-28T10:30:43.000Z",
+                  "updatedAt": "2026-07-28T10:30:43.000Z",
+                  "uid": "35240-d9a552d1-df1a-4e5b-b01d-1da8f9f8f36f"
+                },
+                {
+                  "id": "fd62e29d-71da-462f-a98f-256eb8de442b",
+                  "name": "InvalidRequestException",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/certificates/:certificateId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "certificates",
+                        ":certificateId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "certificateId"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:30:43.000Z",
+                  "updatedAt": "2026-07-28T10:30:43.000Z",
+                  "uid": "35240-fd62e29d-71da-462f-a98f-256eb8de442b"
+                },
+                {
+                  "id": "e111d4f7-2dd7-4ba2-8067-3919ad881142",
+                  "name": "ThrottlingException",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/certificates/:certificateId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "certificates",
+                        ":certificateId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "certificateId"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:30:43.000Z",
+                  "updatedAt": "2026-07-28T10:30:43.000Z",
+                  "uid": "35240-e111d4f7-2dd7-4ba2-8067-3919ad881142"
+                },
+                {
+                  "id": "39a41a83-9249-4dd7-8ff3-78e16f056597",
+                  "name": "UnauthorizedException",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/certificates/:certificateId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "certificates",
+                        ":certificateId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "certificateId"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:30:43.000Z",
+                  "updatedAt": "2026-07-28T10:30:43.000Z",
+                  "uid": "35240-39a41a83-9249-4dd7-8ff3-78e16f056597"
+                },
+                {
+                  "id": "3f74e4e5-6b34-4aaf-aef6-75fd83732a51",
+                  "name": "ServiceUnavailableException",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/certificates/:certificateId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "certificates",
+                        ":certificateId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "certificateId"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:30:43.000Z",
+                  "updatedAt": "2026-07-28T10:30:43.000Z",
+                  "uid": "35240-3f74e4e5-6b34-4aaf-aef6-75fd83732a51"
+                },
+                {
+                  "id": "ceeca370-0f2c-4f20-a947-860f104f1b77",
+                  "name": "InternalFailureException",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/certificates/:certificateId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "certificates",
+                        ":certificateId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "certificateId"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:30:43.000Z",
+                  "updatedAt": "2026-07-28T10:30:43.000Z",
+                  "uid": "35240-ceeca370-0f2c-4f20-a947-860f104f1b77"
+                },
+                {
+                  "id": "2965d2ab-dd39-485c-adbd-f11e8073deed",
+                  "name": "ResourceNotFoundException",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/certificates/:certificateId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "certificates",
+                        ":certificateId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "certificateId"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:30:43.000Z",
+                  "updatedAt": "2026-07-28T10:30:43.000Z",
+                  "uid": "35240-2965d2ab-dd39-485c-adbd-f11e8073deed"
+                }
+              ],
+              "createdAt": "2026-07-28T10:30:43.000Z",
+              "updatedAt": "2026-07-28T10:30:43.000Z",
+              "uid": "35240-91511c6e-0ff6-4d89-ba16-3f724faea60e"
+            }
+          ],
+          "id": "95e06615-9df0-4ecc-8933-6ff0d45be318",
+          "createdAt": "2026-07-28T10:30:43.000Z",
+          "updatedAt": "2026-07-28T10:30:43.000Z",
+          "uid": "35240-95e06615-9df0-4ecc-8933-6ff0d45be318"
+        },
+        {
+          "name": "{certificateId}#newStatus",
+          "item": [
+            {
+              "name": "Amazon IoT Core Update Certificate",
+              "id": "0007a046-6a7b-4adf-aa9d-b744bc159a0d",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/certificates/{{certificateId}}?newStatus=PENDING_ACTIVATION#newStatus",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "certificates",
+                    "{{certificateId}}"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) <p>The new status.</p> <p> <b>Note:</b> Setting the status to PENDING_TRANSFER or PENDING_ACTIVATION will result in an exception being thrown. PENDING_TRANSFER and PENDING_ACTIVATION are statuses used internally by IoT. They are not intended for developer use.</p> <p> <b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should not be used.</p>",
+                      "key": "newStatus",
+                      "value": "PENDING_ACTIVATION"
+                    }
+                  ],
+                  "hash": "newStatus"
+                },
+                "description": "<p>Updates the status of the specified certificate. This operation is idempotent.</p> <p>Requires permission to access the <a href=\"https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions\">UpdateCertificate</a> action.</p> <p>Certificates must be in the ACTIVE state to authenticate devices that use a certificate to connect to IoT.</p> <p>Within a few minutes of updating a certificate from the ACTIVE state to any other state, IoT disconnects all devices that used that certificate to connect. Devices cannot use a certificate that is not in the ACTIVE state to reconnect.</p>"
+              },
+              "response": [
+                {
+                  "id": "dfd4ad8b-6eb6-45b0-8b52-b279a2a5dc87",
+                  "name": "Success",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/certificates/{{certificateId}}?newStatus=PENDING_ACTIVATION#newStatus",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "certificates",
+                        "{{certificateId}}"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) <p>The new status.</p> <p> <b>Note:</b> Setting the status to PENDING_TRANSFER or PENDING_ACTIVATION will result in an exception being thrown. PENDING_TRANSFER and PENDING_ACTIVATION are statuses used internally by IoT. They are not intended for developer use.</p> <p> <b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should not be used.</p>",
+                          "key": "newStatus",
+                          "value": "PENDING_ACTIVATION"
+                        }
+                      ],
+                      "hash": "newStatus"
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-07-28T10:30:43.000Z",
+                  "updatedAt": "2026-07-28T10:30:43.000Z",
+                  "uid": "35240-dfd4ad8b-6eb6-45b0-8b52-b279a2a5dc87"
+                },
+                {
+                  "id": "48e921dd-30f8-4962-a3dd-c10cd7e79246",
+                  "name": "ResourceNotFoundException",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/certificates/{{certificateId}}?newStatus=PENDING_ACTIVATION#newStatus",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "certificates",
+                        "{{certificateId}}"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) <p>The new status.</p> <p> <b>Note:</b> Setting the status to PENDING_TRANSFER or PENDING_ACTIVATION will result in an exception being thrown. PENDING_TRANSFER and PENDING_ACTIVATION are statuses used internally by IoT. They are not intended for developer use.</p> <p> <b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should not be used.</p>",
+                          "key": "newStatus",
+                          "value": "PENDING_ACTIVATION"
+                        }
+                      ],
+                      "hash": "newStatus"
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:30:43.000Z",
+                  "updatedAt": "2026-07-28T10:30:43.000Z",
+                  "uid": "35240-48e921dd-30f8-4962-a3dd-c10cd7e79246"
+                },
+                {
+                  "id": "8e601770-b66c-4cd2-8c2f-d491f6ce19e5",
+                  "name": "CertificateStateException",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/certificates/{{certificateId}}?newStatus=PENDING_ACTIVATION#newStatus",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "certificates",
+                        "{{certificateId}}"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) <p>The new status.</p> <p> <b>Note:</b> Setting the status to PENDING_TRANSFER or PENDING_ACTIVATION will result in an exception being thrown. PENDING_TRANSFER and PENDING_ACTIVATION are statuses used internally by IoT. They are not intended for developer use.</p> <p> <b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should not be used.</p>",
+                          "key": "newStatus",
+                          "value": "PENDING_ACTIVATION"
+                        }
+                      ],
+                      "hash": "newStatus"
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:30:43.000Z",
+                  "updatedAt": "2026-07-28T10:30:43.000Z",
+                  "uid": "35240-8e601770-b66c-4cd2-8c2f-d491f6ce19e5"
+                },
+                {
+                  "id": "fef09b8f-c0d2-4e0d-850c-4ecd30c8749a",
+                  "name": "InvalidRequestException",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/certificates/{{certificateId}}?newStatus=PENDING_ACTIVATION#newStatus",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "certificates",
+                        "{{certificateId}}"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) <p>The new status.</p> <p> <b>Note:</b> Setting the status to PENDING_TRANSFER or PENDING_ACTIVATION will result in an exception being thrown. PENDING_TRANSFER and PENDING_ACTIVATION are statuses used internally by IoT. They are not intended for developer use.</p> <p> <b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should not be used.</p>",
+                          "key": "newStatus",
+                          "value": "PENDING_ACTIVATION"
+                        }
+                      ],
+                      "hash": "newStatus"
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:30:43.000Z",
+                  "updatedAt": "2026-07-28T10:30:43.000Z",
+                  "uid": "35240-fef09b8f-c0d2-4e0d-850c-4ecd30c8749a"
+                },
+                {
+                  "id": "f8c0a971-55db-430d-80ae-b5aaba6b9e44",
+                  "name": "ThrottlingException",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/certificates/{{certificateId}}?newStatus=PENDING_ACTIVATION#newStatus",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "certificates",
+                        "{{certificateId}}"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) <p>The new status.</p> <p> <b>Note:</b> Setting the status to PENDING_TRANSFER or PENDING_ACTIVATION will result in an exception being thrown. PENDING_TRANSFER and PENDING_ACTIVATION are statuses used internally by IoT. They are not intended for developer use.</p> <p> <b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should not be used.</p>",
+                          "key": "newStatus",
+                          "value": "PENDING_ACTIVATION"
+                        }
+                      ],
+                      "hash": "newStatus"
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:30:43.000Z",
+                  "updatedAt": "2026-07-28T10:30:43.000Z",
+                  "uid": "35240-f8c0a971-55db-430d-80ae-b5aaba6b9e44"
+                },
+                {
+                  "id": "c7dc4c2a-18fb-4ac7-a978-cc52a7f7e1d6",
+                  "name": "UnauthorizedException",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/certificates/{{certificateId}}?newStatus=PENDING_ACTIVATION#newStatus",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "certificates",
+                        "{{certificateId}}"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) <p>The new status.</p> <p> <b>Note:</b> Setting the status to PENDING_TRANSFER or PENDING_ACTIVATION will result in an exception being thrown. PENDING_TRANSFER and PENDING_ACTIVATION are statuses used internally by IoT. They are not intended for developer use.</p> <p> <b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should not be used.</p>",
+                          "key": "newStatus",
+                          "value": "PENDING_ACTIVATION"
+                        }
+                      ],
+                      "hash": "newStatus"
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:30:43.000Z",
+                  "updatedAt": "2026-07-28T10:30:43.000Z",
+                  "uid": "35240-c7dc4c2a-18fb-4ac7-a978-cc52a7f7e1d6"
+                },
+                {
+                  "id": "bebf0897-c7d8-47a8-80b7-d1c8f8d0a22f",
+                  "name": "ServiceUnavailableException",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/certificates/{{certificateId}}?newStatus=PENDING_ACTIVATION#newStatus",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "certificates",
+                        "{{certificateId}}"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) <p>The new status.</p> <p> <b>Note:</b> Setting the status to PENDING_TRANSFER or PENDING_ACTIVATION will result in an exception being thrown. PENDING_TRANSFER and PENDING_ACTIVATION are statuses used internally by IoT. They are not intended for developer use.</p> <p> <b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should not be used.</p>",
+                          "key": "newStatus",
+                          "value": "PENDING_ACTIVATION"
+                        }
+                      ],
+                      "hash": "newStatus"
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:30:43.000Z",
+                  "updatedAt": "2026-07-28T10:30:43.000Z",
+                  "uid": "35240-bebf0897-c7d8-47a8-80b7-d1c8f8d0a22f"
+                },
+                {
+                  "id": "27711fc1-af6a-4b57-9821-667ada72bda3",
+                  "name": "InternalFailureException",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/certificates/{{certificateId}}?newStatus=PENDING_ACTIVATION#newStatus",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "certificates",
+                        "{{certificateId}}"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) <p>The new status.</p> <p> <b>Note:</b> Setting the status to PENDING_TRANSFER or PENDING_ACTIVATION will result in an exception being thrown. PENDING_TRANSFER and PENDING_ACTIVATION are statuses used internally by IoT. They are not intended for developer use.</p> <p> <b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should not be used.</p>",
+                          "key": "newStatus",
+                          "value": "PENDING_ACTIVATION"
+                        }
+                      ],
+                      "hash": "newStatus"
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:30:43.000Z",
+                  "updatedAt": "2026-07-28T10:30:43.000Z",
+                  "uid": "35240-27711fc1-af6a-4b57-9821-667ada72bda3"
+                }
+              ],
+              "createdAt": "2026-07-28T10:30:43.000Z",
+              "updatedAt": "2026-07-28T10:30:43.000Z",
+              "uid": "35240-0007a046-6a7b-4adf-aa9d-b744bc159a0d"
+            }
+          ],
+          "id": "271e76e8-8a2c-468c-9757-0bd975be3673",
+          "createdAt": "2026-07-28T10:30:43.000Z",
+          "updatedAt": "2026-07-28T10:30:43.000Z",
+          "uid": "35240-271e76e8-8a2c-468c-9757-0bd975be3673"
+        },
+        {
+          "name": "Amazon IoT Core Create Certificate from Csr",
+          "id": "cfdd85d0-8579-478e-8e9a-bcd8678f3553",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"certificateSigningRequest\": \"Xr{l{\u2007*\"\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/certificates?setAsActive=<boolean>",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "certificates"
+              ],
+              "query": [
+                {
+                  "description": "Specifies whether the certificate is active.",
+                  "key": "setAsActive",
+                  "value": "<boolean>"
+                }
+              ]
+            },
+            "description": "<p>Creates an X.509 certificate using the specified certificate signing request. </p> <p>Requires permission to access the <a href=\"https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions\">CreateCertificateFromCsr</a> action. </p> <note> <p>The CSR must include a public key that is either an RSA key with a length of at least 2048 bits or an ECC key from NIST P-25 or NIST P-384 curves. For supported certificates, consult <a href=\"https://docs.aws.amazon.com/iot/latest/developerguide/x509-client-certs.html#x509-cert-algorithms\"> Certificate signing algorithms supported by IoT</a>. </p> </note> <note> <p>Reusing the same certificate signing request (CSR) results in a distinct certificate.</p> </note> <p>You can create multiple certificates in a batch by creating a directory, copying multiple <code>.csr</code> files into that directory, and then specifying that directory on the command line. The following commands show how to create a batch of certificates given a batch of CSRs. In the following commands, we assume that a set of CSRs are located inside of the directory my-csr-directory:</p> <p>On Linux and OS X, the command is: </p> <p> <code>$ ls my-csr-directory/ | xargs -I {} aws iot create-certificate-from-csr --certificate-signing-request file://my-csr-directory/{}</code> </p> <p>This command lists all of the CSRs in my-csr-directory and pipes each CSR file name to the <code>aws iot create-certificate-from-csr</code> Amazon Web Services CLI command to create a certificate for the corresponding CSR. </p> <p>You can also run the <code>aws iot create-certificate-from-csr</code> part of the command in parallel to speed up the certificate creation process:</p> <p> <code>$ ls my-csr-directory/ | xargs -P 10 -I {} aws iot create-certificate-from-csr --certificate-signing-request file://my-csr-directory/{} </code> </p> <p>On Windows PowerShell, the command to create certificates for all CSRs in my-csr-directory is:</p> <p> <code>&gt; ls -Name my-csr-directory | %{aws iot create-certificate-from-csr --certificate-signing-request file://my-csr-directory/$_} </code> </p> <p>On a Windows command prompt, the command to create certificates for all CSRs in my-csr-directory is:</p> <p> <code>&gt; forfiles /p my-csr-directory /c \"cmd /c aws iot create-certificate-from-csr --certificate-signing-request file://@path\" </code> </p>"
+          },
+          "response": [
+            {
+              "id": "f1c108da-26af-4572-b5b6-3ef9fa819a8e",
+              "name": "Success",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"certificateSigningRequest\": \"Xr{l{\u2007*\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/certificates?setAsActive=<boolean>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "certificates"
+                  ],
+                  "query": [
+                    {
+                      "description": "Specifies whether the certificate is active.",
+                      "key": "setAsActive",
+                      "value": "<boolean>"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"certificateArn\": \"<string>\",\n  \"certificateId\": \"5ee068EA5ee068EA5ee068EA5ee068EA5ee068EA5ee068EA5ee068EA5ee068EA\",\n  \"certificatePem\": \"b\u2004\"\n}",
+              "createdAt": "2026-07-28T10:30:43.000Z",
+              "updatedAt": "2026-07-28T10:30:43.000Z",
+              "uid": "35240-f1c108da-26af-4572-b5b6-3ef9fa819a8e"
+            },
+            {
+              "id": "118f6910-4653-4296-85a3-8a6f0539e764",
+              "name": "InvalidRequestException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"certificateSigningRequest\": \"Xr{l{\u2007*\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/certificates?setAsActive=<boolean>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "certificates"
+                  ],
+                  "query": [
+                    {
+                      "description": "Specifies whether the certificate is active.",
+                      "key": "setAsActive",
+                      "value": "<boolean>"
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:30:43.000Z",
+              "updatedAt": "2026-07-28T10:30:43.000Z",
+              "uid": "35240-118f6910-4653-4296-85a3-8a6f0539e764"
+            },
+            {
+              "id": "10bf12ee-a318-49a0-a4fe-e2df092d1e12",
+              "name": "ThrottlingException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"certificateSigningRequest\": \"Xr{l{\u2007*\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/certificates?setAsActive=<boolean>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "certificates"
+                  ],
+                  "query": [
+                    {
+                      "description": "Specifies whether the certificate is active.",
+                      "key": "setAsActive",
+                      "value": "<boolean>"
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:30:43.000Z",
+              "updatedAt": "2026-07-28T10:30:43.000Z",
+              "uid": "35240-10bf12ee-a318-49a0-a4fe-e2df092d1e12"
+            },
+            {
+              "id": "5235222e-eb92-4e84-9cb5-21266ac69ab4",
+              "name": "UnauthorizedException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"certificateSigningRequest\": \"Xr{l{\u2007*\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/certificates?setAsActive=<boolean>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "certificates"
+                  ],
+                  "query": [
+                    {
+                      "description": "Specifies whether the certificate is active.",
+                      "key": "setAsActive",
+                      "value": "<boolean>"
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:30:43.000Z",
+              "updatedAt": "2026-07-28T10:30:43.000Z",
+              "uid": "35240-5235222e-eb92-4e84-9cb5-21266ac69ab4"
+            },
+            {
+              "id": "e2bec41a-6a64-4e85-94d4-5d17a52c0a2c",
+              "name": "ServiceUnavailableException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"certificateSigningRequest\": \"Xr{l{\u2007*\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/certificates?setAsActive=<boolean>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "certificates"
+                  ],
+                  "query": [
+                    {
+                      "description": "Specifies whether the certificate is active.",
+                      "key": "setAsActive",
+                      "value": "<boolean>"
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:30:43.000Z",
+              "updatedAt": "2026-07-28T10:30:43.000Z",
+              "uid": "35240-e2bec41a-6a64-4e85-94d4-5d17a52c0a2c"
+            },
+            {
+              "id": "7864462c-d2c8-482a-b9ac-e91c0f8a695b",
+              "name": "InternalFailureException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"certificateSigningRequest\": \"Xr{l{\u2007*\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/certificates?setAsActive=<boolean>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "certificates"
+                  ],
+                  "query": [
+                    {
+                      "description": "Specifies whether the certificate is active.",
+                      "key": "setAsActive",
+                      "value": "<boolean>"
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:30:43.000Z",
+              "updatedAt": "2026-07-28T10:30:43.000Z",
+              "uid": "35240-7864462c-d2c8-482a-b9ac-e91c0f8a695b"
+            }
+          ],
+          "createdAt": "2026-07-28T10:30:43.000Z",
+          "updatedAt": "2026-07-28T10:30:43.000Z",
+          "uid": "35240-cfdd85d0-8579-478e-8e9a-bcd8678f3553"
+        },
+        {
+          "name": "Amazon IoT Core List Certificates",
+          "id": "03a8772d-1edc-4643-aad4-2ae20bfa4708",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/certificates?pageSize=<integer>&marker=rv==&isAscendingOrder=<boolean>",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "certificates"
+              ],
+              "query": [
+                {
+                  "description": "The result page size.",
+                  "key": "pageSize",
+                  "value": "<integer>"
+                },
+                {
+                  "description": "The marker for the next set of results.",
+                  "key": "marker",
+                  "value": "rv=="
+                },
+                {
+                  "description": "Specifies the order for results. If True, the results are returned in ascending order, based on the creation date.",
+                  "key": "isAscendingOrder",
+                  "value": "<boolean>"
+                }
+              ]
+            },
+            "description": "<p>Lists the certificates registered in your Amazon Web Services account.</p> <p>The results are paginated with a default page size of 25. You can use the returned marker to retrieve additional results.</p> <p>Requires permission to access the <a href=\"https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions\">ListCertificates</a> action.</p>"
+          },
+          "response": [
+            {
+              "id": "f62dc222-b334-4ff6-a30b-9ccb58ff815c",
+              "name": "Success",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/certificates?pageSize=<integer>&marker=rv==&isAscendingOrder=<boolean>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "certificates"
+                  ],
+                  "query": [
+                    {
+                      "description": "The result page size.",
+                      "key": "pageSize",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "The marker for the next set of results.",
+                      "key": "marker",
+                      "value": "rv=="
+                    },
+                    {
+                      "description": "Specifies the order for results. If True, the results are returned in ascending order, based on the creation date.",
+                      "key": "isAscendingOrder",
+                      "value": "<boolean>"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"certificates\": [\n    {\n      \"certificateArn\": \"<string>\",\n      \"certificateId\": \"0xD0xD0xD0xD0xD0xD0xD0xD0xD0xD0xD0xD0xD0xD0xD0xD0xD0xD0xD0xD0xD0\",\n      \"status\": \"REVOKED\",\n      \"certificateMode\": \"DEFAULT\",\n      \"creationDate\": \"<dateTime>\"\n    },\n    {\n      \"certificateArn\": \"<string>\",\n      \"certificateId\": \"52fD652fD652fD652fD652fD652fD652fD652fD652fD652fD652fD652fD652fD\",\n      \"status\": \"PENDING_ACTIVATION\",\n      \"certificateMode\": \"SNI_ONLY\",\n      \"creationDate\": \"<dateTime>\"\n    }\n  ],\n  \"nextMarker\": \"wBOe6hLQFM==\"\n}",
+              "createdAt": "2026-07-28T10:30:43.000Z",
+              "updatedAt": "2026-07-28T10:30:43.000Z",
+              "uid": "35240-f62dc222-b334-4ff6-a30b-9ccb58ff815c"
+            },
+            {
+              "id": "89258d1e-3c11-4649-bb8c-10ce4ddc26e6",
+              "name": "InvalidRequestException",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/certificates?pageSize=<integer>&marker=rv==&isAscendingOrder=<boolean>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "certificates"
+                  ],
+                  "query": [
+                    {
+                      "description": "The result page size.",
+                      "key": "pageSize",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "The marker for the next set of results.",
+                      "key": "marker",
+                      "value": "rv=="
+                    },
+                    {
+                      "description": "Specifies the order for results. If True, the results are returned in ascending order, based on the creation date.",
+                      "key": "isAscendingOrder",
+                      "value": "<boolean>"
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:30:43.000Z",
+              "updatedAt": "2026-07-28T10:30:43.000Z",
+              "uid": "35240-89258d1e-3c11-4649-bb8c-10ce4ddc26e6"
+            },
+            {
+              "id": "1a065f45-2d57-4122-9ed0-4bfbfcb7ab9b",
+              "name": "ThrottlingException",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/certificates?pageSize=<integer>&marker=rv==&isAscendingOrder=<boolean>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "certificates"
+                  ],
+                  "query": [
+                    {
+                      "description": "The result page size.",
+                      "key": "pageSize",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "The marker for the next set of results.",
+                      "key": "marker",
+                      "value": "rv=="
+                    },
+                    {
+                      "description": "Specifies the order for results. If True, the results are returned in ascending order, based on the creation date.",
+                      "key": "isAscendingOrder",
+                      "value": "<boolean>"
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:30:43.000Z",
+              "updatedAt": "2026-07-28T10:30:43.000Z",
+              "uid": "35240-1a065f45-2d57-4122-9ed0-4bfbfcb7ab9b"
+            },
+            {
+              "id": "6b5e8142-ea07-4e2f-89df-3867e74542f9",
+              "name": "UnauthorizedException",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/certificates?pageSize=<integer>&marker=rv==&isAscendingOrder=<boolean>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "certificates"
+                  ],
+                  "query": [
+                    {
+                      "description": "The result page size.",
+                      "key": "pageSize",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "The marker for the next set of results.",
+                      "key": "marker",
+                      "value": "rv=="
+                    },
+                    {
+                      "description": "Specifies the order for results. If True, the results are returned in ascending order, based on the creation date.",
+                      "key": "isAscendingOrder",
+                      "value": "<boolean>"
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:30:43.000Z",
+              "updatedAt": "2026-07-28T10:30:43.000Z",
+              "uid": "35240-6b5e8142-ea07-4e2f-89df-3867e74542f9"
+            },
+            {
+              "id": "ae6485d4-b627-4ae2-b35a-4c9a47ed422e",
+              "name": "ServiceUnavailableException",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/certificates?pageSize=<integer>&marker=rv==&isAscendingOrder=<boolean>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "certificates"
+                  ],
+                  "query": [
+                    {
+                      "description": "The result page size.",
+                      "key": "pageSize",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "The marker for the next set of results.",
+                      "key": "marker",
+                      "value": "rv=="
+                    },
+                    {
+                      "description": "Specifies the order for results. If True, the results are returned in ascending order, based on the creation date.",
+                      "key": "isAscendingOrder",
+                      "value": "<boolean>"
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:30:43.000Z",
+              "updatedAt": "2026-07-28T10:30:43.000Z",
+              "uid": "35240-ae6485d4-b627-4ae2-b35a-4c9a47ed422e"
+            },
+            {
+              "id": "45ea44e2-0bcb-44e0-bdfd-431f8dbc42d4",
+              "name": "InternalFailureException",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/certificates?pageSize=<integer>&marker=rv==&isAscendingOrder=<boolean>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "certificates"
+                  ],
+                  "query": [
+                    {
+                      "description": "The result page size.",
+                      "key": "pageSize",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "The marker for the next set of results.",
+                      "key": "marker",
+                      "value": "rv=="
+                    },
+                    {
+                      "description": "Specifies the order for results. If True, the results are returned in ascending order, based on the creation date.",
+                      "key": "isAscendingOrder",
+                      "value": "<boolean>"
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:30:43.000Z",
+              "updatedAt": "2026-07-28T10:30:43.000Z",
+              "uid": "35240-45ea44e2-0bcb-44e0-bdfd-431f8dbc42d4"
+            }
+          ],
+          "createdAt": "2026-07-28T10:30:43.000Z",
+          "updatedAt": "2026-07-28T10:30:43.000Z",
+          "uid": "35240-03a8772d-1edc-4643-aad4-2ae20bfa4708"
+        }
+      ],
+      "id": "582f860e-3f3a-47d4-bbdc-7e4a33c54ac8",
+      "createdAt": "2026-07-28T10:30:43.000Z",
+      "updatedAt": "2026-07-28T10:30:43.000Z",
+      "uid": "35240-582f860e-3f3a-47d4-bbdc-7e4a33c54ac8"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "http://iot.{{region}}.amazonaws.com"
+    },
+    {
+      "key": "certificateId",
+      "value": "fDfDfDfDfDfDfDfDfDfDfDfDfDfDfDfDfDfDfDfDfDfDfDfDfDfDfDfDfDfDfDfD"
+    }
+  ]
+}

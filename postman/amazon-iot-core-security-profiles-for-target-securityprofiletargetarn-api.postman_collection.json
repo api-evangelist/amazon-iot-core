@@ -1,0 +1,592 @@
+{
+  "info": {
+    "_postman_id": "f67e9812-e9f4-4a9c-bdc8-aa9a6402c826",
+    "name": "AWS IoT Accept Certificate Transfer Security Profiles For Target#securityProfileTargetArn API",
+    "description": "<fullname>IoT</fullname> <p>IoT provides secure, bi-directional communication between Internet-connected devices (such as sensors, actuators, embedded devices, or smart appliances) and the Amazon Web Services cloud. You can discover your custom IoT-Data endpoint to communicate with, configure rules for data processing and integration with other services, organize resources associated with each device (Registry), configure logging, and create and manage policies and credentials to authenticate devices.</p> <p>The service endpoints that expose this API are listed in <a href=\"https://docs.aws.amazon.com/general/latest/gr/iot-core.html\">Amazon Web Services IoT Core Endpoints and Quotas</a>. You must use the endpoint for the region that has the resources you want to access.</p> <p>The service name used by <a href=\"https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html\">Amazon Web Services Signature Version 4</a> to sign the request is: <i>execute-api</i>.</p> <p>For more information about how IoT works, see the <a href=\"https://docs.aws.amazon.com/iot/latest/developerguide/aws-iot-how-it-works.html\">Developer Guide</a>.</p> <p>For information about how to use the credentials provider for IoT, see <a href=\"https://docs.aws.amazon.com/iot/latest/developerguide/authorizing-direct-aws.html\">Authorizing Direct Calls to Amazon Web Services Services</a>.</p>\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:33:11.000Z",
+    "updatedAt": "2026-07-28T10:33:11.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-f67e9812-e9f4-4a9c-bdc8-aa9a6402c826"
+  },
+  "item": [
+    {
+      "name": "security-profiles-for-target#securityProfileTargetArn",
+      "item": [
+        {
+          "name": "Amazon IoT Core List Security Profiles for Target",
+          "id": "6dedd1af-6890-4ea9-a04b-845413e79783",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/security-profiles-for-target?nextToken=<string>&maxResults=<integer>&recursive=<boolean>&securityProfileTargetArn=<string>#securityProfileTargetArn",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "security-profiles-for-target"
+              ],
+              "query": [
+                {
+                  "description": "The token for the next set of results.",
+                  "key": "nextToken",
+                  "value": "<string>"
+                },
+                {
+                  "description": "The maximum number of results to return at one time.",
+                  "key": "maxResults",
+                  "value": "<integer>"
+                },
+                {
+                  "description": "If true, return child groups too.",
+                  "key": "recursive",
+                  "value": "<boolean>"
+                },
+                {
+                  "description": "(Required) The ARN of the target (thing group) whose attached security profiles you want to get.",
+                  "key": "securityProfileTargetArn",
+                  "value": "<string>"
+                }
+              ],
+              "hash": "securityProfileTargetArn"
+            },
+            "description": "<p>Lists the Device Defender security profiles attached to a target (thing group).</p> <p>Requires permission to access the <a href=\"https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions\">ListSecurityProfilesForTarget</a> action.</p>"
+          },
+          "response": [
+            {
+              "id": "53c0ca0e-eecd-4a93-9bc1-cac0d49f2832",
+              "name": "Success",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/security-profiles-for-target?nextToken=<string>&maxResults=<integer>&recursive=<boolean>&securityProfileTargetArn=<string>#securityProfileTargetArn",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "security-profiles-for-target"
+                  ],
+                  "query": [
+                    {
+                      "description": "The token for the next set of results.",
+                      "key": "nextToken",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The maximum number of results to return at one time.",
+                      "key": "maxResults",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "If true, return child groups too.",
+                      "key": "recursive",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "description": "(Required) The ARN of the target (thing group) whose attached security profiles you want to get.",
+                      "key": "securityProfileTargetArn",
+                      "value": "<string>"
+                    }
+                  ],
+                  "hash": "securityProfileTargetArn"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"securityProfileTargetMappings\": [\n    {\n      \"securityProfileIdentifier\": {\n        \"name\": \"F64\",\n        \"arn\": \"<string>\"\n      },\n      \"target\": {\n        \"arn\": \"<string>\"\n      }\n    },\n    {\n      \"securityProfileIdentifier\": {\n        \"name\": \"3xzZ\",\n        \"arn\": \"<string>\"\n      },\n      \"target\": {\n        \"arn\": \"<string>\"\n      }\n    }\n  ],\n  \"nextToken\": \"<string>\"\n}",
+              "createdAt": "2026-07-28T10:33:12.000Z",
+              "updatedAt": "2026-07-28T10:33:12.000Z",
+              "uid": "35240-53c0ca0e-eecd-4a93-9bc1-cac0d49f2832"
+            },
+            {
+              "id": "97533c05-7893-4eac-8afd-64349def1050",
+              "name": "InvalidRequestException",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/security-profiles-for-target?nextToken=<string>&maxResults=<integer>&recursive=<boolean>&securityProfileTargetArn=<string>#securityProfileTargetArn",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "security-profiles-for-target"
+                  ],
+                  "query": [
+                    {
+                      "description": "The token for the next set of results.",
+                      "key": "nextToken",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The maximum number of results to return at one time.",
+                      "key": "maxResults",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "If true, return child groups too.",
+                      "key": "recursive",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "description": "(Required) The ARN of the target (thing group) whose attached security profiles you want to get.",
+                      "key": "securityProfileTargetArn",
+                      "value": "<string>"
+                    }
+                  ],
+                  "hash": "securityProfileTargetArn"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:33:12.000Z",
+              "updatedAt": "2026-07-28T10:33:12.000Z",
+              "uid": "35240-97533c05-7893-4eac-8afd-64349def1050"
+            },
+            {
+              "id": "9c07cbc2-305c-45ba-b853-5078eca6aec6",
+              "name": "ThrottlingException",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/security-profiles-for-target?nextToken=<string>&maxResults=<integer>&recursive=<boolean>&securityProfileTargetArn=<string>#securityProfileTargetArn",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "security-profiles-for-target"
+                  ],
+                  "query": [
+                    {
+                      "description": "The token for the next set of results.",
+                      "key": "nextToken",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The maximum number of results to return at one time.",
+                      "key": "maxResults",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "If true, return child groups too.",
+                      "key": "recursive",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "description": "(Required) The ARN of the target (thing group) whose attached security profiles you want to get.",
+                      "key": "securityProfileTargetArn",
+                      "value": "<string>"
+                    }
+                  ],
+                  "hash": "securityProfileTargetArn"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:33:12.000Z",
+              "updatedAt": "2026-07-28T10:33:12.000Z",
+              "uid": "35240-9c07cbc2-305c-45ba-b853-5078eca6aec6"
+            },
+            {
+              "id": "cc0d2951-1d73-41af-a6d3-dcdeafcef508",
+              "name": "InternalFailureException",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/security-profiles-for-target?nextToken=<string>&maxResults=<integer>&recursive=<boolean>&securityProfileTargetArn=<string>#securityProfileTargetArn",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "security-profiles-for-target"
+                  ],
+                  "query": [
+                    {
+                      "description": "The token for the next set of results.",
+                      "key": "nextToken",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The maximum number of results to return at one time.",
+                      "key": "maxResults",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "If true, return child groups too.",
+                      "key": "recursive",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "description": "(Required) The ARN of the target (thing group) whose attached security profiles you want to get.",
+                      "key": "securityProfileTargetArn",
+                      "value": "<string>"
+                    }
+                  ],
+                  "hash": "securityProfileTargetArn"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:33:12.000Z",
+              "updatedAt": "2026-07-28T10:33:12.000Z",
+              "uid": "35240-cc0d2951-1d73-41af-a6d3-dcdeafcef508"
+            },
+            {
+              "id": "9e4c9430-016f-4833-a14f-4cb796491308",
+              "name": "ResourceNotFoundException",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/security-profiles-for-target?nextToken=<string>&maxResults=<integer>&recursive=<boolean>&securityProfileTargetArn=<string>#securityProfileTargetArn",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "security-profiles-for-target"
+                  ],
+                  "query": [
+                    {
+                      "description": "The token for the next set of results.",
+                      "key": "nextToken",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The maximum number of results to return at one time.",
+                      "key": "maxResults",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "If true, return child groups too.",
+                      "key": "recursive",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "description": "(Required) The ARN of the target (thing group) whose attached security profiles you want to get.",
+                      "key": "securityProfileTargetArn",
+                      "value": "<string>"
+                    }
+                  ],
+                  "hash": "securityProfileTargetArn"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:33:12.000Z",
+              "updatedAt": "2026-07-28T10:33:12.000Z",
+              "uid": "35240-9e4c9430-016f-4833-a14f-4cb796491308"
+            }
+          ],
+          "createdAt": "2026-07-28T10:33:12.000Z",
+          "updatedAt": "2026-07-28T10:33:12.000Z",
+          "uid": "35240-6dedd1af-6890-4ea9-a04b-845413e79783"
+        }
+      ],
+      "id": "75f1b543-d44c-439a-83d4-7d0d7ed62611",
+      "createdAt": "2026-07-28T10:33:12.000Z",
+      "updatedAt": "2026-07-28T10:33:12.000Z",
+      "uid": "35240-75f1b543-d44c-439a-83d4-7d0d7ed62611"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "http://iot.{{region}}.amazonaws.com"
+    }
+  ]
+}

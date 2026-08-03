@@ -1,0 +1,969 @@
+{
+  "info": {
+    "_postman_id": "9a4fd3d7-0c0f-45c8-8a83-980eb2e1a457",
+    "name": "AWS IoT Accept Certificate Transfer Transfer Certificate API",
+    "description": "<fullname>IoT</fullname> <p>IoT provides secure, bi-directional communication between Internet-connected devices (such as sensors, actuators, embedded devices, or smart appliances) and the Amazon Web Services cloud. You can discover your custom IoT-Data endpoint to communicate with, configure rules for data processing and integration with other services, organize resources associated with each device (Registry), configure logging, and create and manage policies and credentials to authenticate devices.</p> <p>The service endpoints that expose this API are listed in <a href=\"https://docs.aws.amazon.com/general/latest/gr/iot-core.html\">Amazon Web Services IoT Core Endpoints and Quotas</a>. You must use the endpoint for the region that has the resources you want to access.</p> <p>The service name used by <a href=\"https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html\">Amazon Web Services Signature Version 4</a> to sign the request is: <i>execute-api</i>.</p> <p>For more information about how IoT works, see the <a href=\"https://docs.aws.amazon.com/iot/latest/developerguide/aws-iot-how-it-works.html\">Developer Guide</a>.</p> <p>For information about how to use the credentials provider for IoT, see <a href=\"https://docs.aws.amazon.com/iot/latest/developerguide/authorizing-direct-aws.html\">Authorizing Direct Calls to Amazon Web Services Services</a>.</p>\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:33:23.000Z",
+    "updatedAt": "2026-07-28T10:33:23.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-9a4fd3d7-0c0f-45c8-8a83-980eb2e1a457"
+  },
+  "item": [
+    {
+      "name": "transfer-certificate",
+      "item": [
+        {
+          "name": "{certificateId}#targetAwsAccount",
+          "item": [
+            {
+              "name": "Amazon IoT Core Transfer Certificate",
+              "id": "b229c975-f5ce-44b8-8732-ef0ee84604d0",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "PATCH",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"transferMessage\": \"HK\u2000\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/transfer-certificate/{{certificateId}}?targetAwsAccount=923152923152#targetAwsAccount",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "transfer-certificate",
+                    "{{certificateId}}"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) The Amazon Web Services account.",
+                      "key": "targetAwsAccount",
+                      "value": "923152923152"
+                    }
+                  ],
+                  "hash": "targetAwsAccount"
+                },
+                "description": "<p>Transfers the specified certificate to the specified Amazon Web Services account.</p> <p>Requires permission to access the <a href=\"https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions\">TransferCertificate</a> action.</p> <p>You can cancel the transfer until it is acknowledged by the recipient.</p> <p>No notification is sent to the transfer destination's account. It is up to the caller to notify the transfer target.</p> <p>The certificate being transferred must not be in the ACTIVE state. You can use the <a>UpdateCertificate</a> action to deactivate it.</p> <p>The certificate must not have any policies attached to it. You can use the <a>DetachPolicy</a> action to detach them.</p>"
+              },
+              "response": [
+                {
+                  "id": "62781981-ee11-4d58-9998-d669c4f17902",
+                  "name": "Success",
+                  "originalRequest": {
+                    "method": "PATCH",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"transferMessage\": \"HK\u2000\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/transfer-certificate/{{certificateId}}?targetAwsAccount=923152923152#targetAwsAccount",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "transfer-certificate",
+                        "{{certificateId}}"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) The Amazon Web Services account.",
+                          "key": "targetAwsAccount",
+                          "value": "923152923152"
+                        }
+                      ],
+                      "hash": "targetAwsAccount"
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"transferredCertificateArn\": \"<string>\"\n}",
+                  "createdAt": "2026-07-28T10:33:24.000Z",
+                  "updatedAt": "2026-07-28T10:33:24.000Z",
+                  "uid": "35240-62781981-ee11-4d58-9998-d669c4f17902"
+                },
+                {
+                  "id": "1bd4325a-9f24-4eb6-9b7c-e1657ecd90ad",
+                  "name": "InvalidRequestException",
+                  "originalRequest": {
+                    "method": "PATCH",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"transferMessage\": \"HK\u2000\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/transfer-certificate/{{certificateId}}?targetAwsAccount=923152923152#targetAwsAccount",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "transfer-certificate",
+                        "{{certificateId}}"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) The Amazon Web Services account.",
+                          "key": "targetAwsAccount",
+                          "value": "923152923152"
+                        }
+                      ],
+                      "hash": "targetAwsAccount"
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:33:24.000Z",
+                  "updatedAt": "2026-07-28T10:33:24.000Z",
+                  "uid": "35240-1bd4325a-9f24-4eb6-9b7c-e1657ecd90ad"
+                },
+                {
+                  "id": "08444d47-cd7c-4f3d-86ae-55232aa1e537",
+                  "name": "ResourceNotFoundException",
+                  "originalRequest": {
+                    "method": "PATCH",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"transferMessage\": \"HK\u2000\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/transfer-certificate/{{certificateId}}?targetAwsAccount=923152923152#targetAwsAccount",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "transfer-certificate",
+                        "{{certificateId}}"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) The Amazon Web Services account.",
+                          "key": "targetAwsAccount",
+                          "value": "923152923152"
+                        }
+                      ],
+                      "hash": "targetAwsAccount"
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:33:24.000Z",
+                  "updatedAt": "2026-07-28T10:33:24.000Z",
+                  "uid": "35240-08444d47-cd7c-4f3d-86ae-55232aa1e537"
+                },
+                {
+                  "id": "bd3d7cdd-f201-43a4-89a4-32af6850d774",
+                  "name": "CertificateStateException",
+                  "originalRequest": {
+                    "method": "PATCH",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"transferMessage\": \"HK\u2000\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/transfer-certificate/{{certificateId}}?targetAwsAccount=923152923152#targetAwsAccount",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "transfer-certificate",
+                        "{{certificateId}}"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) The Amazon Web Services account.",
+                          "key": "targetAwsAccount",
+                          "value": "923152923152"
+                        }
+                      ],
+                      "hash": "targetAwsAccount"
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:33:24.000Z",
+                  "updatedAt": "2026-07-28T10:33:24.000Z",
+                  "uid": "35240-bd3d7cdd-f201-43a4-89a4-32af6850d774"
+                },
+                {
+                  "id": "0ca7f109-0dc3-47b0-979b-92b99b913b0b",
+                  "name": "TransferConflictException",
+                  "originalRequest": {
+                    "method": "PATCH",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"transferMessage\": \"HK\u2000\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/transfer-certificate/{{certificateId}}?targetAwsAccount=923152923152#targetAwsAccount",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "transfer-certificate",
+                        "{{certificateId}}"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) The Amazon Web Services account.",
+                          "key": "targetAwsAccount",
+                          "value": "923152923152"
+                        }
+                      ],
+                      "hash": "targetAwsAccount"
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:33:24.000Z",
+                  "updatedAt": "2026-07-28T10:33:24.000Z",
+                  "uid": "35240-0ca7f109-0dc3-47b0-979b-92b99b913b0b"
+                },
+                {
+                  "id": "cad5e80f-4e30-4087-bb11-a5c60e70fd1c",
+                  "name": "ThrottlingException",
+                  "originalRequest": {
+                    "method": "PATCH",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"transferMessage\": \"HK\u2000\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/transfer-certificate/{{certificateId}}?targetAwsAccount=923152923152#targetAwsAccount",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "transfer-certificate",
+                        "{{certificateId}}"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) The Amazon Web Services account.",
+                          "key": "targetAwsAccount",
+                          "value": "923152923152"
+                        }
+                      ],
+                      "hash": "targetAwsAccount"
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:33:24.000Z",
+                  "updatedAt": "2026-07-28T10:33:24.000Z",
+                  "uid": "35240-cad5e80f-4e30-4087-bb11-a5c60e70fd1c"
+                },
+                {
+                  "id": "51e79dce-74f9-46c4-bcb3-579457a2e25f",
+                  "name": "UnauthorizedException",
+                  "originalRequest": {
+                    "method": "PATCH",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"transferMessage\": \"HK\u2000\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/transfer-certificate/{{certificateId}}?targetAwsAccount=923152923152#targetAwsAccount",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "transfer-certificate",
+                        "{{certificateId}}"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) The Amazon Web Services account.",
+                          "key": "targetAwsAccount",
+                          "value": "923152923152"
+                        }
+                      ],
+                      "hash": "targetAwsAccount"
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:33:24.000Z",
+                  "updatedAt": "2026-07-28T10:33:24.000Z",
+                  "uid": "35240-51e79dce-74f9-46c4-bcb3-579457a2e25f"
+                },
+                {
+                  "id": "8a461ab3-fd55-4cd3-b926-9cf8ebc1750a",
+                  "name": "ServiceUnavailableException",
+                  "originalRequest": {
+                    "method": "PATCH",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"transferMessage\": \"HK\u2000\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/transfer-certificate/{{certificateId}}?targetAwsAccount=923152923152#targetAwsAccount",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "transfer-certificate",
+                        "{{certificateId}}"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) The Amazon Web Services account.",
+                          "key": "targetAwsAccount",
+                          "value": "923152923152"
+                        }
+                      ],
+                      "hash": "targetAwsAccount"
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:33:24.000Z",
+                  "updatedAt": "2026-07-28T10:33:24.000Z",
+                  "uid": "35240-8a461ab3-fd55-4cd3-b926-9cf8ebc1750a"
+                },
+                {
+                  "id": "e0788c68-bc0e-487c-858b-d4aa53cc3c87",
+                  "name": "InternalFailureException",
+                  "originalRequest": {
+                    "method": "PATCH",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"transferMessage\": \"HK\u2000\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/transfer-certificate/{{certificateId}}?targetAwsAccount=923152923152#targetAwsAccount",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "transfer-certificate",
+                        "{{certificateId}}"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) The Amazon Web Services account.",
+                          "key": "targetAwsAccount",
+                          "value": "923152923152"
+                        }
+                      ],
+                      "hash": "targetAwsAccount"
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:33:24.000Z",
+                  "updatedAt": "2026-07-28T10:33:24.000Z",
+                  "uid": "35240-e0788c68-bc0e-487c-858b-d4aa53cc3c87"
+                }
+              ],
+              "createdAt": "2026-07-28T10:33:24.000Z",
+              "updatedAt": "2026-07-28T10:33:24.000Z",
+              "uid": "35240-b229c975-f5ce-44b8-8732-ef0ee84604d0"
+            }
+          ],
+          "id": "ce9cb557-4a92-4b9d-9b73-35163ec5cfde",
+          "createdAt": "2026-07-28T10:33:24.000Z",
+          "updatedAt": "2026-07-28T10:33:24.000Z",
+          "uid": "35240-ce9cb557-4a92-4b9d-9b73-35163ec5cfde"
+        }
+      ],
+      "id": "b01af05e-25e4-42b8-801d-6f95b313ddb8",
+      "createdAt": "2026-07-28T10:33:24.000Z",
+      "updatedAt": "2026-07-28T10:33:24.000Z",
+      "uid": "35240-b01af05e-25e4-42b8-801d-6f95b313ddb8"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "http://iot.{{region}}.amazonaws.com"
+    },
+    {
+      "key": "certificateId",
+      "value": "ae5cF42DA0ae5cF42DA0ae5cF42DA0ae5cF42DA0ae5cF42DA0ae5cF42DA0ae5c"
+    }
+  ]
+}

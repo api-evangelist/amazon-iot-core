@@ -1,0 +1,3468 @@
+{
+  "info": {
+    "_postman_id": "44b3122f-e1a2-4e08-ab91-9a25cebacc18",
+    "name": "AWS IoT Accept Certificate Transfer Fleet Metric API",
+    "description": "<fullname>IoT</fullname> <p>IoT provides secure, bi-directional communication between Internet-connected devices (such as sensors, actuators, embedded devices, or smart appliances) and the Amazon Web Services cloud. You can discover your custom IoT-Data endpoint to communicate with, configure rules for data processing and integration with other services, organize resources associated with each device (Registry), configure logging, and create and manage policies and credentials to authenticate devices.</p> <p>The service endpoints that expose this API are listed in <a href=\"https://docs.aws.amazon.com/general/latest/gr/iot-core.html\">Amazon Web Services IoT Core Endpoints and Quotas</a>. You must use the endpoint for the region that has the resources you want to access.</p> <p>The service name used by <a href=\"https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html\">Amazon Web Services Signature Version 4</a> to sign the request is: <i>execute-api</i>.</p> <p>For more information about how IoT works, see the <a href=\"https://docs.aws.amazon.com/iot/latest/developerguide/aws-iot-how-it-works.html\">Developer Guide</a>.</p> <p>For information about how to use the credentials provider for IoT, see <a href=\"https://docs.aws.amazon.com/iot/latest/developerguide/authorizing-direct-aws.html\">Authorizing Direct Calls to Amazon Web Services Services</a>.</p>\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:31:31.000Z",
+    "updatedAt": "2026-07-28T10:31:31.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-44b3122f-e1a2-4e08-ab91-9a25cebacc18"
+  },
+  "item": [
+    {
+      "name": "fleet-metric",
+      "item": [
+        {
+          "name": "{metricName}",
+          "item": [
+            {
+              "name": "Amazon IoT Core Create Fleet Metric",
+              "id": "e982efb1-5d29-463f-8f35-414693f5413d",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"queryString\": \"<string>\",\n  \"aggregationType\": {\n    \"name\": \"Statistics\",\n    \"values\": [\n      \"ucb2bJx\",\n      \"vqY8eirng\"\n    ]\n  },\n  \"period\": \"<integer>\",\n  \"aggregationField\": \"<string>\",\n  \"description\": \"}r}h{{haa\",\n  \"queryVersion\": \"<string>\",\n  \"indexName\": \"EBv\",\n  \"unit\": \"Gigabytes\",\n  \"tags\": [\n    {\n      \"Key\": \" \",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \" \",\n      \"Value\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/fleet-metric/:metricName",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "fleet-metric",
+                    ":metricName"
+                  ],
+                  "variable": [
+                    {
+                      "id": "3cdc0103-c0aa-4c9d-834a-cb184c189208",
+                      "key": "metricName",
+                      "value": "yX",
+                      "description": "(Required) The name of the fleet metric to create."
+                    }
+                  ]
+                },
+                "description": "<p>Creates a fleet metric.</p> <p>Requires permission to access the <a href=\"https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions\">CreateFleetMetric</a> action.</p>"
+              },
+              "response": [
+                {
+                  "id": "64e4c2d0-c209-4e16-a832-b9db4c7911fb",
+                  "name": "Success",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"queryString\": \"<string>\",\n  \"aggregationType\": {\n    \"name\": \"Statistics\",\n    \"values\": [\n      \"ucb2bJx\",\n      \"vqY8eirng\"\n    ]\n  },\n  \"period\": \"<integer>\",\n  \"aggregationField\": \"<string>\",\n  \"description\": \"}r}h{{haa\",\n  \"queryVersion\": \"<string>\",\n  \"indexName\": \"EBv\",\n  \"unit\": \"Gigabytes\",\n  \"tags\": [\n    {\n      \"Key\": \" \",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \" \",\n      \"Value\": \"<string>\"\n    }\n  ]\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/fleet-metric/:metricName",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "fleet-metric",
+                        ":metricName"
+                      ],
+                      "variable": [
+                        {
+                          "key": "metricName"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"metricName\": \"7XQw\",\n  \"metricArn\": \"<string>\"\n}",
+                  "createdAt": "2026-07-28T10:31:32.000Z",
+                  "updatedAt": "2026-07-28T10:31:32.000Z",
+                  "uid": "35240-64e4c2d0-c209-4e16-a832-b9db4c7911fb"
+                },
+                {
+                  "id": "ba792240-d945-4b84-91ef-255b80387c10",
+                  "name": "InvalidRequestException",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"queryString\": \"<string>\",\n  \"aggregationType\": {\n    \"name\": \"Statistics\",\n    \"values\": [\n      \"ucb2bJx\",\n      \"vqY8eirng\"\n    ]\n  },\n  \"period\": \"<integer>\",\n  \"aggregationField\": \"<string>\",\n  \"description\": \"}r}h{{haa\",\n  \"queryVersion\": \"<string>\",\n  \"indexName\": \"EBv\",\n  \"unit\": \"Gigabytes\",\n  \"tags\": [\n    {\n      \"Key\": \" \",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \" \",\n      \"Value\": \"<string>\"\n    }\n  ]\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/fleet-metric/:metricName",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "fleet-metric",
+                        ":metricName"
+                      ],
+                      "variable": [
+                        {
+                          "key": "metricName"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:31:32.000Z",
+                  "updatedAt": "2026-07-28T10:31:32.000Z",
+                  "uid": "35240-ba792240-d945-4b84-91ef-255b80387c10"
+                },
+                {
+                  "id": "e1c4b833-a025-44ec-b234-3a99430f724c",
+                  "name": "ThrottlingException",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"queryString\": \"<string>\",\n  \"aggregationType\": {\n    \"name\": \"Statistics\",\n    \"values\": [\n      \"ucb2bJx\",\n      \"vqY8eirng\"\n    ]\n  },\n  \"period\": \"<integer>\",\n  \"aggregationField\": \"<string>\",\n  \"description\": \"}r}h{{haa\",\n  \"queryVersion\": \"<string>\",\n  \"indexName\": \"EBv\",\n  \"unit\": \"Gigabytes\",\n  \"tags\": [\n    {\n      \"Key\": \" \",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \" \",\n      \"Value\": \"<string>\"\n    }\n  ]\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/fleet-metric/:metricName",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "fleet-metric",
+                        ":metricName"
+                      ],
+                      "variable": [
+                        {
+                          "key": "metricName"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:31:32.000Z",
+                  "updatedAt": "2026-07-28T10:31:32.000Z",
+                  "uid": "35240-e1c4b833-a025-44ec-b234-3a99430f724c"
+                },
+                {
+                  "id": "c4d87a46-a728-47df-8307-5c8046b1e821",
+                  "name": "UnauthorizedException",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"queryString\": \"<string>\",\n  \"aggregationType\": {\n    \"name\": \"Statistics\",\n    \"values\": [\n      \"ucb2bJx\",\n      \"vqY8eirng\"\n    ]\n  },\n  \"period\": \"<integer>\",\n  \"aggregationField\": \"<string>\",\n  \"description\": \"}r}h{{haa\",\n  \"queryVersion\": \"<string>\",\n  \"indexName\": \"EBv\",\n  \"unit\": \"Gigabytes\",\n  \"tags\": [\n    {\n      \"Key\": \" \",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \" \",\n      \"Value\": \"<string>\"\n    }\n  ]\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/fleet-metric/:metricName",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "fleet-metric",
+                        ":metricName"
+                      ],
+                      "variable": [
+                        {
+                          "key": "metricName"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:31:32.000Z",
+                  "updatedAt": "2026-07-28T10:31:32.000Z",
+                  "uid": "35240-c4d87a46-a728-47df-8307-5c8046b1e821"
+                },
+                {
+                  "id": "565702a3-2de8-4c04-b550-902c97499a19",
+                  "name": "ServiceUnavailableException",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"queryString\": \"<string>\",\n  \"aggregationType\": {\n    \"name\": \"Statistics\",\n    \"values\": [\n      \"ucb2bJx\",\n      \"vqY8eirng\"\n    ]\n  },\n  \"period\": \"<integer>\",\n  \"aggregationField\": \"<string>\",\n  \"description\": \"}r}h{{haa\",\n  \"queryVersion\": \"<string>\",\n  \"indexName\": \"EBv\",\n  \"unit\": \"Gigabytes\",\n  \"tags\": [\n    {\n      \"Key\": \" \",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \" \",\n      \"Value\": \"<string>\"\n    }\n  ]\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/fleet-metric/:metricName",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "fleet-metric",
+                        ":metricName"
+                      ],
+                      "variable": [
+                        {
+                          "key": "metricName"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:31:32.000Z",
+                  "updatedAt": "2026-07-28T10:31:32.000Z",
+                  "uid": "35240-565702a3-2de8-4c04-b550-902c97499a19"
+                },
+                {
+                  "id": "aa434b2f-f630-4bc8-afea-2b18a99e0e5a",
+                  "name": "InternalFailureException",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"queryString\": \"<string>\",\n  \"aggregationType\": {\n    \"name\": \"Statistics\",\n    \"values\": [\n      \"ucb2bJx\",\n      \"vqY8eirng\"\n    ]\n  },\n  \"period\": \"<integer>\",\n  \"aggregationField\": \"<string>\",\n  \"description\": \"}r}h{{haa\",\n  \"queryVersion\": \"<string>\",\n  \"indexName\": \"EBv\",\n  \"unit\": \"Gigabytes\",\n  \"tags\": [\n    {\n      \"Key\": \" \",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \" \",\n      \"Value\": \"<string>\"\n    }\n  ]\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/fleet-metric/:metricName",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "fleet-metric",
+                        ":metricName"
+                      ],
+                      "variable": [
+                        {
+                          "key": "metricName"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:31:32.000Z",
+                  "updatedAt": "2026-07-28T10:31:32.000Z",
+                  "uid": "35240-aa434b2f-f630-4bc8-afea-2b18a99e0e5a"
+                },
+                {
+                  "id": "468d0d11-0fb2-44ac-98f1-b7fa38095f6b",
+                  "name": "LimitExceededException",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"queryString\": \"<string>\",\n  \"aggregationType\": {\n    \"name\": \"Statistics\",\n    \"values\": [\n      \"ucb2bJx\",\n      \"vqY8eirng\"\n    ]\n  },\n  \"period\": \"<integer>\",\n  \"aggregationField\": \"<string>\",\n  \"description\": \"}r}h{{haa\",\n  \"queryVersion\": \"<string>\",\n  \"indexName\": \"EBv\",\n  \"unit\": \"Gigabytes\",\n  \"tags\": [\n    {\n      \"Key\": \" \",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \" \",\n      \"Value\": \"<string>\"\n    }\n  ]\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/fleet-metric/:metricName",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "fleet-metric",
+                        ":metricName"
+                      ],
+                      "variable": [
+                        {
+                          "key": "metricName"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:31:32.000Z",
+                  "updatedAt": "2026-07-28T10:31:32.000Z",
+                  "uid": "35240-468d0d11-0fb2-44ac-98f1-b7fa38095f6b"
+                },
+                {
+                  "id": "7b98efae-b335-4c3d-bce9-38d3616bb82d",
+                  "name": "ResourceAlreadyExistsException",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"queryString\": \"<string>\",\n  \"aggregationType\": {\n    \"name\": \"Statistics\",\n    \"values\": [\n      \"ucb2bJx\",\n      \"vqY8eirng\"\n    ]\n  },\n  \"period\": \"<integer>\",\n  \"aggregationField\": \"<string>\",\n  \"description\": \"}r}h{{haa\",\n  \"queryVersion\": \"<string>\",\n  \"indexName\": \"EBv\",\n  \"unit\": \"Gigabytes\",\n  \"tags\": [\n    {\n      \"Key\": \" \",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \" \",\n      \"Value\": \"<string>\"\n    }\n  ]\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/fleet-metric/:metricName",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "fleet-metric",
+                        ":metricName"
+                      ],
+                      "variable": [
+                        {
+                          "key": "metricName"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:31:32.000Z",
+                  "updatedAt": "2026-07-28T10:31:32.000Z",
+                  "uid": "35240-7b98efae-b335-4c3d-bce9-38d3616bb82d"
+                },
+                {
+                  "id": "bef55644-221f-4f81-9bd5-09bd73f368f8",
+                  "name": "ResourceNotFoundException",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"queryString\": \"<string>\",\n  \"aggregationType\": {\n    \"name\": \"Statistics\",\n    \"values\": [\n      \"ucb2bJx\",\n      \"vqY8eirng\"\n    ]\n  },\n  \"period\": \"<integer>\",\n  \"aggregationField\": \"<string>\",\n  \"description\": \"}r}h{{haa\",\n  \"queryVersion\": \"<string>\",\n  \"indexName\": \"EBv\",\n  \"unit\": \"Gigabytes\",\n  \"tags\": [\n    {\n      \"Key\": \" \",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \" \",\n      \"Value\": \"<string>\"\n    }\n  ]\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/fleet-metric/:metricName",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "fleet-metric",
+                        ":metricName"
+                      ],
+                      "variable": [
+                        {
+                          "key": "metricName"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:31:32.000Z",
+                  "updatedAt": "2026-07-28T10:31:32.000Z",
+                  "uid": "35240-bef55644-221f-4f81-9bd5-09bd73f368f8"
+                },
+                {
+                  "id": "c1e154b8-787b-4a3a-ab63-3cddae0ab996",
+                  "name": "InvalidQueryException",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"queryString\": \"<string>\",\n  \"aggregationType\": {\n    \"name\": \"Statistics\",\n    \"values\": [\n      \"ucb2bJx\",\n      \"vqY8eirng\"\n    ]\n  },\n  \"period\": \"<integer>\",\n  \"aggregationField\": \"<string>\",\n  \"description\": \"}r}h{{haa\",\n  \"queryVersion\": \"<string>\",\n  \"indexName\": \"EBv\",\n  \"unit\": \"Gigabytes\",\n  \"tags\": [\n    {\n      \"Key\": \" \",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \" \",\n      \"Value\": \"<string>\"\n    }\n  ]\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/fleet-metric/:metricName",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "fleet-metric",
+                        ":metricName"
+                      ],
+                      "variable": [
+                        {
+                          "key": "metricName"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:31:32.000Z",
+                  "updatedAt": "2026-07-28T10:31:32.000Z",
+                  "uid": "35240-c1e154b8-787b-4a3a-ab63-3cddae0ab996"
+                },
+                {
+                  "id": "60bb4641-6e50-403d-8c9e-8fefb6e14f70",
+                  "name": "InvalidAggregationException",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"queryString\": \"<string>\",\n  \"aggregationType\": {\n    \"name\": \"Statistics\",\n    \"values\": [\n      \"ucb2bJx\",\n      \"vqY8eirng\"\n    ]\n  },\n  \"period\": \"<integer>\",\n  \"aggregationField\": \"<string>\",\n  \"description\": \"}r}h{{haa\",\n  \"queryVersion\": \"<string>\",\n  \"indexName\": \"EBv\",\n  \"unit\": \"Gigabytes\",\n  \"tags\": [\n    {\n      \"Key\": \" \",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \" \",\n      \"Value\": \"<string>\"\n    }\n  ]\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/fleet-metric/:metricName",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "fleet-metric",
+                        ":metricName"
+                      ],
+                      "variable": [
+                        {
+                          "key": "metricName"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:31:32.000Z",
+                  "updatedAt": "2026-07-28T10:31:32.000Z",
+                  "uid": "35240-60bb4641-6e50-403d-8c9e-8fefb6e14f70"
+                },
+                {
+                  "id": "51d08ad3-5966-4be8-84fa-410d5da9274f",
+                  "name": "IndexNotReadyException",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"queryString\": \"<string>\",\n  \"aggregationType\": {\n    \"name\": \"Statistics\",\n    \"values\": [\n      \"ucb2bJx\",\n      \"vqY8eirng\"\n    ]\n  },\n  \"period\": \"<integer>\",\n  \"aggregationField\": \"<string>\",\n  \"description\": \"}r}h{{haa\",\n  \"queryVersion\": \"<string>\",\n  \"indexName\": \"EBv\",\n  \"unit\": \"Gigabytes\",\n  \"tags\": [\n    {\n      \"Key\": \" \",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \" \",\n      \"Value\": \"<string>\"\n    }\n  ]\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/fleet-metric/:metricName",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "fleet-metric",
+                        ":metricName"
+                      ],
+                      "variable": [
+                        {
+                          "key": "metricName"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:31:32.000Z",
+                  "updatedAt": "2026-07-28T10:31:32.000Z",
+                  "uid": "35240-51d08ad3-5966-4be8-84fa-410d5da9274f"
+                }
+              ],
+              "createdAt": "2026-07-28T10:31:32.000Z",
+              "updatedAt": "2026-07-28T10:31:32.000Z",
+              "uid": "35240-e982efb1-5d29-463f-8f35-414693f5413d"
+            },
+            {
+              "name": "Amazon IoT Core Delete Fleet Metric",
+              "id": "40228b05-dd8f-4281-9b38-d633b8c7af9f",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "DELETE",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/fleet-metric/:metricName?expectedVersion=<integer>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "fleet-metric",
+                    ":metricName"
+                  ],
+                  "query": [
+                    {
+                      "description": "The expected version of the fleet metric to delete.",
+                      "key": "expectedVersion",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "id": "2b3bc18b-bdc1-41c1-aefc-4087d3c8bbf6",
+                      "key": "metricName",
+                      "value": "yX",
+                      "description": "(Required) The name of the fleet metric to delete."
+                    }
+                  ]
+                },
+                "description": "<p>Deletes the specified fleet metric. Returns successfully with no error if the deletion is successful or you specify a fleet metric that doesn't exist.</p> <p>Requires permission to access the <a href=\"https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions\">DeleteFleetMetric</a> action.</p>"
+              },
+              "response": [
+                {
+                  "id": "5e24f491-9315-44a0-a30f-e3b7e539be52",
+                  "name": "Success",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/fleet-metric/:metricName?expectedVersion=<integer>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "fleet-metric",
+                        ":metricName"
+                      ],
+                      "query": [
+                        {
+                          "description": "The expected version of the fleet metric to delete.",
+                          "key": "expectedVersion",
+                          "value": "<integer>"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "metricName"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-07-28T10:31:32.000Z",
+                  "updatedAt": "2026-07-28T10:31:32.000Z",
+                  "uid": "35240-5e24f491-9315-44a0-a30f-e3b7e539be52"
+                },
+                {
+                  "id": "d4875d0a-f291-43d8-9c25-e7e179783565",
+                  "name": "InvalidRequestException",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/fleet-metric/:metricName?expectedVersion=<integer>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "fleet-metric",
+                        ":metricName"
+                      ],
+                      "query": [
+                        {
+                          "description": "The expected version of the fleet metric to delete.",
+                          "key": "expectedVersion",
+                          "value": "<integer>"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "metricName"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:31:32.000Z",
+                  "updatedAt": "2026-07-28T10:31:32.000Z",
+                  "uid": "35240-d4875d0a-f291-43d8-9c25-e7e179783565"
+                },
+                {
+                  "id": "4087b53e-7bd4-4737-b24d-a71f7252fc5f",
+                  "name": "ThrottlingException",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/fleet-metric/:metricName?expectedVersion=<integer>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "fleet-metric",
+                        ":metricName"
+                      ],
+                      "query": [
+                        {
+                          "description": "The expected version of the fleet metric to delete.",
+                          "key": "expectedVersion",
+                          "value": "<integer>"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "metricName"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:31:32.000Z",
+                  "updatedAt": "2026-07-28T10:31:32.000Z",
+                  "uid": "35240-4087b53e-7bd4-4737-b24d-a71f7252fc5f"
+                },
+                {
+                  "id": "bbd6e498-9bd6-4e23-a616-568d9ba75d6b",
+                  "name": "UnauthorizedException",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/fleet-metric/:metricName?expectedVersion=<integer>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "fleet-metric",
+                        ":metricName"
+                      ],
+                      "query": [
+                        {
+                          "description": "The expected version of the fleet metric to delete.",
+                          "key": "expectedVersion",
+                          "value": "<integer>"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "metricName"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:31:32.000Z",
+                  "updatedAt": "2026-07-28T10:31:32.000Z",
+                  "uid": "35240-bbd6e498-9bd6-4e23-a616-568d9ba75d6b"
+                },
+                {
+                  "id": "1d765553-937c-4f4d-b10a-759226ce133b",
+                  "name": "ServiceUnavailableException",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/fleet-metric/:metricName?expectedVersion=<integer>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "fleet-metric",
+                        ":metricName"
+                      ],
+                      "query": [
+                        {
+                          "description": "The expected version of the fleet metric to delete.",
+                          "key": "expectedVersion",
+                          "value": "<integer>"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "metricName"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:31:32.000Z",
+                  "updatedAt": "2026-07-28T10:31:32.000Z",
+                  "uid": "35240-1d765553-937c-4f4d-b10a-759226ce133b"
+                },
+                {
+                  "id": "faacd3b5-f18d-4f1e-90c9-11cbf8fbb174",
+                  "name": "InternalFailureException",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/fleet-metric/:metricName?expectedVersion=<integer>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "fleet-metric",
+                        ":metricName"
+                      ],
+                      "query": [
+                        {
+                          "description": "The expected version of the fleet metric to delete.",
+                          "key": "expectedVersion",
+                          "value": "<integer>"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "metricName"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:31:32.000Z",
+                  "updatedAt": "2026-07-28T10:31:32.000Z",
+                  "uid": "35240-faacd3b5-f18d-4f1e-90c9-11cbf8fbb174"
+                },
+                {
+                  "id": "c97fe989-4865-4f14-853c-29f4ad06f5d6",
+                  "name": "VersionConflictException",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/fleet-metric/:metricName?expectedVersion=<integer>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "fleet-metric",
+                        ":metricName"
+                      ],
+                      "query": [
+                        {
+                          "description": "The expected version of the fleet metric to delete.",
+                          "key": "expectedVersion",
+                          "value": "<integer>"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "metricName"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:31:32.000Z",
+                  "updatedAt": "2026-07-28T10:31:32.000Z",
+                  "uid": "35240-c97fe989-4865-4f14-853c-29f4ad06f5d6"
+                }
+              ],
+              "createdAt": "2026-07-28T10:31:32.000Z",
+              "updatedAt": "2026-07-28T10:31:32.000Z",
+              "uid": "35240-40228b05-dd8f-4281-9b38-d633b8c7af9f"
+            },
+            {
+              "name": "Amazon IoT Core Describe Fleet Metric",
+              "id": "ca9bd9a7-a4d5-45c6-88b9-8fb9b40a8965",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/fleet-metric/:metricName",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "fleet-metric",
+                    ":metricName"
+                  ],
+                  "variable": [
+                    {
+                      "id": "a0567b0b-9495-4466-aaa7-76c3e44ef133",
+                      "key": "metricName",
+                      "value": "yX",
+                      "description": "(Required) The name of the fleet metric to describe."
+                    }
+                  ]
+                },
+                "description": "<p>Gets information about the specified fleet metric.</p> <p>Requires permission to access the <a href=\"https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions\">DescribeFleetMetric</a> action.</p>"
+              },
+              "response": [
+                {
+                  "id": "1b0db50c-87b0-4c57-8906-fcb3438e2ffd",
+                  "name": "Success",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/fleet-metric/:metricName",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "fleet-metric",
+                        ":metricName"
+                      ],
+                      "variable": [
+                        {
+                          "key": "metricName"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"metricName\": \"WXhBKKfoa\",\n  \"queryString\": \"<string>\",\n  \"aggregationType\": {\n    \"name\": \"Statistics\",\n    \"values\": [\n      \"kAO2\",\n      \"315Qfw7\"\n    ]\n  },\n  \"period\": \"<integer>\",\n  \"aggregationField\": \"<string>\",\n  \"description\": \"\",\n  \"queryVersion\": \"<string>\",\n  \"indexName\": \"JiOPOl3X\",\n  \"creationDate\": \"<dateTime>\",\n  \"lastModifiedDate\": \"<dateTime>\",\n  \"unit\": \"Terabits\",\n  \"version\": \"<integer>\",\n  \"metricArn\": \"<string>\"\n}",
+                  "createdAt": "2026-07-28T10:31:32.000Z",
+                  "updatedAt": "2026-07-28T10:31:32.000Z",
+                  "uid": "35240-1b0db50c-87b0-4c57-8906-fcb3438e2ffd"
+                },
+                {
+                  "id": "b0e56de8-2bad-4725-a5b0-d7951a645597",
+                  "name": "InvalidRequestException",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/fleet-metric/:metricName",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "fleet-metric",
+                        ":metricName"
+                      ],
+                      "variable": [
+                        {
+                          "key": "metricName"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:31:32.000Z",
+                  "updatedAt": "2026-07-28T10:31:32.000Z",
+                  "uid": "35240-b0e56de8-2bad-4725-a5b0-d7951a645597"
+                },
+                {
+                  "id": "cae94bc2-300a-496b-93fb-e8319bf32329",
+                  "name": "ThrottlingException",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/fleet-metric/:metricName",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "fleet-metric",
+                        ":metricName"
+                      ],
+                      "variable": [
+                        {
+                          "key": "metricName"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:31:32.000Z",
+                  "updatedAt": "2026-07-28T10:31:32.000Z",
+                  "uid": "35240-cae94bc2-300a-496b-93fb-e8319bf32329"
+                },
+                {
+                  "id": "b45d71f6-24a0-44b0-9f85-40f00bca8849",
+                  "name": "UnauthorizedException",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/fleet-metric/:metricName",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "fleet-metric",
+                        ":metricName"
+                      ],
+                      "variable": [
+                        {
+                          "key": "metricName"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:31:32.000Z",
+                  "updatedAt": "2026-07-28T10:31:32.000Z",
+                  "uid": "35240-b45d71f6-24a0-44b0-9f85-40f00bca8849"
+                },
+                {
+                  "id": "4509a70a-4d33-4e47-96f0-09a4afd37342",
+                  "name": "ServiceUnavailableException",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/fleet-metric/:metricName",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "fleet-metric",
+                        ":metricName"
+                      ],
+                      "variable": [
+                        {
+                          "key": "metricName"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:31:32.000Z",
+                  "updatedAt": "2026-07-28T10:31:32.000Z",
+                  "uid": "35240-4509a70a-4d33-4e47-96f0-09a4afd37342"
+                },
+                {
+                  "id": "d64d8866-fc39-42fd-84bd-834dcb2c508e",
+                  "name": "InternalFailureException",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/fleet-metric/:metricName",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "fleet-metric",
+                        ":metricName"
+                      ],
+                      "variable": [
+                        {
+                          "key": "metricName"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:31:32.000Z",
+                  "updatedAt": "2026-07-28T10:31:32.000Z",
+                  "uid": "35240-d64d8866-fc39-42fd-84bd-834dcb2c508e"
+                },
+                {
+                  "id": "5d93e918-2fc4-4e0d-a34c-656a5ae5b907",
+                  "name": "ResourceNotFoundException",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/fleet-metric/:metricName",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "fleet-metric",
+                        ":metricName"
+                      ],
+                      "variable": [
+                        {
+                          "key": "metricName"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:31:32.000Z",
+                  "updatedAt": "2026-07-28T10:31:32.000Z",
+                  "uid": "35240-5d93e918-2fc4-4e0d-a34c-656a5ae5b907"
+                }
+              ],
+              "createdAt": "2026-07-28T10:31:32.000Z",
+              "updatedAt": "2026-07-28T10:31:32.000Z",
+              "uid": "35240-ca9bd9a7-a4d5-45c6-88b9-8fb9b40a8965"
+            },
+            {
+              "name": "Amazon IoT Core Update Fleet Metric",
+              "id": "f61036d2-c6e0-4475-8930-e045e277595e",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "PATCH",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"indexName\": \"YkUaGrO\",\n  \"queryString\": \"<string>\",\n  \"aggregationType\": {\n    \"name\": \"Statistics\",\n    \"values\": [\n      \"K\",\n      \"6roEZUVA\"\n    ]\n  },\n  \"period\": \"<integer>\",\n  \"aggregationField\": \"<string>\",\n  \"description\": \"GGpG{}p}r\",\n  \"queryVersion\": \"<string>\",\n  \"unit\": \"Megabytes/Second\",\n  \"expectedVersion\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/fleet-metric/:metricName",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "fleet-metric",
+                    ":metricName"
+                  ],
+                  "variable": [
+                    {
+                      "id": "e9e77dad-81f4-4238-99ee-e76ef5188e86",
+                      "key": "metricName",
+                      "value": "yX",
+                      "description": "(Required) The name of the fleet metric to update."
+                    }
+                  ]
+                },
+                "description": "<p>Updates the data for a fleet metric.</p> <p>Requires permission to access the <a href=\"https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions\">UpdateFleetMetric</a> action.</p>"
+              },
+              "response": [
+                {
+                  "id": "37a06392-c8f5-461b-b769-cd7ae9e0b387",
+                  "name": "Success",
+                  "originalRequest": {
+                    "method": "PATCH",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"indexName\": \"YkUaGrO\",\n  \"queryString\": \"<string>\",\n  \"aggregationType\": {\n    \"name\": \"Statistics\",\n    \"values\": [\n      \"K\",\n      \"6roEZUVA\"\n    ]\n  },\n  \"period\": \"<integer>\",\n  \"aggregationField\": \"<string>\",\n  \"description\": \"GGpG{}p}r\",\n  \"queryVersion\": \"<string>\",\n  \"unit\": \"Megabytes/Second\",\n  \"expectedVersion\": \"<integer>\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/fleet-metric/:metricName",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "fleet-metric",
+                        ":metricName"
+                      ],
+                      "variable": [
+                        {
+                          "key": "metricName"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-07-28T10:31:32.000Z",
+                  "updatedAt": "2026-07-28T10:31:32.000Z",
+                  "uid": "35240-37a06392-c8f5-461b-b769-cd7ae9e0b387"
+                },
+                {
+                  "id": "8d6e78eb-e8df-4eb8-8230-c2e3ecf73eed",
+                  "name": "InvalidRequestException",
+                  "originalRequest": {
+                    "method": "PATCH",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"indexName\": \"YkUaGrO\",\n  \"queryString\": \"<string>\",\n  \"aggregationType\": {\n    \"name\": \"Statistics\",\n    \"values\": [\n      \"K\",\n      \"6roEZUVA\"\n    ]\n  },\n  \"period\": \"<integer>\",\n  \"aggregationField\": \"<string>\",\n  \"description\": \"GGpG{}p}r\",\n  \"queryVersion\": \"<string>\",\n  \"unit\": \"Megabytes/Second\",\n  \"expectedVersion\": \"<integer>\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/fleet-metric/:metricName",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "fleet-metric",
+                        ":metricName"
+                      ],
+                      "variable": [
+                        {
+                          "key": "metricName"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:31:32.000Z",
+                  "updatedAt": "2026-07-28T10:31:32.000Z",
+                  "uid": "35240-8d6e78eb-e8df-4eb8-8230-c2e3ecf73eed"
+                },
+                {
+                  "id": "44a0efba-2fb3-466a-a43f-0750e5bd323d",
+                  "name": "ThrottlingException",
+                  "originalRequest": {
+                    "method": "PATCH",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"indexName\": \"YkUaGrO\",\n  \"queryString\": \"<string>\",\n  \"aggregationType\": {\n    \"name\": \"Statistics\",\n    \"values\": [\n      \"K\",\n      \"6roEZUVA\"\n    ]\n  },\n  \"period\": \"<integer>\",\n  \"aggregationField\": \"<string>\",\n  \"description\": \"GGpG{}p}r\",\n  \"queryVersion\": \"<string>\",\n  \"unit\": \"Megabytes/Second\",\n  \"expectedVersion\": \"<integer>\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/fleet-metric/:metricName",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "fleet-metric",
+                        ":metricName"
+                      ],
+                      "variable": [
+                        {
+                          "key": "metricName"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:31:32.000Z",
+                  "updatedAt": "2026-07-28T10:31:32.000Z",
+                  "uid": "35240-44a0efba-2fb3-466a-a43f-0750e5bd323d"
+                },
+                {
+                  "id": "13ddb02d-e5b2-43b1-8882-15f19c3a1757",
+                  "name": "UnauthorizedException",
+                  "originalRequest": {
+                    "method": "PATCH",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"indexName\": \"YkUaGrO\",\n  \"queryString\": \"<string>\",\n  \"aggregationType\": {\n    \"name\": \"Statistics\",\n    \"values\": [\n      \"K\",\n      \"6roEZUVA\"\n    ]\n  },\n  \"period\": \"<integer>\",\n  \"aggregationField\": \"<string>\",\n  \"description\": \"GGpG{}p}r\",\n  \"queryVersion\": \"<string>\",\n  \"unit\": \"Megabytes/Second\",\n  \"expectedVersion\": \"<integer>\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/fleet-metric/:metricName",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "fleet-metric",
+                        ":metricName"
+                      ],
+                      "variable": [
+                        {
+                          "key": "metricName"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:31:32.000Z",
+                  "updatedAt": "2026-07-28T10:31:32.000Z",
+                  "uid": "35240-13ddb02d-e5b2-43b1-8882-15f19c3a1757"
+                },
+                {
+                  "id": "baf4ba55-9734-4919-b4c3-b8c0df7b80da",
+                  "name": "ServiceUnavailableException",
+                  "originalRequest": {
+                    "method": "PATCH",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"indexName\": \"YkUaGrO\",\n  \"queryString\": \"<string>\",\n  \"aggregationType\": {\n    \"name\": \"Statistics\",\n    \"values\": [\n      \"K\",\n      \"6roEZUVA\"\n    ]\n  },\n  \"period\": \"<integer>\",\n  \"aggregationField\": \"<string>\",\n  \"description\": \"GGpG{}p}r\",\n  \"queryVersion\": \"<string>\",\n  \"unit\": \"Megabytes/Second\",\n  \"expectedVersion\": \"<integer>\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/fleet-metric/:metricName",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "fleet-metric",
+                        ":metricName"
+                      ],
+                      "variable": [
+                        {
+                          "key": "metricName"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:31:32.000Z",
+                  "updatedAt": "2026-07-28T10:31:32.000Z",
+                  "uid": "35240-baf4ba55-9734-4919-b4c3-b8c0df7b80da"
+                },
+                {
+                  "id": "0e44597a-3f00-4f6c-b53f-d3aaf520ec30",
+                  "name": "InternalFailureException",
+                  "originalRequest": {
+                    "method": "PATCH",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"indexName\": \"YkUaGrO\",\n  \"queryString\": \"<string>\",\n  \"aggregationType\": {\n    \"name\": \"Statistics\",\n    \"values\": [\n      \"K\",\n      \"6roEZUVA\"\n    ]\n  },\n  \"period\": \"<integer>\",\n  \"aggregationField\": \"<string>\",\n  \"description\": \"GGpG{}p}r\",\n  \"queryVersion\": \"<string>\",\n  \"unit\": \"Megabytes/Second\",\n  \"expectedVersion\": \"<integer>\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/fleet-metric/:metricName",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "fleet-metric",
+                        ":metricName"
+                      ],
+                      "variable": [
+                        {
+                          "key": "metricName"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:31:32.000Z",
+                  "updatedAt": "2026-07-28T10:31:32.000Z",
+                  "uid": "35240-0e44597a-3f00-4f6c-b53f-d3aaf520ec30"
+                },
+                {
+                  "id": "b5261910-2942-4aaf-a828-171ca882a13c",
+                  "name": "ResourceNotFoundException",
+                  "originalRequest": {
+                    "method": "PATCH",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"indexName\": \"YkUaGrO\",\n  \"queryString\": \"<string>\",\n  \"aggregationType\": {\n    \"name\": \"Statistics\",\n    \"values\": [\n      \"K\",\n      \"6roEZUVA\"\n    ]\n  },\n  \"period\": \"<integer>\",\n  \"aggregationField\": \"<string>\",\n  \"description\": \"GGpG{}p}r\",\n  \"queryVersion\": \"<string>\",\n  \"unit\": \"Megabytes/Second\",\n  \"expectedVersion\": \"<integer>\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/fleet-metric/:metricName",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "fleet-metric",
+                        ":metricName"
+                      ],
+                      "variable": [
+                        {
+                          "key": "metricName"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:31:32.000Z",
+                  "updatedAt": "2026-07-28T10:31:32.000Z",
+                  "uid": "35240-b5261910-2942-4aaf-a828-171ca882a13c"
+                },
+                {
+                  "id": "316e0905-287f-4467-8c5f-42a6014a02d6",
+                  "name": "InvalidQueryException",
+                  "originalRequest": {
+                    "method": "PATCH",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"indexName\": \"YkUaGrO\",\n  \"queryString\": \"<string>\",\n  \"aggregationType\": {\n    \"name\": \"Statistics\",\n    \"values\": [\n      \"K\",\n      \"6roEZUVA\"\n    ]\n  },\n  \"period\": \"<integer>\",\n  \"aggregationField\": \"<string>\",\n  \"description\": \"GGpG{}p}r\",\n  \"queryVersion\": \"<string>\",\n  \"unit\": \"Megabytes/Second\",\n  \"expectedVersion\": \"<integer>\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/fleet-metric/:metricName",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "fleet-metric",
+                        ":metricName"
+                      ],
+                      "variable": [
+                        {
+                          "key": "metricName"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:31:32.000Z",
+                  "updatedAt": "2026-07-28T10:31:32.000Z",
+                  "uid": "35240-316e0905-287f-4467-8c5f-42a6014a02d6"
+                },
+                {
+                  "id": "7aa13f4e-e43f-4585-8323-4cf23fae3f5d",
+                  "name": "InvalidAggregationException",
+                  "originalRequest": {
+                    "method": "PATCH",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"indexName\": \"YkUaGrO\",\n  \"queryString\": \"<string>\",\n  \"aggregationType\": {\n    \"name\": \"Statistics\",\n    \"values\": [\n      \"K\",\n      \"6roEZUVA\"\n    ]\n  },\n  \"period\": \"<integer>\",\n  \"aggregationField\": \"<string>\",\n  \"description\": \"GGpG{}p}r\",\n  \"queryVersion\": \"<string>\",\n  \"unit\": \"Megabytes/Second\",\n  \"expectedVersion\": \"<integer>\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/fleet-metric/:metricName",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "fleet-metric",
+                        ":metricName"
+                      ],
+                      "variable": [
+                        {
+                          "key": "metricName"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:31:32.000Z",
+                  "updatedAt": "2026-07-28T10:31:32.000Z",
+                  "uid": "35240-7aa13f4e-e43f-4585-8323-4cf23fae3f5d"
+                },
+                {
+                  "id": "eb237b4a-882f-4213-993a-e0b9bb5a43d2",
+                  "name": "VersionConflictException",
+                  "originalRequest": {
+                    "method": "PATCH",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"indexName\": \"YkUaGrO\",\n  \"queryString\": \"<string>\",\n  \"aggregationType\": {\n    \"name\": \"Statistics\",\n    \"values\": [\n      \"K\",\n      \"6roEZUVA\"\n    ]\n  },\n  \"period\": \"<integer>\",\n  \"aggregationField\": \"<string>\",\n  \"description\": \"GGpG{}p}r\",\n  \"queryVersion\": \"<string>\",\n  \"unit\": \"Megabytes/Second\",\n  \"expectedVersion\": \"<integer>\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/fleet-metric/:metricName",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "fleet-metric",
+                        ":metricName"
+                      ],
+                      "variable": [
+                        {
+                          "key": "metricName"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:31:32.000Z",
+                  "updatedAt": "2026-07-28T10:31:32.000Z",
+                  "uid": "35240-eb237b4a-882f-4213-993a-e0b9bb5a43d2"
+                },
+                {
+                  "id": "8b135f9c-c781-4eee-816a-18af0bacce80",
+                  "name": "IndexNotReadyException",
+                  "originalRequest": {
+                    "method": "PATCH",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"indexName\": \"YkUaGrO\",\n  \"queryString\": \"<string>\",\n  \"aggregationType\": {\n    \"name\": \"Statistics\",\n    \"values\": [\n      \"K\",\n      \"6roEZUVA\"\n    ]\n  },\n  \"period\": \"<integer>\",\n  \"aggregationField\": \"<string>\",\n  \"description\": \"GGpG{}p}r\",\n  \"queryVersion\": \"<string>\",\n  \"unit\": \"Megabytes/Second\",\n  \"expectedVersion\": \"<integer>\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/fleet-metric/:metricName",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "fleet-metric",
+                        ":metricName"
+                      ],
+                      "variable": [
+                        {
+                          "key": "metricName"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:31:32.000Z",
+                  "updatedAt": "2026-07-28T10:31:32.000Z",
+                  "uid": "35240-8b135f9c-c781-4eee-816a-18af0bacce80"
+                }
+              ],
+              "createdAt": "2026-07-28T10:31:32.000Z",
+              "updatedAt": "2026-07-28T10:31:32.000Z",
+              "uid": "35240-f61036d2-c6e0-4475-8930-e045e277595e"
+            }
+          ],
+          "id": "44382045-443a-44c1-acc4-fa0ec1c92e3b",
+          "createdAt": "2026-07-28T10:31:32.000Z",
+          "updatedAt": "2026-07-28T10:31:32.000Z",
+          "uid": "35240-44382045-443a-44c1-acc4-fa0ec1c92e3b"
+        }
+      ],
+      "id": "ca15673f-10b1-4a91-a281-cc44843ed5f5",
+      "createdAt": "2026-07-28T10:31:32.000Z",
+      "updatedAt": "2026-07-28T10:31:32.000Z",
+      "uid": "35240-ca15673f-10b1-4a91-a281-cc44843ed5f5"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "http://iot.{{region}}.amazonaws.com"
+    }
+  ]
+}

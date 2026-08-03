@@ -1,0 +1,847 @@
+{
+  "info": {
+    "_postman_id": "91255bd1-cfce-4a44-8a30-3037f522797c",
+    "name": "AWS IoT Accept Certificate Transfer Effective Policies API",
+    "description": "<fullname>IoT</fullname> <p>IoT provides secure, bi-directional communication between Internet-connected devices (such as sensors, actuators, embedded devices, or smart appliances) and the Amazon Web Services cloud. You can discover your custom IoT-Data endpoint to communicate with, configure rules for data processing and integration with other services, organize resources associated with each device (Registry), configure logging, and create and manage policies and credentials to authenticate devices.</p> <p>The service endpoints that expose this API are listed in <a href=\"https://docs.aws.amazon.com/general/latest/gr/iot-core.html\">Amazon Web Services IoT Core Endpoints and Quotas</a>. You must use the endpoint for the region that has the resources you want to access.</p> <p>The service name used by <a href=\"https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html\">Amazon Web Services Signature Version 4</a> to sign the request is: <i>execute-api</i>.</p> <p>For more information about how IoT works, see the <a href=\"https://docs.aws.amazon.com/iot/latest/developerguide/aws-iot-how-it-works.html\">Developer Guide</a>.</p> <p>For information about how to use the credentials provider for IoT, see <a href=\"https://docs.aws.amazon.com/iot/latest/developerguide/authorizing-direct-aws.html\">Authorizing Direct Calls to Amazon Web Services Services</a>.</p>\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:31:28.000Z",
+    "updatedAt": "2026-07-28T10:31:28.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-91255bd1-cfce-4a44-8a30-3037f522797c"
+  },
+  "item": [
+    {
+      "name": "effective-policies",
+      "item": [
+        {
+          "name": "Amazon IoT Core Get Effective Policies",
+          "id": "8eee166b-0ef1-461b-a555-562a987fa208",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"principal\": \"<string>\",\n  \"cognitoIdentityPoolId\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/effective-policies?thingName=tDYpizuo2",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "effective-policies"
+              ],
+              "query": [
+                {
+                  "description": "The thing name.",
+                  "key": "thingName",
+                  "value": "tDYpizuo2"
+                }
+              ]
+            },
+            "description": "<p>Gets a list of the policies that have an effect on the authorization behavior of the specified device when it connects to the IoT device gateway.</p> <p>Requires permission to access the <a href=\"https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions\">GetEffectivePolicies</a> action.</p>"
+          },
+          "response": [
+            {
+              "id": "26d95db3-a325-4d0c-8983-fa9812dc4516",
+              "name": "Success",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"principal\": \"<string>\",\n  \"cognitoIdentityPoolId\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/effective-policies?thingName=tDYpizuo2",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "effective-policies"
+                  ],
+                  "query": [
+                    {
+                      "description": "The thing name.",
+                      "key": "thingName",
+                      "value": "tDYpizuo2"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"effectivePolicies\": [\n    {\n      \"policyName\": \"fInyB_D\",\n      \"policyArn\": \"<string>\",\n      \"policyDocument\": \"M.\\n.8\\r@\\\\OE\"\n    },\n    {\n      \"policyName\": \"Y5Bw=\",\n      \"policyArn\": \"<string>\",\n      \"policyDocument\": \"Jk6/J\"\n    }\n  ]\n}",
+              "createdAt": "2026-07-28T10:31:29.000Z",
+              "updatedAt": "2026-07-28T10:31:29.000Z",
+              "uid": "35240-26d95db3-a325-4d0c-8983-fa9812dc4516"
+            },
+            {
+              "id": "e02f099b-4192-4ebf-9748-c500da61a5b4",
+              "name": "ResourceNotFoundException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"principal\": \"<string>\",\n  \"cognitoIdentityPoolId\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/effective-policies?thingName=tDYpizuo2",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "effective-policies"
+                  ],
+                  "query": [
+                    {
+                      "description": "The thing name.",
+                      "key": "thingName",
+                      "value": "tDYpizuo2"
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:31:29.000Z",
+              "updatedAt": "2026-07-28T10:31:29.000Z",
+              "uid": "35240-e02f099b-4192-4ebf-9748-c500da61a5b4"
+            },
+            {
+              "id": "1198af4e-e675-4095-acc3-531f105dce86",
+              "name": "InvalidRequestException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"principal\": \"<string>\",\n  \"cognitoIdentityPoolId\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/effective-policies?thingName=tDYpizuo2",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "effective-policies"
+                  ],
+                  "query": [
+                    {
+                      "description": "The thing name.",
+                      "key": "thingName",
+                      "value": "tDYpizuo2"
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:31:29.000Z",
+              "updatedAt": "2026-07-28T10:31:29.000Z",
+              "uid": "35240-1198af4e-e675-4095-acc3-531f105dce86"
+            },
+            {
+              "id": "d5103371-68f6-4656-9021-94fc29911284",
+              "name": "ThrottlingException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"principal\": \"<string>\",\n  \"cognitoIdentityPoolId\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/effective-policies?thingName=tDYpizuo2",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "effective-policies"
+                  ],
+                  "query": [
+                    {
+                      "description": "The thing name.",
+                      "key": "thingName",
+                      "value": "tDYpizuo2"
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:31:29.000Z",
+              "updatedAt": "2026-07-28T10:31:29.000Z",
+              "uid": "35240-d5103371-68f6-4656-9021-94fc29911284"
+            },
+            {
+              "id": "59a9a01e-5e71-4cce-8480-77e873290172",
+              "name": "UnauthorizedException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"principal\": \"<string>\",\n  \"cognitoIdentityPoolId\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/effective-policies?thingName=tDYpizuo2",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "effective-policies"
+                  ],
+                  "query": [
+                    {
+                      "description": "The thing name.",
+                      "key": "thingName",
+                      "value": "tDYpizuo2"
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:31:29.000Z",
+              "updatedAt": "2026-07-28T10:31:29.000Z",
+              "uid": "35240-59a9a01e-5e71-4cce-8480-77e873290172"
+            },
+            {
+              "id": "9eaec1ca-ad7e-4aa0-a727-f7a2a083b9da",
+              "name": "ServiceUnavailableException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"principal\": \"<string>\",\n  \"cognitoIdentityPoolId\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/effective-policies?thingName=tDYpizuo2",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "effective-policies"
+                  ],
+                  "query": [
+                    {
+                      "description": "The thing name.",
+                      "key": "thingName",
+                      "value": "tDYpizuo2"
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:31:29.000Z",
+              "updatedAt": "2026-07-28T10:31:29.000Z",
+              "uid": "35240-9eaec1ca-ad7e-4aa0-a727-f7a2a083b9da"
+            },
+            {
+              "id": "47184a68-9f6f-40b4-a8ff-77d6ad2e544d",
+              "name": "InternalFailureException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"principal\": \"<string>\",\n  \"cognitoIdentityPoolId\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/effective-policies?thingName=tDYpizuo2",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "effective-policies"
+                  ],
+                  "query": [
+                    {
+                      "description": "The thing name.",
+                      "key": "thingName",
+                      "value": "tDYpizuo2"
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:31:29.000Z",
+              "updatedAt": "2026-07-28T10:31:29.000Z",
+              "uid": "35240-47184a68-9f6f-40b4-a8ff-77d6ad2e544d"
+            },
+            {
+              "id": "ba2d5cf3-e07e-4173-949f-3e52f6aad874",
+              "name": "LimitExceededException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"principal\": \"<string>\",\n  \"cognitoIdentityPoolId\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/effective-policies?thingName=tDYpizuo2",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "effective-policies"
+                  ],
+                  "query": [
+                    {
+                      "description": "The thing name.",
+                      "key": "thingName",
+                      "value": "tDYpizuo2"
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:31:29.000Z",
+              "updatedAt": "2026-07-28T10:31:29.000Z",
+              "uid": "35240-ba2d5cf3-e07e-4173-949f-3e52f6aad874"
+            }
+          ],
+          "createdAt": "2026-07-28T10:31:29.000Z",
+          "updatedAt": "2026-07-28T10:31:29.000Z",
+          "uid": "35240-8eee166b-0ef1-461b-a555-562a987fa208"
+        }
+      ],
+      "id": "2e51235b-a5bf-44ce-90a3-3e194711dd3c",
+      "createdAt": "2026-07-28T10:31:29.000Z",
+      "updatedAt": "2026-07-28T10:31:29.000Z",
+      "uid": "35240-2e51235b-a5bf-44ce-90a3-3e194711dd3c"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "http://iot.{{region}}.amazonaws.com"
+    }
+  ]
+}

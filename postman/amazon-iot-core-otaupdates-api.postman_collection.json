@@ -1,0 +1,2884 @@
+{
+  "info": {
+    "_postman_id": "8ed2202e-5dd7-4303-8fe2-91ae99125b6f",
+    "name": "AWS IoT Accept Certificate Transfer OtaUpdates API",
+    "description": "<fullname>IoT</fullname> <p>IoT provides secure, bi-directional communication between Internet-connected devices (such as sensors, actuators, embedded devices, or smart appliances) and the Amazon Web Services cloud. You can discover your custom IoT-Data endpoint to communicate with, configure rules for data processing and integration with other services, organize resources associated with each device (Registry), configure logging, and create and manage policies and credentials to authenticate devices.</p> <p>The service endpoints that expose this API are listed in <a href=\"https://docs.aws.amazon.com/general/latest/gr/iot-core.html\">Amazon Web Services IoT Core Endpoints and Quotas</a>. You must use the endpoint for the region that has the resources you want to access.</p> <p>The service name used by <a href=\"https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html\">Amazon Web Services Signature Version 4</a> to sign the request is: <i>execute-api</i>.</p> <p>For more information about how IoT works, see the <a href=\"https://docs.aws.amazon.com/iot/latest/developerguide/aws-iot-how-it-works.html\">Developer Guide</a>.</p> <p>For information about how to use the credentials provider for IoT, see <a href=\"https://docs.aws.amazon.com/iot/latest/developerguide/authorizing-direct-aws.html\">Authorizing Direct Calls to Amazon Web Services Services</a>.</p>\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:32:41.000Z",
+    "updatedAt": "2026-07-28T10:32:41.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-8ed2202e-5dd7-4303-8fe2-91ae99125b6f"
+  },
+  "item": [
+    {
+      "name": "otaUpdates",
+      "item": [
+        {
+          "name": "{otaUpdateId}",
+          "item": [
+            {
+              "name": "Amazon IoT Core Create O T a Update",
+              "id": "583c61ef-5d9b-41c9-aff5-d231e8d2afd0",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"targets\": [\n    \"<string>\"\n  ],\n  \"files\": [\n    {\n      \"fileName\": \"<string>\",\n      \"fileType\": \"<integer>\",\n      \"fileVersion\": \"<string>\",\n      \"fileLocation\": {\n        \"stream\": {\n          \"streamId\": \"CSbGXBQyX\",\n          \"fileId\": \"<integer>\"\n        },\n        \"s3Location\": {\n          \"bucket\": \"<string>\",\n          \"key\": \"<string>\",\n          \"version\": \"<string>\"\n        }\n      },\n      \"codeSigning\": {\n        \"awsSignerJobId\": \"<string>\",\n        \"startSigningJobParameter\": {\n          \"signingProfileParameter\": {\n            \"certificateArn\": \"<string>\",\n            \"platform\": \"<string>\",\n            \"certificatePathOnDevice\": \"<string>\"\n          },\n          \"signingProfileName\": \"<string>\",\n          \"destination\": {\n            \"s3Destination\": {\n              \"bucket\": \"<string>\",\n              \"prefix\": \"<string>\"\n            }\n          }\n        },\n        \"customCodeSigning\": {\n          \"signature\": {\n            \"inlineDocument\": \"<string>\"\n          },\n          \"certificateChain\": {\n            \"certificateName\": \"<string>\",\n            \"inlineDocument\": \"<string>\"\n          },\n          \"hashAlgorithm\": \"<string>\",\n          \"signatureAlgorithm\": \"<string>\"\n        }\n      },\n      \"attributes\": {\n        \"non_a4\": \"Q\u2001wD\",\n        \"voluptate8\": \"q\"\n      }\n    }\n  ],\n  \"roleArn\": \"<string>\",\n  \"description\": \"b?I\",\n  \"protocols\": [\n    \"HTTP\"\n  ],\n  \"targetSelection\": \"CONTINUOUS\",\n  \"awsJobExecutionsRolloutConfig\": {\n    \"maximumPerMinute\": \"<integer>\",\n    \"exponentialRate\": {\n      \"baseRatePerMinute\": \"<integer>\",\n      \"incrementFactor\": \"<double>\",\n      \"rateIncreaseCriteria\": {\n        \"numberOfNotifiedThings\": \"<integer>\",\n        \"numberOfSucceededThings\": \"<integer>\"\n      }\n    }\n  },\n  \"awsJobPresignedUrlConfig\": {\n    \"expiresInSec\": \"<integer>\"\n  },\n  \"awsJobAbortConfig\": {\n    \"abortCriteriaList\": [\n      {\n        \"failureType\": \"ALL\",\n        \"action\": \"CANCEL\",\n        \"thresholdPercentage\": \"<double>\",\n        \"minNumberOfExecutedThings\": \"<integer>\"\n      }\n    ]\n  },\n  \"awsJobTimeoutConfig\": {\n    \"inProgressTimeoutInMinutes\": \"<integer>\"\n  },\n  \"additionalParameters\": {\n    \"deserunt3\": \"1V\",\n    \"Ut_d00\": \"`#>C@E]\"\n  },\n  \"tags\": [\n    {\n      \"Key\": \"-=\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"/{L=.@}=N@\",\n      \"Value\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/otaUpdates/:otaUpdateId",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "otaUpdates",
+                    ":otaUpdateId"
+                  ],
+                  "variable": [
+                    {
+                      "id": "9f3b7b3b-0079-4ab6-b448-b6fc34c2f7b5",
+                      "key": "otaUpdateId",
+                      "value": "1SGNbSFbArR",
+                      "description": "(Required) The ID of the OTA update to be created."
+                    }
+                  ]
+                },
+                "description": "<p>Creates an IoT OTA update on a target group of things or groups.</p> <p>Requires permission to access the <a href=\"https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions\">CreateOTAUpdate</a> action.</p>"
+              },
+              "response": [
+                {
+                  "id": "fe05da82-a2ab-4e94-ab3a-4be6c56e63b7",
+                  "name": "Success",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"targets\": [\n    \"<string>\"\n  ],\n  \"files\": [\n    {\n      \"fileName\": \"<string>\",\n      \"fileType\": \"<integer>\",\n      \"fileVersion\": \"<string>\",\n      \"fileLocation\": {\n        \"stream\": {\n          \"streamId\": \"CSbGXBQyX\",\n          \"fileId\": \"<integer>\"\n        },\n        \"s3Location\": {\n          \"bucket\": \"<string>\",\n          \"key\": \"<string>\",\n          \"version\": \"<string>\"\n        }\n      },\n      \"codeSigning\": {\n        \"awsSignerJobId\": \"<string>\",\n        \"startSigningJobParameter\": {\n          \"signingProfileParameter\": {\n            \"certificateArn\": \"<string>\",\n            \"platform\": \"<string>\",\n            \"certificatePathOnDevice\": \"<string>\"\n          },\n          \"signingProfileName\": \"<string>\",\n          \"destination\": {\n            \"s3Destination\": {\n              \"bucket\": \"<string>\",\n              \"prefix\": \"<string>\"\n            }\n          }\n        },\n        \"customCodeSigning\": {\n          \"signature\": {\n            \"inlineDocument\": \"<string>\"\n          },\n          \"certificateChain\": {\n            \"certificateName\": \"<string>\",\n            \"inlineDocument\": \"<string>\"\n          },\n          \"hashAlgorithm\": \"<string>\",\n          \"signatureAlgorithm\": \"<string>\"\n        }\n      },\n      \"attributes\": {\n        \"non_a4\": \"Q\u2001wD\",\n        \"voluptate8\": \"q\"\n      }\n    }\n  ],\n  \"roleArn\": \"<string>\",\n  \"description\": \"b?I\",\n  \"protocols\": [\n    \"HTTP\"\n  ],\n  \"targetSelection\": \"CONTINUOUS\",\n  \"awsJobExecutionsRolloutConfig\": {\n    \"maximumPerMinute\": \"<integer>\",\n    \"exponentialRate\": {\n      \"baseRatePerMinute\": \"<integer>\",\n      \"incrementFactor\": \"<double>\",\n      \"rateIncreaseCriteria\": {\n        \"numberOfNotifiedThings\": \"<integer>\",\n        \"numberOfSucceededThings\": \"<integer>\"\n      }\n    }\n  },\n  \"awsJobPresignedUrlConfig\": {\n    \"expiresInSec\": \"<integer>\"\n  },\n  \"awsJobAbortConfig\": {\n    \"abortCriteriaList\": [\n      {\n        \"failureType\": \"ALL\",\n        \"action\": \"CANCEL\",\n        \"thresholdPercentage\": \"<double>\",\n        \"minNumberOfExecutedThings\": \"<integer>\"\n      }\n    ]\n  },\n  \"awsJobTimeoutConfig\": {\n    \"inProgressTimeoutInMinutes\": \"<integer>\"\n  },\n  \"additionalParameters\": {\n    \"deserunt3\": \"1V\",\n    \"Ut_d00\": \"`#>C@E]\"\n  },\n  \"tags\": [\n    {\n      \"Key\": \"-=\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"/{L=.@}=N@\",\n      \"Value\": \"<string>\"\n    }\n  ]\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/otaUpdates/:otaUpdateId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "otaUpdates",
+                        ":otaUpdateId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "otaUpdateId"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"otaUpdateId\": \"iL\",\n  \"awsIotJobId\": \"<string>\",\n  \"otaUpdateArn\": \"<string>\",\n  \"awsIotJobArn\": \"<string>\",\n  \"otaUpdateStatus\": \"CREATE_PENDING\"\n}",
+                  "createdAt": "2026-07-28T10:32:41.000Z",
+                  "updatedAt": "2026-07-28T10:32:41.000Z",
+                  "uid": "35240-fe05da82-a2ab-4e94-ab3a-4be6c56e63b7"
+                },
+                {
+                  "id": "73ee0e4c-32eb-44d9-a4a2-b81cbea55442",
+                  "name": "InvalidRequestException",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"targets\": [\n    \"<string>\"\n  ],\n  \"files\": [\n    {\n      \"fileName\": \"<string>\",\n      \"fileType\": \"<integer>\",\n      \"fileVersion\": \"<string>\",\n      \"fileLocation\": {\n        \"stream\": {\n          \"streamId\": \"CSbGXBQyX\",\n          \"fileId\": \"<integer>\"\n        },\n        \"s3Location\": {\n          \"bucket\": \"<string>\",\n          \"key\": \"<string>\",\n          \"version\": \"<string>\"\n        }\n      },\n      \"codeSigning\": {\n        \"awsSignerJobId\": \"<string>\",\n        \"startSigningJobParameter\": {\n          \"signingProfileParameter\": {\n            \"certificateArn\": \"<string>\",\n            \"platform\": \"<string>\",\n            \"certificatePathOnDevice\": \"<string>\"\n          },\n          \"signingProfileName\": \"<string>\",\n          \"destination\": {\n            \"s3Destination\": {\n              \"bucket\": \"<string>\",\n              \"prefix\": \"<string>\"\n            }\n          }\n        },\n        \"customCodeSigning\": {\n          \"signature\": {\n            \"inlineDocument\": \"<string>\"\n          },\n          \"certificateChain\": {\n            \"certificateName\": \"<string>\",\n            \"inlineDocument\": \"<string>\"\n          },\n          \"hashAlgorithm\": \"<string>\",\n          \"signatureAlgorithm\": \"<string>\"\n        }\n      },\n      \"attributes\": {\n        \"non_a4\": \"Q\u2001wD\",\n        \"voluptate8\": \"q\"\n      }\n    }\n  ],\n  \"roleArn\": \"<string>\",\n  \"description\": \"b?I\",\n  \"protocols\": [\n    \"HTTP\"\n  ],\n  \"targetSelection\": \"CONTINUOUS\",\n  \"awsJobExecutionsRolloutConfig\": {\n    \"maximumPerMinute\": \"<integer>\",\n    \"exponentialRate\": {\n      \"baseRatePerMinute\": \"<integer>\",\n      \"incrementFactor\": \"<double>\",\n      \"rateIncreaseCriteria\": {\n        \"numberOfNotifiedThings\": \"<integer>\",\n        \"numberOfSucceededThings\": \"<integer>\"\n      }\n    }\n  },\n  \"awsJobPresignedUrlConfig\": {\n    \"expiresInSec\": \"<integer>\"\n  },\n  \"awsJobAbortConfig\": {\n    \"abortCriteriaList\": [\n      {\n        \"failureType\": \"ALL\",\n        \"action\": \"CANCEL\",\n        \"thresholdPercentage\": \"<double>\",\n        \"minNumberOfExecutedThings\": \"<integer>\"\n      }\n    ]\n  },\n  \"awsJobTimeoutConfig\": {\n    \"inProgressTimeoutInMinutes\": \"<integer>\"\n  },\n  \"additionalParameters\": {\n    \"deserunt3\": \"1V\",\n    \"Ut_d00\": \"`#>C@E]\"\n  },\n  \"tags\": [\n    {\n      \"Key\": \"-=\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"/{L=.@}=N@\",\n      \"Value\": \"<string>\"\n    }\n  ]\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/otaUpdates/:otaUpdateId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "otaUpdates",
+                        ":otaUpdateId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "otaUpdateId"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:32:41.000Z",
+                  "updatedAt": "2026-07-28T10:32:41.000Z",
+                  "uid": "35240-73ee0e4c-32eb-44d9-a4a2-b81cbea55442"
+                },
+                {
+                  "id": "7b7041c6-fa64-4da7-abc6-fe6342defa06",
+                  "name": "LimitExceededException",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"targets\": [\n    \"<string>\"\n  ],\n  \"files\": [\n    {\n      \"fileName\": \"<string>\",\n      \"fileType\": \"<integer>\",\n      \"fileVersion\": \"<string>\",\n      \"fileLocation\": {\n        \"stream\": {\n          \"streamId\": \"CSbGXBQyX\",\n          \"fileId\": \"<integer>\"\n        },\n        \"s3Location\": {\n          \"bucket\": \"<string>\",\n          \"key\": \"<string>\",\n          \"version\": \"<string>\"\n        }\n      },\n      \"codeSigning\": {\n        \"awsSignerJobId\": \"<string>\",\n        \"startSigningJobParameter\": {\n          \"signingProfileParameter\": {\n            \"certificateArn\": \"<string>\",\n            \"platform\": \"<string>\",\n            \"certificatePathOnDevice\": \"<string>\"\n          },\n          \"signingProfileName\": \"<string>\",\n          \"destination\": {\n            \"s3Destination\": {\n              \"bucket\": \"<string>\",\n              \"prefix\": \"<string>\"\n            }\n          }\n        },\n        \"customCodeSigning\": {\n          \"signature\": {\n            \"inlineDocument\": \"<string>\"\n          },\n          \"certificateChain\": {\n            \"certificateName\": \"<string>\",\n            \"inlineDocument\": \"<string>\"\n          },\n          \"hashAlgorithm\": \"<string>\",\n          \"signatureAlgorithm\": \"<string>\"\n        }\n      },\n      \"attributes\": {\n        \"non_a4\": \"Q\u2001wD\",\n        \"voluptate8\": \"q\"\n      }\n    }\n  ],\n  \"roleArn\": \"<string>\",\n  \"description\": \"b?I\",\n  \"protocols\": [\n    \"HTTP\"\n  ],\n  \"targetSelection\": \"CONTINUOUS\",\n  \"awsJobExecutionsRolloutConfig\": {\n    \"maximumPerMinute\": \"<integer>\",\n    \"exponentialRate\": {\n      \"baseRatePerMinute\": \"<integer>\",\n      \"incrementFactor\": \"<double>\",\n      \"rateIncreaseCriteria\": {\n        \"numberOfNotifiedThings\": \"<integer>\",\n        \"numberOfSucceededThings\": \"<integer>\"\n      }\n    }\n  },\n  \"awsJobPresignedUrlConfig\": {\n    \"expiresInSec\": \"<integer>\"\n  },\n  \"awsJobAbortConfig\": {\n    \"abortCriteriaList\": [\n      {\n        \"failureType\": \"ALL\",\n        \"action\": \"CANCEL\",\n        \"thresholdPercentage\": \"<double>\",\n        \"minNumberOfExecutedThings\": \"<integer>\"\n      }\n    ]\n  },\n  \"awsJobTimeoutConfig\": {\n    \"inProgressTimeoutInMinutes\": \"<integer>\"\n  },\n  \"additionalParameters\": {\n    \"deserunt3\": \"1V\",\n    \"Ut_d00\": \"`#>C@E]\"\n  },\n  \"tags\": [\n    {\n      \"Key\": \"-=\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"/{L=.@}=N@\",\n      \"Value\": \"<string>\"\n    }\n  ]\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/otaUpdates/:otaUpdateId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "otaUpdates",
+                        ":otaUpdateId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "otaUpdateId"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:32:41.000Z",
+                  "updatedAt": "2026-07-28T10:32:41.000Z",
+                  "uid": "35240-7b7041c6-fa64-4da7-abc6-fe6342defa06"
+                },
+                {
+                  "id": "88193142-9302-4e88-af5b-95079f8a5b55",
+                  "name": "ResourceNotFoundException",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"targets\": [\n    \"<string>\"\n  ],\n  \"files\": [\n    {\n      \"fileName\": \"<string>\",\n      \"fileType\": \"<integer>\",\n      \"fileVersion\": \"<string>\",\n      \"fileLocation\": {\n        \"stream\": {\n          \"streamId\": \"CSbGXBQyX\",\n          \"fileId\": \"<integer>\"\n        },\n        \"s3Location\": {\n          \"bucket\": \"<string>\",\n          \"key\": \"<string>\",\n          \"version\": \"<string>\"\n        }\n      },\n      \"codeSigning\": {\n        \"awsSignerJobId\": \"<string>\",\n        \"startSigningJobParameter\": {\n          \"signingProfileParameter\": {\n            \"certificateArn\": \"<string>\",\n            \"platform\": \"<string>\",\n            \"certificatePathOnDevice\": \"<string>\"\n          },\n          \"signingProfileName\": \"<string>\",\n          \"destination\": {\n            \"s3Destination\": {\n              \"bucket\": \"<string>\",\n              \"prefix\": \"<string>\"\n            }\n          }\n        },\n        \"customCodeSigning\": {\n          \"signature\": {\n            \"inlineDocument\": \"<string>\"\n          },\n          \"certificateChain\": {\n            \"certificateName\": \"<string>\",\n            \"inlineDocument\": \"<string>\"\n          },\n          \"hashAlgorithm\": \"<string>\",\n          \"signatureAlgorithm\": \"<string>\"\n        }\n      },\n      \"attributes\": {\n        \"non_a4\": \"Q\u2001wD\",\n        \"voluptate8\": \"q\"\n      }\n    }\n  ],\n  \"roleArn\": \"<string>\",\n  \"description\": \"b?I\",\n  \"protocols\": [\n    \"HTTP\"\n  ],\n  \"targetSelection\": \"CONTINUOUS\",\n  \"awsJobExecutionsRolloutConfig\": {\n    \"maximumPerMinute\": \"<integer>\",\n    \"exponentialRate\": {\n      \"baseRatePerMinute\": \"<integer>\",\n      \"incrementFactor\": \"<double>\",\n      \"rateIncreaseCriteria\": {\n        \"numberOfNotifiedThings\": \"<integer>\",\n        \"numberOfSucceededThings\": \"<integer>\"\n      }\n    }\n  },\n  \"awsJobPresignedUrlConfig\": {\n    \"expiresInSec\": \"<integer>\"\n  },\n  \"awsJobAbortConfig\": {\n    \"abortCriteriaList\": [\n      {\n        \"failureType\": \"ALL\",\n        \"action\": \"CANCEL\",\n        \"thresholdPercentage\": \"<double>\",\n        \"minNumberOfExecutedThings\": \"<integer>\"\n      }\n    ]\n  },\n  \"awsJobTimeoutConfig\": {\n    \"inProgressTimeoutInMinutes\": \"<integer>\"\n  },\n  \"additionalParameters\": {\n    \"deserunt3\": \"1V\",\n    \"Ut_d00\": \"`#>C@E]\"\n  },\n  \"tags\": [\n    {\n      \"Key\": \"-=\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"/{L=.@}=N@\",\n      \"Value\": \"<string>\"\n    }\n  ]\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/otaUpdates/:otaUpdateId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "otaUpdates",
+                        ":otaUpdateId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "otaUpdateId"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:32:41.000Z",
+                  "updatedAt": "2026-07-28T10:32:41.000Z",
+                  "uid": "35240-88193142-9302-4e88-af5b-95079f8a5b55"
+                },
+                {
+                  "id": "63dc70be-d874-4475-b408-e43e6b93d39c",
+                  "name": "ResourceAlreadyExistsException",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"targets\": [\n    \"<string>\"\n  ],\n  \"files\": [\n    {\n      \"fileName\": \"<string>\",\n      \"fileType\": \"<integer>\",\n      \"fileVersion\": \"<string>\",\n      \"fileLocation\": {\n        \"stream\": {\n          \"streamId\": \"CSbGXBQyX\",\n          \"fileId\": \"<integer>\"\n        },\n        \"s3Location\": {\n          \"bucket\": \"<string>\",\n          \"key\": \"<string>\",\n          \"version\": \"<string>\"\n        }\n      },\n      \"codeSigning\": {\n        \"awsSignerJobId\": \"<string>\",\n        \"startSigningJobParameter\": {\n          \"signingProfileParameter\": {\n            \"certificateArn\": \"<string>\",\n            \"platform\": \"<string>\",\n            \"certificatePathOnDevice\": \"<string>\"\n          },\n          \"signingProfileName\": \"<string>\",\n          \"destination\": {\n            \"s3Destination\": {\n              \"bucket\": \"<string>\",\n              \"prefix\": \"<string>\"\n            }\n          }\n        },\n        \"customCodeSigning\": {\n          \"signature\": {\n            \"inlineDocument\": \"<string>\"\n          },\n          \"certificateChain\": {\n            \"certificateName\": \"<string>\",\n            \"inlineDocument\": \"<string>\"\n          },\n          \"hashAlgorithm\": \"<string>\",\n          \"signatureAlgorithm\": \"<string>\"\n        }\n      },\n      \"attributes\": {\n        \"non_a4\": \"Q\u2001wD\",\n        \"voluptate8\": \"q\"\n      }\n    }\n  ],\n  \"roleArn\": \"<string>\",\n  \"description\": \"b?I\",\n  \"protocols\": [\n    \"HTTP\"\n  ],\n  \"targetSelection\": \"CONTINUOUS\",\n  \"awsJobExecutionsRolloutConfig\": {\n    \"maximumPerMinute\": \"<integer>\",\n    \"exponentialRate\": {\n      \"baseRatePerMinute\": \"<integer>\",\n      \"incrementFactor\": \"<double>\",\n      \"rateIncreaseCriteria\": {\n        \"numberOfNotifiedThings\": \"<integer>\",\n        \"numberOfSucceededThings\": \"<integer>\"\n      }\n    }\n  },\n  \"awsJobPresignedUrlConfig\": {\n    \"expiresInSec\": \"<integer>\"\n  },\n  \"awsJobAbortConfig\": {\n    \"abortCriteriaList\": [\n      {\n        \"failureType\": \"ALL\",\n        \"action\": \"CANCEL\",\n        \"thresholdPercentage\": \"<double>\",\n        \"minNumberOfExecutedThings\": \"<integer>\"\n      }\n    ]\n  },\n  \"awsJobTimeoutConfig\": {\n    \"inProgressTimeoutInMinutes\": \"<integer>\"\n  },\n  \"additionalParameters\": {\n    \"deserunt3\": \"1V\",\n    \"Ut_d00\": \"`#>C@E]\"\n  },\n  \"tags\": [\n    {\n      \"Key\": \"-=\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"/{L=.@}=N@\",\n      \"Value\": \"<string>\"\n    }\n  ]\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/otaUpdates/:otaUpdateId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "otaUpdates",
+                        ":otaUpdateId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "otaUpdateId"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:32:41.000Z",
+                  "updatedAt": "2026-07-28T10:32:41.000Z",
+                  "uid": "35240-63dc70be-d874-4475-b408-e43e6b93d39c"
+                },
+                {
+                  "id": "fa0b7bc2-eb77-4e46-8744-0a1258399fe6",
+                  "name": "ThrottlingException",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"targets\": [\n    \"<string>\"\n  ],\n  \"files\": [\n    {\n      \"fileName\": \"<string>\",\n      \"fileType\": \"<integer>\",\n      \"fileVersion\": \"<string>\",\n      \"fileLocation\": {\n        \"stream\": {\n          \"streamId\": \"CSbGXBQyX\",\n          \"fileId\": \"<integer>\"\n        },\n        \"s3Location\": {\n          \"bucket\": \"<string>\",\n          \"key\": \"<string>\",\n          \"version\": \"<string>\"\n        }\n      },\n      \"codeSigning\": {\n        \"awsSignerJobId\": \"<string>\",\n        \"startSigningJobParameter\": {\n          \"signingProfileParameter\": {\n            \"certificateArn\": \"<string>\",\n            \"platform\": \"<string>\",\n            \"certificatePathOnDevice\": \"<string>\"\n          },\n          \"signingProfileName\": \"<string>\",\n          \"destination\": {\n            \"s3Destination\": {\n              \"bucket\": \"<string>\",\n              \"prefix\": \"<string>\"\n            }\n          }\n        },\n        \"customCodeSigning\": {\n          \"signature\": {\n            \"inlineDocument\": \"<string>\"\n          },\n          \"certificateChain\": {\n            \"certificateName\": \"<string>\",\n            \"inlineDocument\": \"<string>\"\n          },\n          \"hashAlgorithm\": \"<string>\",\n          \"signatureAlgorithm\": \"<string>\"\n        }\n      },\n      \"attributes\": {\n        \"non_a4\": \"Q\u2001wD\",\n        \"voluptate8\": \"q\"\n      }\n    }\n  ],\n  \"roleArn\": \"<string>\",\n  \"description\": \"b?I\",\n  \"protocols\": [\n    \"HTTP\"\n  ],\n  \"targetSelection\": \"CONTINUOUS\",\n  \"awsJobExecutionsRolloutConfig\": {\n    \"maximumPerMinute\": \"<integer>\",\n    \"exponentialRate\": {\n      \"baseRatePerMinute\": \"<integer>\",\n      \"incrementFactor\": \"<double>\",\n      \"rateIncreaseCriteria\": {\n        \"numberOfNotifiedThings\": \"<integer>\",\n        \"numberOfSucceededThings\": \"<integer>\"\n      }\n    }\n  },\n  \"awsJobPresignedUrlConfig\": {\n    \"expiresInSec\": \"<integer>\"\n  },\n  \"awsJobAbortConfig\": {\n    \"abortCriteriaList\": [\n      {\n        \"failureType\": \"ALL\",\n        \"action\": \"CANCEL\",\n        \"thresholdPercentage\": \"<double>\",\n        \"minNumberOfExecutedThings\": \"<integer>\"\n      }\n    ]\n  },\n  \"awsJobTimeoutConfig\": {\n    \"inProgressTimeoutInMinutes\": \"<integer>\"\n  },\n  \"additionalParameters\": {\n    \"deserunt3\": \"1V\",\n    \"Ut_d00\": \"`#>C@E]\"\n  },\n  \"tags\": [\n    {\n      \"Key\": \"-=\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"/{L=.@}=N@\",\n      \"Value\": \"<string>\"\n    }\n  ]\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/otaUpdates/:otaUpdateId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "otaUpdates",
+                        ":otaUpdateId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "otaUpdateId"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:32:41.000Z",
+                  "updatedAt": "2026-07-28T10:32:41.000Z",
+                  "uid": "35240-fa0b7bc2-eb77-4e46-8744-0a1258399fe6"
+                },
+                {
+                  "id": "c4851219-7da3-450b-ba62-1d9ec0519735",
+                  "name": "UnauthorizedException",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"targets\": [\n    \"<string>\"\n  ],\n  \"files\": [\n    {\n      \"fileName\": \"<string>\",\n      \"fileType\": \"<integer>\",\n      \"fileVersion\": \"<string>\",\n      \"fileLocation\": {\n        \"stream\": {\n          \"streamId\": \"CSbGXBQyX\",\n          \"fileId\": \"<integer>\"\n        },\n        \"s3Location\": {\n          \"bucket\": \"<string>\",\n          \"key\": \"<string>\",\n          \"version\": \"<string>\"\n        }\n      },\n      \"codeSigning\": {\n        \"awsSignerJobId\": \"<string>\",\n        \"startSigningJobParameter\": {\n          \"signingProfileParameter\": {\n            \"certificateArn\": \"<string>\",\n            \"platform\": \"<string>\",\n            \"certificatePathOnDevice\": \"<string>\"\n          },\n          \"signingProfileName\": \"<string>\",\n          \"destination\": {\n            \"s3Destination\": {\n              \"bucket\": \"<string>\",\n              \"prefix\": \"<string>\"\n            }\n          }\n        },\n        \"customCodeSigning\": {\n          \"signature\": {\n            \"inlineDocument\": \"<string>\"\n          },\n          \"certificateChain\": {\n            \"certificateName\": \"<string>\",\n            \"inlineDocument\": \"<string>\"\n          },\n          \"hashAlgorithm\": \"<string>\",\n          \"signatureAlgorithm\": \"<string>\"\n        }\n      },\n      \"attributes\": {\n        \"non_a4\": \"Q\u2001wD\",\n        \"voluptate8\": \"q\"\n      }\n    }\n  ],\n  \"roleArn\": \"<string>\",\n  \"description\": \"b?I\",\n  \"protocols\": [\n    \"HTTP\"\n  ],\n  \"targetSelection\": \"CONTINUOUS\",\n  \"awsJobExecutionsRolloutConfig\": {\n    \"maximumPerMinute\": \"<integer>\",\n    \"exponentialRate\": {\n      \"baseRatePerMinute\": \"<integer>\",\n      \"incrementFactor\": \"<double>\",\n      \"rateIncreaseCriteria\": {\n        \"numberOfNotifiedThings\": \"<integer>\",\n        \"numberOfSucceededThings\": \"<integer>\"\n      }\n    }\n  },\n  \"awsJobPresignedUrlConfig\": {\n    \"expiresInSec\": \"<integer>\"\n  },\n  \"awsJobAbortConfig\": {\n    \"abortCriteriaList\": [\n      {\n        \"failureType\": \"ALL\",\n        \"action\": \"CANCEL\",\n        \"thresholdPercentage\": \"<double>\",\n        \"minNumberOfExecutedThings\": \"<integer>\"\n      }\n    ]\n  },\n  \"awsJobTimeoutConfig\": {\n    \"inProgressTimeoutInMinutes\": \"<integer>\"\n  },\n  \"additionalParameters\": {\n    \"deserunt3\": \"1V\",\n    \"Ut_d00\": \"`#>C@E]\"\n  },\n  \"tags\": [\n    {\n      \"Key\": \"-=\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"/{L=.@}=N@\",\n      \"Value\": \"<string>\"\n    }\n  ]\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/otaUpdates/:otaUpdateId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "otaUpdates",
+                        ":otaUpdateId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "otaUpdateId"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:32:41.000Z",
+                  "updatedAt": "2026-07-28T10:32:41.000Z",
+                  "uid": "35240-c4851219-7da3-450b-ba62-1d9ec0519735"
+                },
+                {
+                  "id": "25f54e29-60ff-4fdc-885c-bcb23f6447b9",
+                  "name": "InternalFailureException",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"targets\": [\n    \"<string>\"\n  ],\n  \"files\": [\n    {\n      \"fileName\": \"<string>\",\n      \"fileType\": \"<integer>\",\n      \"fileVersion\": \"<string>\",\n      \"fileLocation\": {\n        \"stream\": {\n          \"streamId\": \"CSbGXBQyX\",\n          \"fileId\": \"<integer>\"\n        },\n        \"s3Location\": {\n          \"bucket\": \"<string>\",\n          \"key\": \"<string>\",\n          \"version\": \"<string>\"\n        }\n      },\n      \"codeSigning\": {\n        \"awsSignerJobId\": \"<string>\",\n        \"startSigningJobParameter\": {\n          \"signingProfileParameter\": {\n            \"certificateArn\": \"<string>\",\n            \"platform\": \"<string>\",\n            \"certificatePathOnDevice\": \"<string>\"\n          },\n          \"signingProfileName\": \"<string>\",\n          \"destination\": {\n            \"s3Destination\": {\n              \"bucket\": \"<string>\",\n              \"prefix\": \"<string>\"\n            }\n          }\n        },\n        \"customCodeSigning\": {\n          \"signature\": {\n            \"inlineDocument\": \"<string>\"\n          },\n          \"certificateChain\": {\n            \"certificateName\": \"<string>\",\n            \"inlineDocument\": \"<string>\"\n          },\n          \"hashAlgorithm\": \"<string>\",\n          \"signatureAlgorithm\": \"<string>\"\n        }\n      },\n      \"attributes\": {\n        \"non_a4\": \"Q\u2001wD\",\n        \"voluptate8\": \"q\"\n      }\n    }\n  ],\n  \"roleArn\": \"<string>\",\n  \"description\": \"b?I\",\n  \"protocols\": [\n    \"HTTP\"\n  ],\n  \"targetSelection\": \"CONTINUOUS\",\n  \"awsJobExecutionsRolloutConfig\": {\n    \"maximumPerMinute\": \"<integer>\",\n    \"exponentialRate\": {\n      \"baseRatePerMinute\": \"<integer>\",\n      \"incrementFactor\": \"<double>\",\n      \"rateIncreaseCriteria\": {\n        \"numberOfNotifiedThings\": \"<integer>\",\n        \"numberOfSucceededThings\": \"<integer>\"\n      }\n    }\n  },\n  \"awsJobPresignedUrlConfig\": {\n    \"expiresInSec\": \"<integer>\"\n  },\n  \"awsJobAbortConfig\": {\n    \"abortCriteriaList\": [\n      {\n        \"failureType\": \"ALL\",\n        \"action\": \"CANCEL\",\n        \"thresholdPercentage\": \"<double>\",\n        \"minNumberOfExecutedThings\": \"<integer>\"\n      }\n    ]\n  },\n  \"awsJobTimeoutConfig\": {\n    \"inProgressTimeoutInMinutes\": \"<integer>\"\n  },\n  \"additionalParameters\": {\n    \"deserunt3\": \"1V\",\n    \"Ut_d00\": \"`#>C@E]\"\n  },\n  \"tags\": [\n    {\n      \"Key\": \"-=\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"/{L=.@}=N@\",\n      \"Value\": \"<string>\"\n    }\n  ]\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/otaUpdates/:otaUpdateId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "otaUpdates",
+                        ":otaUpdateId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "otaUpdateId"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:32:41.000Z",
+                  "updatedAt": "2026-07-28T10:32:41.000Z",
+                  "uid": "35240-25f54e29-60ff-4fdc-885c-bcb23f6447b9"
+                },
+                {
+                  "id": "3a7ec4db-527c-45c7-85b7-d082d6b1e066",
+                  "name": "ServiceUnavailableException",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"targets\": [\n    \"<string>\"\n  ],\n  \"files\": [\n    {\n      \"fileName\": \"<string>\",\n      \"fileType\": \"<integer>\",\n      \"fileVersion\": \"<string>\",\n      \"fileLocation\": {\n        \"stream\": {\n          \"streamId\": \"CSbGXBQyX\",\n          \"fileId\": \"<integer>\"\n        },\n        \"s3Location\": {\n          \"bucket\": \"<string>\",\n          \"key\": \"<string>\",\n          \"version\": \"<string>\"\n        }\n      },\n      \"codeSigning\": {\n        \"awsSignerJobId\": \"<string>\",\n        \"startSigningJobParameter\": {\n          \"signingProfileParameter\": {\n            \"certificateArn\": \"<string>\",\n            \"platform\": \"<string>\",\n            \"certificatePathOnDevice\": \"<string>\"\n          },\n          \"signingProfileName\": \"<string>\",\n          \"destination\": {\n            \"s3Destination\": {\n              \"bucket\": \"<string>\",\n              \"prefix\": \"<string>\"\n            }\n          }\n        },\n        \"customCodeSigning\": {\n          \"signature\": {\n            \"inlineDocument\": \"<string>\"\n          },\n          \"certificateChain\": {\n            \"certificateName\": \"<string>\",\n            \"inlineDocument\": \"<string>\"\n          },\n          \"hashAlgorithm\": \"<string>\",\n          \"signatureAlgorithm\": \"<string>\"\n        }\n      },\n      \"attributes\": {\n        \"non_a4\": \"Q\u2001wD\",\n        \"voluptate8\": \"q\"\n      }\n    }\n  ],\n  \"roleArn\": \"<string>\",\n  \"description\": \"b?I\",\n  \"protocols\": [\n    \"HTTP\"\n  ],\n  \"targetSelection\": \"CONTINUOUS\",\n  \"awsJobExecutionsRolloutConfig\": {\n    \"maximumPerMinute\": \"<integer>\",\n    \"exponentialRate\": {\n      \"baseRatePerMinute\": \"<integer>\",\n      \"incrementFactor\": \"<double>\",\n      \"rateIncreaseCriteria\": {\n        \"numberOfNotifiedThings\": \"<integer>\",\n        \"numberOfSucceededThings\": \"<integer>\"\n      }\n    }\n  },\n  \"awsJobPresignedUrlConfig\": {\n    \"expiresInSec\": \"<integer>\"\n  },\n  \"awsJobAbortConfig\": {\n    \"abortCriteriaList\": [\n      {\n        \"failureType\": \"ALL\",\n        \"action\": \"CANCEL\",\n        \"thresholdPercentage\": \"<double>\",\n        \"minNumberOfExecutedThings\": \"<integer>\"\n      }\n    ]\n  },\n  \"awsJobTimeoutConfig\": {\n    \"inProgressTimeoutInMinutes\": \"<integer>\"\n  },\n  \"additionalParameters\": {\n    \"deserunt3\": \"1V\",\n    \"Ut_d00\": \"`#>C@E]\"\n  },\n  \"tags\": [\n    {\n      \"Key\": \"-=\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"/{L=.@}=N@\",\n      \"Value\": \"<string>\"\n    }\n  ]\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/otaUpdates/:otaUpdateId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "otaUpdates",
+                        ":otaUpdateId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "otaUpdateId"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:32:41.000Z",
+                  "updatedAt": "2026-07-28T10:32:41.000Z",
+                  "uid": "35240-3a7ec4db-527c-45c7-85b7-d082d6b1e066"
+                }
+              ],
+              "createdAt": "2026-07-28T10:32:41.000Z",
+              "updatedAt": "2026-07-28T10:32:41.000Z",
+              "uid": "35240-583c61ef-5d9b-41c9-aff5-d231e8d2afd0"
+            },
+            {
+              "name": "Amazon IoT Core Delete O T a Update",
+              "id": "1c81fff9-3772-4d91-96ef-b05ed5634519",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "DELETE",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/otaUpdates/:otaUpdateId?deleteStream=<boolean>&forceDeleteAWSJob=<boolean>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "otaUpdates",
+                    ":otaUpdateId"
+                  ],
+                  "query": [
+                    {
+                      "description": "When true, the stream created by the OTAUpdate process is deleted when the OTA update is deleted. Ignored if the stream specified in the OTAUpdate is supplied by the user.",
+                      "key": "deleteStream",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "description": "When true, deletes the IoT job created by the OTAUpdate process even if it is \"IN_PROGRESS\". Otherwise, if the job is not in a terminal state (\"COMPLETED\" or \"CANCELED\") an exception will occur. The default is false.",
+                      "key": "forceDeleteAWSJob",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "id": "7c862812-9d7a-40a8-9a0d-485d252a4226",
+                      "key": "otaUpdateId",
+                      "value": "1SGNbSFbArR",
+                      "description": "(Required) The ID of the OTA update to delete."
+                    }
+                  ]
+                },
+                "description": "<p>Delete an OTA update.</p> <p>Requires permission to access the <a href=\"https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions\">DeleteOTAUpdate</a> action.</p>"
+              },
+              "response": [
+                {
+                  "id": "08c01440-0cde-43f0-b01f-e7cec472ab26",
+                  "name": "Success",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/otaUpdates/:otaUpdateId?deleteStream=<boolean>&forceDeleteAWSJob=<boolean>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "otaUpdates",
+                        ":otaUpdateId"
+                      ],
+                      "query": [
+                        {
+                          "description": "When true, the stream created by the OTAUpdate process is deleted when the OTA update is deleted. Ignored if the stream specified in the OTAUpdate is supplied by the user.",
+                          "key": "deleteStream",
+                          "value": "<boolean>"
+                        },
+                        {
+                          "description": "When true, deletes the IoT job created by the OTAUpdate process even if it is \"IN_PROGRESS\". Otherwise, if the job is not in a terminal state (\"COMPLETED\" or \"CANCELED\") an exception will occur. The default is false.",
+                          "key": "forceDeleteAWSJob",
+                          "value": "<boolean>"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "otaUpdateId"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:32:41.000Z",
+                  "updatedAt": "2026-07-28T10:32:41.000Z",
+                  "uid": "35240-08c01440-0cde-43f0-b01f-e7cec472ab26"
+                },
+                {
+                  "id": "428e2a51-405e-4f2a-9a17-00f5ccf52357",
+                  "name": "InvalidRequestException",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/otaUpdates/:otaUpdateId?deleteStream=<boolean>&forceDeleteAWSJob=<boolean>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "otaUpdates",
+                        ":otaUpdateId"
+                      ],
+                      "query": [
+                        {
+                          "description": "When true, the stream created by the OTAUpdate process is deleted when the OTA update is deleted. Ignored if the stream specified in the OTAUpdate is supplied by the user.",
+                          "key": "deleteStream",
+                          "value": "<boolean>"
+                        },
+                        {
+                          "description": "When true, deletes the IoT job created by the OTAUpdate process even if it is \"IN_PROGRESS\". Otherwise, if the job is not in a terminal state (\"COMPLETED\" or \"CANCELED\") an exception will occur. The default is false.",
+                          "key": "forceDeleteAWSJob",
+                          "value": "<boolean>"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "otaUpdateId"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:32:41.000Z",
+                  "updatedAt": "2026-07-28T10:32:41.000Z",
+                  "uid": "35240-428e2a51-405e-4f2a-9a17-00f5ccf52357"
+                },
+                {
+                  "id": "50b0ac36-3e97-48bc-b1ed-0448793e0cb1",
+                  "name": "ResourceNotFoundException",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/otaUpdates/:otaUpdateId?deleteStream=<boolean>&forceDeleteAWSJob=<boolean>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "otaUpdates",
+                        ":otaUpdateId"
+                      ],
+                      "query": [
+                        {
+                          "description": "When true, the stream created by the OTAUpdate process is deleted when the OTA update is deleted. Ignored if the stream specified in the OTAUpdate is supplied by the user.",
+                          "key": "deleteStream",
+                          "value": "<boolean>"
+                        },
+                        {
+                          "description": "When true, deletes the IoT job created by the OTAUpdate process even if it is \"IN_PROGRESS\". Otherwise, if the job is not in a terminal state (\"COMPLETED\" or \"CANCELED\") an exception will occur. The default is false.",
+                          "key": "forceDeleteAWSJob",
+                          "value": "<boolean>"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "otaUpdateId"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:32:41.000Z",
+                  "updatedAt": "2026-07-28T10:32:41.000Z",
+                  "uid": "35240-50b0ac36-3e97-48bc-b1ed-0448793e0cb1"
+                },
+                {
+                  "id": "46ed34e8-090d-4360-9536-cb22146ce7b9",
+                  "name": "ThrottlingException",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/otaUpdates/:otaUpdateId?deleteStream=<boolean>&forceDeleteAWSJob=<boolean>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "otaUpdates",
+                        ":otaUpdateId"
+                      ],
+                      "query": [
+                        {
+                          "description": "When true, the stream created by the OTAUpdate process is deleted when the OTA update is deleted. Ignored if the stream specified in the OTAUpdate is supplied by the user.",
+                          "key": "deleteStream",
+                          "value": "<boolean>"
+                        },
+                        {
+                          "description": "When true, deletes the IoT job created by the OTAUpdate process even if it is \"IN_PROGRESS\". Otherwise, if the job is not in a terminal state (\"COMPLETED\" or \"CANCELED\") an exception will occur. The default is false.",
+                          "key": "forceDeleteAWSJob",
+                          "value": "<boolean>"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "otaUpdateId"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:32:41.000Z",
+                  "updatedAt": "2026-07-28T10:32:41.000Z",
+                  "uid": "35240-46ed34e8-090d-4360-9536-cb22146ce7b9"
+                },
+                {
+                  "id": "5817529e-b0d1-4c11-b649-9238af0b2477",
+                  "name": "UnauthorizedException",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/otaUpdates/:otaUpdateId?deleteStream=<boolean>&forceDeleteAWSJob=<boolean>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "otaUpdates",
+                        ":otaUpdateId"
+                      ],
+                      "query": [
+                        {
+                          "description": "When true, the stream created by the OTAUpdate process is deleted when the OTA update is deleted. Ignored if the stream specified in the OTAUpdate is supplied by the user.",
+                          "key": "deleteStream",
+                          "value": "<boolean>"
+                        },
+                        {
+                          "description": "When true, deletes the IoT job created by the OTAUpdate process even if it is \"IN_PROGRESS\". Otherwise, if the job is not in a terminal state (\"COMPLETED\" or \"CANCELED\") an exception will occur. The default is false.",
+                          "key": "forceDeleteAWSJob",
+                          "value": "<boolean>"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "otaUpdateId"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:32:41.000Z",
+                  "updatedAt": "2026-07-28T10:32:41.000Z",
+                  "uid": "35240-5817529e-b0d1-4c11-b649-9238af0b2477"
+                },
+                {
+                  "id": "1a143737-5df5-4070-b28d-9e58a8927e68",
+                  "name": "InternalFailureException",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/otaUpdates/:otaUpdateId?deleteStream=<boolean>&forceDeleteAWSJob=<boolean>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "otaUpdates",
+                        ":otaUpdateId"
+                      ],
+                      "query": [
+                        {
+                          "description": "When true, the stream created by the OTAUpdate process is deleted when the OTA update is deleted. Ignored if the stream specified in the OTAUpdate is supplied by the user.",
+                          "key": "deleteStream",
+                          "value": "<boolean>"
+                        },
+                        {
+                          "description": "When true, deletes the IoT job created by the OTAUpdate process even if it is \"IN_PROGRESS\". Otherwise, if the job is not in a terminal state (\"COMPLETED\" or \"CANCELED\") an exception will occur. The default is false.",
+                          "key": "forceDeleteAWSJob",
+                          "value": "<boolean>"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "otaUpdateId"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:32:41.000Z",
+                  "updatedAt": "2026-07-28T10:32:41.000Z",
+                  "uid": "35240-1a143737-5df5-4070-b28d-9e58a8927e68"
+                },
+                {
+                  "id": "b4e468e0-eb2d-4699-a27e-ecc7b5204aef",
+                  "name": "ServiceUnavailableException",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/otaUpdates/:otaUpdateId?deleteStream=<boolean>&forceDeleteAWSJob=<boolean>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "otaUpdates",
+                        ":otaUpdateId"
+                      ],
+                      "query": [
+                        {
+                          "description": "When true, the stream created by the OTAUpdate process is deleted when the OTA update is deleted. Ignored if the stream specified in the OTAUpdate is supplied by the user.",
+                          "key": "deleteStream",
+                          "value": "<boolean>"
+                        },
+                        {
+                          "description": "When true, deletes the IoT job created by the OTAUpdate process even if it is \"IN_PROGRESS\". Otherwise, if the job is not in a terminal state (\"COMPLETED\" or \"CANCELED\") an exception will occur. The default is false.",
+                          "key": "forceDeleteAWSJob",
+                          "value": "<boolean>"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "otaUpdateId"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:32:41.000Z",
+                  "updatedAt": "2026-07-28T10:32:41.000Z",
+                  "uid": "35240-b4e468e0-eb2d-4699-a27e-ecc7b5204aef"
+                },
+                {
+                  "id": "68119377-2a93-4568-b65d-3caacb914f0e",
+                  "name": "VersionConflictException",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/otaUpdates/:otaUpdateId?deleteStream=<boolean>&forceDeleteAWSJob=<boolean>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "otaUpdates",
+                        ":otaUpdateId"
+                      ],
+                      "query": [
+                        {
+                          "description": "When true, the stream created by the OTAUpdate process is deleted when the OTA update is deleted. Ignored if the stream specified in the OTAUpdate is supplied by the user.",
+                          "key": "deleteStream",
+                          "value": "<boolean>"
+                        },
+                        {
+                          "description": "When true, deletes the IoT job created by the OTAUpdate process even if it is \"IN_PROGRESS\". Otherwise, if the job is not in a terminal state (\"COMPLETED\" or \"CANCELED\") an exception will occur. The default is false.",
+                          "key": "forceDeleteAWSJob",
+                          "value": "<boolean>"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "otaUpdateId"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:32:41.000Z",
+                  "updatedAt": "2026-07-28T10:32:41.000Z",
+                  "uid": "35240-68119377-2a93-4568-b65d-3caacb914f0e"
+                }
+              ],
+              "createdAt": "2026-07-28T10:32:41.000Z",
+              "updatedAt": "2026-07-28T10:32:41.000Z",
+              "uid": "35240-1c81fff9-3772-4d91-96ef-b05ed5634519"
+            },
+            {
+              "name": "Amazon IoT Core Get O T a Update",
+              "id": "d7a2bc36-8ad9-417d-b073-e6e8d0cc4c7d",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/otaUpdates/:otaUpdateId",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "otaUpdates",
+                    ":otaUpdateId"
+                  ],
+                  "variable": [
+                    {
+                      "id": "79ac61ac-52dd-42fb-bd90-7cbaf48d1ee8",
+                      "key": "otaUpdateId",
+                      "value": "1SGNbSFbArR",
+                      "description": "(Required) The OTA update ID."
+                    }
+                  ]
+                },
+                "description": "<p>Gets an OTA update.</p> <p>Requires permission to access the <a href=\"https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions\">GetOTAUpdate</a> action.</p>"
+              },
+              "response": [
+                {
+                  "id": "3c9d8f76-894a-4d85-8c97-492bf105677c",
+                  "name": "Success",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/otaUpdates/:otaUpdateId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "otaUpdates",
+                        ":otaUpdateId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "otaUpdateId"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"otaUpdateInfo\": {\n    \"otaUpdateId\": \"0QPrW0tg6Z7\",\n    \"otaUpdateArn\": \"<string>\",\n    \"creationDate\": \"<dateTime>\",\n    \"lastModifiedDate\": \"<dateTime>\",\n    \"description\": \"v+Kxqf4K\",\n    \"targets\": [\n      \"<string>\"\n    ],\n    \"protocols\": [\n      \"HTTP\"\n    ],\n    \"awsJobExecutionsRolloutConfig\": {\n      \"maximumPerMinute\": \"<integer>\",\n      \"exponentialRate\": {\n        \"baseRatePerMinute\": \"<integer>\",\n        \"incrementFactor\": \"<double>\",\n        \"rateIncreaseCriteria\": {\n          \"numberOfNotifiedThings\": \"<integer>\",\n          \"numberOfSucceededThings\": \"<integer>\"\n        }\n      }\n    },\n    \"awsJobPresignedUrlConfig\": {\n      \"expiresInSec\": \"<integer>\"\n    },\n    \"targetSelection\": \"CONTINUOUS\",\n    \"otaUpdateFiles\": [\n      {\n        \"fileName\": \"<string>\",\n        \"fileType\": \"<integer>\",\n        \"fileVersion\": \"<string>\",\n        \"fileLocation\": {\n          \"stream\": {\n            \"streamId\": \"7y9aj5\",\n            \"fileId\": \"<integer>\"\n          },\n          \"s3Location\": {\n            \"bucket\": \"<string>\",\n            \"key\": \"<string>\",\n            \"version\": \"<string>\"\n          }\n        },\n        \"codeSigning\": {\n          \"awsSignerJobId\": \"<string>\",\n          \"startSigningJobParameter\": {\n            \"signingProfileParameter\": {\n              \"certificateArn\": \"<string>\",\n              \"platform\": \"<string>\",\n              \"certificatePathOnDevice\": \"<string>\"\n            },\n            \"signingProfileName\": \"<string>\",\n            \"destination\": {\n              \"s3Destination\": {\n                \"bucket\": \"<string>\",\n                \"prefix\": \"<string>\"\n              }\n            }\n          },\n          \"customCodeSigning\": {\n            \"signature\": {\n              \"inlineDocument\": \"<string>\"\n            },\n            \"certificateChain\": {\n              \"certificateName\": \"<string>\",\n              \"inlineDocument\": \"<string>\"\n            },\n            \"hashAlgorithm\": \"<string>\",\n            \"signatureAlgorithm\": \"<string>\"\n          }\n        },\n        \"attributes\": {\n          \"nisi57c\": \"GR^@L_:\",\n          \"officia_b0\": \"y6\"\n        }\n      }\n    ],\n    \"otaUpdateStatus\": \"CREATE_FAILED\",\n    \"awsIotJobId\": \"<string>\",\n    \"awsIotJobArn\": \"<string>\",\n    \"errorInfo\": {\n      \"code\": \"<string>\",\n      \"message\": \"<string>\"\n    },\n    \"additionalParameters\": {\n      \"sita\": \"\"\n    }\n  }\n}",
+                  "createdAt": "2026-07-28T10:32:41.000Z",
+                  "updatedAt": "2026-07-28T10:32:41.000Z",
+                  "uid": "35240-3c9d8f76-894a-4d85-8c97-492bf105677c"
+                },
+                {
+                  "id": "7a79a12e-b783-4c5b-ac88-844421147daa",
+                  "name": "InvalidRequestException",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/otaUpdates/:otaUpdateId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "otaUpdates",
+                        ":otaUpdateId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "otaUpdateId"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:32:41.000Z",
+                  "updatedAt": "2026-07-28T10:32:41.000Z",
+                  "uid": "35240-7a79a12e-b783-4c5b-ac88-844421147daa"
+                },
+                {
+                  "id": "d9bafb83-901e-4b80-bb91-2da640dd00e4",
+                  "name": "ThrottlingException",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/otaUpdates/:otaUpdateId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "otaUpdates",
+                        ":otaUpdateId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "otaUpdateId"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:32:41.000Z",
+                  "updatedAt": "2026-07-28T10:32:41.000Z",
+                  "uid": "35240-d9bafb83-901e-4b80-bb91-2da640dd00e4"
+                },
+                {
+                  "id": "91669801-ea91-491c-b8f4-5d78a52e93a9",
+                  "name": "UnauthorizedException",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/otaUpdates/:otaUpdateId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "otaUpdates",
+                        ":otaUpdateId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "otaUpdateId"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:32:41.000Z",
+                  "updatedAt": "2026-07-28T10:32:41.000Z",
+                  "uid": "35240-91669801-ea91-491c-b8f4-5d78a52e93a9"
+                },
+                {
+                  "id": "7b6d28a9-dc6d-4fc1-ba51-07a8fda557c5",
+                  "name": "InternalFailureException",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/otaUpdates/:otaUpdateId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "otaUpdates",
+                        ":otaUpdateId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "otaUpdateId"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:32:41.000Z",
+                  "updatedAt": "2026-07-28T10:32:41.000Z",
+                  "uid": "35240-7b6d28a9-dc6d-4fc1-ba51-07a8fda557c5"
+                },
+                {
+                  "id": "6859e8b1-bb72-4686-a925-8f93e057352a",
+                  "name": "ServiceUnavailableException",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/otaUpdates/:otaUpdateId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "otaUpdates",
+                        ":otaUpdateId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "otaUpdateId"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:32:41.000Z",
+                  "updatedAt": "2026-07-28T10:32:41.000Z",
+                  "uid": "35240-6859e8b1-bb72-4686-a925-8f93e057352a"
+                },
+                {
+                  "id": "fea44853-2d28-42e6-9eaf-97c087a14bbf",
+                  "name": "ResourceNotFoundException",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/otaUpdates/:otaUpdateId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "otaUpdates",
+                        ":otaUpdateId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "otaUpdateId"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:32:41.000Z",
+                  "updatedAt": "2026-07-28T10:32:41.000Z",
+                  "uid": "35240-fea44853-2d28-42e6-9eaf-97c087a14bbf"
+                }
+              ],
+              "createdAt": "2026-07-28T10:32:41.000Z",
+              "updatedAt": "2026-07-28T10:32:41.000Z",
+              "uid": "35240-d7a2bc36-8ad9-417d-b073-e6e8d0cc4c7d"
+            }
+          ],
+          "id": "a40425c7-c518-4060-ad34-e4e5fe690d18",
+          "createdAt": "2026-07-28T10:32:41.000Z",
+          "updatedAt": "2026-07-28T10:32:41.000Z",
+          "uid": "35240-a40425c7-c518-4060-ad34-e4e5fe690d18"
+        },
+        {
+          "name": "Amazon IoT Core List O T a Updates",
+          "id": "9943e36e-3b24-47c4-8d7f-21fcfb219e3d",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/otaUpdates?maxResults=<integer>&nextToken=<string>&otaUpdateStatus=CREATE_PENDING",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "otaUpdates"
+              ],
+              "query": [
+                {
+                  "description": "The maximum number of results to return at one time.",
+                  "key": "maxResults",
+                  "value": "<integer>"
+                },
+                {
+                  "description": "A token used to retrieve the next set of results.",
+                  "key": "nextToken",
+                  "value": "<string>"
+                },
+                {
+                  "description": "The OTA update job status.",
+                  "key": "otaUpdateStatus",
+                  "value": "CREATE_PENDING"
+                }
+              ]
+            },
+            "description": "<p>Lists OTA updates.</p> <p>Requires permission to access the <a href=\"https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions\">ListOTAUpdates</a> action.</p>"
+          },
+          "response": [
+            {
+              "id": "2afcfde1-3180-48b3-a0ad-9e027ab883e7",
+              "name": "Success",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/otaUpdates?maxResults=<integer>&nextToken=<string>&otaUpdateStatus=CREATE_PENDING",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "otaUpdates"
+                  ],
+                  "query": [
+                    {
+                      "description": "The maximum number of results to return at one time.",
+                      "key": "maxResults",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "A token used to retrieve the next set of results.",
+                      "key": "nextToken",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The OTA update job status.",
+                      "key": "otaUpdateStatus",
+                      "value": "CREATE_PENDING"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"otaUpdates\": [\n    {\n      \"otaUpdateId\": \"ISkVBuTq\",\n      \"otaUpdateArn\": \"<string>\",\n      \"creationDate\": \"<dateTime>\"\n    },\n    {\n      \"otaUpdateId\": \"cJiopja1OC\",\n      \"otaUpdateArn\": \"<string>\",\n      \"creationDate\": \"<dateTime>\"\n    }\n  ],\n  \"nextToken\": \"<string>\"\n}",
+              "createdAt": "2026-07-28T10:32:41.000Z",
+              "updatedAt": "2026-07-28T10:32:41.000Z",
+              "uid": "35240-2afcfde1-3180-48b3-a0ad-9e027ab883e7"
+            },
+            {
+              "id": "1bd07353-3d9f-4c50-8428-7026062610a4",
+              "name": "InvalidRequestException",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/otaUpdates?maxResults=<integer>&nextToken=<string>&otaUpdateStatus=CREATE_PENDING",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "otaUpdates"
+                  ],
+                  "query": [
+                    {
+                      "description": "The maximum number of results to return at one time.",
+                      "key": "maxResults",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "A token used to retrieve the next set of results.",
+                      "key": "nextToken",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The OTA update job status.",
+                      "key": "otaUpdateStatus",
+                      "value": "CREATE_PENDING"
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:32:41.000Z",
+              "updatedAt": "2026-07-28T10:32:41.000Z",
+              "uid": "35240-1bd07353-3d9f-4c50-8428-7026062610a4"
+            },
+            {
+              "id": "702734a9-0043-4bfc-a060-2086f3d306f9",
+              "name": "ThrottlingException",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/otaUpdates?maxResults=<integer>&nextToken=<string>&otaUpdateStatus=CREATE_PENDING",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "otaUpdates"
+                  ],
+                  "query": [
+                    {
+                      "description": "The maximum number of results to return at one time.",
+                      "key": "maxResults",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "A token used to retrieve the next set of results.",
+                      "key": "nextToken",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The OTA update job status.",
+                      "key": "otaUpdateStatus",
+                      "value": "CREATE_PENDING"
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:32:41.000Z",
+              "updatedAt": "2026-07-28T10:32:41.000Z",
+              "uid": "35240-702734a9-0043-4bfc-a060-2086f3d306f9"
+            },
+            {
+              "id": "6198a684-d906-4b22-9b83-632983d2324b",
+              "name": "UnauthorizedException",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/otaUpdates?maxResults=<integer>&nextToken=<string>&otaUpdateStatus=CREATE_PENDING",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "otaUpdates"
+                  ],
+                  "query": [
+                    {
+                      "description": "The maximum number of results to return at one time.",
+                      "key": "maxResults",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "A token used to retrieve the next set of results.",
+                      "key": "nextToken",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The OTA update job status.",
+                      "key": "otaUpdateStatus",
+                      "value": "CREATE_PENDING"
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:32:41.000Z",
+              "updatedAt": "2026-07-28T10:32:41.000Z",
+              "uid": "35240-6198a684-d906-4b22-9b83-632983d2324b"
+            },
+            {
+              "id": "87f1805d-ff9a-4bfc-8cce-ced050cb3341",
+              "name": "InternalFailureException",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/otaUpdates?maxResults=<integer>&nextToken=<string>&otaUpdateStatus=CREATE_PENDING",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "otaUpdates"
+                  ],
+                  "query": [
+                    {
+                      "description": "The maximum number of results to return at one time.",
+                      "key": "maxResults",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "A token used to retrieve the next set of results.",
+                      "key": "nextToken",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The OTA update job status.",
+                      "key": "otaUpdateStatus",
+                      "value": "CREATE_PENDING"
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:32:41.000Z",
+              "updatedAt": "2026-07-28T10:32:41.000Z",
+              "uid": "35240-87f1805d-ff9a-4bfc-8cce-ced050cb3341"
+            },
+            {
+              "id": "31a523ef-fed0-4431-a437-64ad8fc83ee8",
+              "name": "ServiceUnavailableException",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/otaUpdates?maxResults=<integer>&nextToken=<string>&otaUpdateStatus=CREATE_PENDING",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "otaUpdates"
+                  ],
+                  "query": [
+                    {
+                      "description": "The maximum number of results to return at one time.",
+                      "key": "maxResults",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "A token used to retrieve the next set of results.",
+                      "key": "nextToken",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The OTA update job status.",
+                      "key": "otaUpdateStatus",
+                      "value": "CREATE_PENDING"
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:32:41.000Z",
+              "updatedAt": "2026-07-28T10:32:41.000Z",
+              "uid": "35240-31a523ef-fed0-4431-a437-64ad8fc83ee8"
+            }
+          ],
+          "createdAt": "2026-07-28T10:32:41.000Z",
+          "updatedAt": "2026-07-28T10:32:41.000Z",
+          "uid": "35240-9943e36e-3b24-47c4-8d7f-21fcfb219e3d"
+        }
+      ],
+      "id": "b38d956c-f08a-4656-8885-869fe8910dd9",
+      "createdAt": "2026-07-28T10:32:41.000Z",
+      "updatedAt": "2026-07-28T10:32:41.000Z",
+      "uid": "35240-b38d956c-f08a-4656-8885-869fe8910dd9"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "http://iot.{{region}}.amazonaws.com"
+    }
+  ]
+}

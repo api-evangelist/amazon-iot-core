@@ -1,0 +1,4150 @@
+{
+  "info": {
+    "_postman_id": "23c53d04-1e35-49a1-b070-5211c663ffb5",
+    "name": "AWS IoT Accept Certificate Transfer Billing Groups API",
+    "description": "<fullname>IoT</fullname> <p>IoT provides secure, bi-directional communication between Internet-connected devices (such as sensors, actuators, embedded devices, or smart appliances) and the Amazon Web Services cloud. You can discover your custom IoT-Data endpoint to communicate with, configure rules for data processing and integration with other services, organize resources associated with each device (Registry), configure logging, and create and manage policies and credentials to authenticate devices.</p> <p>The service endpoints that expose this API are listed in <a href=\"https://docs.aws.amazon.com/general/latest/gr/iot-core.html\">Amazon Web Services IoT Core Endpoints and Quotas</a>. You must use the endpoint for the region that has the resources you want to access.</p> <p>The service name used by <a href=\"https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html\">Amazon Web Services Signature Version 4</a> to sign the request is: <i>execute-api</i>.</p> <p>For more information about how IoT works, see the <a href=\"https://docs.aws.amazon.com/iot/latest/developerguide/aws-iot-how-it-works.html\">Developer Guide</a>.</p> <p>For information about how to use the credentials provider for IoT, see <a href=\"https://docs.aws.amazon.com/iot/latest/developerguide/authorizing-direct-aws.html\">Authorizing Direct Calls to Amazon Web Services Services</a>.</p>\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:30:36.000Z",
+    "updatedAt": "2026-07-28T10:30:36.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-23c53d04-1e35-49a1-b070-5211c663ffb5"
+  },
+  "item": [
+    {
+      "name": "billing-groups",
+      "item": [
+        {
+          "name": "addThingToBillingGroup",
+          "item": [
+            {
+              "name": "Amazon IoT Core Add Thing to Billing Group",
+              "id": "46968d43-5b74-4a67-9fa1-c2492cdd242e",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"billingGroupName\": \"cIz\",\n  \"billingGroupArn\": \"<string>\",\n  \"thingName\": \"i1HLDkh-I\",\n  \"thingArn\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/billing-groups/addThingToBillingGroup",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "billing-groups",
+                    "addThingToBillingGroup"
+                  ]
+                },
+                "description": "<p>Adds a thing to a billing group.</p> <p>Requires permission to access the <a href=\"https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions\">AddThingToBillingGroup</a> action.</p>"
+              },
+              "response": [
+                {
+                  "id": "32ad6bd2-8a4d-4628-8189-7756dbe271d5",
+                  "name": "Success",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"billingGroupName\": \"cIz\",\n  \"billingGroupArn\": \"<string>\",\n  \"thingName\": \"i1HLDkh-I\",\n  \"thingArn\": \"<string>\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/billing-groups/addThingToBillingGroup",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "billing-groups",
+                        "addThingToBillingGroup"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:30:37.000Z",
+                  "updatedAt": "2026-07-28T10:30:37.000Z",
+                  "uid": "35240-32ad6bd2-8a4d-4628-8189-7756dbe271d5"
+                },
+                {
+                  "id": "cbae38bc-882f-4632-a826-3ff1d67dd4e3",
+                  "name": "InvalidRequestException",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"billingGroupName\": \"cIz\",\n  \"billingGroupArn\": \"<string>\",\n  \"thingName\": \"i1HLDkh-I\",\n  \"thingArn\": \"<string>\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/billing-groups/addThingToBillingGroup",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "billing-groups",
+                        "addThingToBillingGroup"
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:30:37.000Z",
+                  "updatedAt": "2026-07-28T10:30:37.000Z",
+                  "uid": "35240-cbae38bc-882f-4632-a826-3ff1d67dd4e3"
+                },
+                {
+                  "id": "b74f1f8e-c6f6-48e8-b464-bd815ebb2899",
+                  "name": "ThrottlingException",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"billingGroupName\": \"cIz\",\n  \"billingGroupArn\": \"<string>\",\n  \"thingName\": \"i1HLDkh-I\",\n  \"thingArn\": \"<string>\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/billing-groups/addThingToBillingGroup",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "billing-groups",
+                        "addThingToBillingGroup"
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:30:37.000Z",
+                  "updatedAt": "2026-07-28T10:30:37.000Z",
+                  "uid": "35240-b74f1f8e-c6f6-48e8-b464-bd815ebb2899"
+                },
+                {
+                  "id": "f58c43ce-4221-4f01-9506-cfc4a653576d",
+                  "name": "InternalFailureException",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"billingGroupName\": \"cIz\",\n  \"billingGroupArn\": \"<string>\",\n  \"thingName\": \"i1HLDkh-I\",\n  \"thingArn\": \"<string>\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/billing-groups/addThingToBillingGroup",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "billing-groups",
+                        "addThingToBillingGroup"
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:30:37.000Z",
+                  "updatedAt": "2026-07-28T10:30:37.000Z",
+                  "uid": "35240-f58c43ce-4221-4f01-9506-cfc4a653576d"
+                },
+                {
+                  "id": "88ff6198-9728-4102-8c8f-0cfb402904a1",
+                  "name": "ResourceNotFoundException",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"billingGroupName\": \"cIz\",\n  \"billingGroupArn\": \"<string>\",\n  \"thingName\": \"i1HLDkh-I\",\n  \"thingArn\": \"<string>\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/billing-groups/addThingToBillingGroup",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "billing-groups",
+                        "addThingToBillingGroup"
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:30:37.000Z",
+                  "updatedAt": "2026-07-28T10:30:37.000Z",
+                  "uid": "35240-88ff6198-9728-4102-8c8f-0cfb402904a1"
+                }
+              ],
+              "createdAt": "2026-07-28T10:30:37.000Z",
+              "updatedAt": "2026-07-28T10:30:37.000Z",
+              "uid": "35240-46968d43-5b74-4a67-9fa1-c2492cdd242e"
+            }
+          ],
+          "id": "03569572-9cfe-4f97-a5fd-77db03aaa8d6",
+          "createdAt": "2026-07-28T10:30:37.000Z",
+          "updatedAt": "2026-07-28T10:30:37.000Z",
+          "uid": "35240-03569572-9cfe-4f97-a5fd-77db03aaa8d6"
+        },
+        {
+          "name": "{billingGroupName}",
+          "item": [
+            {
+              "name": "things",
+              "item": [
+                {
+                  "name": "Amazon IoT Core List Things in Billing Group",
+                  "id": "3f27b7b9-7ccf-4f7b-9ed1-694afbc81693",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/billing-groups/:billingGroupName/things?nextToken=<string>&maxResults=<integer>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "billing-groups",
+                        ":billingGroupName",
+                        "things"
+                      ],
+                      "query": [
+                        {
+                          "description": "To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.",
+                          "key": "nextToken",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "The maximum number of results to return per request.",
+                          "key": "maxResults",
+                          "value": "<integer>"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "id": "59b657bb-bf35-44bf-a912-2a146b055d6b",
+                          "key": "billingGroupName",
+                          "value": "3jPmyovg",
+                          "description": "(Required) The name of the billing group."
+                        }
+                      ]
+                    },
+                    "description": "<p>Lists the things you have added to the given billing group.</p> <p>Requires permission to access the <a href=\"https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions\">ListThingsInBillingGroup</a> action.</p>"
+                  },
+                  "response": [
+                    {
+                      "id": "3f4c75cc-9c5d-444d-be50-27d3135ec46a",
+                      "name": "Success",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/billing-groups/:billingGroupName/things?nextToken=<string>&maxResults=<integer>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "billing-groups",
+                            ":billingGroupName",
+                            "things"
+                          ],
+                          "query": [
+                            {
+                              "description": "To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.",
+                              "key": "nextToken",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "The maximum number of results to return per request.",
+                              "key": "maxResults",
+                              "value": "<integer>"
+                            }
+                          ],
+                          "variable": [
+                            {
+                              "key": "billingGroupName"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"things\": [\n    \"n0QNJrt\",\n    \":x8PUTcU\"\n  ],\n  \"nextToken\": \"<string>\"\n}",
+                      "createdAt": "2026-07-28T10:30:37.000Z",
+                      "updatedAt": "2026-07-28T10:30:37.000Z",
+                      "uid": "35240-3f4c75cc-9c5d-444d-be50-27d3135ec46a"
+                    },
+                    {
+                      "id": "1b7c776e-8871-42f8-8fcd-63827c14abe7",
+                      "name": "InvalidRequestException",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/billing-groups/:billingGroupName/things?nextToken=<string>&maxResults=<integer>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "billing-groups",
+                            ":billingGroupName",
+                            "things"
+                          ],
+                          "query": [
+                            {
+                              "description": "To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.",
+                              "key": "nextToken",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "The maximum number of results to return per request.",
+                              "key": "maxResults",
+                              "value": "<integer>"
+                            }
+                          ],
+                          "variable": [
+                            {
+                              "key": "billingGroupName"
+                            }
+                          ]
+                        }
+                      },
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-07-28T10:30:37.000Z",
+                      "updatedAt": "2026-07-28T10:30:37.000Z",
+                      "uid": "35240-1b7c776e-8871-42f8-8fcd-63827c14abe7"
+                    },
+                    {
+                      "id": "b085fca7-2310-47b5-bea2-43311003d432",
+                      "name": "InternalFailureException",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/billing-groups/:billingGroupName/things?nextToken=<string>&maxResults=<integer>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "billing-groups",
+                            ":billingGroupName",
+                            "things"
+                          ],
+                          "query": [
+                            {
+                              "description": "To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.",
+                              "key": "nextToken",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "The maximum number of results to return per request.",
+                              "key": "maxResults",
+                              "value": "<integer>"
+                            }
+                          ],
+                          "variable": [
+                            {
+                              "key": "billingGroupName"
+                            }
+                          ]
+                        }
+                      },
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-07-28T10:30:37.000Z",
+                      "updatedAt": "2026-07-28T10:30:37.000Z",
+                      "uid": "35240-b085fca7-2310-47b5-bea2-43311003d432"
+                    },
+                    {
+                      "id": "6118f91b-942f-466d-94c0-4a9e9f162621",
+                      "name": "ResourceNotFoundException",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/billing-groups/:billingGroupName/things?nextToken=<string>&maxResults=<integer>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "billing-groups",
+                            ":billingGroupName",
+                            "things"
+                          ],
+                          "query": [
+                            {
+                              "description": "To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.",
+                              "key": "nextToken",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "The maximum number of results to return per request.",
+                              "key": "maxResults",
+                              "value": "<integer>"
+                            }
+                          ],
+                          "variable": [
+                            {
+                              "key": "billingGroupName"
+                            }
+                          ]
+                        }
+                      },
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-07-28T10:30:37.000Z",
+                      "updatedAt": "2026-07-28T10:30:37.000Z",
+                      "uid": "35240-6118f91b-942f-466d-94c0-4a9e9f162621"
+                    },
+                    {
+                      "id": "1ccdde12-053e-4548-accc-ee14e3603d52",
+                      "name": "ThrottlingException",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/billing-groups/:billingGroupName/things?nextToken=<string>&maxResults=<integer>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "billing-groups",
+                            ":billingGroupName",
+                            "things"
+                          ],
+                          "query": [
+                            {
+                              "description": "To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.",
+                              "key": "nextToken",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "The maximum number of results to return per request.",
+                              "key": "maxResults",
+                              "value": "<integer>"
+                            }
+                          ],
+                          "variable": [
+                            {
+                              "key": "billingGroupName"
+                            }
+                          ]
+                        }
+                      },
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-07-28T10:30:37.000Z",
+                      "updatedAt": "2026-07-28T10:30:37.000Z",
+                      "uid": "35240-1ccdde12-053e-4548-accc-ee14e3603d52"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T10:30:37.000Z",
+                  "updatedAt": "2026-07-28T10:30:37.000Z",
+                  "uid": "35240-3f27b7b9-7ccf-4f7b-9ed1-694afbc81693"
+                }
+              ],
+              "id": "7f24043d-cc09-4fe9-add3-abc84da625a5",
+              "createdAt": "2026-07-28T10:30:37.000Z",
+              "updatedAt": "2026-07-28T10:30:37.000Z",
+              "uid": "35240-7f24043d-cc09-4fe9-add3-abc84da625a5"
+            },
+            {
+              "name": "Amazon IoT Core Create Billing Group",
+              "id": "611ef423-850c-4174-a759-7590e3d94a9e",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"billingGroupProperties\": {\n    \"billingGroupDescription\": \"h{}pG}p\"\n  },\n  \"tags\": [\n    {\n      \"Key\": \" \",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"@/@}=/}\",\n      \"Value\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/billing-groups/:billingGroupName",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "billing-groups",
+                    ":billingGroupName"
+                  ],
+                  "variable": [
+                    {
+                      "id": "1a5f2c3e-063a-4f8a-9957-a648fe352864",
+                      "key": "billingGroupName",
+                      "value": "3jPmyovg",
+                      "description": "(Required) The name you wish to give to the billing group."
+                    }
+                  ]
+                },
+                "description": "<p>Creates a billing group.</p> <p>Requires permission to access the <a href=\"https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions\">CreateBillingGroup</a> action.</p>"
+              },
+              "response": [
+                {
+                  "id": "5b101053-8168-4fa9-9a04-f4d12d4899f8",
+                  "name": "Success",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"billingGroupProperties\": {\n    \"billingGroupDescription\": \"h{}pG}p\"\n  },\n  \"tags\": [\n    {\n      \"Key\": \" \",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"@/@}=/}\",\n      \"Value\": \"<string>\"\n    }\n  ]\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/billing-groups/:billingGroupName",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "billing-groups",
+                        ":billingGroupName"
+                      ],
+                      "variable": [
+                        {
+                          "key": "billingGroupName"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"billingGroupName\": \"jQRq\",\n  \"billingGroupArn\": \"<string>\",\n  \"billingGroupId\": \"CPKXrYZvDmh\"\n}",
+                  "createdAt": "2026-07-28T10:30:37.000Z",
+                  "updatedAt": "2026-07-28T10:30:37.000Z",
+                  "uid": "35240-5b101053-8168-4fa9-9a04-f4d12d4899f8"
+                },
+                {
+                  "id": "66f5ca60-01b1-459b-9432-60c9151a7f29",
+                  "name": "InvalidRequestException",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"billingGroupProperties\": {\n    \"billingGroupDescription\": \"h{}pG}p\"\n  },\n  \"tags\": [\n    {\n      \"Key\": \" \",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"@/@}=/}\",\n      \"Value\": \"<string>\"\n    }\n  ]\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/billing-groups/:billingGroupName",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "billing-groups",
+                        ":billingGroupName"
+                      ],
+                      "variable": [
+                        {
+                          "key": "billingGroupName"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:30:37.000Z",
+                  "updatedAt": "2026-07-28T10:30:37.000Z",
+                  "uid": "35240-66f5ca60-01b1-459b-9432-60c9151a7f29"
+                },
+                {
+                  "id": "b1e4912e-f430-497e-a093-b35902cb69c5",
+                  "name": "ResourceAlreadyExistsException",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"billingGroupProperties\": {\n    \"billingGroupDescription\": \"h{}pG}p\"\n  },\n  \"tags\": [\n    {\n      \"Key\": \" \",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"@/@}=/}\",\n      \"Value\": \"<string>\"\n    }\n  ]\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/billing-groups/:billingGroupName",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "billing-groups",
+                        ":billingGroupName"
+                      ],
+                      "variable": [
+                        {
+                          "key": "billingGroupName"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:30:37.000Z",
+                  "updatedAt": "2026-07-28T10:30:37.000Z",
+                  "uid": "35240-b1e4912e-f430-497e-a093-b35902cb69c5"
+                },
+                {
+                  "id": "c343f1af-214f-499a-98b4-ad529de34c70",
+                  "name": "ThrottlingException",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"billingGroupProperties\": {\n    \"billingGroupDescription\": \"h{}pG}p\"\n  },\n  \"tags\": [\n    {\n      \"Key\": \" \",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"@/@}=/}\",\n      \"Value\": \"<string>\"\n    }\n  ]\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/billing-groups/:billingGroupName",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "billing-groups",
+                        ":billingGroupName"
+                      ],
+                      "variable": [
+                        {
+                          "key": "billingGroupName"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:30:37.000Z",
+                  "updatedAt": "2026-07-28T10:30:37.000Z",
+                  "uid": "35240-c343f1af-214f-499a-98b4-ad529de34c70"
+                },
+                {
+                  "id": "98c8d127-fb38-4b5f-b285-afa4dce3ae92",
+                  "name": "InternalFailureException",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"billingGroupProperties\": {\n    \"billingGroupDescription\": \"h{}pG}p\"\n  },\n  \"tags\": [\n    {\n      \"Key\": \" \",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"@/@}=/}\",\n      \"Value\": \"<string>\"\n    }\n  ]\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/billing-groups/:billingGroupName",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "billing-groups",
+                        ":billingGroupName"
+                      ],
+                      "variable": [
+                        {
+                          "key": "billingGroupName"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:30:37.000Z",
+                  "updatedAt": "2026-07-28T10:30:37.000Z",
+                  "uid": "35240-98c8d127-fb38-4b5f-b285-afa4dce3ae92"
+                }
+              ],
+              "createdAt": "2026-07-28T10:30:37.000Z",
+              "updatedAt": "2026-07-28T10:30:37.000Z",
+              "uid": "35240-611ef423-850c-4174-a759-7590e3d94a9e"
+            },
+            {
+              "name": "Amazon IoT Core Delete Billing Group",
+              "id": "935c1435-53d4-40c9-b80d-323929bffe9a",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "DELETE",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/billing-groups/:billingGroupName?expectedVersion=<integer>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "billing-groups",
+                    ":billingGroupName"
+                  ],
+                  "query": [
+                    {
+                      "description": "The expected version of the billing group. If the version of the billing group does not match the expected version specified in the request, the <code>DeleteBillingGroup</code> request is rejected with a <code>VersionConflictException</code>.",
+                      "key": "expectedVersion",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "id": "66c2eff9-5eaf-48d1-9a7f-b1869c45035f",
+                      "key": "billingGroupName",
+                      "value": "3jPmyovg",
+                      "description": "(Required) The name of the billing group."
+                    }
+                  ]
+                },
+                "description": "<p>Deletes the billing group.</p> <p>Requires permission to access the <a href=\"https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions\">DeleteBillingGroup</a> action.</p>"
+              },
+              "response": [
+                {
+                  "id": "0b9b00cb-1d3c-4080-b89d-6630b2b26a8e",
+                  "name": "Success",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/billing-groups/:billingGroupName?expectedVersion=<integer>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "billing-groups",
+                        ":billingGroupName"
+                      ],
+                      "query": [
+                        {
+                          "description": "The expected version of the billing group. If the version of the billing group does not match the expected version specified in the request, the <code>DeleteBillingGroup</code> request is rejected with a <code>VersionConflictException</code>.",
+                          "key": "expectedVersion",
+                          "value": "<integer>"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "billingGroupName"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:30:37.000Z",
+                  "updatedAt": "2026-07-28T10:30:37.000Z",
+                  "uid": "35240-0b9b00cb-1d3c-4080-b89d-6630b2b26a8e"
+                },
+                {
+                  "id": "367a0568-66d6-48ca-b1cc-4c33f009d9e8",
+                  "name": "InvalidRequestException",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/billing-groups/:billingGroupName?expectedVersion=<integer>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "billing-groups",
+                        ":billingGroupName"
+                      ],
+                      "query": [
+                        {
+                          "description": "The expected version of the billing group. If the version of the billing group does not match the expected version specified in the request, the <code>DeleteBillingGroup</code> request is rejected with a <code>VersionConflictException</code>.",
+                          "key": "expectedVersion",
+                          "value": "<integer>"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "billingGroupName"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:30:37.000Z",
+                  "updatedAt": "2026-07-28T10:30:37.000Z",
+                  "uid": "35240-367a0568-66d6-48ca-b1cc-4c33f009d9e8"
+                },
+                {
+                  "id": "71558350-2f4c-46e5-895b-dcee4522fbee",
+                  "name": "VersionConflictException",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/billing-groups/:billingGroupName?expectedVersion=<integer>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "billing-groups",
+                        ":billingGroupName"
+                      ],
+                      "query": [
+                        {
+                          "description": "The expected version of the billing group. If the version of the billing group does not match the expected version specified in the request, the <code>DeleteBillingGroup</code> request is rejected with a <code>VersionConflictException</code>.",
+                          "key": "expectedVersion",
+                          "value": "<integer>"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "billingGroupName"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:30:37.000Z",
+                  "updatedAt": "2026-07-28T10:30:37.000Z",
+                  "uid": "35240-71558350-2f4c-46e5-895b-dcee4522fbee"
+                },
+                {
+                  "id": "d41c6cdf-3445-4bf2-8c6c-d59b23d70ac5",
+                  "name": "ThrottlingException",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/billing-groups/:billingGroupName?expectedVersion=<integer>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "billing-groups",
+                        ":billingGroupName"
+                      ],
+                      "query": [
+                        {
+                          "description": "The expected version of the billing group. If the version of the billing group does not match the expected version specified in the request, the <code>DeleteBillingGroup</code> request is rejected with a <code>VersionConflictException</code>.",
+                          "key": "expectedVersion",
+                          "value": "<integer>"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "billingGroupName"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:30:37.000Z",
+                  "updatedAt": "2026-07-28T10:30:37.000Z",
+                  "uid": "35240-d41c6cdf-3445-4bf2-8c6c-d59b23d70ac5"
+                },
+                {
+                  "id": "06d78151-9295-4a0d-ba66-dac4adfda728",
+                  "name": "InternalFailureException",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/billing-groups/:billingGroupName?expectedVersion=<integer>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "billing-groups",
+                        ":billingGroupName"
+                      ],
+                      "query": [
+                        {
+                          "description": "The expected version of the billing group. If the version of the billing group does not match the expected version specified in the request, the <code>DeleteBillingGroup</code> request is rejected with a <code>VersionConflictException</code>.",
+                          "key": "expectedVersion",
+                          "value": "<integer>"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "billingGroupName"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:30:37.000Z",
+                  "updatedAt": "2026-07-28T10:30:37.000Z",
+                  "uid": "35240-06d78151-9295-4a0d-ba66-dac4adfda728"
+                }
+              ],
+              "createdAt": "2026-07-28T10:30:37.000Z",
+              "updatedAt": "2026-07-28T10:30:37.000Z",
+              "uid": "35240-935c1435-53d4-40c9-b80d-323929bffe9a"
+            },
+            {
+              "name": "Amazon IoT Core Describe Billing Group",
+              "id": "7bdff222-745d-4c93-8728-114f56b2cf61",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/billing-groups/:billingGroupName",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "billing-groups",
+                    ":billingGroupName"
+                  ],
+                  "variable": [
+                    {
+                      "id": "3439ebf4-88fb-4886-abdf-5f0b71494ee6",
+                      "key": "billingGroupName",
+                      "value": "3jPmyovg",
+                      "description": "(Required) The name of the billing group."
+                    }
+                  ]
+                },
+                "description": "<p>Returns information about a billing group.</p> <p>Requires permission to access the <a href=\"https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions\">DescribeBillingGroup</a> action.</p>"
+              },
+              "response": [
+                {
+                  "id": "2c84b298-3a1e-4118-a3c9-67c91d4fa107",
+                  "name": "Success",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/billing-groups/:billingGroupName",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "billing-groups",
+                        ":billingGroupName"
+                      ],
+                      "variable": [
+                        {
+                          "key": "billingGroupName"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"billingGroupName\": \"Yn\",\n  \"billingGroupId\": \"VCjH\",\n  \"billingGroupArn\": \"<string>\",\n  \"version\": \"<integer>\",\n  \"billingGroupProperties\": {\n    \"billingGroupDescription\": \"a{\"\n  },\n  \"billingGroupMetadata\": {\n    \"creationDate\": \"<dateTime>\"\n  }\n}",
+                  "createdAt": "2026-07-28T10:30:37.000Z",
+                  "updatedAt": "2026-07-28T10:30:37.000Z",
+                  "uid": "35240-2c84b298-3a1e-4118-a3c9-67c91d4fa107"
+                },
+                {
+                  "id": "247a6ddb-7f74-4d15-9db1-72fcb6b31b14",
+                  "name": "InvalidRequestException",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/billing-groups/:billingGroupName",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "billing-groups",
+                        ":billingGroupName"
+                      ],
+                      "variable": [
+                        {
+                          "key": "billingGroupName"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:30:37.000Z",
+                  "updatedAt": "2026-07-28T10:30:37.000Z",
+                  "uid": "35240-247a6ddb-7f74-4d15-9db1-72fcb6b31b14"
+                },
+                {
+                  "id": "b4eb4eac-2bf1-4cb8-be39-d996a346a7e3",
+                  "name": "ThrottlingException",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/billing-groups/:billingGroupName",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "billing-groups",
+                        ":billingGroupName"
+                      ],
+                      "variable": [
+                        {
+                          "key": "billingGroupName"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:30:37.000Z",
+                  "updatedAt": "2026-07-28T10:30:37.000Z",
+                  "uid": "35240-b4eb4eac-2bf1-4cb8-be39-d996a346a7e3"
+                },
+                {
+                  "id": "0164c381-8fc3-4d3a-8d00-d2d857762d4e",
+                  "name": "InternalFailureException",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/billing-groups/:billingGroupName",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "billing-groups",
+                        ":billingGroupName"
+                      ],
+                      "variable": [
+                        {
+                          "key": "billingGroupName"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:30:37.000Z",
+                  "updatedAt": "2026-07-28T10:30:37.000Z",
+                  "uid": "35240-0164c381-8fc3-4d3a-8d00-d2d857762d4e"
+                },
+                {
+                  "id": "3a7e3f01-f371-4cb8-af1d-b39ecd3b6760",
+                  "name": "ResourceNotFoundException",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/billing-groups/:billingGroupName",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "billing-groups",
+                        ":billingGroupName"
+                      ],
+                      "variable": [
+                        {
+                          "key": "billingGroupName"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:30:37.000Z",
+                  "updatedAt": "2026-07-28T10:30:37.000Z",
+                  "uid": "35240-3a7e3f01-f371-4cb8-af1d-b39ecd3b6760"
+                }
+              ],
+              "createdAt": "2026-07-28T10:30:37.000Z",
+              "updatedAt": "2026-07-28T10:30:37.000Z",
+              "uid": "35240-7bdff222-745d-4c93-8728-114f56b2cf61"
+            },
+            {
+              "name": "Amazon IoT Core Update Billing Group",
+              "id": "fbd5f6a1-fd5c-4392-90ac-167d8506eda5",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "PATCH",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"billingGroupProperties\": {\n    \"billingGroupDescription\": \"{}} { {\"\n  },\n  \"expectedVersion\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/billing-groups/:billingGroupName",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "billing-groups",
+                    ":billingGroupName"
+                  ],
+                  "variable": [
+                    {
+                      "id": "9eddba9f-9482-4ded-98c9-af6e29ff8055",
+                      "key": "billingGroupName",
+                      "value": "3jPmyovg",
+                      "description": "(Required) The name of the billing group."
+                    }
+                  ]
+                },
+                "description": "<p>Updates information about the billing group.</p> <p>Requires permission to access the <a href=\"https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions\">UpdateBillingGroup</a> action.</p>"
+              },
+              "response": [
+                {
+                  "id": "5f27e7b5-bbb5-4963-af4f-0a112e281bf2",
+                  "name": "Success",
+                  "originalRequest": {
+                    "method": "PATCH",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"billingGroupProperties\": {\n    \"billingGroupDescription\": \"{}} { {\"\n  },\n  \"expectedVersion\": \"<integer>\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/billing-groups/:billingGroupName",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "billing-groups",
+                        ":billingGroupName"
+                      ],
+                      "variable": [
+                        {
+                          "key": "billingGroupName"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"version\": \"<integer>\"\n}",
+                  "createdAt": "2026-07-28T10:30:37.000Z",
+                  "updatedAt": "2026-07-28T10:30:37.000Z",
+                  "uid": "35240-5f27e7b5-bbb5-4963-af4f-0a112e281bf2"
+                },
+                {
+                  "id": "ce17151a-57f2-4d34-b4d7-b354a4b2032a",
+                  "name": "InvalidRequestException",
+                  "originalRequest": {
+                    "method": "PATCH",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"billingGroupProperties\": {\n    \"billingGroupDescription\": \"{}} { {\"\n  },\n  \"expectedVersion\": \"<integer>\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/billing-groups/:billingGroupName",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "billing-groups",
+                        ":billingGroupName"
+                      ],
+                      "variable": [
+                        {
+                          "key": "billingGroupName"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:30:37.000Z",
+                  "updatedAt": "2026-07-28T10:30:37.000Z",
+                  "uid": "35240-ce17151a-57f2-4d34-b4d7-b354a4b2032a"
+                },
+                {
+                  "id": "acde58ec-2087-47f5-90be-6187720936a6",
+                  "name": "VersionConflictException",
+                  "originalRequest": {
+                    "method": "PATCH",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"billingGroupProperties\": {\n    \"billingGroupDescription\": \"{}} { {\"\n  },\n  \"expectedVersion\": \"<integer>\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/billing-groups/:billingGroupName",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "billing-groups",
+                        ":billingGroupName"
+                      ],
+                      "variable": [
+                        {
+                          "key": "billingGroupName"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:30:37.000Z",
+                  "updatedAt": "2026-07-28T10:30:37.000Z",
+                  "uid": "35240-acde58ec-2087-47f5-90be-6187720936a6"
+                },
+                {
+                  "id": "1356568b-fc74-4190-9dc6-fe6068887858",
+                  "name": "ThrottlingException",
+                  "originalRequest": {
+                    "method": "PATCH",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"billingGroupProperties\": {\n    \"billingGroupDescription\": \"{}} { {\"\n  },\n  \"expectedVersion\": \"<integer>\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/billing-groups/:billingGroupName",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "billing-groups",
+                        ":billingGroupName"
+                      ],
+                      "variable": [
+                        {
+                          "key": "billingGroupName"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:30:37.000Z",
+                  "updatedAt": "2026-07-28T10:30:37.000Z",
+                  "uid": "35240-1356568b-fc74-4190-9dc6-fe6068887858"
+                },
+                {
+                  "id": "423598f3-eac0-479f-a1f7-20cea7004b93",
+                  "name": "InternalFailureException",
+                  "originalRequest": {
+                    "method": "PATCH",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"billingGroupProperties\": {\n    \"billingGroupDescription\": \"{}} { {\"\n  },\n  \"expectedVersion\": \"<integer>\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/billing-groups/:billingGroupName",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "billing-groups",
+                        ":billingGroupName"
+                      ],
+                      "variable": [
+                        {
+                          "key": "billingGroupName"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:30:37.000Z",
+                  "updatedAt": "2026-07-28T10:30:37.000Z",
+                  "uid": "35240-423598f3-eac0-479f-a1f7-20cea7004b93"
+                },
+                {
+                  "id": "95a44356-8e2a-4956-8de3-24e375829e72",
+                  "name": "ResourceNotFoundException",
+                  "originalRequest": {
+                    "method": "PATCH",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"billingGroupProperties\": {\n    \"billingGroupDescription\": \"{}} { {\"\n  },\n  \"expectedVersion\": \"<integer>\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/billing-groups/:billingGroupName",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "billing-groups",
+                        ":billingGroupName"
+                      ],
+                      "variable": [
+                        {
+                          "key": "billingGroupName"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:30:37.000Z",
+                  "updatedAt": "2026-07-28T10:30:37.000Z",
+                  "uid": "35240-95a44356-8e2a-4956-8de3-24e375829e72"
+                }
+              ],
+              "createdAt": "2026-07-28T10:30:37.000Z",
+              "updatedAt": "2026-07-28T10:30:37.000Z",
+              "uid": "35240-fbd5f6a1-fd5c-4392-90ac-167d8506eda5"
+            }
+          ],
+          "id": "fc966a37-9f0d-47bf-88f5-bf3e9c97c86f",
+          "createdAt": "2026-07-28T10:30:37.000Z",
+          "updatedAt": "2026-07-28T10:30:37.000Z",
+          "uid": "35240-fc966a37-9f0d-47bf-88f5-bf3e9c97c86f"
+        },
+        {
+          "name": "removeThingFromBillingGroup",
+          "item": [
+            {
+              "name": "Amazon IoT Core Remove Thing from Billing Group",
+              "id": "48016d1a-9f60-4801-b048-969e7dd40083",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"billingGroupName\": \"uxGL4BD4m\",\n  \"billingGroupArn\": \"<string>\",\n  \"thingName\": \"3HNDMf2fdt8\",\n  \"thingArn\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/billing-groups/removeThingFromBillingGroup",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "billing-groups",
+                    "removeThingFromBillingGroup"
+                  ]
+                },
+                "description": "<p>Removes the given thing from the billing group.</p> <p>Requires permission to access the <a href=\"https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions\">RemoveThingFromBillingGroup</a> action.</p> <note> <p>This call is asynchronous. It might take several seconds for the detachment to propagate.</p> </note>"
+              },
+              "response": [
+                {
+                  "id": "95831eb7-74ab-4959-a163-bf026f34bd81",
+                  "name": "Success",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"billingGroupName\": \"uxGL4BD4m\",\n  \"billingGroupArn\": \"<string>\",\n  \"thingName\": \"3HNDMf2fdt8\",\n  \"thingArn\": \"<string>\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/billing-groups/removeThingFromBillingGroup",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "billing-groups",
+                        "removeThingFromBillingGroup"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:30:37.000Z",
+                  "updatedAt": "2026-07-28T10:30:37.000Z",
+                  "uid": "35240-95831eb7-74ab-4959-a163-bf026f34bd81"
+                },
+                {
+                  "id": "f402e9f8-52e7-4f9d-b982-c88e4fcb5077",
+                  "name": "InvalidRequestException",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"billingGroupName\": \"uxGL4BD4m\",\n  \"billingGroupArn\": \"<string>\",\n  \"thingName\": \"3HNDMf2fdt8\",\n  \"thingArn\": \"<string>\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/billing-groups/removeThingFromBillingGroup",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "billing-groups",
+                        "removeThingFromBillingGroup"
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:30:37.000Z",
+                  "updatedAt": "2026-07-28T10:30:37.000Z",
+                  "uid": "35240-f402e9f8-52e7-4f9d-b982-c88e4fcb5077"
+                },
+                {
+                  "id": "ecafb4ea-0dd4-4bf9-a7e2-b0e84c749b7f",
+                  "name": "ThrottlingException",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"billingGroupName\": \"uxGL4BD4m\",\n  \"billingGroupArn\": \"<string>\",\n  \"thingName\": \"3HNDMf2fdt8\",\n  \"thingArn\": \"<string>\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/billing-groups/removeThingFromBillingGroup",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "billing-groups",
+                        "removeThingFromBillingGroup"
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:30:37.000Z",
+                  "updatedAt": "2026-07-28T10:30:37.000Z",
+                  "uid": "35240-ecafb4ea-0dd4-4bf9-a7e2-b0e84c749b7f"
+                },
+                {
+                  "id": "ff32908f-a1ab-4ed1-9857-932e8854d1d4",
+                  "name": "InternalFailureException",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"billingGroupName\": \"uxGL4BD4m\",\n  \"billingGroupArn\": \"<string>\",\n  \"thingName\": \"3HNDMf2fdt8\",\n  \"thingArn\": \"<string>\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/billing-groups/removeThingFromBillingGroup",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "billing-groups",
+                        "removeThingFromBillingGroup"
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:30:37.000Z",
+                  "updatedAt": "2026-07-28T10:30:37.000Z",
+                  "uid": "35240-ff32908f-a1ab-4ed1-9857-932e8854d1d4"
+                },
+                {
+                  "id": "21482860-8955-4926-9b77-8a553732ebe3",
+                  "name": "ResourceNotFoundException",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"billingGroupName\": \"uxGL4BD4m\",\n  \"billingGroupArn\": \"<string>\",\n  \"thingName\": \"3HNDMf2fdt8\",\n  \"thingArn\": \"<string>\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/billing-groups/removeThingFromBillingGroup",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "billing-groups",
+                        "removeThingFromBillingGroup"
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:30:37.000Z",
+                  "updatedAt": "2026-07-28T10:30:37.000Z",
+                  "uid": "35240-21482860-8955-4926-9b77-8a553732ebe3"
+                }
+              ],
+              "createdAt": "2026-07-28T10:30:37.000Z",
+              "updatedAt": "2026-07-28T10:30:37.000Z",
+              "uid": "35240-48016d1a-9f60-4801-b048-969e7dd40083"
+            }
+          ],
+          "id": "3cf103d1-9479-42f3-b0ad-e374feb436b3",
+          "createdAt": "2026-07-28T10:30:37.000Z",
+          "updatedAt": "2026-07-28T10:30:37.000Z",
+          "uid": "35240-3cf103d1-9479-42f3-b0ad-e374feb436b3"
+        },
+        {
+          "name": "Amazon IoT Core List Billing Groups",
+          "id": "64930fb7-02c0-4633-bb7d-a7028044b234",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/billing-groups?nextToken=<string>&maxResults=<integer>&namePrefixFilter=3jPmyovg",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "billing-groups"
+              ],
+              "query": [
+                {
+                  "description": "To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.",
+                  "key": "nextToken",
+                  "value": "<string>"
+                },
+                {
+                  "description": "The maximum number of results to return per request.",
+                  "key": "maxResults",
+                  "value": "<integer>"
+                },
+                {
+                  "description": "Limit the results to billing groups whose names have the given prefix.",
+                  "key": "namePrefixFilter",
+                  "value": "3jPmyovg"
+                }
+              ]
+            },
+            "description": "<p>Lists the billing groups you have created.</p> <p>Requires permission to access the <a href=\"https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions\">ListBillingGroups</a> action.</p>"
+          },
+          "response": [
+            {
+              "id": "79513083-91c0-4ca2-acba-9d1d629de1d5",
+              "name": "Success",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/billing-groups?nextToken=<string>&maxResults=<integer>&namePrefixFilter=3jPmyovg",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "billing-groups"
+                  ],
+                  "query": [
+                    {
+                      "description": "To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.",
+                      "key": "nextToken",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The maximum number of results to return per request.",
+                      "key": "maxResults",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "Limit the results to billing groups whose names have the given prefix.",
+                      "key": "namePrefixFilter",
+                      "value": "3jPmyovg"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"billingGroups\": [\n    {\n      \"groupName\": \"f-ZYYZinIR\",\n      \"groupArn\": \"<string>\"\n    },\n    {\n      \"groupName\": \"G72j3\",\n      \"groupArn\": \"<string>\"\n    }\n  ],\n  \"nextToken\": \"<string>\"\n}",
+              "createdAt": "2026-07-28T10:30:37.000Z",
+              "updatedAt": "2026-07-28T10:30:37.000Z",
+              "uid": "35240-79513083-91c0-4ca2-acba-9d1d629de1d5"
+            },
+            {
+              "id": "98333e90-2eb7-4bb5-9ba9-3e91dfbc653d",
+              "name": "InvalidRequestException",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/billing-groups?nextToken=<string>&maxResults=<integer>&namePrefixFilter=3jPmyovg",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "billing-groups"
+                  ],
+                  "query": [
+                    {
+                      "description": "To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.",
+                      "key": "nextToken",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The maximum number of results to return per request.",
+                      "key": "maxResults",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "Limit the results to billing groups whose names have the given prefix.",
+                      "key": "namePrefixFilter",
+                      "value": "3jPmyovg"
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:30:37.000Z",
+              "updatedAt": "2026-07-28T10:30:37.000Z",
+              "uid": "35240-98333e90-2eb7-4bb5-9ba9-3e91dfbc653d"
+            },
+            {
+              "id": "f16d4c5c-3d08-4312-9e84-cb565c7b0336",
+              "name": "InternalFailureException",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/billing-groups?nextToken=<string>&maxResults=<integer>&namePrefixFilter=3jPmyovg",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "billing-groups"
+                  ],
+                  "query": [
+                    {
+                      "description": "To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.",
+                      "key": "nextToken",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The maximum number of results to return per request.",
+                      "key": "maxResults",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "Limit the results to billing groups whose names have the given prefix.",
+                      "key": "namePrefixFilter",
+                      "value": "3jPmyovg"
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:30:37.000Z",
+              "updatedAt": "2026-07-28T10:30:37.000Z",
+              "uid": "35240-f16d4c5c-3d08-4312-9e84-cb565c7b0336"
+            },
+            {
+              "id": "1a5a3055-4d51-4d0e-b99d-fdd89d81c9ef",
+              "name": "ResourceNotFoundException",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/billing-groups?nextToken=<string>&maxResults=<integer>&namePrefixFilter=3jPmyovg",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "billing-groups"
+                  ],
+                  "query": [
+                    {
+                      "description": "To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.",
+                      "key": "nextToken",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The maximum number of results to return per request.",
+                      "key": "maxResults",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "Limit the results to billing groups whose names have the given prefix.",
+                      "key": "namePrefixFilter",
+                      "value": "3jPmyovg"
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:30:37.000Z",
+              "updatedAt": "2026-07-28T10:30:37.000Z",
+              "uid": "35240-1a5a3055-4d51-4d0e-b99d-fdd89d81c9ef"
+            },
+            {
+              "id": "704cae3e-5f73-4145-813e-b446ac807a35",
+              "name": "ThrottlingException",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/billing-groups?nextToken=<string>&maxResults=<integer>&namePrefixFilter=3jPmyovg",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "billing-groups"
+                  ],
+                  "query": [
+                    {
+                      "description": "To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.",
+                      "key": "nextToken",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The maximum number of results to return per request.",
+                      "key": "maxResults",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "Limit the results to billing groups whose names have the given prefix.",
+                      "key": "namePrefixFilter",
+                      "value": "3jPmyovg"
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:30:37.000Z",
+              "updatedAt": "2026-07-28T10:30:37.000Z",
+              "uid": "35240-704cae3e-5f73-4145-813e-b446ac807a35"
+            }
+          ],
+          "createdAt": "2026-07-28T10:30:37.000Z",
+          "updatedAt": "2026-07-28T10:30:37.000Z",
+          "uid": "35240-64930fb7-02c0-4633-bb7d-a7028044b234"
+        }
+      ],
+      "id": "c83f2a00-0004-4c94-8d2f-848424bacdcb",
+      "createdAt": "2026-07-28T10:30:37.000Z",
+      "updatedAt": "2026-07-28T10:30:37.000Z",
+      "uid": "35240-c83f2a00-0004-4c94-8d2f-848424bacdcb"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "http://iot.{{region}}.amazonaws.com"
+    }
+  ]
+}

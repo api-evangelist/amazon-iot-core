@@ -1,0 +1,2657 @@
+{
+  "info": {
+    "_postman_id": "cbc3da35-9e2a-4450-8520-794205035777",
+    "name": "AWS IoT Accept Certificate Transfer Thing Registration Tasks API",
+    "description": "<fullname>IoT</fullname> <p>IoT provides secure, bi-directional communication between Internet-connected devices (such as sensors, actuators, embedded devices, or smart appliances) and the Amazon Web Services cloud. You can discover your custom IoT-Data endpoint to communicate with, configure rules for data processing and integration with other services, organize resources associated with each device (Registry), configure logging, and create and manage policies and credentials to authenticate devices.</p> <p>The service endpoints that expose this API are listed in <a href=\"https://docs.aws.amazon.com/general/latest/gr/iot-core.html\">Amazon Web Services IoT Core Endpoints and Quotas</a>. You must use the endpoint for the region that has the resources you want to access.</p> <p>The service name used by <a href=\"https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html\">Amazon Web Services Signature Version 4</a> to sign the request is: <i>execute-api</i>.</p> <p>For more information about how IoT works, see the <a href=\"https://docs.aws.amazon.com/iot/latest/developerguide/aws-iot-how-it-works.html\">Developer Guide</a>.</p> <p>For information about how to use the credentials provider for IoT, see <a href=\"https://docs.aws.amazon.com/iot/latest/developerguide/authorizing-direct-aws.html\">Authorizing Direct Calls to Amazon Web Services Services</a>.</p>\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:33:19.000Z",
+    "updatedAt": "2026-07-28T10:33:20.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-cbc3da35-9e2a-4450-8520-794205035777"
+  },
+  "item": [
+    {
+      "name": "thing-registration-tasks",
+      "item": [
+        {
+          "name": "{taskId}",
+          "item": [
+            {
+              "name": "reports#reportType",
+              "item": [
+                {
+                  "name": "Amazon IoT Core List Thing Registration Task Reports",
+                  "id": "a9ed50ee-ed33-4d31-a2bb-0d31070f8c9e",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/thing-registration-tasks/:taskId/reports?reportType=RESULTS&nextToken=<string>&maxResults=<integer>#reportType",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "thing-registration-tasks",
+                        ":taskId",
+                        "reports"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) The type of task report.",
+                          "key": "reportType",
+                          "value": "RESULTS"
+                        },
+                        {
+                          "description": "To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.",
+                          "key": "nextToken",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "The maximum number of results to return per request.",
+                          "key": "maxResults",
+                          "value": "<integer>"
+                        }
+                      ],
+                      "hash": "reportType",
+                      "variable": [
+                        {
+                          "id": "fe82aab9-8731-4c1f-bfa3-d794a7c7a453",
+                          "key": "taskId",
+                          "value": "<string>",
+                          "description": "(Required) The id of the task."
+                        }
+                      ]
+                    },
+                    "description": "Information about the thing registration tasks."
+                  },
+                  "response": [
+                    {
+                      "id": "d2ba426e-77b8-485c-a581-68fc3247b108",
+                      "name": "Success",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/thing-registration-tasks/:taskId/reports?reportType=RESULTS&nextToken=<string>&maxResults=<integer>#reportType",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "thing-registration-tasks",
+                            ":taskId",
+                            "reports"
+                          ],
+                          "query": [
+                            {
+                              "description": "(Required) The type of task report.",
+                              "key": "reportType",
+                              "value": "RESULTS"
+                            },
+                            {
+                              "description": "To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.",
+                              "key": "nextToken",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "The maximum number of results to return per request.",
+                              "key": "maxResults",
+                              "value": "<integer>"
+                            }
+                          ],
+                          "hash": "reportType",
+                          "variable": [
+                            {
+                              "key": "taskId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"resourceLinks\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"reportType\": \"ERRORS\",\n  \"nextToken\": \"<string>\"\n}",
+                      "createdAt": "2026-07-28T10:33:20.000Z",
+                      "updatedAt": "2026-07-28T10:33:20.000Z",
+                      "uid": "35240-d2ba426e-77b8-485c-a581-68fc3247b108"
+                    },
+                    {
+                      "id": "6a59739f-595f-45c8-b46d-d4d5852ac6df",
+                      "name": "InvalidRequestException",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/thing-registration-tasks/:taskId/reports?reportType=RESULTS&nextToken=<string>&maxResults=<integer>#reportType",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "thing-registration-tasks",
+                            ":taskId",
+                            "reports"
+                          ],
+                          "query": [
+                            {
+                              "description": "(Required) The type of task report.",
+                              "key": "reportType",
+                              "value": "RESULTS"
+                            },
+                            {
+                              "description": "To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.",
+                              "key": "nextToken",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "The maximum number of results to return per request.",
+                              "key": "maxResults",
+                              "value": "<integer>"
+                            }
+                          ],
+                          "hash": "reportType",
+                          "variable": [
+                            {
+                              "key": "taskId"
+                            }
+                          ]
+                        }
+                      },
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-07-28T10:33:20.000Z",
+                      "updatedAt": "2026-07-28T10:33:20.000Z",
+                      "uid": "35240-6a59739f-595f-45c8-b46d-d4d5852ac6df"
+                    },
+                    {
+                      "id": "064b6653-cbe0-43e9-a16f-4b26fcf3d465",
+                      "name": "ThrottlingException",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/thing-registration-tasks/:taskId/reports?reportType=RESULTS&nextToken=<string>&maxResults=<integer>#reportType",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "thing-registration-tasks",
+                            ":taskId",
+                            "reports"
+                          ],
+                          "query": [
+                            {
+                              "description": "(Required) The type of task report.",
+                              "key": "reportType",
+                              "value": "RESULTS"
+                            },
+                            {
+                              "description": "To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.",
+                              "key": "nextToken",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "The maximum number of results to return per request.",
+                              "key": "maxResults",
+                              "value": "<integer>"
+                            }
+                          ],
+                          "hash": "reportType",
+                          "variable": [
+                            {
+                              "key": "taskId"
+                            }
+                          ]
+                        }
+                      },
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-07-28T10:33:20.000Z",
+                      "updatedAt": "2026-07-28T10:33:20.000Z",
+                      "uid": "35240-064b6653-cbe0-43e9-a16f-4b26fcf3d465"
+                    },
+                    {
+                      "id": "89bd5be1-478e-476a-bdb9-f15e80ead744",
+                      "name": "UnauthorizedException",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/thing-registration-tasks/:taskId/reports?reportType=RESULTS&nextToken=<string>&maxResults=<integer>#reportType",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "thing-registration-tasks",
+                            ":taskId",
+                            "reports"
+                          ],
+                          "query": [
+                            {
+                              "description": "(Required) The type of task report.",
+                              "key": "reportType",
+                              "value": "RESULTS"
+                            },
+                            {
+                              "description": "To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.",
+                              "key": "nextToken",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "The maximum number of results to return per request.",
+                              "key": "maxResults",
+                              "value": "<integer>"
+                            }
+                          ],
+                          "hash": "reportType",
+                          "variable": [
+                            {
+                              "key": "taskId"
+                            }
+                          ]
+                        }
+                      },
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-07-28T10:33:20.000Z",
+                      "updatedAt": "2026-07-28T10:33:20.000Z",
+                      "uid": "35240-89bd5be1-478e-476a-bdb9-f15e80ead744"
+                    },
+                    {
+                      "id": "93a86472-db4b-429e-b888-9fac091d922c",
+                      "name": "InternalFailureException",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/thing-registration-tasks/:taskId/reports?reportType=RESULTS&nextToken=<string>&maxResults=<integer>#reportType",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "thing-registration-tasks",
+                            ":taskId",
+                            "reports"
+                          ],
+                          "query": [
+                            {
+                              "description": "(Required) The type of task report.",
+                              "key": "reportType",
+                              "value": "RESULTS"
+                            },
+                            {
+                              "description": "To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.",
+                              "key": "nextToken",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "The maximum number of results to return per request.",
+                              "key": "maxResults",
+                              "value": "<integer>"
+                            }
+                          ],
+                          "hash": "reportType",
+                          "variable": [
+                            {
+                              "key": "taskId"
+                            }
+                          ]
+                        }
+                      },
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-07-28T10:33:20.000Z",
+                      "updatedAt": "2026-07-28T10:33:20.000Z",
+                      "uid": "35240-93a86472-db4b-429e-b888-9fac091d922c"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T10:33:20.000Z",
+                  "updatedAt": "2026-07-28T10:33:20.000Z",
+                  "uid": "35240-a9ed50ee-ed33-4d31-a2bb-0d31070f8c9e"
+                }
+              ],
+              "id": "072a1954-86ce-4dab-b733-c344264a9669",
+              "createdAt": "2026-07-28T10:33:20.000Z",
+              "updatedAt": "2026-07-28T10:33:20.000Z",
+              "uid": "35240-072a1954-86ce-4dab-b733-c344264a9669"
+            },
+            {
+              "name": "cancel",
+              "item": [
+                {
+                  "name": "Amazon IoT Core Stop Thing Registration Task",
+                  "id": "994ff48d-beb0-4dca-a8fe-949759a2120f",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/thing-registration-tasks/:taskId/cancel",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "thing-registration-tasks",
+                        ":taskId",
+                        "cancel"
+                      ],
+                      "variable": [
+                        {
+                          "id": "52f41c76-ec88-4692-a784-70f3062ad8c2",
+                          "key": "taskId",
+                          "value": "<string>",
+                          "description": "(Required) The bulk thing provisioning task ID."
+                        }
+                      ]
+                    },
+                    "description": "<p>Cancels a bulk thing provisioning task.</p> <p>Requires permission to access the <a href=\"https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions\">StopThingRegistrationTask</a> action.</p>"
+                  },
+                  "response": [
+                    {
+                      "id": "c64aff09-a905-4b82-8471-cb9381a98146",
+                      "name": "Success",
+                      "originalRequest": {
+                        "method": "PUT",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/thing-registration-tasks/:taskId/cancel",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "thing-registration-tasks",
+                            ":taskId",
+                            "cancel"
+                          ],
+                          "variable": [
+                            {
+                              "key": "taskId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-07-28T10:33:20.000Z",
+                      "updatedAt": "2026-07-28T10:33:20.000Z",
+                      "uid": "35240-c64aff09-a905-4b82-8471-cb9381a98146"
+                    },
+                    {
+                      "id": "9325b69e-9c46-4081-8bb7-c07352fce510",
+                      "name": "InvalidRequestException",
+                      "originalRequest": {
+                        "method": "PUT",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/thing-registration-tasks/:taskId/cancel",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "thing-registration-tasks",
+                            ":taskId",
+                            "cancel"
+                          ],
+                          "variable": [
+                            {
+                              "key": "taskId"
+                            }
+                          ]
+                        }
+                      },
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-07-28T10:33:20.000Z",
+                      "updatedAt": "2026-07-28T10:33:20.000Z",
+                      "uid": "35240-9325b69e-9c46-4081-8bb7-c07352fce510"
+                    },
+                    {
+                      "id": "35a43e48-dc8c-4afd-ae13-bad67b54b38f",
+                      "name": "ThrottlingException",
+                      "originalRequest": {
+                        "method": "PUT",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/thing-registration-tasks/:taskId/cancel",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "thing-registration-tasks",
+                            ":taskId",
+                            "cancel"
+                          ],
+                          "variable": [
+                            {
+                              "key": "taskId"
+                            }
+                          ]
+                        }
+                      },
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-07-28T10:33:20.000Z",
+                      "updatedAt": "2026-07-28T10:33:20.000Z",
+                      "uid": "35240-35a43e48-dc8c-4afd-ae13-bad67b54b38f"
+                    },
+                    {
+                      "id": "7df24351-1195-439a-b574-6ef5b608f072",
+                      "name": "UnauthorizedException",
+                      "originalRequest": {
+                        "method": "PUT",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/thing-registration-tasks/:taskId/cancel",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "thing-registration-tasks",
+                            ":taskId",
+                            "cancel"
+                          ],
+                          "variable": [
+                            {
+                              "key": "taskId"
+                            }
+                          ]
+                        }
+                      },
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-07-28T10:33:20.000Z",
+                      "updatedAt": "2026-07-28T10:33:20.000Z",
+                      "uid": "35240-7df24351-1195-439a-b574-6ef5b608f072"
+                    },
+                    {
+                      "id": "a8398e25-6a7b-41a4-8dc9-dbbafc6c961c",
+                      "name": "InternalFailureException",
+                      "originalRequest": {
+                        "method": "PUT",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/thing-registration-tasks/:taskId/cancel",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "thing-registration-tasks",
+                            ":taskId",
+                            "cancel"
+                          ],
+                          "variable": [
+                            {
+                              "key": "taskId"
+                            }
+                          ]
+                        }
+                      },
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-07-28T10:33:20.000Z",
+                      "updatedAt": "2026-07-28T10:33:20.000Z",
+                      "uid": "35240-a8398e25-6a7b-41a4-8dc9-dbbafc6c961c"
+                    },
+                    {
+                      "id": "fd9ea038-0f39-4867-bdc6-6296533eb97d",
+                      "name": "ResourceNotFoundException",
+                      "originalRequest": {
+                        "method": "PUT",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/thing-registration-tasks/:taskId/cancel",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "thing-registration-tasks",
+                            ":taskId",
+                            "cancel"
+                          ],
+                          "variable": [
+                            {
+                              "key": "taskId"
+                            }
+                          ]
+                        }
+                      },
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-07-28T10:33:20.000Z",
+                      "updatedAt": "2026-07-28T10:33:20.000Z",
+                      "uid": "35240-fd9ea038-0f39-4867-bdc6-6296533eb97d"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T10:33:20.000Z",
+                  "updatedAt": "2026-07-28T10:33:20.000Z",
+                  "uid": "35240-994ff48d-beb0-4dca-a8fe-949759a2120f"
+                }
+              ],
+              "id": "be9b3809-0c4a-43a8-b331-b6762ebd9381",
+              "createdAt": "2026-07-28T10:33:20.000Z",
+              "updatedAt": "2026-07-28T10:33:20.000Z",
+              "uid": "35240-be9b3809-0c4a-43a8-b331-b6762ebd9381"
+            },
+            {
+              "name": "Amazon IoT Core Describe Thing Registration Task",
+              "id": "7754bf96-99a0-4761-b267-0f4ba253adb0",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/thing-registration-tasks/:taskId",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "thing-registration-tasks",
+                    ":taskId"
+                  ],
+                  "variable": [
+                    {
+                      "id": "da96f8f3-987f-4ebe-bd58-df5b3b174b56",
+                      "key": "taskId",
+                      "value": "<string>",
+                      "description": "(Required) The task ID."
+                    }
+                  ]
+                },
+                "description": "<p>Describes a bulk thing provisioning task.</p> <p>Requires permission to access the <a href=\"https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions\">DescribeThingRegistrationTask</a> action.</p>"
+              },
+              "response": [
+                {
+                  "id": "de0af30b-d38c-4e8c-9321-ceb85accc833",
+                  "name": "Success",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/thing-registration-tasks/:taskId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "thing-registration-tasks",
+                        ":taskId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "taskId"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"taskId\": \"<string>\",\n  \"creationDate\": \"<dateTime>\",\n  \"lastModifiedDate\": \"<dateTime>\",\n  \"templateBody\": \"L\",\n  \"inputFileBucket\": \"ygtX5thT\",\n  \"inputFileKey\": \"0\",\n  \"roleArn\": \"<string>\",\n  \"status\": \"InProgress\",\n  \"message\": \"<string>\",\n  \"successCount\": \"<integer>\",\n  \"failureCount\": \"<integer>\",\n  \"percentageProgress\": \"<integer>\"\n}",
+                  "createdAt": "2026-07-28T10:33:20.000Z",
+                  "updatedAt": "2026-07-28T10:33:20.000Z",
+                  "uid": "35240-de0af30b-d38c-4e8c-9321-ceb85accc833"
+                },
+                {
+                  "id": "976c3120-75fb-4a27-bdde-928ce239b0f8",
+                  "name": "InvalidRequestException",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/thing-registration-tasks/:taskId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "thing-registration-tasks",
+                        ":taskId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "taskId"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:33:20.000Z",
+                  "updatedAt": "2026-07-28T10:33:20.000Z",
+                  "uid": "35240-976c3120-75fb-4a27-bdde-928ce239b0f8"
+                },
+                {
+                  "id": "93d6a665-e03b-425a-9e3f-8488b35ceef6",
+                  "name": "ThrottlingException",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/thing-registration-tasks/:taskId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "thing-registration-tasks",
+                        ":taskId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "taskId"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:33:20.000Z",
+                  "updatedAt": "2026-07-28T10:33:20.000Z",
+                  "uid": "35240-93d6a665-e03b-425a-9e3f-8488b35ceef6"
+                },
+                {
+                  "id": "9a6bd86f-e27b-4f97-aba1-0197ce433b85",
+                  "name": "UnauthorizedException",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/thing-registration-tasks/:taskId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "thing-registration-tasks",
+                        ":taskId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "taskId"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:33:20.000Z",
+                  "updatedAt": "2026-07-28T10:33:20.000Z",
+                  "uid": "35240-9a6bd86f-e27b-4f97-aba1-0197ce433b85"
+                },
+                {
+                  "id": "ff3f0af2-5dd6-4df5-854e-958a4cdf38b7",
+                  "name": "InternalFailureException",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/thing-registration-tasks/:taskId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "thing-registration-tasks",
+                        ":taskId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "taskId"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:33:20.000Z",
+                  "updatedAt": "2026-07-28T10:33:20.000Z",
+                  "uid": "35240-ff3f0af2-5dd6-4df5-854e-958a4cdf38b7"
+                },
+                {
+                  "id": "d1f6a8bc-8e50-445d-955a-eb2077da392a",
+                  "name": "ResourceNotFoundException",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/thing-registration-tasks/:taskId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "thing-registration-tasks",
+                        ":taskId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "taskId"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:33:20.000Z",
+                  "updatedAt": "2026-07-28T10:33:20.000Z",
+                  "uid": "35240-d1f6a8bc-8e50-445d-955a-eb2077da392a"
+                }
+              ],
+              "createdAt": "2026-07-28T10:33:20.000Z",
+              "updatedAt": "2026-07-28T10:33:20.000Z",
+              "uid": "35240-7754bf96-99a0-4761-b267-0f4ba253adb0"
+            }
+          ],
+          "id": "4e6169a8-bdee-41f8-a715-fe637278bd6d",
+          "createdAt": "2026-07-28T10:33:20.000Z",
+          "updatedAt": "2026-07-28T10:33:20.000Z",
+          "uid": "35240-4e6169a8-bdee-41f8-a715-fe637278bd6d"
+        },
+        {
+          "name": "Amazon IoT Core List Thing Registration Tasks",
+          "id": "2e127cc4-1dee-4b13-b266-864751e20381",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/thing-registration-tasks?nextToken=<string>&maxResults=<integer>&status=Cancelling",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "thing-registration-tasks"
+              ],
+              "query": [
+                {
+                  "description": "To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.",
+                  "key": "nextToken",
+                  "value": "<string>"
+                },
+                {
+                  "description": "The maximum number of results to return at one time.",
+                  "key": "maxResults",
+                  "value": "<integer>"
+                },
+                {
+                  "description": "The status of the bulk thing provisioning task.",
+                  "key": "status",
+                  "value": "Cancelling"
+                }
+              ]
+            },
+            "description": "<p>List bulk thing provisioning tasks.</p> <p>Requires permission to access the <a href=\"https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions\">ListThingRegistrationTasks</a> action.</p>"
+          },
+          "response": [
+            {
+              "id": "0d222459-ee02-4f3d-9136-239d506008cd",
+              "name": "Success",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/thing-registration-tasks?nextToken=<string>&maxResults=<integer>&status=Cancelling",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "thing-registration-tasks"
+                  ],
+                  "query": [
+                    {
+                      "description": "To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.",
+                      "key": "nextToken",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The maximum number of results to return at one time.",
+                      "key": "maxResults",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "The status of the bulk thing provisioning task.",
+                      "key": "status",
+                      "value": "Cancelling"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"taskIds\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"nextToken\": \"<string>\"\n}",
+              "createdAt": "2026-07-28T10:33:20.000Z",
+              "updatedAt": "2026-07-28T10:33:20.000Z",
+              "uid": "35240-0d222459-ee02-4f3d-9136-239d506008cd"
+            },
+            {
+              "id": "472ecc17-6e2d-4a2e-96f4-119ce2e3a472",
+              "name": "InvalidRequestException",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/thing-registration-tasks?nextToken=<string>&maxResults=<integer>&status=Cancelling",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "thing-registration-tasks"
+                  ],
+                  "query": [
+                    {
+                      "description": "To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.",
+                      "key": "nextToken",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The maximum number of results to return at one time.",
+                      "key": "maxResults",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "The status of the bulk thing provisioning task.",
+                      "key": "status",
+                      "value": "Cancelling"
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:33:20.000Z",
+              "updatedAt": "2026-07-28T10:33:20.000Z",
+              "uid": "35240-472ecc17-6e2d-4a2e-96f4-119ce2e3a472"
+            },
+            {
+              "id": "1f525c6d-784d-49fb-b148-c56b3b3ae023",
+              "name": "ThrottlingException",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/thing-registration-tasks?nextToken=<string>&maxResults=<integer>&status=Cancelling",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "thing-registration-tasks"
+                  ],
+                  "query": [
+                    {
+                      "description": "To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.",
+                      "key": "nextToken",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The maximum number of results to return at one time.",
+                      "key": "maxResults",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "The status of the bulk thing provisioning task.",
+                      "key": "status",
+                      "value": "Cancelling"
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:33:20.000Z",
+              "updatedAt": "2026-07-28T10:33:20.000Z",
+              "uid": "35240-1f525c6d-784d-49fb-b148-c56b3b3ae023"
+            },
+            {
+              "id": "c2c4241a-127c-4f0c-b6d9-e3791a81593b",
+              "name": "UnauthorizedException",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/thing-registration-tasks?nextToken=<string>&maxResults=<integer>&status=Cancelling",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "thing-registration-tasks"
+                  ],
+                  "query": [
+                    {
+                      "description": "To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.",
+                      "key": "nextToken",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The maximum number of results to return at one time.",
+                      "key": "maxResults",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "The status of the bulk thing provisioning task.",
+                      "key": "status",
+                      "value": "Cancelling"
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:33:20.000Z",
+              "updatedAt": "2026-07-28T10:33:20.000Z",
+              "uid": "35240-c2c4241a-127c-4f0c-b6d9-e3791a81593b"
+            },
+            {
+              "id": "212c5233-68d8-4ec3-aff7-40d0dc009c3e",
+              "name": "InternalFailureException",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/thing-registration-tasks?nextToken=<string>&maxResults=<integer>&status=Cancelling",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "thing-registration-tasks"
+                  ],
+                  "query": [
+                    {
+                      "description": "To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.",
+                      "key": "nextToken",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The maximum number of results to return at one time.",
+                      "key": "maxResults",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "The status of the bulk thing provisioning task.",
+                      "key": "status",
+                      "value": "Cancelling"
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:33:20.000Z",
+              "updatedAt": "2026-07-28T10:33:20.000Z",
+              "uid": "35240-212c5233-68d8-4ec3-aff7-40d0dc009c3e"
+            }
+          ],
+          "createdAt": "2026-07-28T10:33:20.000Z",
+          "updatedAt": "2026-07-28T10:33:20.000Z",
+          "uid": "35240-2e127cc4-1dee-4b13-b266-864751e20381"
+        },
+        {
+          "name": "Amazon IoT Core Start Thing Registration Task",
+          "id": "02fa049c-88f6-4293-a00c-148b8e0142d2",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"templateBody\": \":\u2028f74%8l\",\n  \"inputFileBucket\": \"wKwK\",\n  \"inputFileKey\": \"a\",\n  \"roleArn\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/thing-registration-tasks",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "thing-registration-tasks"
+              ]
+            },
+            "description": "<p>Creates a bulk thing provisioning task.</p> <p>Requires permission to access the <a href=\"https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions\">StartThingRegistrationTask</a> action.</p>"
+          },
+          "response": [
+            {
+              "id": "e1b452df-840f-496d-9bb7-e8c799168e57",
+              "name": "Success",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"templateBody\": \":\u2028f74%8l\",\n  \"inputFileBucket\": \"wKwK\",\n  \"inputFileKey\": \"a\",\n  \"roleArn\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/thing-registration-tasks",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "thing-registration-tasks"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"taskId\": \"<string>\"\n}",
+              "createdAt": "2026-07-28T10:33:20.000Z",
+              "updatedAt": "2026-07-28T10:33:20.000Z",
+              "uid": "35240-e1b452df-840f-496d-9bb7-e8c799168e57"
+            },
+            {
+              "id": "68ea5677-5a29-4d8c-8dd3-0f33e186d131",
+              "name": "InvalidRequestException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"templateBody\": \":\u2028f74%8l\",\n  \"inputFileBucket\": \"wKwK\",\n  \"inputFileKey\": \"a\",\n  \"roleArn\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/thing-registration-tasks",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "thing-registration-tasks"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:33:20.000Z",
+              "updatedAt": "2026-07-28T10:33:20.000Z",
+              "uid": "35240-68ea5677-5a29-4d8c-8dd3-0f33e186d131"
+            },
+            {
+              "id": "ec650348-f028-40b4-b23d-47f019bbc777",
+              "name": "ThrottlingException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"templateBody\": \":\u2028f74%8l\",\n  \"inputFileBucket\": \"wKwK\",\n  \"inputFileKey\": \"a\",\n  \"roleArn\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/thing-registration-tasks",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "thing-registration-tasks"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:33:20.000Z",
+              "updatedAt": "2026-07-28T10:33:20.000Z",
+              "uid": "35240-ec650348-f028-40b4-b23d-47f019bbc777"
+            },
+            {
+              "id": "5c5cd00a-9631-41e8-95a2-a64e9f79d150",
+              "name": "UnauthorizedException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"templateBody\": \":\u2028f74%8l\",\n  \"inputFileBucket\": \"wKwK\",\n  \"inputFileKey\": \"a\",\n  \"roleArn\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/thing-registration-tasks",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "thing-registration-tasks"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:33:20.000Z",
+              "updatedAt": "2026-07-28T10:33:20.000Z",
+              "uid": "35240-5c5cd00a-9631-41e8-95a2-a64e9f79d150"
+            },
+            {
+              "id": "f732f1af-7a37-4016-b797-4a3f5baf75eb",
+              "name": "InternalFailureException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"templateBody\": \":\u2028f74%8l\",\n  \"inputFileBucket\": \"wKwK\",\n  \"inputFileKey\": \"a\",\n  \"roleArn\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/thing-registration-tasks",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "thing-registration-tasks"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:33:20.000Z",
+              "updatedAt": "2026-07-28T10:33:20.000Z",
+              "uid": "35240-f732f1af-7a37-4016-b797-4a3f5baf75eb"
+            }
+          ],
+          "createdAt": "2026-07-28T10:33:20.000Z",
+          "updatedAt": "2026-07-28T10:33:20.000Z",
+          "uid": "35240-02fa049c-88f6-4293-a00c-148b8e0142d2"
+        }
+      ],
+      "id": "a1f89f4b-ca67-4d3b-8cd5-abbad3788db9",
+      "createdAt": "2026-07-28T10:33:20.000Z",
+      "updatedAt": "2026-07-28T10:33:20.000Z",
+      "uid": "35240-a1f89f4b-ca67-4d3b-8cd5-abbad3788db9"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "http://iot.{{region}}.amazonaws.com"
+    }
+  ]
+}

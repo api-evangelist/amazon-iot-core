@@ -1,0 +1,442 @@
+{
+  "info": {
+    "_postman_id": "92cbfa02-1e02-4168-8d11-8f8e118cd80b",
+    "name": "AWS IoT Accept Certificate Transfer V2LoggingLevel#targetType&targetName API",
+    "description": "<fullname>IoT</fullname> <p>IoT provides secure, bi-directional communication between Internet-connected devices (such as sensors, actuators, embedded devices, or smart appliances) and the Amazon Web Services cloud. You can discover your custom IoT-Data endpoint to communicate with, configure rules for data processing and integration with other services, organize resources associated with each device (Registry), configure logging, and create and manage policies and credentials to authenticate devices.</p> <p>The service endpoints that expose this API are listed in <a href=\"https://docs.aws.amazon.com/general/latest/gr/iot-core.html\">Amazon Web Services IoT Core Endpoints and Quotas</a>. You must use the endpoint for the region that has the resources you want to access.</p> <p>The service name used by <a href=\"https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html\">Amazon Web Services Signature Version 4</a> to sign the request is: <i>execute-api</i>.</p> <p>For more information about how IoT works, see the <a href=\"https://docs.aws.amazon.com/iot/latest/developerguide/aws-iot-how-it-works.html\">Developer Guide</a>.</p> <p>For information about how to use the credentials provider for IoT, see <a href=\"https://docs.aws.amazon.com/iot/latest/developerguide/authorizing-direct-aws.html\">Authorizing Direct Calls to Amazon Web Services Services</a>.</p>\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:33:27.000Z",
+    "updatedAt": "2026-07-28T10:33:27.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-92cbfa02-1e02-4168-8d11-8f8e118cd80b"
+  },
+  "item": [
+    {
+      "name": "v2LoggingLevel#targetType&targetName",
+      "item": [
+        {
+          "name": "Amazon IoT Core Delete V2 Logging Level",
+          "id": "2dde5be7-e84b-4702-943f-61c718981940",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/v2LoggingLevel?targetType=SOURCE_IP&targetName=<string>#targetType&targetName",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "v2LoggingLevel"
+              ],
+              "query": [
+                {
+                  "description": "(Required) The type of resource for which you are configuring logging. Must be <code>THING_Group</code>.",
+                  "key": "targetType",
+                  "value": "SOURCE_IP"
+                },
+                {
+                  "description": "(Required) The name of the resource for which you are configuring logging.",
+                  "key": "targetName",
+                  "value": "<string>"
+                }
+              ],
+              "hash": "targetType&targetName"
+            },
+            "description": "<p>Deletes a logging level.</p> <p>Requires permission to access the <a href=\"https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions\">DeleteV2LoggingLevel</a> action.</p>"
+          },
+          "response": [
+            {
+              "id": "015addf4-8cce-4259-8e2c-e64cb1518285",
+              "name": "Success",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/v2LoggingLevel?targetType=SOURCE_IP&targetName=<string>#targetType&targetName",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "v2LoggingLevel"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) The type of resource for which you are configuring logging. Must be <code>THING_Group</code>.",
+                      "key": "targetType",
+                      "value": "SOURCE_IP"
+                    },
+                    {
+                      "description": "(Required) The name of the resource for which you are configuring logging.",
+                      "key": "targetName",
+                      "value": "<string>"
+                    }
+                  ],
+                  "hash": "targetType&targetName"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "responseTime": null,
+              "body": null,
+              "createdAt": "2026-07-28T10:33:27.000Z",
+              "updatedAt": "2026-07-28T10:33:27.000Z",
+              "uid": "35240-015addf4-8cce-4259-8e2c-e64cb1518285"
+            },
+            {
+              "id": "dd6dbfed-049b-4777-806b-348eb0cb5eb1",
+              "name": "InternalException",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/v2LoggingLevel?targetType=SOURCE_IP&targetName=<string>#targetType&targetName",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "v2LoggingLevel"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) The type of resource for which you are configuring logging. Must be <code>THING_Group</code>.",
+                      "key": "targetType",
+                      "value": "SOURCE_IP"
+                    },
+                    {
+                      "description": "(Required) The name of the resource for which you are configuring logging.",
+                      "key": "targetName",
+                      "value": "<string>"
+                    }
+                  ],
+                  "hash": "targetType&targetName"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:33:27.000Z",
+              "updatedAt": "2026-07-28T10:33:27.000Z",
+              "uid": "35240-dd6dbfed-049b-4777-806b-348eb0cb5eb1"
+            },
+            {
+              "id": "095dc4d7-9fec-4549-aca1-179765950708",
+              "name": "InvalidRequestException",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/v2LoggingLevel?targetType=SOURCE_IP&targetName=<string>#targetType&targetName",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "v2LoggingLevel"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) The type of resource for which you are configuring logging. Must be <code>THING_Group</code>.",
+                      "key": "targetType",
+                      "value": "SOURCE_IP"
+                    },
+                    {
+                      "description": "(Required) The name of the resource for which you are configuring logging.",
+                      "key": "targetName",
+                      "value": "<string>"
+                    }
+                  ],
+                  "hash": "targetType&targetName"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:33:27.000Z",
+              "updatedAt": "2026-07-28T10:33:27.000Z",
+              "uid": "35240-095dc4d7-9fec-4549-aca1-179765950708"
+            },
+            {
+              "id": "10c2bd52-4461-437f-baf3-de28d854fa91",
+              "name": "ServiceUnavailableException",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/v2LoggingLevel?targetType=SOURCE_IP&targetName=<string>#targetType&targetName",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "v2LoggingLevel"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) The type of resource for which you are configuring logging. Must be <code>THING_Group</code>.",
+                      "key": "targetType",
+                      "value": "SOURCE_IP"
+                    },
+                    {
+                      "description": "(Required) The name of the resource for which you are configuring logging.",
+                      "key": "targetName",
+                      "value": "<string>"
+                    }
+                  ],
+                  "hash": "targetType&targetName"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:33:27.000Z",
+              "updatedAt": "2026-07-28T10:33:27.000Z",
+              "uid": "35240-10c2bd52-4461-437f-baf3-de28d854fa91"
+            }
+          ],
+          "createdAt": "2026-07-28T10:33:27.000Z",
+          "updatedAt": "2026-07-28T10:33:27.000Z",
+          "uid": "35240-2dde5be7-e84b-4702-943f-61c718981940"
+        }
+      ],
+      "id": "d34956f2-d00c-4c8e-ac2f-8b290b136848",
+      "createdAt": "2026-07-28T10:33:27.000Z",
+      "updatedAt": "2026-07-28T10:33:27.000Z",
+      "uid": "35240-d34956f2-d00c-4c8e-ac2f-8b290b136848"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "http://iot.{{region}}.amazonaws.com"
+    }
+  ]
+}

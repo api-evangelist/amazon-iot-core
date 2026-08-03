@@ -1,0 +1,3243 @@
+{
+  "info": {
+    "_postman_id": "ab100e9c-f183-473c-8241-9860df8edf08",
+    "name": "AWS IoT Accept Certificate Transfer Thing Types API",
+    "description": "<fullname>IoT</fullname> <p>IoT provides secure, bi-directional communication between Internet-connected devices (such as sensors, actuators, embedded devices, or smart appliances) and the Amazon Web Services cloud. You can discover your custom IoT-Data endpoint to communicate with, configure rules for data processing and integration with other services, organize resources associated with each device (Registry), configure logging, and create and manage policies and credentials to authenticate devices.</p> <p>The service endpoints that expose this API are listed in <a href=\"https://docs.aws.amazon.com/general/latest/gr/iot-core.html\">Amazon Web Services IoT Core Endpoints and Quotas</a>. You must use the endpoint for the region that has the resources you want to access.</p> <p>The service name used by <a href=\"https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html\">Amazon Web Services Signature Version 4</a> to sign the request is: <i>execute-api</i>.</p> <p>For more information about how IoT works, see the <a href=\"https://docs.aws.amazon.com/iot/latest/developerguide/aws-iot-how-it-works.html\">Developer Guide</a>.</p> <p>For information about how to use the credentials provider for IoT, see <a href=\"https://docs.aws.amazon.com/iot/latest/developerguide/authorizing-direct-aws.html\">Authorizing Direct Calls to Amazon Web Services Services</a>.</p>\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:33:21.000Z",
+    "updatedAt": "2026-07-28T10:33:21.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-ab100e9c-f183-473c-8241-9860df8edf08"
+  },
+  "item": [
+    {
+      "name": "thing-types",
+      "item": [
+        {
+          "name": "{thingTypeName}",
+          "item": [
+            {
+              "name": "deprecate",
+              "item": [
+                {
+                  "name": "Amazon IoT Core Deprecate Thing Type",
+                  "id": "765866c1-e7bb-4638-8a16-ada54e1758b7",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"undoDeprecate\": \"<boolean>\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/thing-types/:thingTypeName/deprecate",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "thing-types",
+                        ":thingTypeName",
+                        "deprecate"
+                      ],
+                      "variable": [
+                        {
+                          "id": "0ec1d74b-90cd-412e-912b-02a1228253a8",
+                          "key": "thingTypeName",
+                          "value": "h21",
+                          "description": "(Required) The name of the thing type to deprecate."
+                        }
+                      ]
+                    },
+                    "description": "<p>Deprecates a thing type. You can not associate new things with deprecated thing type.</p> <p>Requires permission to access the <a href=\"https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions\">DeprecateThingType</a> action.</p>"
+                  },
+                  "response": [
+                    {
+                      "id": "24f4a4a3-27df-442b-a525-f9d1f78f200b",
+                      "name": "Success",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"undoDeprecate\": \"<boolean>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/thing-types/:thingTypeName/deprecate",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "thing-types",
+                            ":thingTypeName",
+                            "deprecate"
+                          ],
+                          "variable": [
+                            {
+                              "key": "thingTypeName"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-07-28T10:33:21.000Z",
+                      "updatedAt": "2026-07-28T10:33:21.000Z",
+                      "uid": "35240-24f4a4a3-27df-442b-a525-f9d1f78f200b"
+                    },
+                    {
+                      "id": "7a34778b-26c1-4202-bdb6-f77fcf6f27f8",
+                      "name": "ResourceNotFoundException",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"undoDeprecate\": \"<boolean>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/thing-types/:thingTypeName/deprecate",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "thing-types",
+                            ":thingTypeName",
+                            "deprecate"
+                          ],
+                          "variable": [
+                            {
+                              "key": "thingTypeName"
+                            }
+                          ]
+                        }
+                      },
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-07-28T10:33:21.000Z",
+                      "updatedAt": "2026-07-28T10:33:21.000Z",
+                      "uid": "35240-7a34778b-26c1-4202-bdb6-f77fcf6f27f8"
+                    },
+                    {
+                      "id": "6825d388-6b17-4aa5-ab63-1b7df1f8ac29",
+                      "name": "InvalidRequestException",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"undoDeprecate\": \"<boolean>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/thing-types/:thingTypeName/deprecate",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "thing-types",
+                            ":thingTypeName",
+                            "deprecate"
+                          ],
+                          "variable": [
+                            {
+                              "key": "thingTypeName"
+                            }
+                          ]
+                        }
+                      },
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-07-28T10:33:21.000Z",
+                      "updatedAt": "2026-07-28T10:33:21.000Z",
+                      "uid": "35240-6825d388-6b17-4aa5-ab63-1b7df1f8ac29"
+                    },
+                    {
+                      "id": "88d7422e-5766-43cd-9ff2-d82f2e531e1e",
+                      "name": "ThrottlingException",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"undoDeprecate\": \"<boolean>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/thing-types/:thingTypeName/deprecate",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "thing-types",
+                            ":thingTypeName",
+                            "deprecate"
+                          ],
+                          "variable": [
+                            {
+                              "key": "thingTypeName"
+                            }
+                          ]
+                        }
+                      },
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-07-28T10:33:21.000Z",
+                      "updatedAt": "2026-07-28T10:33:21.000Z",
+                      "uid": "35240-88d7422e-5766-43cd-9ff2-d82f2e531e1e"
+                    },
+                    {
+                      "id": "3883781f-b1f9-4df6-b5f1-83aebf539779",
+                      "name": "UnauthorizedException",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"undoDeprecate\": \"<boolean>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/thing-types/:thingTypeName/deprecate",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "thing-types",
+                            ":thingTypeName",
+                            "deprecate"
+                          ],
+                          "variable": [
+                            {
+                              "key": "thingTypeName"
+                            }
+                          ]
+                        }
+                      },
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-07-28T10:33:21.000Z",
+                      "updatedAt": "2026-07-28T10:33:21.000Z",
+                      "uid": "35240-3883781f-b1f9-4df6-b5f1-83aebf539779"
+                    },
+                    {
+                      "id": "ae10e6e3-9caa-4f67-a3c5-4aa98913c522",
+                      "name": "ServiceUnavailableException",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"undoDeprecate\": \"<boolean>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/thing-types/:thingTypeName/deprecate",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "thing-types",
+                            ":thingTypeName",
+                            "deprecate"
+                          ],
+                          "variable": [
+                            {
+                              "key": "thingTypeName"
+                            }
+                          ]
+                        }
+                      },
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-07-28T10:33:21.000Z",
+                      "updatedAt": "2026-07-28T10:33:21.000Z",
+                      "uid": "35240-ae10e6e3-9caa-4f67-a3c5-4aa98913c522"
+                    },
+                    {
+                      "id": "845d7551-7202-44e3-8996-c61c32f7f1d6",
+                      "name": "InternalFailureException",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"undoDeprecate\": \"<boolean>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/thing-types/:thingTypeName/deprecate",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "thing-types",
+                            ":thingTypeName",
+                            "deprecate"
+                          ],
+                          "variable": [
+                            {
+                              "key": "thingTypeName"
+                            }
+                          ]
+                        }
+                      },
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-07-28T10:33:21.000Z",
+                      "updatedAt": "2026-07-28T10:33:21.000Z",
+                      "uid": "35240-845d7551-7202-44e3-8996-c61c32f7f1d6"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T10:33:21.000Z",
+                  "updatedAt": "2026-07-28T10:33:21.000Z",
+                  "uid": "35240-765866c1-e7bb-4638-8a16-ada54e1758b7"
+                }
+              ],
+              "id": "da740ae0-dd1a-4473-9677-fab33a0fa878",
+              "createdAt": "2026-07-28T10:33:21.000Z",
+              "updatedAt": "2026-07-28T10:33:21.000Z",
+              "uid": "35240-da740ae0-dd1a-4473-9677-fab33a0fa878"
+            },
+            {
+              "name": "Amazon IoT Core Create Thing Type",
+              "id": "ebaa71bd-f99f-44b4-bd4a-14d909181683",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"thingTypeProperties\": {\n    \"thingTypeDescription\": \"{{r \",\n    \"searchableAttributes\": [\n      \"eSIIy5\",\n      \"diunPE\"\n    ]\n  },\n  \"tags\": [\n    {\n      \"Key\": \"Z-\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \" \",\n      \"Value\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/thing-types/:thingTypeName",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "thing-types",
+                    ":thingTypeName"
+                  ],
+                  "variable": [
+                    {
+                      "id": "a7d0a6d2-b3cf-4199-bb70-597c06562d6d",
+                      "key": "thingTypeName",
+                      "value": "h21",
+                      "description": "(Required) The name of the thing type."
+                    }
+                  ]
+                },
+                "description": "<p>Creates a new thing type.</p> <p>Requires permission to access the <a href=\"https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions\">CreateThingType</a> action.</p>"
+              },
+              "response": [
+                {
+                  "id": "02ca1aaf-ec66-4a4c-bc59-b4826b5b74fc",
+                  "name": "Success",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"thingTypeProperties\": {\n    \"thingTypeDescription\": \"{{r \",\n    \"searchableAttributes\": [\n      \"eSIIy5\",\n      \"diunPE\"\n    ]\n  },\n  \"tags\": [\n    {\n      \"Key\": \"Z-\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \" \",\n      \"Value\": \"<string>\"\n    }\n  ]\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/thing-types/:thingTypeName",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "thing-types",
+                        ":thingTypeName"
+                      ],
+                      "variable": [
+                        {
+                          "key": "thingTypeName"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"thingTypeName\": \"dGki\",\n  \"thingTypeArn\": \"<string>\",\n  \"thingTypeId\": \"<string>\"\n}",
+                  "createdAt": "2026-07-28T10:33:21.000Z",
+                  "updatedAt": "2026-07-28T10:33:21.000Z",
+                  "uid": "35240-02ca1aaf-ec66-4a4c-bc59-b4826b5b74fc"
+                },
+                {
+                  "id": "68cc3fbc-8ceb-4252-9cef-741fd28776c1",
+                  "name": "InvalidRequestException",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"thingTypeProperties\": {\n    \"thingTypeDescription\": \"{{r \",\n    \"searchableAttributes\": [\n      \"eSIIy5\",\n      \"diunPE\"\n    ]\n  },\n  \"tags\": [\n    {\n      \"Key\": \"Z-\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \" \",\n      \"Value\": \"<string>\"\n    }\n  ]\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/thing-types/:thingTypeName",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "thing-types",
+                        ":thingTypeName"
+                      ],
+                      "variable": [
+                        {
+                          "key": "thingTypeName"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:33:21.000Z",
+                  "updatedAt": "2026-07-28T10:33:21.000Z",
+                  "uid": "35240-68cc3fbc-8ceb-4252-9cef-741fd28776c1"
+                },
+                {
+                  "id": "63ec90a2-4819-40e7-b2e4-fff6d0537dac",
+                  "name": "ThrottlingException",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"thingTypeProperties\": {\n    \"thingTypeDescription\": \"{{r \",\n    \"searchableAttributes\": [\n      \"eSIIy5\",\n      \"diunPE\"\n    ]\n  },\n  \"tags\": [\n    {\n      \"Key\": \"Z-\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \" \",\n      \"Value\": \"<string>\"\n    }\n  ]\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/thing-types/:thingTypeName",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "thing-types",
+                        ":thingTypeName"
+                      ],
+                      "variable": [
+                        {
+                          "key": "thingTypeName"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:33:21.000Z",
+                  "updatedAt": "2026-07-28T10:33:21.000Z",
+                  "uid": "35240-63ec90a2-4819-40e7-b2e4-fff6d0537dac"
+                },
+                {
+                  "id": "91e8a919-18c5-4714-94d1-265bd780295f",
+                  "name": "UnauthorizedException",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"thingTypeProperties\": {\n    \"thingTypeDescription\": \"{{r \",\n    \"searchableAttributes\": [\n      \"eSIIy5\",\n      \"diunPE\"\n    ]\n  },\n  \"tags\": [\n    {\n      \"Key\": \"Z-\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \" \",\n      \"Value\": \"<string>\"\n    }\n  ]\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/thing-types/:thingTypeName",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "thing-types",
+                        ":thingTypeName"
+                      ],
+                      "variable": [
+                        {
+                          "key": "thingTypeName"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:33:21.000Z",
+                  "updatedAt": "2026-07-28T10:33:21.000Z",
+                  "uid": "35240-91e8a919-18c5-4714-94d1-265bd780295f"
+                },
+                {
+                  "id": "97558a97-6e48-43c9-85cf-c420fe1f3f18",
+                  "name": "ServiceUnavailableException",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"thingTypeProperties\": {\n    \"thingTypeDescription\": \"{{r \",\n    \"searchableAttributes\": [\n      \"eSIIy5\",\n      \"diunPE\"\n    ]\n  },\n  \"tags\": [\n    {\n      \"Key\": \"Z-\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \" \",\n      \"Value\": \"<string>\"\n    }\n  ]\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/thing-types/:thingTypeName",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "thing-types",
+                        ":thingTypeName"
+                      ],
+                      "variable": [
+                        {
+                          "key": "thingTypeName"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:33:21.000Z",
+                  "updatedAt": "2026-07-28T10:33:21.000Z",
+                  "uid": "35240-97558a97-6e48-43c9-85cf-c420fe1f3f18"
+                },
+                {
+                  "id": "51fb00b2-6cf7-4b17-92a2-fc63d789fe12",
+                  "name": "InternalFailureException",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"thingTypeProperties\": {\n    \"thingTypeDescription\": \"{{r \",\n    \"searchableAttributes\": [\n      \"eSIIy5\",\n      \"diunPE\"\n    ]\n  },\n  \"tags\": [\n    {\n      \"Key\": \"Z-\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \" \",\n      \"Value\": \"<string>\"\n    }\n  ]\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/thing-types/:thingTypeName",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "thing-types",
+                        ":thingTypeName"
+                      ],
+                      "variable": [
+                        {
+                          "key": "thingTypeName"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:33:21.000Z",
+                  "updatedAt": "2026-07-28T10:33:21.000Z",
+                  "uid": "35240-51fb00b2-6cf7-4b17-92a2-fc63d789fe12"
+                },
+                {
+                  "id": "da7c3682-ae6b-4c80-bfe3-5e6bdea93a75",
+                  "name": "ResourceAlreadyExistsException",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"thingTypeProperties\": {\n    \"thingTypeDescription\": \"{{r \",\n    \"searchableAttributes\": [\n      \"eSIIy5\",\n      \"diunPE\"\n    ]\n  },\n  \"tags\": [\n    {\n      \"Key\": \"Z-\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \" \",\n      \"Value\": \"<string>\"\n    }\n  ]\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/thing-types/:thingTypeName",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "thing-types",
+                        ":thingTypeName"
+                      ],
+                      "variable": [
+                        {
+                          "key": "thingTypeName"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:33:21.000Z",
+                  "updatedAt": "2026-07-28T10:33:21.000Z",
+                  "uid": "35240-da7c3682-ae6b-4c80-bfe3-5e6bdea93a75"
+                }
+              ],
+              "createdAt": "2026-07-28T10:33:21.000Z",
+              "updatedAt": "2026-07-28T10:33:21.000Z",
+              "uid": "35240-ebaa71bd-f99f-44b4-bd4a-14d909181683"
+            },
+            {
+              "name": "Amazon IoT Core Delete Thing Type",
+              "id": "77b3bc20-5b7e-4d9d-af82-37683c7be4cc",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "DELETE",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/thing-types/:thingTypeName",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "thing-types",
+                    ":thingTypeName"
+                  ],
+                  "variable": [
+                    {
+                      "id": "bd84d28d-aad1-46ff-af12-ac63fc81a293",
+                      "key": "thingTypeName",
+                      "value": "h21",
+                      "description": "(Required) The name of the thing type."
+                    }
+                  ]
+                },
+                "description": "<p>Deletes the specified thing type. You cannot delete a thing type if it has things associated with it. To delete a thing type, first mark it as deprecated by calling <a>DeprecateThingType</a>, then remove any associated things by calling <a>UpdateThing</a> to change the thing type on any associated thing, and finally use <a>DeleteThingType</a> to delete the thing type.</p> <p>Requires permission to access the <a href=\"https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions\">DeleteThingType</a> action.</p>"
+              },
+              "response": [
+                {
+                  "id": "6dadd867-c0c5-4779-b6f8-14910d73ef8d",
+                  "name": "Success",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/thing-types/:thingTypeName",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "thing-types",
+                        ":thingTypeName"
+                      ],
+                      "variable": [
+                        {
+                          "key": "thingTypeName"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:33:21.000Z",
+                  "updatedAt": "2026-07-28T10:33:21.000Z",
+                  "uid": "35240-6dadd867-c0c5-4779-b6f8-14910d73ef8d"
+                },
+                {
+                  "id": "d71b1d41-4312-4135-abde-ae9b3f983b05",
+                  "name": "ResourceNotFoundException",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/thing-types/:thingTypeName",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "thing-types",
+                        ":thingTypeName"
+                      ],
+                      "variable": [
+                        {
+                          "key": "thingTypeName"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:33:21.000Z",
+                  "updatedAt": "2026-07-28T10:33:21.000Z",
+                  "uid": "35240-d71b1d41-4312-4135-abde-ae9b3f983b05"
+                },
+                {
+                  "id": "daa299a8-e39d-4647-93c8-eb8aa3e0d637",
+                  "name": "InvalidRequestException",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/thing-types/:thingTypeName",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "thing-types",
+                        ":thingTypeName"
+                      ],
+                      "variable": [
+                        {
+                          "key": "thingTypeName"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:33:21.000Z",
+                  "updatedAt": "2026-07-28T10:33:21.000Z",
+                  "uid": "35240-daa299a8-e39d-4647-93c8-eb8aa3e0d637"
+                },
+                {
+                  "id": "03023055-6734-4865-bef4-9154cb4611bc",
+                  "name": "ThrottlingException",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/thing-types/:thingTypeName",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "thing-types",
+                        ":thingTypeName"
+                      ],
+                      "variable": [
+                        {
+                          "key": "thingTypeName"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:33:21.000Z",
+                  "updatedAt": "2026-07-28T10:33:21.000Z",
+                  "uid": "35240-03023055-6734-4865-bef4-9154cb4611bc"
+                },
+                {
+                  "id": "3c1efc53-fce2-460e-a5fb-ae4489206107",
+                  "name": "UnauthorizedException",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/thing-types/:thingTypeName",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "thing-types",
+                        ":thingTypeName"
+                      ],
+                      "variable": [
+                        {
+                          "key": "thingTypeName"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:33:21.000Z",
+                  "updatedAt": "2026-07-28T10:33:21.000Z",
+                  "uid": "35240-3c1efc53-fce2-460e-a5fb-ae4489206107"
+                },
+                {
+                  "id": "7e97d568-293c-44a8-872f-f1ae48dba8c4",
+                  "name": "ServiceUnavailableException",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/thing-types/:thingTypeName",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "thing-types",
+                        ":thingTypeName"
+                      ],
+                      "variable": [
+                        {
+                          "key": "thingTypeName"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:33:21.000Z",
+                  "updatedAt": "2026-07-28T10:33:21.000Z",
+                  "uid": "35240-7e97d568-293c-44a8-872f-f1ae48dba8c4"
+                },
+                {
+                  "id": "5833430a-a1ea-43d9-a804-19844d5e5b98",
+                  "name": "InternalFailureException",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/thing-types/:thingTypeName",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "thing-types",
+                        ":thingTypeName"
+                      ],
+                      "variable": [
+                        {
+                          "key": "thingTypeName"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:33:21.000Z",
+                  "updatedAt": "2026-07-28T10:33:21.000Z",
+                  "uid": "35240-5833430a-a1ea-43d9-a804-19844d5e5b98"
+                }
+              ],
+              "createdAt": "2026-07-28T10:33:21.000Z",
+              "updatedAt": "2026-07-28T10:33:21.000Z",
+              "uid": "35240-77b3bc20-5b7e-4d9d-af82-37683c7be4cc"
+            },
+            {
+              "name": "Amazon IoT Core Describe Thing Type",
+              "id": "4d006cf8-af46-4a71-852f-7c6f6658e0e9",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/thing-types/:thingTypeName",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "thing-types",
+                    ":thingTypeName"
+                  ],
+                  "variable": [
+                    {
+                      "id": "b568ab19-d683-46cb-962e-ae6f9abef6fa",
+                      "key": "thingTypeName",
+                      "value": "h21",
+                      "description": "(Required) The name of the thing type."
+                    }
+                  ]
+                },
+                "description": "<p>Gets information about the specified thing type.</p> <p>Requires permission to access the <a href=\"https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions\">DescribeThingType</a> action.</p>"
+              },
+              "response": [
+                {
+                  "id": "5e865bd3-ee50-4076-8ba5-aaa5f0ead48b",
+                  "name": "Success",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/thing-types/:thingTypeName",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "thing-types",
+                        ":thingTypeName"
+                      ],
+                      "variable": [
+                        {
+                          "key": "thingTypeName"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"thingTypeName\": \"W84gRBN\",\n  \"thingTypeId\": \"<string>\",\n  \"thingTypeArn\": \"<string>\",\n  \"thingTypeProperties\": {\n    \"thingTypeDescription\": \"a h{\",\n    \"searchableAttributes\": [\n      \"N0AxQ.Z\",\n      \"v/gpxR#CEW\"\n    ]\n  },\n  \"thingTypeMetadata\": {\n    \"deprecated\": \"<boolean>\",\n    \"deprecationDate\": \"<dateTime>\",\n    \"creationDate\": \"<dateTime>\"\n  }\n}",
+                  "createdAt": "2026-07-28T10:33:21.000Z",
+                  "updatedAt": "2026-07-28T10:33:21.000Z",
+                  "uid": "35240-5e865bd3-ee50-4076-8ba5-aaa5f0ead48b"
+                },
+                {
+                  "id": "77257ce8-1edc-4e55-bdca-04441e589c07",
+                  "name": "ResourceNotFoundException",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/thing-types/:thingTypeName",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "thing-types",
+                        ":thingTypeName"
+                      ],
+                      "variable": [
+                        {
+                          "key": "thingTypeName"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:33:21.000Z",
+                  "updatedAt": "2026-07-28T10:33:21.000Z",
+                  "uid": "35240-77257ce8-1edc-4e55-bdca-04441e589c07"
+                },
+                {
+                  "id": "2832eed4-9ed5-41b3-9a74-edfb414892fe",
+                  "name": "InvalidRequestException",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/thing-types/:thingTypeName",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "thing-types",
+                        ":thingTypeName"
+                      ],
+                      "variable": [
+                        {
+                          "key": "thingTypeName"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:33:21.000Z",
+                  "updatedAt": "2026-07-28T10:33:21.000Z",
+                  "uid": "35240-2832eed4-9ed5-41b3-9a74-edfb414892fe"
+                },
+                {
+                  "id": "47a7b2ad-567a-4cb0-8de7-20d14972720c",
+                  "name": "ThrottlingException",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/thing-types/:thingTypeName",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "thing-types",
+                        ":thingTypeName"
+                      ],
+                      "variable": [
+                        {
+                          "key": "thingTypeName"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:33:21.000Z",
+                  "updatedAt": "2026-07-28T10:33:21.000Z",
+                  "uid": "35240-47a7b2ad-567a-4cb0-8de7-20d14972720c"
+                },
+                {
+                  "id": "6959c224-7686-449d-9190-1b41e843562c",
+                  "name": "UnauthorizedException",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/thing-types/:thingTypeName",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "thing-types",
+                        ":thingTypeName"
+                      ],
+                      "variable": [
+                        {
+                          "key": "thingTypeName"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:33:21.000Z",
+                  "updatedAt": "2026-07-28T10:33:21.000Z",
+                  "uid": "35240-6959c224-7686-449d-9190-1b41e843562c"
+                },
+                {
+                  "id": "6b494f2e-1602-4f1a-a89b-c7abf8798639",
+                  "name": "ServiceUnavailableException",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/thing-types/:thingTypeName",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "thing-types",
+                        ":thingTypeName"
+                      ],
+                      "variable": [
+                        {
+                          "key": "thingTypeName"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:33:21.000Z",
+                  "updatedAt": "2026-07-28T10:33:21.000Z",
+                  "uid": "35240-6b494f2e-1602-4f1a-a89b-c7abf8798639"
+                },
+                {
+                  "id": "25c5980e-1d48-4750-8f4b-8d00730474df",
+                  "name": "InternalFailureException",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/thing-types/:thingTypeName",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "thing-types",
+                        ":thingTypeName"
+                      ],
+                      "variable": [
+                        {
+                          "key": "thingTypeName"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:33:21.000Z",
+                  "updatedAt": "2026-07-28T10:33:21.000Z",
+                  "uid": "35240-25c5980e-1d48-4750-8f4b-8d00730474df"
+                }
+              ],
+              "createdAt": "2026-07-28T10:33:21.000Z",
+              "updatedAt": "2026-07-28T10:33:21.000Z",
+              "uid": "35240-4d006cf8-af46-4a71-852f-7c6f6658e0e9"
+            }
+          ],
+          "id": "a9b2e91d-5cf8-47f2-98d4-c1f96441004d",
+          "createdAt": "2026-07-28T10:33:21.000Z",
+          "updatedAt": "2026-07-28T10:33:21.000Z",
+          "uid": "35240-a9b2e91d-5cf8-47f2-98d4-c1f96441004d"
+        },
+        {
+          "name": "Amazon IoT Core List Thing Types",
+          "id": "1b5df3e0-030b-46b1-a4b9-55268a1b1b79",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/thing-types?nextToken=<string>&maxResults=<integer>&thingTypeName=h21",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "thing-types"
+              ],
+              "query": [
+                {
+                  "description": "To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.",
+                  "key": "nextToken",
+                  "value": "<string>"
+                },
+                {
+                  "description": "The maximum number of results to return in this operation.",
+                  "key": "maxResults",
+                  "value": "<integer>"
+                },
+                {
+                  "description": "The name of the thing type.",
+                  "key": "thingTypeName",
+                  "value": "h21"
+                }
+              ]
+            },
+            "description": "<p>Lists the existing thing types.</p> <p>Requires permission to access the <a href=\"https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions\">ListThingTypes</a> action.</p>"
+          },
+          "response": [
+            {
+              "id": "2015981b-77d1-4816-b5e9-0307c4afbe4d",
+              "name": "Success",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/thing-types?nextToken=<string>&maxResults=<integer>&thingTypeName=h21",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "thing-types"
+                  ],
+                  "query": [
+                    {
+                      "description": "To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.",
+                      "key": "nextToken",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The maximum number of results to return in this operation.",
+                      "key": "maxResults",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "The name of the thing type.",
+                      "key": "thingTypeName",
+                      "value": "h21"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"thingTypes\": [\n    {\n      \"thingTypeName\": \"L3\",\n      \"thingTypeArn\": \"<string>\",\n      \"thingTypeProperties\": {\n        \"thingTypeDescription\": \"}G\",\n        \"searchableAttributes\": [\n          \"oNVYR\",\n          \"huWxQR#6\"\n        ]\n      },\n      \"thingTypeMetadata\": {\n        \"deprecated\": \"<boolean>\",\n        \"deprecationDate\": \"<dateTime>\",\n        \"creationDate\": \"<dateTime>\"\n      }\n    },\n    {\n      \"thingTypeName\": \"DtDRk0-c\",\n      \"thingTypeArn\": \"<string>\",\n      \"thingTypeProperties\": {\n        \"thingTypeDescription\": \"  rGh {r}\",\n        \"searchableAttributes\": [\n          \"-P3a,.JV@3\",\n          \",Rwy,961o\"\n        ]\n      },\n      \"thingTypeMetadata\": {\n        \"deprecated\": \"<boolean>\",\n        \"deprecationDate\": \"<dateTime>\",\n        \"creationDate\": \"<dateTime>\"\n      }\n    }\n  ],\n  \"nextToken\": \"<string>\"\n}",
+              "createdAt": "2026-07-28T10:33:21.000Z",
+              "updatedAt": "2026-07-28T10:33:21.000Z",
+              "uid": "35240-2015981b-77d1-4816-b5e9-0307c4afbe4d"
+            },
+            {
+              "id": "66cd2adc-c3fe-4a3d-9890-1279a8c672b5",
+              "name": "InvalidRequestException",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/thing-types?nextToken=<string>&maxResults=<integer>&thingTypeName=h21",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "thing-types"
+                  ],
+                  "query": [
+                    {
+                      "description": "To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.",
+                      "key": "nextToken",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The maximum number of results to return in this operation.",
+                      "key": "maxResults",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "The name of the thing type.",
+                      "key": "thingTypeName",
+                      "value": "h21"
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:33:21.000Z",
+              "updatedAt": "2026-07-28T10:33:21.000Z",
+              "uid": "35240-66cd2adc-c3fe-4a3d-9890-1279a8c672b5"
+            },
+            {
+              "id": "9155c05c-83a8-409c-ad9d-8004c7e5de2b",
+              "name": "ThrottlingException",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/thing-types?nextToken=<string>&maxResults=<integer>&thingTypeName=h21",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "thing-types"
+                  ],
+                  "query": [
+                    {
+                      "description": "To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.",
+                      "key": "nextToken",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The maximum number of results to return in this operation.",
+                      "key": "maxResults",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "The name of the thing type.",
+                      "key": "thingTypeName",
+                      "value": "h21"
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:33:21.000Z",
+              "updatedAt": "2026-07-28T10:33:21.000Z",
+              "uid": "35240-9155c05c-83a8-409c-ad9d-8004c7e5de2b"
+            },
+            {
+              "id": "1b55d96c-ac1c-405f-b93d-9f1bf9af46e1",
+              "name": "UnauthorizedException",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/thing-types?nextToken=<string>&maxResults=<integer>&thingTypeName=h21",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "thing-types"
+                  ],
+                  "query": [
+                    {
+                      "description": "To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.",
+                      "key": "nextToken",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The maximum number of results to return in this operation.",
+                      "key": "maxResults",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "The name of the thing type.",
+                      "key": "thingTypeName",
+                      "value": "h21"
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:33:21.000Z",
+              "updatedAt": "2026-07-28T10:33:21.000Z",
+              "uid": "35240-1b55d96c-ac1c-405f-b93d-9f1bf9af46e1"
+            },
+            {
+              "id": "e47a7317-e879-4a21-8c07-1c6a19ca8153",
+              "name": "ServiceUnavailableException",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/thing-types?nextToken=<string>&maxResults=<integer>&thingTypeName=h21",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "thing-types"
+                  ],
+                  "query": [
+                    {
+                      "description": "To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.",
+                      "key": "nextToken",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The maximum number of results to return in this operation.",
+                      "key": "maxResults",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "The name of the thing type.",
+                      "key": "thingTypeName",
+                      "value": "h21"
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:33:21.000Z",
+              "updatedAt": "2026-07-28T10:33:21.000Z",
+              "uid": "35240-e47a7317-e879-4a21-8c07-1c6a19ca8153"
+            },
+            {
+              "id": "28c1e139-bc8f-4858-bee6-77f24f6ef203",
+              "name": "InternalFailureException",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/thing-types?nextToken=<string>&maxResults=<integer>&thingTypeName=h21",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "thing-types"
+                  ],
+                  "query": [
+                    {
+                      "description": "To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.",
+                      "key": "nextToken",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "The maximum number of results to return in this operation.",
+                      "key": "maxResults",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "The name of the thing type.",
+                      "key": "thingTypeName",
+                      "value": "h21"
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:33:21.000Z",
+              "updatedAt": "2026-07-28T10:33:21.000Z",
+              "uid": "35240-28c1e139-bc8f-4858-bee6-77f24f6ef203"
+            }
+          ],
+          "createdAt": "2026-07-28T10:33:21.000Z",
+          "updatedAt": "2026-07-28T10:33:21.000Z",
+          "uid": "35240-1b5df3e0-030b-46b1-a4b9-55268a1b1b79"
+        }
+      ],
+      "id": "94b5cc07-44ec-4876-a534-c2f7ff587113",
+      "createdAt": "2026-07-28T10:33:21.000Z",
+      "updatedAt": "2026-07-28T10:33:21.000Z",
+      "uid": "35240-94b5cc07-44ec-4876-a534-c2f7ff587113"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "http://iot.{{region}}.amazonaws.com"
+    }
+  ]
+}

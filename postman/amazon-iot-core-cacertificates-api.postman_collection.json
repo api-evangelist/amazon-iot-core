@@ -1,0 +1,676 @@
+{
+  "info": {
+    "_postman_id": "c0121522-29fb-4403-b505-661cde0432ee",
+    "name": "AWS IoT Accept Certificate Transfer Cacertificates API",
+    "description": "<fullname>IoT</fullname> <p>IoT provides secure, bi-directional communication between Internet-connected devices (such as sensors, actuators, embedded devices, or smart appliances) and the Amazon Web Services cloud. You can discover your custom IoT-Data endpoint to communicate with, configure rules for data processing and integration with other services, organize resources associated with each device (Registry), configure logging, and create and manage policies and credentials to authenticate devices.</p> <p>The service endpoints that expose this API are listed in <a href=\"https://docs.aws.amazon.com/general/latest/gr/iot-core.html\">Amazon Web Services IoT Core Endpoints and Quotas</a>. You must use the endpoint for the region that has the resources you want to access.</p> <p>The service name used by <a href=\"https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html\">Amazon Web Services Signature Version 4</a> to sign the request is: <i>execute-api</i>.</p> <p>For more information about how IoT works, see the <a href=\"https://docs.aws.amazon.com/iot/latest/developerguide/aws-iot-how-it-works.html\">Developer Guide</a>.</p> <p>For information about how to use the credentials provider for IoT, see <a href=\"https://docs.aws.amazon.com/iot/latest/developerguide/authorizing-direct-aws.html\">Authorizing Direct Calls to Amazon Web Services Services</a>.</p>\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:30:39.000Z",
+    "updatedAt": "2026-07-28T10:30:39.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-c0121522-29fb-4403-b505-661cde0432ee"
+  },
+  "item": [
+    {
+      "name": "cacertificates",
+      "item": [
+        {
+          "name": "Amazon IoT Core List C a Certificates",
+          "id": "2f3637b8-1e09-4fd7-addf-8169acbff938",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/cacertificates?pageSize=<integer>&marker=70==&isAscendingOrder=<boolean>&templateName=Q3M0L9ZNR",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "cacertificates"
+              ],
+              "query": [
+                {
+                  "description": "The result page size.",
+                  "key": "pageSize",
+                  "value": "<integer>"
+                },
+                {
+                  "description": "The marker for the next set of results.",
+                  "key": "marker",
+                  "value": "70=="
+                },
+                {
+                  "description": "Determines the order of the results.",
+                  "key": "isAscendingOrder",
+                  "value": "<boolean>"
+                },
+                {
+                  "description": "The name of the provisioning template.",
+                  "key": "templateName",
+                  "value": "Q3M0L9ZNR"
+                }
+              ]
+            },
+            "description": "<p>Lists the CA certificates registered for your Amazon Web Services account.</p> <p>The results are paginated with a default page size of 25. You can use the returned marker to retrieve additional results.</p> <p>Requires permission to access the <a href=\"https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions\">ListCACertificates</a> action.</p>"
+          },
+          "response": [
+            {
+              "id": "45f24c39-e55a-498b-87e7-106f867d7a0c",
+              "name": "Success",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/cacertificates?pageSize=<integer>&marker=70==&isAscendingOrder=<boolean>&templateName=Q3M0L9ZNR",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "cacertificates"
+                  ],
+                  "query": [
+                    {
+                      "description": "The result page size.",
+                      "key": "pageSize",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "The marker for the next set of results.",
+                      "key": "marker",
+                      "value": "70=="
+                    },
+                    {
+                      "description": "Determines the order of the results.",
+                      "key": "isAscendingOrder",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "description": "The name of the provisioning template.",
+                      "key": "templateName",
+                      "value": "Q3M0L9ZNR"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"certificates\": [\n    {\n      \"certificateArn\": \"<string>\",\n      \"certificateId\": \"0xdA6a0xdA6a0xdA6a0xdA6a0xdA6a0xdA6a0xdA6a0xdA6a0xdA6a0xdA6a0xdA\",\n      \"status\": \"ACTIVE\",\n      \"creationDate\": \"<dateTime>\"\n    },\n    {\n      \"certificateArn\": \"<string>\",\n      \"certificateId\": \"0xFEE31D0xFEE31D0xFEE31D0xFEE31D0xFEE31D0xFEE31D0xFEE31D0xFEE31D\",\n      \"status\": \"ACTIVE\",\n      \"creationDate\": \"<dateTime>\"\n    }\n  ],\n  \"nextMarker\": \"zf==\"\n}",
+              "createdAt": "2026-07-28T10:30:39.000Z",
+              "updatedAt": "2026-07-28T10:30:39.000Z",
+              "uid": "35240-45f24c39-e55a-498b-87e7-106f867d7a0c"
+            },
+            {
+              "id": "0bedfda0-aa9d-4ac3-91fc-bebbd617cfa7",
+              "name": "InvalidRequestException",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/cacertificates?pageSize=<integer>&marker=70==&isAscendingOrder=<boolean>&templateName=Q3M0L9ZNR",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "cacertificates"
+                  ],
+                  "query": [
+                    {
+                      "description": "The result page size.",
+                      "key": "pageSize",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "The marker for the next set of results.",
+                      "key": "marker",
+                      "value": "70=="
+                    },
+                    {
+                      "description": "Determines the order of the results.",
+                      "key": "isAscendingOrder",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "description": "The name of the provisioning template.",
+                      "key": "templateName",
+                      "value": "Q3M0L9ZNR"
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:30:39.000Z",
+              "updatedAt": "2026-07-28T10:30:39.000Z",
+              "uid": "35240-0bedfda0-aa9d-4ac3-91fc-bebbd617cfa7"
+            },
+            {
+              "id": "736d60cb-c027-4a2b-96f6-203bc0308a54",
+              "name": "ThrottlingException",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/cacertificates?pageSize=<integer>&marker=70==&isAscendingOrder=<boolean>&templateName=Q3M0L9ZNR",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "cacertificates"
+                  ],
+                  "query": [
+                    {
+                      "description": "The result page size.",
+                      "key": "pageSize",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "The marker for the next set of results.",
+                      "key": "marker",
+                      "value": "70=="
+                    },
+                    {
+                      "description": "Determines the order of the results.",
+                      "key": "isAscendingOrder",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "description": "The name of the provisioning template.",
+                      "key": "templateName",
+                      "value": "Q3M0L9ZNR"
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:30:39.000Z",
+              "updatedAt": "2026-07-28T10:30:39.000Z",
+              "uid": "35240-736d60cb-c027-4a2b-96f6-203bc0308a54"
+            },
+            {
+              "id": "8cc5164a-c2e4-42f1-9363-b2668fa9af35",
+              "name": "UnauthorizedException",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/cacertificates?pageSize=<integer>&marker=70==&isAscendingOrder=<boolean>&templateName=Q3M0L9ZNR",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "cacertificates"
+                  ],
+                  "query": [
+                    {
+                      "description": "The result page size.",
+                      "key": "pageSize",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "The marker for the next set of results.",
+                      "key": "marker",
+                      "value": "70=="
+                    },
+                    {
+                      "description": "Determines the order of the results.",
+                      "key": "isAscendingOrder",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "description": "The name of the provisioning template.",
+                      "key": "templateName",
+                      "value": "Q3M0L9ZNR"
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:30:39.000Z",
+              "updatedAt": "2026-07-28T10:30:39.000Z",
+              "uid": "35240-8cc5164a-c2e4-42f1-9363-b2668fa9af35"
+            },
+            {
+              "id": "88c32b0e-3b7c-4338-a255-ce147cd93cbd",
+              "name": "ServiceUnavailableException",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/cacertificates?pageSize=<integer>&marker=70==&isAscendingOrder=<boolean>&templateName=Q3M0L9ZNR",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "cacertificates"
+                  ],
+                  "query": [
+                    {
+                      "description": "The result page size.",
+                      "key": "pageSize",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "The marker for the next set of results.",
+                      "key": "marker",
+                      "value": "70=="
+                    },
+                    {
+                      "description": "Determines the order of the results.",
+                      "key": "isAscendingOrder",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "description": "The name of the provisioning template.",
+                      "key": "templateName",
+                      "value": "Q3M0L9ZNR"
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:30:39.000Z",
+              "updatedAt": "2026-07-28T10:30:39.000Z",
+              "uid": "35240-88c32b0e-3b7c-4338-a255-ce147cd93cbd"
+            },
+            {
+              "id": "6e778e9c-db44-4b9c-870d-6a2702acf07a",
+              "name": "InternalFailureException",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/cacertificates?pageSize=<integer>&marker=70==&isAscendingOrder=<boolean>&templateName=Q3M0L9ZNR",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "cacertificates"
+                  ],
+                  "query": [
+                    {
+                      "description": "The result page size.",
+                      "key": "pageSize",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "The marker for the next set of results.",
+                      "key": "marker",
+                      "value": "70=="
+                    },
+                    {
+                      "description": "Determines the order of the results.",
+                      "key": "isAscendingOrder",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "description": "The name of the provisioning template.",
+                      "key": "templateName",
+                      "value": "Q3M0L9ZNR"
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:30:39.000Z",
+              "updatedAt": "2026-07-28T10:30:39.000Z",
+              "uid": "35240-6e778e9c-db44-4b9c-870d-6a2702acf07a"
+            }
+          ],
+          "createdAt": "2026-07-28T10:30:39.000Z",
+          "updatedAt": "2026-07-28T10:30:39.000Z",
+          "uid": "35240-2f3637b8-1e09-4fd7-addf-8169acbff938"
+        }
+      ],
+      "id": "c54b1594-9fb0-4bac-ac41-5f9f0082b8ee",
+      "createdAt": "2026-07-28T10:30:39.000Z",
+      "updatedAt": "2026-07-28T10:30:39.000Z",
+      "uid": "35240-c54b1594-9fb0-4bac-ac41-5f9f0082b8ee"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "http://iot.{{region}}.amazonaws.com"
+    }
+  ]
+}

@@ -1,0 +1,641 @@
+{
+  "info": {
+    "_postman_id": "dd83196d-f27d-454c-af01-286e7de3ad8b",
+    "name": "AWS IoT Accept Certificate Transfer Certificates Out Going API",
+    "description": "<fullname>IoT</fullname> <p>IoT provides secure, bi-directional communication between Internet-connected devices (such as sensors, actuators, embedded devices, or smart appliances) and the Amazon Web Services cloud. You can discover your custom IoT-Data endpoint to communicate with, configure rules for data processing and integration with other services, organize resources associated with each device (Registry), configure logging, and create and manage policies and credentials to authenticate devices.</p> <p>The service endpoints that expose this API are listed in <a href=\"https://docs.aws.amazon.com/general/latest/gr/iot-core.html\">Amazon Web Services IoT Core Endpoints and Quotas</a>. You must use the endpoint for the region that has the resources you want to access.</p> <p>The service name used by <a href=\"https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html\">Amazon Web Services Signature Version 4</a> to sign the request is: <i>execute-api</i>.</p> <p>For more information about how IoT works, see the <a href=\"https://docs.aws.amazon.com/iot/latest/developerguide/aws-iot-how-it-works.html\">Developer Guide</a>.</p> <p>For information about how to use the credentials provider for IoT, see <a href=\"https://docs.aws.amazon.com/iot/latest/developerguide/authorizing-direct-aws.html\">Authorizing Direct Calls to Amazon Web Services Services</a>.</p>\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:30:45.000Z",
+    "updatedAt": "2026-07-28T10:30:45.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-dd83196d-f27d-454c-af01-286e7de3ad8b"
+  },
+  "item": [
+    {
+      "name": "certificates-out-going",
+      "item": [
+        {
+          "name": "Amazon IoT Core List Outgoing Certificates",
+          "id": "0a990d09-42b8-45f9-8f02-e906dc123646",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/certificates-out-going?pageSize=<integer>&marker=d8yEqN6r&isAscendingOrder=<boolean>",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "certificates-out-going"
+              ],
+              "query": [
+                {
+                  "description": "The result page size.",
+                  "key": "pageSize",
+                  "value": "<integer>"
+                },
+                {
+                  "description": "The marker for the next set of results.",
+                  "key": "marker",
+                  "value": "d8yEqN6r"
+                },
+                {
+                  "description": "Specifies the order for results. If True, the results are returned in ascending order, based on the creation date.",
+                  "key": "isAscendingOrder",
+                  "value": "<boolean>"
+                }
+              ]
+            },
+            "description": "<p>Lists certificates that are being transferred but not yet accepted.</p> <p>Requires permission to access the <a href=\"https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions\">ListOutgoingCertificates</a> action.</p>"
+          },
+          "response": [
+            {
+              "id": "c4ecb7e6-ae33-49c6-908c-2827a76a0687",
+              "name": "Success",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/certificates-out-going?pageSize=<integer>&marker=d8yEqN6r&isAscendingOrder=<boolean>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "certificates-out-going"
+                  ],
+                  "query": [
+                    {
+                      "description": "The result page size.",
+                      "key": "pageSize",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "The marker for the next set of results.",
+                      "key": "marker",
+                      "value": "d8yEqN6r"
+                    },
+                    {
+                      "description": "Specifies the order for results. If True, the results are returned in ascending order, based on the creation date.",
+                      "key": "isAscendingOrder",
+                      "value": "<boolean>"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"outgoingCertificates\": [\n    {\n      \"certificateArn\": \"<string>\",\n      \"certificateId\": \"6fdc79f73aa6fdc79f73aa6fdc79f73aa6fdc79f73aa6fdc79f73aa6fdc79f73\",\n      \"transferredTo\": \"257257257257\",\n      \"transferDate\": \"<dateTime>\",\n      \"transferMessage\": \"5w:}\",\n      \"creationDate\": \"<dateTime>\"\n    },\n    {\n      \"certificateArn\": \"<string>\",\n      \"certificateId\": \"0x0e60x0e60x0e60x0e60x0e60x0e60x0e60x0e60x0e60x0e60x0e60x0e60x0e\",\n      \"transferredTo\": \"214222121422\",\n      \"transferDate\": \"<dateTime>\",\n      \"transferMessage\": \"q@\u2000KE!\",\n      \"creationDate\": \"<dateTime>\"\n    }\n  ],\n  \"nextMarker\": \"Kgdy=\"\n}",
+              "createdAt": "2026-07-28T10:30:45.000Z",
+              "updatedAt": "2026-07-28T10:30:45.000Z",
+              "uid": "35240-c4ecb7e6-ae33-49c6-908c-2827a76a0687"
+            },
+            {
+              "id": "cd61e5bd-6e13-4f2b-b54a-d7c3bb45b348",
+              "name": "InvalidRequestException",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/certificates-out-going?pageSize=<integer>&marker=d8yEqN6r&isAscendingOrder=<boolean>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "certificates-out-going"
+                  ],
+                  "query": [
+                    {
+                      "description": "The result page size.",
+                      "key": "pageSize",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "The marker for the next set of results.",
+                      "key": "marker",
+                      "value": "d8yEqN6r"
+                    },
+                    {
+                      "description": "Specifies the order for results. If True, the results are returned in ascending order, based on the creation date.",
+                      "key": "isAscendingOrder",
+                      "value": "<boolean>"
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:30:45.000Z",
+              "updatedAt": "2026-07-28T10:30:45.000Z",
+              "uid": "35240-cd61e5bd-6e13-4f2b-b54a-d7c3bb45b348"
+            },
+            {
+              "id": "e77f190a-cd2f-46c8-ac9c-aad73c602078",
+              "name": "ThrottlingException",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/certificates-out-going?pageSize=<integer>&marker=d8yEqN6r&isAscendingOrder=<boolean>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "certificates-out-going"
+                  ],
+                  "query": [
+                    {
+                      "description": "The result page size.",
+                      "key": "pageSize",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "The marker for the next set of results.",
+                      "key": "marker",
+                      "value": "d8yEqN6r"
+                    },
+                    {
+                      "description": "Specifies the order for results. If True, the results are returned in ascending order, based on the creation date.",
+                      "key": "isAscendingOrder",
+                      "value": "<boolean>"
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:30:45.000Z",
+              "updatedAt": "2026-07-28T10:30:45.000Z",
+              "uid": "35240-e77f190a-cd2f-46c8-ac9c-aad73c602078"
+            },
+            {
+              "id": "3b182aad-6859-4c8d-8042-1ef43ca81676",
+              "name": "UnauthorizedException",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/certificates-out-going?pageSize=<integer>&marker=d8yEqN6r&isAscendingOrder=<boolean>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "certificates-out-going"
+                  ],
+                  "query": [
+                    {
+                      "description": "The result page size.",
+                      "key": "pageSize",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "The marker for the next set of results.",
+                      "key": "marker",
+                      "value": "d8yEqN6r"
+                    },
+                    {
+                      "description": "Specifies the order for results. If True, the results are returned in ascending order, based on the creation date.",
+                      "key": "isAscendingOrder",
+                      "value": "<boolean>"
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:30:45.000Z",
+              "updatedAt": "2026-07-28T10:30:45.000Z",
+              "uid": "35240-3b182aad-6859-4c8d-8042-1ef43ca81676"
+            },
+            {
+              "id": "0fb49ee7-7577-42ad-b93a-2db70aa06f01",
+              "name": "ServiceUnavailableException",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/certificates-out-going?pageSize=<integer>&marker=d8yEqN6r&isAscendingOrder=<boolean>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "certificates-out-going"
+                  ],
+                  "query": [
+                    {
+                      "description": "The result page size.",
+                      "key": "pageSize",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "The marker for the next set of results.",
+                      "key": "marker",
+                      "value": "d8yEqN6r"
+                    },
+                    {
+                      "description": "Specifies the order for results. If True, the results are returned in ascending order, based on the creation date.",
+                      "key": "isAscendingOrder",
+                      "value": "<boolean>"
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:30:45.000Z",
+              "updatedAt": "2026-07-28T10:30:45.000Z",
+              "uid": "35240-0fb49ee7-7577-42ad-b93a-2db70aa06f01"
+            },
+            {
+              "id": "f814f321-b57b-4e06-8f25-c2452e0664b1",
+              "name": "InternalFailureException",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/certificates-out-going?pageSize=<integer>&marker=d8yEqN6r&isAscendingOrder=<boolean>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "certificates-out-going"
+                  ],
+                  "query": [
+                    {
+                      "description": "The result page size.",
+                      "key": "pageSize",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "The marker for the next set of results.",
+                      "key": "marker",
+                      "value": "d8yEqN6r"
+                    },
+                    {
+                      "description": "Specifies the order for results. If True, the results are returned in ascending order, based on the creation date.",
+                      "key": "isAscendingOrder",
+                      "value": "<boolean>"
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:30:45.000Z",
+              "updatedAt": "2026-07-28T10:30:45.000Z",
+              "uid": "35240-f814f321-b57b-4e06-8f25-c2452e0664b1"
+            }
+          ],
+          "createdAt": "2026-07-28T10:30:45.000Z",
+          "updatedAt": "2026-07-28T10:30:45.000Z",
+          "uid": "35240-0a990d09-42b8-45f9-8f02-e906dc123646"
+        }
+      ],
+      "id": "ba3cd955-024f-4ddf-8b90-f21dc19485b1",
+      "createdAt": "2026-07-28T10:30:45.000Z",
+      "updatedAt": "2026-07-28T10:30:45.000Z",
+      "uid": "35240-ba3cd955-024f-4ddf-8b90-f21dc19485b1"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "http://iot.{{region}}.amazonaws.com"
+    }
+  ]
+}

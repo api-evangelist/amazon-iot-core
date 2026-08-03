@@ -1,0 +1,683 @@
+{
+  "info": {
+    "_postman_id": "dd57a43c-2f6c-4fb9-bc31-0fb2e9c09586",
+    "name": "AWS IoT Accept Certificate Transfer Authorizers API",
+    "description": "<fullname>IoT</fullname> <p>IoT provides secure, bi-directional communication between Internet-connected devices (such as sensors, actuators, embedded devices, or smart appliances) and the Amazon Web Services cloud. You can discover your custom IoT-Data endpoint to communicate with, configure rules for data processing and integration with other services, organize resources associated with each device (Registry), configure logging, and create and manage policies and credentials to authenticate devices.</p> <p>The service endpoints that expose this API are listed in <a href=\"https://docs.aws.amazon.com/general/latest/gr/iot-core.html\">Amazon Web Services IoT Core Endpoints and Quotas</a>. You must use the endpoint for the region that has the resources you want to access.</p> <p>The service name used by <a href=\"https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html\">Amazon Web Services Signature Version 4</a> to sign the request is: <i>execute-api</i>.</p> <p>For more information about how IoT works, see the <a href=\"https://docs.aws.amazon.com/iot/latest/developerguide/aws-iot-how-it-works.html\">Developer Guide</a>.</p> <p>For information about how to use the credentials provider for IoT, see <a href=\"https://docs.aws.amazon.com/iot/latest/developerguide/authorizing-direct-aws.html\">Authorizing Direct Calls to Amazon Web Services Services</a>.</p>\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:30:29.000Z",
+    "updatedAt": "2026-07-28T10:30:29.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-dd57a43c-2f6c-4fb9-bc31-0fb2e9c09586"
+  },
+  "item": [
+    {
+      "name": "authorizers",
+      "item": [
+        {
+          "name": "Amazon IoT Core List Authorizers",
+          "id": "55a1acec-5344-4811-b46c-93284f1b3317",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/authorizers/?pageSize=<integer>&marker=JsEp8DZH==&isAscendingOrder=<boolean>&status=INACTIVE",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "authorizers",
+                ""
+              ],
+              "query": [
+                {
+                  "description": "The maximum number of results to return at one time.",
+                  "key": "pageSize",
+                  "value": "<integer>"
+                },
+                {
+                  "description": "A marker used to get the next set of results.",
+                  "key": "marker",
+                  "value": "JsEp8DZH=="
+                },
+                {
+                  "description": "Return the list of authorizers in ascending alphabetical order.",
+                  "key": "isAscendingOrder",
+                  "value": "<boolean>"
+                },
+                {
+                  "description": "The status of the list authorizers request.",
+                  "key": "status",
+                  "value": "INACTIVE"
+                }
+              ]
+            },
+            "description": "<p>Lists the authorizers registered in your account.</p> <p>Requires permission to access the <a href=\"https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions\">ListAuthorizers</a> action.</p>"
+          },
+          "response": [
+            {
+              "id": "9ae4fcba-8814-4d31-9b78-2bc171a8b765",
+              "name": "Success",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/authorizers/?pageSize=<integer>&marker=JsEp8DZH==&isAscendingOrder=<boolean>&status=INACTIVE",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "authorizers",
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "The maximum number of results to return at one time.",
+                      "key": "pageSize",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "A marker used to get the next set of results.",
+                      "key": "marker",
+                      "value": "JsEp8DZH=="
+                    },
+                    {
+                      "description": "Return the list of authorizers in ascending alphabetical order.",
+                      "key": "isAscendingOrder",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "description": "The status of the list authorizers request.",
+                      "key": "status",
+                      "value": "INACTIVE"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"authorizers\": [\n    {\n      \"authorizerName\": \"PIAwA\",\n      \"authorizerArn\": \"<string>\"\n    },\n    {\n      \"authorizerName\": \"Q6nXC\",\n      \"authorizerArn\": \"<string>\"\n    }\n  ],\n  \"nextMarker\": \"zARmu=\"\n}",
+              "createdAt": "2026-07-28T10:30:29.000Z",
+              "updatedAt": "2026-07-28T10:30:29.000Z",
+              "uid": "35240-9ae4fcba-8814-4d31-9b78-2bc171a8b765"
+            },
+            {
+              "id": "b4fd40dd-313e-471e-b2bc-b3bd2eda3ae2",
+              "name": "InvalidRequestException",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/authorizers/?pageSize=<integer>&marker=JsEp8DZH==&isAscendingOrder=<boolean>&status=INACTIVE",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "authorizers",
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "The maximum number of results to return at one time.",
+                      "key": "pageSize",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "A marker used to get the next set of results.",
+                      "key": "marker",
+                      "value": "JsEp8DZH=="
+                    },
+                    {
+                      "description": "Return the list of authorizers in ascending alphabetical order.",
+                      "key": "isAscendingOrder",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "description": "The status of the list authorizers request.",
+                      "key": "status",
+                      "value": "INACTIVE"
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:30:29.000Z",
+              "updatedAt": "2026-07-28T10:30:29.000Z",
+              "uid": "35240-b4fd40dd-313e-471e-b2bc-b3bd2eda3ae2"
+            },
+            {
+              "id": "9354d487-7730-4507-89ca-4b019dff7262",
+              "name": "ThrottlingException",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/authorizers/?pageSize=<integer>&marker=JsEp8DZH==&isAscendingOrder=<boolean>&status=INACTIVE",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "authorizers",
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "The maximum number of results to return at one time.",
+                      "key": "pageSize",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "A marker used to get the next set of results.",
+                      "key": "marker",
+                      "value": "JsEp8DZH=="
+                    },
+                    {
+                      "description": "Return the list of authorizers in ascending alphabetical order.",
+                      "key": "isAscendingOrder",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "description": "The status of the list authorizers request.",
+                      "key": "status",
+                      "value": "INACTIVE"
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:30:29.000Z",
+              "updatedAt": "2026-07-28T10:30:29.000Z",
+              "uid": "35240-9354d487-7730-4507-89ca-4b019dff7262"
+            },
+            {
+              "id": "4abe5004-874c-4225-a626-106588a7bb55",
+              "name": "UnauthorizedException",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/authorizers/?pageSize=<integer>&marker=JsEp8DZH==&isAscendingOrder=<boolean>&status=INACTIVE",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "authorizers",
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "The maximum number of results to return at one time.",
+                      "key": "pageSize",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "A marker used to get the next set of results.",
+                      "key": "marker",
+                      "value": "JsEp8DZH=="
+                    },
+                    {
+                      "description": "Return the list of authorizers in ascending alphabetical order.",
+                      "key": "isAscendingOrder",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "description": "The status of the list authorizers request.",
+                      "key": "status",
+                      "value": "INACTIVE"
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:30:29.000Z",
+              "updatedAt": "2026-07-28T10:30:29.000Z",
+              "uid": "35240-4abe5004-874c-4225-a626-106588a7bb55"
+            },
+            {
+              "id": "352e66f4-f689-439d-b5c3-f46ef3285e7b",
+              "name": "ServiceUnavailableException",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/authorizers/?pageSize=<integer>&marker=JsEp8DZH==&isAscendingOrder=<boolean>&status=INACTIVE",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "authorizers",
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "The maximum number of results to return at one time.",
+                      "key": "pageSize",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "A marker used to get the next set of results.",
+                      "key": "marker",
+                      "value": "JsEp8DZH=="
+                    },
+                    {
+                      "description": "Return the list of authorizers in ascending alphabetical order.",
+                      "key": "isAscendingOrder",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "description": "The status of the list authorizers request.",
+                      "key": "status",
+                      "value": "INACTIVE"
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:30:29.000Z",
+              "updatedAt": "2026-07-28T10:30:29.000Z",
+              "uid": "35240-352e66f4-f689-439d-b5c3-f46ef3285e7b"
+            },
+            {
+              "id": "79b971d0-95bb-49de-a962-1e0ebb0f1a57",
+              "name": "InternalFailureException",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/authorizers/?pageSize=<integer>&marker=JsEp8DZH==&isAscendingOrder=<boolean>&status=INACTIVE",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "authorizers",
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "description": "The maximum number of results to return at one time.",
+                      "key": "pageSize",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "A marker used to get the next set of results.",
+                      "key": "marker",
+                      "value": "JsEp8DZH=="
+                    },
+                    {
+                      "description": "Return the list of authorizers in ascending alphabetical order.",
+                      "key": "isAscendingOrder",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "description": "The status of the list authorizers request.",
+                      "key": "status",
+                      "value": "INACTIVE"
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:30:29.000Z",
+              "updatedAt": "2026-07-28T10:30:29.000Z",
+              "uid": "35240-79b971d0-95bb-49de-a962-1e0ebb0f1a57"
+            }
+          ],
+          "createdAt": "2026-07-28T10:30:29.000Z",
+          "updatedAt": "2026-07-28T10:30:29.000Z",
+          "uid": "35240-55a1acec-5344-4811-b46c-93284f1b3317"
+        }
+      ],
+      "id": "afaa9ab2-b257-4fa0-b904-c65fd841eef8",
+      "createdAt": "2026-07-28T10:30:29.000Z",
+      "updatedAt": "2026-07-28T10:30:29.000Z",
+      "uid": "35240-afaa9ab2-b257-4fa0-b904-c65fd841eef8"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "http://iot.{{region}}.amazonaws.com"
+    }
+  ]
+}

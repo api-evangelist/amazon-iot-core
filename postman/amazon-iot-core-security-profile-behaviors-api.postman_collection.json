@@ -1,0 +1,470 @@
+{
+  "info": {
+    "_postman_id": "b26617d3-c6ca-4d56-b49a-d5fe2203694d",
+    "name": "AWS IoT Accept Certificate Transfer Security Profile Behaviors API",
+    "description": "<fullname>IoT</fullname> <p>IoT provides secure, bi-directional communication between Internet-connected devices (such as sensors, actuators, embedded devices, or smart appliances) and the Amazon Web Services cloud. You can discover your custom IoT-Data endpoint to communicate with, configure rules for data processing and integration with other services, organize resources associated with each device (Registry), configure logging, and create and manage policies and credentials to authenticate devices.</p> <p>The service endpoints that expose this API are listed in <a href=\"https://docs.aws.amazon.com/general/latest/gr/iot-core.html\">Amazon Web Services IoT Core Endpoints and Quotas</a>. You must use the endpoint for the region that has the resources you want to access.</p> <p>The service name used by <a href=\"https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html\">Amazon Web Services Signature Version 4</a> to sign the request is: <i>execute-api</i>.</p> <p>For more information about how IoT works, see the <a href=\"https://docs.aws.amazon.com/iot/latest/developerguide/aws-iot-how-it-works.html\">Developer Guide</a>.</p> <p>For information about how to use the credentials provider for IoT, see <a href=\"https://docs.aws.amazon.com/iot/latest/developerguide/authorizing-direct-aws.html\">Authorizing Direct Calls to Amazon Web Services Services</a>.</p>\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:32:57.000Z",
+    "updatedAt": "2026-07-28T10:32:57.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-b26617d3-c6ca-4d56-b49a-d5fe2203694d"
+  },
+  "item": [
+    {
+      "name": "security-profile-behaviors",
+      "item": [
+        {
+          "name": "validate",
+          "item": [
+            {
+              "name": "Amazon IoT Core Validate Security Profile Behaviors",
+              "id": "14b8c746-3163-4e16-b877-d8bfe0ccfcc2",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"behaviors\": [\n    {\n      \"name\": \"nkTbfjm2\",\n      \"metric\": \"<string>\",\n      \"metricDimension\": {\n        \"dimensionName\": \"Nrt\",\n        \"operator\": \"NOT_IN\"\n      },\n      \"criteria\": {\n        \"comparisonOperator\": \"greater-than\",\n        \"value\": {\n          \"count\": \"<integer>\",\n          \"cidrs\": [\n            \"EDdDbFEEAE\",\n            \"C0ebb4\"\n          ],\n          \"ports\": [\n            \"<integer>\",\n            \"<integer>\"\n          ],\n          \"number\": \"<double>\",\n          \"numbers\": [\n            \"<double>\",\n            \"<double>\"\n          ],\n          \"strings\": [\n            \"<string>\",\n            \"<string>\"\n          ]\n        },\n        \"durationSeconds\": \"<integer>\",\n        \"consecutiveDatapointsToAlarm\": \"<integer>\",\n        \"consecutiveDatapointsToClear\": \"<integer>\",\n        \"statisticalThreshold\": {\n          \"statistic\": \"p99.99\"\n        },\n        \"mlDetectionConfig\": {\n          \"confidenceLevel\": \"MEDIUM\"\n        }\n      },\n      \"suppressAlerts\": \"<boolean>\"\n    },\n    {\n      \"name\": \"Vx9cQu\",\n      \"metric\": \"<string>\",\n      \"metricDimension\": {\n        \"dimensionName\": \"XBuVZBl\",\n        \"operator\": \"NOT_IN\"\n      },\n      \"criteria\": {\n        \"comparisonOperator\": \"not-in-port-set\",\n        \"value\": {\n          \"count\": \"<integer>\",\n          \"cidrs\": [\n            \"9917\",\n            \"6Ac0D6\"\n          ],\n          \"ports\": [\n            \"<integer>\",\n            \"<integer>\"\n          ],\n          \"number\": \"<double>\",\n          \"numbers\": [\n            \"<double>\",\n            \"<double>\"\n          ],\n          \"strings\": [\n            \"<string>\",\n            \"<string>\"\n          ]\n        },\n        \"durationSeconds\": \"<integer>\",\n        \"consecutiveDatapointsToAlarm\": \"<integer>\",\n        \"consecutiveDatapointsToClear\": \"<integer>\",\n        \"statisticalThreshold\": {\n          \"statistic\": \"p99.99\"\n        },\n        \"mlDetectionConfig\": {\n          \"confidenceLevel\": \"LOW\"\n        }\n      },\n      \"suppressAlerts\": \"<boolean>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/security-profile-behaviors/validate",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "security-profile-behaviors",
+                    "validate"
+                  ]
+                },
+                "description": "<p>Validates a Device Defender security profile behaviors specification.</p> <p>Requires permission to access the <a href=\"https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions\">ValidateSecurityProfileBehaviors</a> action.</p>"
+              },
+              "response": [
+                {
+                  "id": "14f9f2de-6cf6-46a3-baee-6e245ebef18e",
+                  "name": "Success",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"behaviors\": [\n    {\n      \"name\": \"nkTbfjm2\",\n      \"metric\": \"<string>\",\n      \"metricDimension\": {\n        \"dimensionName\": \"Nrt\",\n        \"operator\": \"NOT_IN\"\n      },\n      \"criteria\": {\n        \"comparisonOperator\": \"greater-than\",\n        \"value\": {\n          \"count\": \"<integer>\",\n          \"cidrs\": [\n            \"EDdDbFEEAE\",\n            \"C0ebb4\"\n          ],\n          \"ports\": [\n            \"<integer>\",\n            \"<integer>\"\n          ],\n          \"number\": \"<double>\",\n          \"numbers\": [\n            \"<double>\",\n            \"<double>\"\n          ],\n          \"strings\": [\n            \"<string>\",\n            \"<string>\"\n          ]\n        },\n        \"durationSeconds\": \"<integer>\",\n        \"consecutiveDatapointsToAlarm\": \"<integer>\",\n        \"consecutiveDatapointsToClear\": \"<integer>\",\n        \"statisticalThreshold\": {\n          \"statistic\": \"p99.99\"\n        },\n        \"mlDetectionConfig\": {\n          \"confidenceLevel\": \"MEDIUM\"\n        }\n      },\n      \"suppressAlerts\": \"<boolean>\"\n    },\n    {\n      \"name\": \"Vx9cQu\",\n      \"metric\": \"<string>\",\n      \"metricDimension\": {\n        \"dimensionName\": \"XBuVZBl\",\n        \"operator\": \"NOT_IN\"\n      },\n      \"criteria\": {\n        \"comparisonOperator\": \"not-in-port-set\",\n        \"value\": {\n          \"count\": \"<integer>\",\n          \"cidrs\": [\n            \"9917\",\n            \"6Ac0D6\"\n          ],\n          \"ports\": [\n            \"<integer>\",\n            \"<integer>\"\n          ],\n          \"number\": \"<double>\",\n          \"numbers\": [\n            \"<double>\",\n            \"<double>\"\n          ],\n          \"strings\": [\n            \"<string>\",\n            \"<string>\"\n          ]\n        },\n        \"durationSeconds\": \"<integer>\",\n        \"consecutiveDatapointsToAlarm\": \"<integer>\",\n        \"consecutiveDatapointsToClear\": \"<integer>\",\n        \"statisticalThreshold\": {\n          \"statistic\": \"p99.99\"\n        },\n        \"mlDetectionConfig\": {\n          \"confidenceLevel\": \"LOW\"\n        }\n      },\n      \"suppressAlerts\": \"<boolean>\"\n    }\n  ]\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/security-profile-behaviors/validate",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "security-profile-behaviors",
+                        "validate"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"valid\": \"<boolean>\",\n  \"validationErrors\": [\n    {\n      \"errorMessage\": \"<string>\"\n    },\n    {\n      \"errorMessage\": \"<string>\"\n    }\n  ]\n}",
+                  "createdAt": "2026-07-28T10:32:58.000Z",
+                  "updatedAt": "2026-07-28T10:32:58.000Z",
+                  "uid": "35240-14f9f2de-6cf6-46a3-baee-6e245ebef18e"
+                },
+                {
+                  "id": "cf9d7893-c77c-4685-b39c-fa9b05634bd7",
+                  "name": "InvalidRequestException",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"behaviors\": [\n    {\n      \"name\": \"nkTbfjm2\",\n      \"metric\": \"<string>\",\n      \"metricDimension\": {\n        \"dimensionName\": \"Nrt\",\n        \"operator\": \"NOT_IN\"\n      },\n      \"criteria\": {\n        \"comparisonOperator\": \"greater-than\",\n        \"value\": {\n          \"count\": \"<integer>\",\n          \"cidrs\": [\n            \"EDdDbFEEAE\",\n            \"C0ebb4\"\n          ],\n          \"ports\": [\n            \"<integer>\",\n            \"<integer>\"\n          ],\n          \"number\": \"<double>\",\n          \"numbers\": [\n            \"<double>\",\n            \"<double>\"\n          ],\n          \"strings\": [\n            \"<string>\",\n            \"<string>\"\n          ]\n        },\n        \"durationSeconds\": \"<integer>\",\n        \"consecutiveDatapointsToAlarm\": \"<integer>\",\n        \"consecutiveDatapointsToClear\": \"<integer>\",\n        \"statisticalThreshold\": {\n          \"statistic\": \"p99.99\"\n        },\n        \"mlDetectionConfig\": {\n          \"confidenceLevel\": \"MEDIUM\"\n        }\n      },\n      \"suppressAlerts\": \"<boolean>\"\n    },\n    {\n      \"name\": \"Vx9cQu\",\n      \"metric\": \"<string>\",\n      \"metricDimension\": {\n        \"dimensionName\": \"XBuVZBl\",\n        \"operator\": \"NOT_IN\"\n      },\n      \"criteria\": {\n        \"comparisonOperator\": \"not-in-port-set\",\n        \"value\": {\n          \"count\": \"<integer>\",\n          \"cidrs\": [\n            \"9917\",\n            \"6Ac0D6\"\n          ],\n          \"ports\": [\n            \"<integer>\",\n            \"<integer>\"\n          ],\n          \"number\": \"<double>\",\n          \"numbers\": [\n            \"<double>\",\n            \"<double>\"\n          ],\n          \"strings\": [\n            \"<string>\",\n            \"<string>\"\n          ]\n        },\n        \"durationSeconds\": \"<integer>\",\n        \"consecutiveDatapointsToAlarm\": \"<integer>\",\n        \"consecutiveDatapointsToClear\": \"<integer>\",\n        \"statisticalThreshold\": {\n          \"statistic\": \"p99.99\"\n        },\n        \"mlDetectionConfig\": {\n          \"confidenceLevel\": \"LOW\"\n        }\n      },\n      \"suppressAlerts\": \"<boolean>\"\n    }\n  ]\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/security-profile-behaviors/validate",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "security-profile-behaviors",
+                        "validate"
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:32:58.000Z",
+                  "updatedAt": "2026-07-28T10:32:58.000Z",
+                  "uid": "35240-cf9d7893-c77c-4685-b39c-fa9b05634bd7"
+                },
+                {
+                  "id": "c8cfb7c9-1e2e-4f80-8b16-230832d334fa",
+                  "name": "ThrottlingException",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"behaviors\": [\n    {\n      \"name\": \"nkTbfjm2\",\n      \"metric\": \"<string>\",\n      \"metricDimension\": {\n        \"dimensionName\": \"Nrt\",\n        \"operator\": \"NOT_IN\"\n      },\n      \"criteria\": {\n        \"comparisonOperator\": \"greater-than\",\n        \"value\": {\n          \"count\": \"<integer>\",\n          \"cidrs\": [\n            \"EDdDbFEEAE\",\n            \"C0ebb4\"\n          ],\n          \"ports\": [\n            \"<integer>\",\n            \"<integer>\"\n          ],\n          \"number\": \"<double>\",\n          \"numbers\": [\n            \"<double>\",\n            \"<double>\"\n          ],\n          \"strings\": [\n            \"<string>\",\n            \"<string>\"\n          ]\n        },\n        \"durationSeconds\": \"<integer>\",\n        \"consecutiveDatapointsToAlarm\": \"<integer>\",\n        \"consecutiveDatapointsToClear\": \"<integer>\",\n        \"statisticalThreshold\": {\n          \"statistic\": \"p99.99\"\n        },\n        \"mlDetectionConfig\": {\n          \"confidenceLevel\": \"MEDIUM\"\n        }\n      },\n      \"suppressAlerts\": \"<boolean>\"\n    },\n    {\n      \"name\": \"Vx9cQu\",\n      \"metric\": \"<string>\",\n      \"metricDimension\": {\n        \"dimensionName\": \"XBuVZBl\",\n        \"operator\": \"NOT_IN\"\n      },\n      \"criteria\": {\n        \"comparisonOperator\": \"not-in-port-set\",\n        \"value\": {\n          \"count\": \"<integer>\",\n          \"cidrs\": [\n            \"9917\",\n            \"6Ac0D6\"\n          ],\n          \"ports\": [\n            \"<integer>\",\n            \"<integer>\"\n          ],\n          \"number\": \"<double>\",\n          \"numbers\": [\n            \"<double>\",\n            \"<double>\"\n          ],\n          \"strings\": [\n            \"<string>\",\n            \"<string>\"\n          ]\n        },\n        \"durationSeconds\": \"<integer>\",\n        \"consecutiveDatapointsToAlarm\": \"<integer>\",\n        \"consecutiveDatapointsToClear\": \"<integer>\",\n        \"statisticalThreshold\": {\n          \"statistic\": \"p99.99\"\n        },\n        \"mlDetectionConfig\": {\n          \"confidenceLevel\": \"LOW\"\n        }\n      },\n      \"suppressAlerts\": \"<boolean>\"\n    }\n  ]\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/security-profile-behaviors/validate",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "security-profile-behaviors",
+                        "validate"
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:32:58.000Z",
+                  "updatedAt": "2026-07-28T10:32:58.000Z",
+                  "uid": "35240-c8cfb7c9-1e2e-4f80-8b16-230832d334fa"
+                },
+                {
+                  "id": "220fbe9e-8660-43d2-b298-68339871436d",
+                  "name": "InternalFailureException",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"behaviors\": [\n    {\n      \"name\": \"nkTbfjm2\",\n      \"metric\": \"<string>\",\n      \"metricDimension\": {\n        \"dimensionName\": \"Nrt\",\n        \"operator\": \"NOT_IN\"\n      },\n      \"criteria\": {\n        \"comparisonOperator\": \"greater-than\",\n        \"value\": {\n          \"count\": \"<integer>\",\n          \"cidrs\": [\n            \"EDdDbFEEAE\",\n            \"C0ebb4\"\n          ],\n          \"ports\": [\n            \"<integer>\",\n            \"<integer>\"\n          ],\n          \"number\": \"<double>\",\n          \"numbers\": [\n            \"<double>\",\n            \"<double>\"\n          ],\n          \"strings\": [\n            \"<string>\",\n            \"<string>\"\n          ]\n        },\n        \"durationSeconds\": \"<integer>\",\n        \"consecutiveDatapointsToAlarm\": \"<integer>\",\n        \"consecutiveDatapointsToClear\": \"<integer>\",\n        \"statisticalThreshold\": {\n          \"statistic\": \"p99.99\"\n        },\n        \"mlDetectionConfig\": {\n          \"confidenceLevel\": \"MEDIUM\"\n        }\n      },\n      \"suppressAlerts\": \"<boolean>\"\n    },\n    {\n      \"name\": \"Vx9cQu\",\n      \"metric\": \"<string>\",\n      \"metricDimension\": {\n        \"dimensionName\": \"XBuVZBl\",\n        \"operator\": \"NOT_IN\"\n      },\n      \"criteria\": {\n        \"comparisonOperator\": \"not-in-port-set\",\n        \"value\": {\n          \"count\": \"<integer>\",\n          \"cidrs\": [\n            \"9917\",\n            \"6Ac0D6\"\n          ],\n          \"ports\": [\n            \"<integer>\",\n            \"<integer>\"\n          ],\n          \"number\": \"<double>\",\n          \"numbers\": [\n            \"<double>\",\n            \"<double>\"\n          ],\n          \"strings\": [\n            \"<string>\",\n            \"<string>\"\n          ]\n        },\n        \"durationSeconds\": \"<integer>\",\n        \"consecutiveDatapointsToAlarm\": \"<integer>\",\n        \"consecutiveDatapointsToClear\": \"<integer>\",\n        \"statisticalThreshold\": {\n          \"statistic\": \"p99.99\"\n        },\n        \"mlDetectionConfig\": {\n          \"confidenceLevel\": \"LOW\"\n        }\n      },\n      \"suppressAlerts\": \"<boolean>\"\n    }\n  ]\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/security-profile-behaviors/validate",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "security-profile-behaviors",
+                        "validate"
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:32:58.000Z",
+                  "updatedAt": "2026-07-28T10:32:58.000Z",
+                  "uid": "35240-220fbe9e-8660-43d2-b298-68339871436d"
+                }
+              ],
+              "createdAt": "2026-07-28T10:32:58.000Z",
+              "updatedAt": "2026-07-28T10:32:58.000Z",
+              "uid": "35240-14b8c746-3163-4e16-b877-d8bfe0ccfcc2"
+            }
+          ],
+          "id": "b1867915-f09d-4907-80ed-6dd932af6dfa",
+          "createdAt": "2026-07-28T10:32:58.000Z",
+          "updatedAt": "2026-07-28T10:32:58.000Z",
+          "uid": "35240-b1867915-f09d-4907-80ed-6dd932af6dfa"
+        }
+      ],
+      "id": "96b08c60-6b4f-463e-add7-e9b1301ad6fe",
+      "createdAt": "2026-07-28T10:32:58.000Z",
+      "updatedAt": "2026-07-28T10:32:58.000Z",
+      "uid": "35240-96b08c60-6b4f-463e-add7-e9b1301ad6fe"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "http://iot.{{region}}.amazonaws.com"
+    }
+  ]
+}

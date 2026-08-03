@@ -1,0 +1,2026 @@
+{
+  "info": {
+    "_postman_id": "c1f8c3e9-1cfb-4272-85d1-11c3dc39b450",
+    "name": "AWS IoT Accept Certificate Transfer Job Templates API",
+    "description": "<fullname>IoT</fullname> <p>IoT provides secure, bi-directional communication between Internet-connected devices (such as sensors, actuators, embedded devices, or smart appliances) and the Amazon Web Services cloud. You can discover your custom IoT-Data endpoint to communicate with, configure rules for data processing and integration with other services, organize resources associated with each device (Registry), configure logging, and create and manage policies and credentials to authenticate devices.</p> <p>The service endpoints that expose this API are listed in <a href=\"https://docs.aws.amazon.com/general/latest/gr/iot-core.html\">Amazon Web Services IoT Core Endpoints and Quotas</a>. You must use the endpoint for the region that has the resources you want to access.</p> <p>The service name used by <a href=\"https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html\">Amazon Web Services Signature Version 4</a> to sign the request is: <i>execute-api</i>.</p> <p>For more information about how IoT works, see the <a href=\"https://docs.aws.amazon.com/iot/latest/developerguide/aws-iot-how-it-works.html\">Developer Guide</a>.</p> <p>For information about how to use the credentials provider for IoT, see <a href=\"https://docs.aws.amazon.com/iot/latest/developerguide/authorizing-direct-aws.html\">Authorizing Direct Calls to Amazon Web Services Services</a>.</p>\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:32:10.000Z",
+    "updatedAt": "2026-07-28T10:32:10.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-c1f8c3e9-1cfb-4272-85d1-11c3dc39b450"
+  },
+  "item": [
+    {
+      "name": "job-templates",
+      "item": [
+        {
+          "name": "{jobTemplateId}",
+          "item": [
+            {
+              "name": "Amazon IoT Core Create Job Template",
+              "id": "a95879a1-a96b-41a8-a9c3-421de0326b4a",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"description\": \"wu)l4!*W\",\n  \"jobArn\": \"<string>\",\n  \"documentSource\": \"<string>\",\n  \"document\": \"<string>\",\n  \"presignedUrlConfig\": {\n    \"roleArn\": \"<string>\",\n    \"expiresInSec\": \"<integer>\"\n  },\n  \"jobExecutionsRolloutConfig\": {\n    \"maximumPerMinute\": \"<integer>\",\n    \"exponentialRate\": {\n      \"baseRatePerMinute\": \"<integer>\",\n      \"incrementFactor\": \"<double>\",\n      \"rateIncreaseCriteria\": {\n        \"numberOfNotifiedThings\": \"<integer>\",\n        \"numberOfSucceededThings\": \"<integer>\"\n      }\n    }\n  },\n  \"abortConfig\": {\n    \"criteriaList\": [\n      {\n        \"failureType\": \"TIMED_OUT\",\n        \"action\": \"CANCEL\",\n        \"thresholdPercentage\": \"<double>\",\n        \"minNumberOfExecutedThings\": \"<integer>\"\n      }\n    ]\n  },\n  \"timeoutConfig\": {\n    \"inProgressTimeoutInMinutes\": \"<integer>\"\n  },\n  \"tags\": [\n    {\n      \"Key\": \"}N.@=}p+}@\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \":_:_.-\",\n      \"Value\": \"<string>\"\n    }\n  ],\n  \"jobExecutionsRetryConfig\": {\n    \"criteriaList\": [\n      {\n        \"failureType\": \"FAILED\",\n        \"numberOfRetries\": \"<integer>\"\n      }\n    ]\n  },\n  \"maintenanceWindows\": [\n    {\n      \"startTime\": \"<string>\",\n      \"durationInMinutes\": \"<integer>\"\n    },\n    {\n      \"startTime\": \"<string>\",\n      \"durationInMinutes\": \"<integer>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/job-templates/:jobTemplateId",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "job-templates",
+                    ":jobTemplateId"
+                  ],
+                  "variable": [
+                    {
+                      "id": "05f35d87-3d01-49db-92e1-6da54ca94a28",
+                      "key": "jobTemplateId",
+                      "value": "3Pr19u",
+                      "description": "(Required) A unique identifier for the job template. We recommend using a UUID. Alpha-numeric characters, \"-\", and \"_\" are valid for use here."
+                    }
+                  ]
+                },
+                "description": "<p>Creates a job template.</p> <p>Requires permission to access the <a href=\"https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions\">CreateJobTemplate</a> action.</p>"
+              },
+              "response": [
+                {
+                  "id": "6e010b70-e07d-42ff-ad34-f3c215db670a",
+                  "name": "Success",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"description\": \"wu)l4!*W\",\n  \"jobArn\": \"<string>\",\n  \"documentSource\": \"<string>\",\n  \"document\": \"<string>\",\n  \"presignedUrlConfig\": {\n    \"roleArn\": \"<string>\",\n    \"expiresInSec\": \"<integer>\"\n  },\n  \"jobExecutionsRolloutConfig\": {\n    \"maximumPerMinute\": \"<integer>\",\n    \"exponentialRate\": {\n      \"baseRatePerMinute\": \"<integer>\",\n      \"incrementFactor\": \"<double>\",\n      \"rateIncreaseCriteria\": {\n        \"numberOfNotifiedThings\": \"<integer>\",\n        \"numberOfSucceededThings\": \"<integer>\"\n      }\n    }\n  },\n  \"abortConfig\": {\n    \"criteriaList\": [\n      {\n        \"failureType\": \"TIMED_OUT\",\n        \"action\": \"CANCEL\",\n        \"thresholdPercentage\": \"<double>\",\n        \"minNumberOfExecutedThings\": \"<integer>\"\n      }\n    ]\n  },\n  \"timeoutConfig\": {\n    \"inProgressTimeoutInMinutes\": \"<integer>\"\n  },\n  \"tags\": [\n    {\n      \"Key\": \"}N.@=}p+}@\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \":_:_.-\",\n      \"Value\": \"<string>\"\n    }\n  ],\n  \"jobExecutionsRetryConfig\": {\n    \"criteriaList\": [\n      {\n        \"failureType\": \"FAILED\",\n        \"numberOfRetries\": \"<integer>\"\n      }\n    ]\n  },\n  \"maintenanceWindows\": [\n    {\n      \"startTime\": \"<string>\",\n      \"durationInMinutes\": \"<integer>\"\n    },\n    {\n      \"startTime\": \"<string>\",\n      \"durationInMinutes\": \"<integer>\"\n    }\n  ]\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/job-templates/:jobTemplateId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "job-templates",
+                        ":jobTemplateId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "jobTemplateId"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"jobTemplateArn\": \"arn:7}\",\n  \"jobTemplateId\": \"vg\"\n}",
+                  "createdAt": "2026-07-28T10:32:10.000Z",
+                  "updatedAt": "2026-07-28T10:32:10.000Z",
+                  "uid": "35240-6e010b70-e07d-42ff-ad34-f3c215db670a"
+                },
+                {
+                  "id": "1eade363-d370-4550-9402-f009644649f9",
+                  "name": "InvalidRequestException",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"description\": \"wu)l4!*W\",\n  \"jobArn\": \"<string>\",\n  \"documentSource\": \"<string>\",\n  \"document\": \"<string>\",\n  \"presignedUrlConfig\": {\n    \"roleArn\": \"<string>\",\n    \"expiresInSec\": \"<integer>\"\n  },\n  \"jobExecutionsRolloutConfig\": {\n    \"maximumPerMinute\": \"<integer>\",\n    \"exponentialRate\": {\n      \"baseRatePerMinute\": \"<integer>\",\n      \"incrementFactor\": \"<double>\",\n      \"rateIncreaseCriteria\": {\n        \"numberOfNotifiedThings\": \"<integer>\",\n        \"numberOfSucceededThings\": \"<integer>\"\n      }\n    }\n  },\n  \"abortConfig\": {\n    \"criteriaList\": [\n      {\n        \"failureType\": \"TIMED_OUT\",\n        \"action\": \"CANCEL\",\n        \"thresholdPercentage\": \"<double>\",\n        \"minNumberOfExecutedThings\": \"<integer>\"\n      }\n    ]\n  },\n  \"timeoutConfig\": {\n    \"inProgressTimeoutInMinutes\": \"<integer>\"\n  },\n  \"tags\": [\n    {\n      \"Key\": \"}N.@=}p+}@\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \":_:_.-\",\n      \"Value\": \"<string>\"\n    }\n  ],\n  \"jobExecutionsRetryConfig\": {\n    \"criteriaList\": [\n      {\n        \"failureType\": \"FAILED\",\n        \"numberOfRetries\": \"<integer>\"\n      }\n    ]\n  },\n  \"maintenanceWindows\": [\n    {\n      \"startTime\": \"<string>\",\n      \"durationInMinutes\": \"<integer>\"\n    },\n    {\n      \"startTime\": \"<string>\",\n      \"durationInMinutes\": \"<integer>\"\n    }\n  ]\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/job-templates/:jobTemplateId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "job-templates",
+                        ":jobTemplateId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "jobTemplateId"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:32:10.000Z",
+                  "updatedAt": "2026-07-28T10:32:10.000Z",
+                  "uid": "35240-1eade363-d370-4550-9402-f009644649f9"
+                },
+                {
+                  "id": "04ee3a29-c892-4073-8063-891f719eb6a2",
+                  "name": "ResourceNotFoundException",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"description\": \"wu)l4!*W\",\n  \"jobArn\": \"<string>\",\n  \"documentSource\": \"<string>\",\n  \"document\": \"<string>\",\n  \"presignedUrlConfig\": {\n    \"roleArn\": \"<string>\",\n    \"expiresInSec\": \"<integer>\"\n  },\n  \"jobExecutionsRolloutConfig\": {\n    \"maximumPerMinute\": \"<integer>\",\n    \"exponentialRate\": {\n      \"baseRatePerMinute\": \"<integer>\",\n      \"incrementFactor\": \"<double>\",\n      \"rateIncreaseCriteria\": {\n        \"numberOfNotifiedThings\": \"<integer>\",\n        \"numberOfSucceededThings\": \"<integer>\"\n      }\n    }\n  },\n  \"abortConfig\": {\n    \"criteriaList\": [\n      {\n        \"failureType\": \"TIMED_OUT\",\n        \"action\": \"CANCEL\",\n        \"thresholdPercentage\": \"<double>\",\n        \"minNumberOfExecutedThings\": \"<integer>\"\n      }\n    ]\n  },\n  \"timeoutConfig\": {\n    \"inProgressTimeoutInMinutes\": \"<integer>\"\n  },\n  \"tags\": [\n    {\n      \"Key\": \"}N.@=}p+}@\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \":_:_.-\",\n      \"Value\": \"<string>\"\n    }\n  ],\n  \"jobExecutionsRetryConfig\": {\n    \"criteriaList\": [\n      {\n        \"failureType\": \"FAILED\",\n        \"numberOfRetries\": \"<integer>\"\n      }\n    ]\n  },\n  \"maintenanceWindows\": [\n    {\n      \"startTime\": \"<string>\",\n      \"durationInMinutes\": \"<integer>\"\n    },\n    {\n      \"startTime\": \"<string>\",\n      \"durationInMinutes\": \"<integer>\"\n    }\n  ]\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/job-templates/:jobTemplateId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "job-templates",
+                        ":jobTemplateId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "jobTemplateId"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:32:10.000Z",
+                  "updatedAt": "2026-07-28T10:32:10.000Z",
+                  "uid": "35240-04ee3a29-c892-4073-8063-891f719eb6a2"
+                },
+                {
+                  "id": "c75d7e20-9ca7-4ae7-bdbe-e55dea7ab081",
+                  "name": "ConflictException",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"description\": \"wu)l4!*W\",\n  \"jobArn\": \"<string>\",\n  \"documentSource\": \"<string>\",\n  \"document\": \"<string>\",\n  \"presignedUrlConfig\": {\n    \"roleArn\": \"<string>\",\n    \"expiresInSec\": \"<integer>\"\n  },\n  \"jobExecutionsRolloutConfig\": {\n    \"maximumPerMinute\": \"<integer>\",\n    \"exponentialRate\": {\n      \"baseRatePerMinute\": \"<integer>\",\n      \"incrementFactor\": \"<double>\",\n      \"rateIncreaseCriteria\": {\n        \"numberOfNotifiedThings\": \"<integer>\",\n        \"numberOfSucceededThings\": \"<integer>\"\n      }\n    }\n  },\n  \"abortConfig\": {\n    \"criteriaList\": [\n      {\n        \"failureType\": \"TIMED_OUT\",\n        \"action\": \"CANCEL\",\n        \"thresholdPercentage\": \"<double>\",\n        \"minNumberOfExecutedThings\": \"<integer>\"\n      }\n    ]\n  },\n  \"timeoutConfig\": {\n    \"inProgressTimeoutInMinutes\": \"<integer>\"\n  },\n  \"tags\": [\n    {\n      \"Key\": \"}N.@=}p+}@\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \":_:_.-\",\n      \"Value\": \"<string>\"\n    }\n  ],\n  \"jobExecutionsRetryConfig\": {\n    \"criteriaList\": [\n      {\n        \"failureType\": \"FAILED\",\n        \"numberOfRetries\": \"<integer>\"\n      }\n    ]\n  },\n  \"maintenanceWindows\": [\n    {\n      \"startTime\": \"<string>\",\n      \"durationInMinutes\": \"<integer>\"\n    },\n    {\n      \"startTime\": \"<string>\",\n      \"durationInMinutes\": \"<integer>\"\n    }\n  ]\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/job-templates/:jobTemplateId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "job-templates",
+                        ":jobTemplateId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "jobTemplateId"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:32:10.000Z",
+                  "updatedAt": "2026-07-28T10:32:10.000Z",
+                  "uid": "35240-c75d7e20-9ca7-4ae7-bdbe-e55dea7ab081"
+                },
+                {
+                  "id": "acae912a-d147-4061-a9b4-55666238970c",
+                  "name": "LimitExceededException",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"description\": \"wu)l4!*W\",\n  \"jobArn\": \"<string>\",\n  \"documentSource\": \"<string>\",\n  \"document\": \"<string>\",\n  \"presignedUrlConfig\": {\n    \"roleArn\": \"<string>\",\n    \"expiresInSec\": \"<integer>\"\n  },\n  \"jobExecutionsRolloutConfig\": {\n    \"maximumPerMinute\": \"<integer>\",\n    \"exponentialRate\": {\n      \"baseRatePerMinute\": \"<integer>\",\n      \"incrementFactor\": \"<double>\",\n      \"rateIncreaseCriteria\": {\n        \"numberOfNotifiedThings\": \"<integer>\",\n        \"numberOfSucceededThings\": \"<integer>\"\n      }\n    }\n  },\n  \"abortConfig\": {\n    \"criteriaList\": [\n      {\n        \"failureType\": \"TIMED_OUT\",\n        \"action\": \"CANCEL\",\n        \"thresholdPercentage\": \"<double>\",\n        \"minNumberOfExecutedThings\": \"<integer>\"\n      }\n    ]\n  },\n  \"timeoutConfig\": {\n    \"inProgressTimeoutInMinutes\": \"<integer>\"\n  },\n  \"tags\": [\n    {\n      \"Key\": \"}N.@=}p+}@\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \":_:_.-\",\n      \"Value\": \"<string>\"\n    }\n  ],\n  \"jobExecutionsRetryConfig\": {\n    \"criteriaList\": [\n      {\n        \"failureType\": \"FAILED\",\n        \"numberOfRetries\": \"<integer>\"\n      }\n    ]\n  },\n  \"maintenanceWindows\": [\n    {\n      \"startTime\": \"<string>\",\n      \"durationInMinutes\": \"<integer>\"\n    },\n    {\n      \"startTime\": \"<string>\",\n      \"durationInMinutes\": \"<integer>\"\n    }\n  ]\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/job-templates/:jobTemplateId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "job-templates",
+                        ":jobTemplateId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "jobTemplateId"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:32:10.000Z",
+                  "updatedAt": "2026-07-28T10:32:10.000Z",
+                  "uid": "35240-acae912a-d147-4061-a9b4-55666238970c"
+                },
+                {
+                  "id": "cc876cc1-5996-4379-b4e1-7fa39a4102e1",
+                  "name": "ThrottlingException",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"description\": \"wu)l4!*W\",\n  \"jobArn\": \"<string>\",\n  \"documentSource\": \"<string>\",\n  \"document\": \"<string>\",\n  \"presignedUrlConfig\": {\n    \"roleArn\": \"<string>\",\n    \"expiresInSec\": \"<integer>\"\n  },\n  \"jobExecutionsRolloutConfig\": {\n    \"maximumPerMinute\": \"<integer>\",\n    \"exponentialRate\": {\n      \"baseRatePerMinute\": \"<integer>\",\n      \"incrementFactor\": \"<double>\",\n      \"rateIncreaseCriteria\": {\n        \"numberOfNotifiedThings\": \"<integer>\",\n        \"numberOfSucceededThings\": \"<integer>\"\n      }\n    }\n  },\n  \"abortConfig\": {\n    \"criteriaList\": [\n      {\n        \"failureType\": \"TIMED_OUT\",\n        \"action\": \"CANCEL\",\n        \"thresholdPercentage\": \"<double>\",\n        \"minNumberOfExecutedThings\": \"<integer>\"\n      }\n    ]\n  },\n  \"timeoutConfig\": {\n    \"inProgressTimeoutInMinutes\": \"<integer>\"\n  },\n  \"tags\": [\n    {\n      \"Key\": \"}N.@=}p+}@\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \":_:_.-\",\n      \"Value\": \"<string>\"\n    }\n  ],\n  \"jobExecutionsRetryConfig\": {\n    \"criteriaList\": [\n      {\n        \"failureType\": \"FAILED\",\n        \"numberOfRetries\": \"<integer>\"\n      }\n    ]\n  },\n  \"maintenanceWindows\": [\n    {\n      \"startTime\": \"<string>\",\n      \"durationInMinutes\": \"<integer>\"\n    },\n    {\n      \"startTime\": \"<string>\",\n      \"durationInMinutes\": \"<integer>\"\n    }\n  ]\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/job-templates/:jobTemplateId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "job-templates",
+                        ":jobTemplateId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "jobTemplateId"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:32:10.000Z",
+                  "updatedAt": "2026-07-28T10:32:10.000Z",
+                  "uid": "35240-cc876cc1-5996-4379-b4e1-7fa39a4102e1"
+                },
+                {
+                  "id": "b7b004bf-ecec-40a2-93f5-a8300a46aad2",
+                  "name": "InternalFailureException",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"description\": \"wu)l4!*W\",\n  \"jobArn\": \"<string>\",\n  \"documentSource\": \"<string>\",\n  \"document\": \"<string>\",\n  \"presignedUrlConfig\": {\n    \"roleArn\": \"<string>\",\n    \"expiresInSec\": \"<integer>\"\n  },\n  \"jobExecutionsRolloutConfig\": {\n    \"maximumPerMinute\": \"<integer>\",\n    \"exponentialRate\": {\n      \"baseRatePerMinute\": \"<integer>\",\n      \"incrementFactor\": \"<double>\",\n      \"rateIncreaseCriteria\": {\n        \"numberOfNotifiedThings\": \"<integer>\",\n        \"numberOfSucceededThings\": \"<integer>\"\n      }\n    }\n  },\n  \"abortConfig\": {\n    \"criteriaList\": [\n      {\n        \"failureType\": \"TIMED_OUT\",\n        \"action\": \"CANCEL\",\n        \"thresholdPercentage\": \"<double>\",\n        \"minNumberOfExecutedThings\": \"<integer>\"\n      }\n    ]\n  },\n  \"timeoutConfig\": {\n    \"inProgressTimeoutInMinutes\": \"<integer>\"\n  },\n  \"tags\": [\n    {\n      \"Key\": \"}N.@=}p+}@\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \":_:_.-\",\n      \"Value\": \"<string>\"\n    }\n  ],\n  \"jobExecutionsRetryConfig\": {\n    \"criteriaList\": [\n      {\n        \"failureType\": \"FAILED\",\n        \"numberOfRetries\": \"<integer>\"\n      }\n    ]\n  },\n  \"maintenanceWindows\": [\n    {\n      \"startTime\": \"<string>\",\n      \"durationInMinutes\": \"<integer>\"\n    },\n    {\n      \"startTime\": \"<string>\",\n      \"durationInMinutes\": \"<integer>\"\n    }\n  ]\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/job-templates/:jobTemplateId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "job-templates",
+                        ":jobTemplateId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "jobTemplateId"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:32:10.000Z",
+                  "updatedAt": "2026-07-28T10:32:10.000Z",
+                  "uid": "35240-b7b004bf-ecec-40a2-93f5-a8300a46aad2"
+                }
+              ],
+              "createdAt": "2026-07-28T10:32:10.000Z",
+              "updatedAt": "2026-07-28T10:32:10.000Z",
+              "uid": "35240-a95879a1-a96b-41a8-a9c3-421de0326b4a"
+            },
+            {
+              "name": "Amazon IoT Core Delete Job Template",
+              "id": "16b860a8-ba23-4515-8cea-ebb1399f4432",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "DELETE",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/job-templates/:jobTemplateId",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "job-templates",
+                    ":jobTemplateId"
+                  ],
+                  "variable": [
+                    {
+                      "id": "ca55444c-ba2e-4e02-a430-00abc1fd9b3d",
+                      "key": "jobTemplateId",
+                      "value": "3Pr19u",
+                      "description": "(Required) The unique identifier of the job template to delete."
+                    }
+                  ]
+                },
+                "description": "Deletes the specified job template."
+              },
+              "response": [
+                {
+                  "id": "0586aae8-0c91-497c-b06a-72f48bfc7949",
+                  "name": "Success",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/job-templates/:jobTemplateId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "job-templates",
+                        ":jobTemplateId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "jobTemplateId"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-07-28T10:32:10.000Z",
+                  "updatedAt": "2026-07-28T10:32:10.000Z",
+                  "uid": "35240-0586aae8-0c91-497c-b06a-72f48bfc7949"
+                },
+                {
+                  "id": "81ecc374-4723-4a45-863c-fc37c5ab3331",
+                  "name": "InvalidRequestException",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/job-templates/:jobTemplateId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "job-templates",
+                        ":jobTemplateId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "jobTemplateId"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:32:10.000Z",
+                  "updatedAt": "2026-07-28T10:32:10.000Z",
+                  "uid": "35240-81ecc374-4723-4a45-863c-fc37c5ab3331"
+                },
+                {
+                  "id": "10426073-4614-4fda-9e55-5584de2a6a73",
+                  "name": "ResourceNotFoundException",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/job-templates/:jobTemplateId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "job-templates",
+                        ":jobTemplateId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "jobTemplateId"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:32:10.000Z",
+                  "updatedAt": "2026-07-28T10:32:10.000Z",
+                  "uid": "35240-10426073-4614-4fda-9e55-5584de2a6a73"
+                },
+                {
+                  "id": "e35b1fb4-b3d4-4bc7-8248-47d5f45aa836",
+                  "name": "ThrottlingException",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/job-templates/:jobTemplateId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "job-templates",
+                        ":jobTemplateId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "jobTemplateId"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:32:10.000Z",
+                  "updatedAt": "2026-07-28T10:32:10.000Z",
+                  "uid": "35240-e35b1fb4-b3d4-4bc7-8248-47d5f45aa836"
+                },
+                {
+                  "id": "e69691ef-7fed-4946-bb99-ebb0ffc37752",
+                  "name": "InternalFailureException",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/job-templates/:jobTemplateId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "job-templates",
+                        ":jobTemplateId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "jobTemplateId"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:32:10.000Z",
+                  "updatedAt": "2026-07-28T10:32:10.000Z",
+                  "uid": "35240-e69691ef-7fed-4946-bb99-ebb0ffc37752"
+                }
+              ],
+              "createdAt": "2026-07-28T10:32:10.000Z",
+              "updatedAt": "2026-07-28T10:32:10.000Z",
+              "uid": "35240-16b860a8-ba23-4515-8cea-ebb1399f4432"
+            },
+            {
+              "name": "Amazon IoT Core Describe Job Template",
+              "id": "957460cc-5c25-49de-a5e7-8d41752b18e7",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/job-templates/:jobTemplateId",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "job-templates",
+                    ":jobTemplateId"
+                  ],
+                  "variable": [
+                    {
+                      "id": "d35f497e-3775-4dd3-9bb3-bb9bd89cdb38",
+                      "key": "jobTemplateId",
+                      "value": "3Pr19u",
+                      "description": "(Required) The unique identifier of the job template."
+                    }
+                  ]
+                },
+                "description": "Returns information about a job template."
+              },
+              "response": [
+                {
+                  "id": "abed9593-606e-4b85-affc-699a35e8e0c3",
+                  "name": "Success",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/job-templates/:jobTemplateId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "job-templates",
+                        ":jobTemplateId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "jobTemplateId"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"jobTemplateArn\": \"arn:_jhT!V3d+\",\n  \"jobTemplateId\": \"b\",\n  \"description\": \"le]9*ac:\",\n  \"documentSource\": \"<string>\",\n  \"document\": \"<string>\",\n  \"createdAt\": \"<dateTime>\",\n  \"presignedUrlConfig\": {\n    \"roleArn\": \"<string>\",\n    \"expiresInSec\": \"<integer>\"\n  },\n  \"jobExecutionsRolloutConfig\": {\n    \"maximumPerMinute\": \"<integer>\",\n    \"exponentialRate\": {\n      \"baseRatePerMinute\": \"<integer>\",\n      \"incrementFactor\": \"<double>\",\n      \"rateIncreaseCriteria\": {\n        \"numberOfNotifiedThings\": \"<integer>\",\n        \"numberOfSucceededThings\": \"<integer>\"\n      }\n    }\n  },\n  \"abortConfig\": {\n    \"criteriaList\": [\n      {\n        \"failureType\": \"FAILED\",\n        \"action\": \"CANCEL\",\n        \"thresholdPercentage\": \"<double>\",\n        \"minNumberOfExecutedThings\": \"<integer>\"\n      }\n    ]\n  },\n  \"timeoutConfig\": {\n    \"inProgressTimeoutInMinutes\": \"<integer>\"\n  },\n  \"jobExecutionsRetryConfig\": {\n    \"criteriaList\": [\n      {\n        \"failureType\": \"ALL\",\n        \"numberOfRetries\": \"<integer>\"\n      }\n    ]\n  },\n  \"maintenanceWindows\": [\n    {\n      \"startTime\": \"<string>\",\n      \"durationInMinutes\": \"<integer>\"\n    },\n    {\n      \"startTime\": \"<string>\",\n      \"durationInMinutes\": \"<integer>\"\n    }\n  ]\n}",
+                  "createdAt": "2026-07-28T10:32:10.000Z",
+                  "updatedAt": "2026-07-28T10:32:10.000Z",
+                  "uid": "35240-abed9593-606e-4b85-affc-699a35e8e0c3"
+                },
+                {
+                  "id": "1f42a47f-30ad-418a-9122-d8d7d17cf89a",
+                  "name": "InvalidRequestException",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/job-templates/:jobTemplateId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "job-templates",
+                        ":jobTemplateId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "jobTemplateId"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:32:10.000Z",
+                  "updatedAt": "2026-07-28T10:32:10.000Z",
+                  "uid": "35240-1f42a47f-30ad-418a-9122-d8d7d17cf89a"
+                },
+                {
+                  "id": "fcb691e8-71d1-4f63-bdf9-d7c3e83e08a6",
+                  "name": "ResourceNotFoundException",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/job-templates/:jobTemplateId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "job-templates",
+                        ":jobTemplateId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "jobTemplateId"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:32:10.000Z",
+                  "updatedAt": "2026-07-28T10:32:10.000Z",
+                  "uid": "35240-fcb691e8-71d1-4f63-bdf9-d7c3e83e08a6"
+                },
+                {
+                  "id": "40aa8ff5-6dc3-4936-b4bd-1da65b07816b",
+                  "name": "ThrottlingException",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/job-templates/:jobTemplateId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "job-templates",
+                        ":jobTemplateId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "jobTemplateId"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:32:10.000Z",
+                  "updatedAt": "2026-07-28T10:32:10.000Z",
+                  "uid": "35240-40aa8ff5-6dc3-4936-b4bd-1da65b07816b"
+                },
+                {
+                  "id": "026cc3ef-169e-4551-9f75-2e1f76a00690",
+                  "name": "InternalFailureException",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/job-templates/:jobTemplateId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "job-templates",
+                        ":jobTemplateId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "jobTemplateId"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:32:10.000Z",
+                  "updatedAt": "2026-07-28T10:32:10.000Z",
+                  "uid": "35240-026cc3ef-169e-4551-9f75-2e1f76a00690"
+                }
+              ],
+              "createdAt": "2026-07-28T10:32:10.000Z",
+              "updatedAt": "2026-07-28T10:32:10.000Z",
+              "uid": "35240-957460cc-5c25-49de-a5e7-8d41752b18e7"
+            }
+          ],
+          "id": "c08be5d7-d945-40b4-a421-95ab6a05790d",
+          "createdAt": "2026-07-28T10:32:10.000Z",
+          "updatedAt": "2026-07-28T10:32:10.000Z",
+          "uid": "35240-c08be5d7-d945-40b4-a421-95ab6a05790d"
+        },
+        {
+          "name": "Amazon IoT Core List Job Templates",
+          "id": "13596ee1-24b6-45de-a226-628597cb4f77",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/job-templates?maxResults=<integer>&nextToken=<string>",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "job-templates"
+              ],
+              "query": [
+                {
+                  "description": "The maximum number of results to return in the list.",
+                  "key": "maxResults",
+                  "value": "<integer>"
+                },
+                {
+                  "description": "The token to use to return the next set of results in the list.",
+                  "key": "nextToken",
+                  "value": "<string>"
+                }
+              ]
+            },
+            "description": "<p>Returns a list of job templates.</p> <p>Requires permission to access the <a href=\"https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions\">ListJobTemplates</a> action.</p>"
+          },
+          "response": [
+            {
+              "id": "93296a9a-c4b2-462a-8498-77fe5829cdda",
+              "name": "Success",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/job-templates?maxResults=<integer>&nextToken=<string>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "job-templates"
+                  ],
+                  "query": [
+                    {
+                      "description": "The maximum number of results to return in the list.",
+                      "key": "maxResults",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "The token to use to return the next set of results in the list.",
+                      "key": "nextToken",
+                      "value": "<string>"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"jobTemplates\": [\n    {\n      \"jobTemplateArn\": \"arn:FFw)]s\",\n      \"jobTemplateId\": \"9\",\n      \"description\": \"8zBw\",\n      \"createdAt\": \"<dateTime>\"\n    },\n    {\n      \"jobTemplateArn\": \"arn:wimFb[Mt\",\n      \"jobTemplateId\": \"w-eveSX\",\n      \"description\": \"xe\",\n      \"createdAt\": \"<dateTime>\"\n    }\n  ],\n  \"nextToken\": \"<string>\"\n}",
+              "createdAt": "2026-07-28T10:32:10.000Z",
+              "updatedAt": "2026-07-28T10:32:10.000Z",
+              "uid": "35240-93296a9a-c4b2-462a-8498-77fe5829cdda"
+            },
+            {
+              "id": "4d0a0a2c-fb22-4e6e-8b4d-a1ccdc032ea9",
+              "name": "InvalidRequestException",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/job-templates?maxResults=<integer>&nextToken=<string>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "job-templates"
+                  ],
+                  "query": [
+                    {
+                      "description": "The maximum number of results to return in the list.",
+                      "key": "maxResults",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "The token to use to return the next set of results in the list.",
+                      "key": "nextToken",
+                      "value": "<string>"
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:32:10.000Z",
+              "updatedAt": "2026-07-28T10:32:10.000Z",
+              "uid": "35240-4d0a0a2c-fb22-4e6e-8b4d-a1ccdc032ea9"
+            },
+            {
+              "id": "151abe9b-db02-4151-8cca-06c64fc307af",
+              "name": "ThrottlingException",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/job-templates?maxResults=<integer>&nextToken=<string>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "job-templates"
+                  ],
+                  "query": [
+                    {
+                      "description": "The maximum number of results to return in the list.",
+                      "key": "maxResults",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "The token to use to return the next set of results in the list.",
+                      "key": "nextToken",
+                      "value": "<string>"
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:32:10.000Z",
+              "updatedAt": "2026-07-28T10:32:10.000Z",
+              "uid": "35240-151abe9b-db02-4151-8cca-06c64fc307af"
+            },
+            {
+              "id": "9b6aaeac-2053-497a-b79a-17f14e640f0a",
+              "name": "InternalFailureException",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/job-templates?maxResults=<integer>&nextToken=<string>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "job-templates"
+                  ],
+                  "query": [
+                    {
+                      "description": "The maximum number of results to return in the list.",
+                      "key": "maxResults",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "The token to use to return the next set of results in the list.",
+                      "key": "nextToken",
+                      "value": "<string>"
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:32:10.000Z",
+              "updatedAt": "2026-07-28T10:32:10.000Z",
+              "uid": "35240-9b6aaeac-2053-497a-b79a-17f14e640f0a"
+            }
+          ],
+          "createdAt": "2026-07-28T10:32:10.000Z",
+          "updatedAt": "2026-07-28T10:32:10.000Z",
+          "uid": "35240-13596ee1-24b6-45de-a226-628597cb4f77"
+        }
+      ],
+      "id": "d097503a-5589-4cb2-a8db-414be5c879a6",
+      "createdAt": "2026-07-28T10:32:10.000Z",
+      "updatedAt": "2026-07-28T10:32:10.000Z",
+      "uid": "35240-d097503a-5589-4cb2-a8db-414be5c879a6"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "http://iot.{{region}}.amazonaws.com"
+    }
+  ]
+}

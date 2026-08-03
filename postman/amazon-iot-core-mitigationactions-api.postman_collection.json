@@ -1,0 +1,2460 @@
+{
+  "info": {
+    "_postman_id": "5d3d311d-12c8-459e-b866-e09ccb1fecec",
+    "name": "AWS IoT Accept Certificate Transfer Mitigationactions API",
+    "description": "<fullname>IoT</fullname> <p>IoT provides secure, bi-directional communication between Internet-connected devices (such as sensors, actuators, embedded devices, or smart appliances) and the Amazon Web Services cloud. You can discover your custom IoT-Data endpoint to communicate with, configure rules for data processing and integration with other services, organize resources associated with each device (Registry), configure logging, and create and manage policies and credentials to authenticate devices.</p> <p>The service endpoints that expose this API are listed in <a href=\"https://docs.aws.amazon.com/general/latest/gr/iot-core.html\">Amazon Web Services IoT Core Endpoints and Quotas</a>. You must use the endpoint for the region that has the resources you want to access.</p> <p>The service name used by <a href=\"https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html\">Amazon Web Services Signature Version 4</a> to sign the request is: <i>execute-api</i>.</p> <p>For more information about how IoT works, see the <a href=\"https://docs.aws.amazon.com/iot/latest/developerguide/aws-iot-how-it-works.html\">Developer Guide</a>.</p> <p>For information about how to use the credentials provider for IoT, see <a href=\"https://docs.aws.amazon.com/iot/latest/developerguide/authorizing-direct-aws.html\">Authorizing Direct Calls to Amazon Web Services Services</a>.</p>\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:32:39.000Z",
+    "updatedAt": "2026-07-28T10:32:40.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-5d3d311d-12c8-459e-b866-e09ccb1fecec"
+  },
+  "item": [
+    {
+      "name": "mitigationactions",
+      "item": [
+        {
+          "name": "actions",
+          "item": [
+            {
+              "name": "{actionName}",
+              "item": [
+                {
+                  "name": "Amazon IoT Core Create Mitigation Action",
+                  "id": "38ffc52c-1011-4a91-9d7b-2d7792b8244b",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"roleArn\": \"<string>\",\n  \"actionParams\": {\n    \"updateDeviceCertificateParams\": {\n      \"action\": \"DEACTIVATE\"\n    },\n    \"updateCACertificateParams\": {\n      \"action\": \"DEACTIVATE\"\n    },\n    \"addThingsToThingGroupParams\": {\n      \"thingGroupNames\": [\n        \"BJv\"\n      ],\n      \"overrideDynamicGroups\": \"<boolean>\"\n    },\n    \"replaceDefaultPolicyVersionParams\": {\n      \"templateName\": \"BLANK_POLICY\"\n    },\n    \"enableIoTLoggingParams\": {\n      \"roleArnForLogging\": \"<string>\",\n      \"logLevel\": \"DISABLED\"\n    },\n    \"publishFindingToSnsParams\": {\n      \"topicArn\": \"<string>\"\n    }\n  },\n  \"tags\": [\n    {\n      \"Key\": \"=LL/p@Npp\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"Z@/\",\n      \"Value\": \"<string>\"\n    }\n  ]\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/mitigationactions/actions/:actionName",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "mitigationactions",
+                        "actions",
+                        ":actionName"
+                      ],
+                      "variable": [
+                        {
+                          "id": "595b9727-7c75-4d1f-8934-d605e8113b70",
+                          "key": "actionName",
+                          "value": "QJMFSE7",
+                          "description": "(Required) A friendly name for the action. Choose a friendly name that accurately describes the action (for example, <code>EnableLoggingAction</code>)."
+                        }
+                      ]
+                    },
+                    "description": "<p>Defines an action that can be applied to audit findings by using StartAuditMitigationActionsTask. Only certain types of mitigation actions can be applied to specific check names. For more information, see <a href=\"https://docs.aws.amazon.com/iot/latest/developerguide/device-defender-mitigation-actions.html\">Mitigation actions</a>. Each mitigation action can apply only one type of change.</p> <p>Requires permission to access the <a href=\"https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions\">CreateMitigationAction</a> action.</p>"
+                  },
+                  "response": [
+                    {
+                      "id": "2f106e50-ab14-434a-93f9-aeddaf18c888",
+                      "name": "Success",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"roleArn\": \"<string>\",\n  \"actionParams\": {\n    \"updateDeviceCertificateParams\": {\n      \"action\": \"DEACTIVATE\"\n    },\n    \"updateCACertificateParams\": {\n      \"action\": \"DEACTIVATE\"\n    },\n    \"addThingsToThingGroupParams\": {\n      \"thingGroupNames\": [\n        \"BJv\"\n      ],\n      \"overrideDynamicGroups\": \"<boolean>\"\n    },\n    \"replaceDefaultPolicyVersionParams\": {\n      \"templateName\": \"BLANK_POLICY\"\n    },\n    \"enableIoTLoggingParams\": {\n      \"roleArnForLogging\": \"<string>\",\n      \"logLevel\": \"DISABLED\"\n    },\n    \"publishFindingToSnsParams\": {\n      \"topicArn\": \"<string>\"\n    }\n  },\n  \"tags\": [\n    {\n      \"Key\": \"=LL/p@Npp\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"Z@/\",\n      \"Value\": \"<string>\"\n    }\n  ]\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/mitigationactions/actions/:actionName",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "mitigationactions",
+                            "actions",
+                            ":actionName"
+                          ],
+                          "variable": [
+                            {
+                              "key": "actionName"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"actionArn\": \"<string>\",\n  \"actionId\": \"<string>\"\n}",
+                      "createdAt": "2026-07-28T10:32:40.000Z",
+                      "updatedAt": "2026-07-28T10:32:40.000Z",
+                      "uid": "35240-2f106e50-ab14-434a-93f9-aeddaf18c888"
+                    },
+                    {
+                      "id": "2fa359c8-ae56-4569-bffb-b305fef0cdf5",
+                      "name": "InvalidRequestException",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"roleArn\": \"<string>\",\n  \"actionParams\": {\n    \"updateDeviceCertificateParams\": {\n      \"action\": \"DEACTIVATE\"\n    },\n    \"updateCACertificateParams\": {\n      \"action\": \"DEACTIVATE\"\n    },\n    \"addThingsToThingGroupParams\": {\n      \"thingGroupNames\": [\n        \"BJv\"\n      ],\n      \"overrideDynamicGroups\": \"<boolean>\"\n    },\n    \"replaceDefaultPolicyVersionParams\": {\n      \"templateName\": \"BLANK_POLICY\"\n    },\n    \"enableIoTLoggingParams\": {\n      \"roleArnForLogging\": \"<string>\",\n      \"logLevel\": \"DISABLED\"\n    },\n    \"publishFindingToSnsParams\": {\n      \"topicArn\": \"<string>\"\n    }\n  },\n  \"tags\": [\n    {\n      \"Key\": \"=LL/p@Npp\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"Z@/\",\n      \"Value\": \"<string>\"\n    }\n  ]\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/mitigationactions/actions/:actionName",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "mitigationactions",
+                            "actions",
+                            ":actionName"
+                          ],
+                          "variable": [
+                            {
+                              "key": "actionName"
+                            }
+                          ]
+                        }
+                      },
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-07-28T10:32:40.000Z",
+                      "updatedAt": "2026-07-28T10:32:40.000Z",
+                      "uid": "35240-2fa359c8-ae56-4569-bffb-b305fef0cdf5"
+                    },
+                    {
+                      "id": "9edbf0db-1159-487c-808d-d632e34edc20",
+                      "name": "ResourceAlreadyExistsException",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"roleArn\": \"<string>\",\n  \"actionParams\": {\n    \"updateDeviceCertificateParams\": {\n      \"action\": \"DEACTIVATE\"\n    },\n    \"updateCACertificateParams\": {\n      \"action\": \"DEACTIVATE\"\n    },\n    \"addThingsToThingGroupParams\": {\n      \"thingGroupNames\": [\n        \"BJv\"\n      ],\n      \"overrideDynamicGroups\": \"<boolean>\"\n    },\n    \"replaceDefaultPolicyVersionParams\": {\n      \"templateName\": \"BLANK_POLICY\"\n    },\n    \"enableIoTLoggingParams\": {\n      \"roleArnForLogging\": \"<string>\",\n      \"logLevel\": \"DISABLED\"\n    },\n    \"publishFindingToSnsParams\": {\n      \"topicArn\": \"<string>\"\n    }\n  },\n  \"tags\": [\n    {\n      \"Key\": \"=LL/p@Npp\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"Z@/\",\n      \"Value\": \"<string>\"\n    }\n  ]\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/mitigationactions/actions/:actionName",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "mitigationactions",
+                            "actions",
+                            ":actionName"
+                          ],
+                          "variable": [
+                            {
+                              "key": "actionName"
+                            }
+                          ]
+                        }
+                      },
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-07-28T10:32:40.000Z",
+                      "updatedAt": "2026-07-28T10:32:40.000Z",
+                      "uid": "35240-9edbf0db-1159-487c-808d-d632e34edc20"
+                    },
+                    {
+                      "id": "a424becc-8fbd-46d7-b125-3d74545de4c3",
+                      "name": "LimitExceededException",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"roleArn\": \"<string>\",\n  \"actionParams\": {\n    \"updateDeviceCertificateParams\": {\n      \"action\": \"DEACTIVATE\"\n    },\n    \"updateCACertificateParams\": {\n      \"action\": \"DEACTIVATE\"\n    },\n    \"addThingsToThingGroupParams\": {\n      \"thingGroupNames\": [\n        \"BJv\"\n      ],\n      \"overrideDynamicGroups\": \"<boolean>\"\n    },\n    \"replaceDefaultPolicyVersionParams\": {\n      \"templateName\": \"BLANK_POLICY\"\n    },\n    \"enableIoTLoggingParams\": {\n      \"roleArnForLogging\": \"<string>\",\n      \"logLevel\": \"DISABLED\"\n    },\n    \"publishFindingToSnsParams\": {\n      \"topicArn\": \"<string>\"\n    }\n  },\n  \"tags\": [\n    {\n      \"Key\": \"=LL/p@Npp\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"Z@/\",\n      \"Value\": \"<string>\"\n    }\n  ]\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/mitigationactions/actions/:actionName",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "mitigationactions",
+                            "actions",
+                            ":actionName"
+                          ],
+                          "variable": [
+                            {
+                              "key": "actionName"
+                            }
+                          ]
+                        }
+                      },
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-07-28T10:32:40.000Z",
+                      "updatedAt": "2026-07-28T10:32:40.000Z",
+                      "uid": "35240-a424becc-8fbd-46d7-b125-3d74545de4c3"
+                    },
+                    {
+                      "id": "007bda54-31a9-4b99-8761-a32d895ad2c7",
+                      "name": "ThrottlingException",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"roleArn\": \"<string>\",\n  \"actionParams\": {\n    \"updateDeviceCertificateParams\": {\n      \"action\": \"DEACTIVATE\"\n    },\n    \"updateCACertificateParams\": {\n      \"action\": \"DEACTIVATE\"\n    },\n    \"addThingsToThingGroupParams\": {\n      \"thingGroupNames\": [\n        \"BJv\"\n      ],\n      \"overrideDynamicGroups\": \"<boolean>\"\n    },\n    \"replaceDefaultPolicyVersionParams\": {\n      \"templateName\": \"BLANK_POLICY\"\n    },\n    \"enableIoTLoggingParams\": {\n      \"roleArnForLogging\": \"<string>\",\n      \"logLevel\": \"DISABLED\"\n    },\n    \"publishFindingToSnsParams\": {\n      \"topicArn\": \"<string>\"\n    }\n  },\n  \"tags\": [\n    {\n      \"Key\": \"=LL/p@Npp\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"Z@/\",\n      \"Value\": \"<string>\"\n    }\n  ]\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/mitigationactions/actions/:actionName",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "mitigationactions",
+                            "actions",
+                            ":actionName"
+                          ],
+                          "variable": [
+                            {
+                              "key": "actionName"
+                            }
+                          ]
+                        }
+                      },
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-07-28T10:32:40.000Z",
+                      "updatedAt": "2026-07-28T10:32:40.000Z",
+                      "uid": "35240-007bda54-31a9-4b99-8761-a32d895ad2c7"
+                    },
+                    {
+                      "id": "b350db33-d45e-4e97-8d38-d23725cad6b6",
+                      "name": "InternalFailureException",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"roleArn\": \"<string>\",\n  \"actionParams\": {\n    \"updateDeviceCertificateParams\": {\n      \"action\": \"DEACTIVATE\"\n    },\n    \"updateCACertificateParams\": {\n      \"action\": \"DEACTIVATE\"\n    },\n    \"addThingsToThingGroupParams\": {\n      \"thingGroupNames\": [\n        \"BJv\"\n      ],\n      \"overrideDynamicGroups\": \"<boolean>\"\n    },\n    \"replaceDefaultPolicyVersionParams\": {\n      \"templateName\": \"BLANK_POLICY\"\n    },\n    \"enableIoTLoggingParams\": {\n      \"roleArnForLogging\": \"<string>\",\n      \"logLevel\": \"DISABLED\"\n    },\n    \"publishFindingToSnsParams\": {\n      \"topicArn\": \"<string>\"\n    }\n  },\n  \"tags\": [\n    {\n      \"Key\": \"=LL/p@Npp\",\n      \"Value\": \"<string>\"\n    },\n    {\n      \"Key\": \"Z@/\",\n      \"Value\": \"<string>\"\n    }\n  ]\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/mitigationactions/actions/:actionName",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "mitigationactions",
+                            "actions",
+                            ":actionName"
+                          ],
+                          "variable": [
+                            {
+                              "key": "actionName"
+                            }
+                          ]
+                        }
+                      },
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-07-28T10:32:40.000Z",
+                      "updatedAt": "2026-07-28T10:32:40.000Z",
+                      "uid": "35240-b350db33-d45e-4e97-8d38-d23725cad6b6"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T10:32:40.000Z",
+                  "updatedAt": "2026-07-28T10:32:40.000Z",
+                  "uid": "35240-38ffc52c-1011-4a91-9d7b-2d7792b8244b"
+                },
+                {
+                  "name": "Amazon IoT Core Delete Mitigation Action",
+                  "id": "eedad6cc-03eb-43b3-8e7b-c92fe0e1de74",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/mitigationactions/actions/:actionName",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "mitigationactions",
+                        "actions",
+                        ":actionName"
+                      ],
+                      "variable": [
+                        {
+                          "id": "81f03d58-8b7e-487d-8742-12ba1c6ed401",
+                          "key": "actionName",
+                          "value": "QJMFSE7",
+                          "description": "(Required) The name of the mitigation action that you want to delete."
+                        }
+                      ]
+                    },
+                    "description": "<p>Deletes a defined mitigation action from your Amazon Web Services accounts.</p> <p>Requires permission to access the <a href=\"https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions\">DeleteMitigationAction</a> action.</p>"
+                  },
+                  "response": [
+                    {
+                      "id": "54846714-9245-4784-bbad-e0e9b627487a",
+                      "name": "Success",
+                      "originalRequest": {
+                        "method": "DELETE",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/mitigationactions/actions/:actionName",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "mitigationactions",
+                            "actions",
+                            ":actionName"
+                          ],
+                          "variable": [
+                            {
+                              "key": "actionName"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-07-28T10:32:40.000Z",
+                      "updatedAt": "2026-07-28T10:32:40.000Z",
+                      "uid": "35240-54846714-9245-4784-bbad-e0e9b627487a"
+                    },
+                    {
+                      "id": "7f7fec97-21c6-4bbb-9f1b-75315b89c482",
+                      "name": "InvalidRequestException",
+                      "originalRequest": {
+                        "method": "DELETE",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/mitigationactions/actions/:actionName",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "mitigationactions",
+                            "actions",
+                            ":actionName"
+                          ],
+                          "variable": [
+                            {
+                              "key": "actionName"
+                            }
+                          ]
+                        }
+                      },
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-07-28T10:32:40.000Z",
+                      "updatedAt": "2026-07-28T10:32:40.000Z",
+                      "uid": "35240-7f7fec97-21c6-4bbb-9f1b-75315b89c482"
+                    },
+                    {
+                      "id": "0b0dbe3f-03d3-43d5-8a2c-8c6e96d1ce5b",
+                      "name": "ThrottlingException",
+                      "originalRequest": {
+                        "method": "DELETE",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/mitigationactions/actions/:actionName",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "mitigationactions",
+                            "actions",
+                            ":actionName"
+                          ],
+                          "variable": [
+                            {
+                              "key": "actionName"
+                            }
+                          ]
+                        }
+                      },
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-07-28T10:32:40.000Z",
+                      "updatedAt": "2026-07-28T10:32:40.000Z",
+                      "uid": "35240-0b0dbe3f-03d3-43d5-8a2c-8c6e96d1ce5b"
+                    },
+                    {
+                      "id": "657ed272-1485-4b4a-be9e-ea3984cc2d5b",
+                      "name": "InternalFailureException",
+                      "originalRequest": {
+                        "method": "DELETE",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/mitigationactions/actions/:actionName",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "mitigationactions",
+                            "actions",
+                            ":actionName"
+                          ],
+                          "variable": [
+                            {
+                              "key": "actionName"
+                            }
+                          ]
+                        }
+                      },
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-07-28T10:32:40.000Z",
+                      "updatedAt": "2026-07-28T10:32:40.000Z",
+                      "uid": "35240-657ed272-1485-4b4a-be9e-ea3984cc2d5b"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T10:32:40.000Z",
+                  "updatedAt": "2026-07-28T10:32:40.000Z",
+                  "uid": "35240-eedad6cc-03eb-43b3-8e7b-c92fe0e1de74"
+                },
+                {
+                  "name": "Amazon IoT Core Describe Mitigation Action",
+                  "id": "98dcbe77-9b99-40cf-ba73-4f344105896a",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/mitigationactions/actions/:actionName",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "mitigationactions",
+                        "actions",
+                        ":actionName"
+                      ],
+                      "variable": [
+                        {
+                          "id": "8bad4c60-2af7-483f-a1b0-fa0f64c3099e",
+                          "key": "actionName",
+                          "value": "QJMFSE7",
+                          "description": "(Required) The friendly name that uniquely identifies the mitigation action."
+                        }
+                      ]
+                    },
+                    "description": "<p>Gets information about a mitigation action.</p> <p>Requires permission to access the <a href=\"https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions\">DescribeMitigationAction</a> action.</p>"
+                  },
+                  "response": [
+                    {
+                      "id": "c93b044b-15fd-464a-b0dd-ecd457967896",
+                      "name": "Success",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/mitigationactions/actions/:actionName",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "mitigationactions",
+                            "actions",
+                            ":actionName"
+                          ],
+                          "variable": [
+                            {
+                              "key": "actionName"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"actionName\": \"I\",\n  \"actionType\": \"UPDATE_DEVICE_CERTIFICATE\",\n  \"actionArn\": \"<string>\",\n  \"actionId\": \"<string>\",\n  \"roleArn\": \"<string>\",\n  \"actionParams\": {\n    \"updateDeviceCertificateParams\": {\n      \"action\": \"DEACTIVATE\"\n    },\n    \"updateCACertificateParams\": {\n      \"action\": \"DEACTIVATE\"\n    },\n    \"addThingsToThingGroupParams\": {\n      \"thingGroupNames\": [\n        \"cvd\"\n      ],\n      \"overrideDynamicGroups\": \"<boolean>\"\n    },\n    \"replaceDefaultPolicyVersionParams\": {\n      \"templateName\": \"BLANK_POLICY\"\n    },\n    \"enableIoTLoggingParams\": {\n      \"roleArnForLogging\": \"<string>\",\n      \"logLevel\": \"DEBUG\"\n    },\n    \"publishFindingToSnsParams\": {\n      \"topicArn\": \"<string>\"\n    }\n  },\n  \"creationDate\": \"<dateTime>\",\n  \"lastModifiedDate\": \"<dateTime>\"\n}",
+                      "createdAt": "2026-07-28T10:32:40.000Z",
+                      "updatedAt": "2026-07-28T10:32:40.000Z",
+                      "uid": "35240-c93b044b-15fd-464a-b0dd-ecd457967896"
+                    },
+                    {
+                      "id": "3b94c6ab-c69f-4f34-ac3f-7a6fdc26ef5f",
+                      "name": "InvalidRequestException",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/mitigationactions/actions/:actionName",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "mitigationactions",
+                            "actions",
+                            ":actionName"
+                          ],
+                          "variable": [
+                            {
+                              "key": "actionName"
+                            }
+                          ]
+                        }
+                      },
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-07-28T10:32:40.000Z",
+                      "updatedAt": "2026-07-28T10:32:40.000Z",
+                      "uid": "35240-3b94c6ab-c69f-4f34-ac3f-7a6fdc26ef5f"
+                    },
+                    {
+                      "id": "0d018671-e152-495c-9bb2-0c9ae14b202a",
+                      "name": "ResourceNotFoundException",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/mitigationactions/actions/:actionName",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "mitigationactions",
+                            "actions",
+                            ":actionName"
+                          ],
+                          "variable": [
+                            {
+                              "key": "actionName"
+                            }
+                          ]
+                        }
+                      },
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-07-28T10:32:40.000Z",
+                      "updatedAt": "2026-07-28T10:32:40.000Z",
+                      "uid": "35240-0d018671-e152-495c-9bb2-0c9ae14b202a"
+                    },
+                    {
+                      "id": "16f5105c-28fc-44b2-96c3-29db9a2b135c",
+                      "name": "ThrottlingException",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/mitigationactions/actions/:actionName",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "mitigationactions",
+                            "actions",
+                            ":actionName"
+                          ],
+                          "variable": [
+                            {
+                              "key": "actionName"
+                            }
+                          ]
+                        }
+                      },
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-07-28T10:32:40.000Z",
+                      "updatedAt": "2026-07-28T10:32:40.000Z",
+                      "uid": "35240-16f5105c-28fc-44b2-96c3-29db9a2b135c"
+                    },
+                    {
+                      "id": "03486b51-40a6-497f-be14-b9701705deec",
+                      "name": "InternalFailureException",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/mitigationactions/actions/:actionName",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "mitigationactions",
+                            "actions",
+                            ":actionName"
+                          ],
+                          "variable": [
+                            {
+                              "key": "actionName"
+                            }
+                          ]
+                        }
+                      },
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-07-28T10:32:40.000Z",
+                      "updatedAt": "2026-07-28T10:32:40.000Z",
+                      "uid": "35240-03486b51-40a6-497f-be14-b9701705deec"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T10:32:40.000Z",
+                  "updatedAt": "2026-07-28T10:32:40.000Z",
+                  "uid": "35240-98dcbe77-9b99-40cf-ba73-4f344105896a"
+                },
+                {
+                  "name": "Amazon IoT Core Update Mitigation Action",
+                  "id": "c7fa04c5-99b0-476f-a442-6563b9dcc284",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "PATCH",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"roleArn\": \"<string>\",\n  \"actionParams\": {\n    \"updateDeviceCertificateParams\": {\n      \"action\": \"DEACTIVATE\"\n    },\n    \"updateCACertificateParams\": {\n      \"action\": \"DEACTIVATE\"\n    },\n    \"addThingsToThingGroupParams\": {\n      \"thingGroupNames\": [\n        \"6R\"\n      ],\n      \"overrideDynamicGroups\": \"<boolean>\"\n    },\n    \"replaceDefaultPolicyVersionParams\": {\n      \"templateName\": \"BLANK_POLICY\"\n    },\n    \"enableIoTLoggingParams\": {\n      \"roleArnForLogging\": \"<string>\",\n      \"logLevel\": \"INFO\"\n    },\n    \"publishFindingToSnsParams\": {\n      \"topicArn\": \"<string>\"\n    }\n  }\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/mitigationactions/actions/:actionName",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "mitigationactions",
+                        "actions",
+                        ":actionName"
+                      ],
+                      "variable": [
+                        {
+                          "id": "285b0148-fab7-422b-aa35-f6950fda28cc",
+                          "key": "actionName",
+                          "value": "QJMFSE7",
+                          "description": "(Required) The friendly name for the mitigation action. You cannot change the name by using <code>UpdateMitigationAction</code>. Instead, you must delete and recreate the mitigation action with the new name."
+                        }
+                      ]
+                    },
+                    "description": "<p>Updates the definition for the specified mitigation action.</p> <p>Requires permission to access the <a href=\"https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions\">UpdateMitigationAction</a> action.</p>"
+                  },
+                  "response": [
+                    {
+                      "id": "2fab9fea-4b29-453a-8e88-72867894d16f",
+                      "name": "Success",
+                      "originalRequest": {
+                        "method": "PATCH",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"roleArn\": \"<string>\",\n  \"actionParams\": {\n    \"updateDeviceCertificateParams\": {\n      \"action\": \"DEACTIVATE\"\n    },\n    \"updateCACertificateParams\": {\n      \"action\": \"DEACTIVATE\"\n    },\n    \"addThingsToThingGroupParams\": {\n      \"thingGroupNames\": [\n        \"6R\"\n      ],\n      \"overrideDynamicGroups\": \"<boolean>\"\n    },\n    \"replaceDefaultPolicyVersionParams\": {\n      \"templateName\": \"BLANK_POLICY\"\n    },\n    \"enableIoTLoggingParams\": {\n      \"roleArnForLogging\": \"<string>\",\n      \"logLevel\": \"INFO\"\n    },\n    \"publishFindingToSnsParams\": {\n      \"topicArn\": \"<string>\"\n    }\n  }\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/mitigationactions/actions/:actionName",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "mitigationactions",
+                            "actions",
+                            ":actionName"
+                          ],
+                          "variable": [
+                            {
+                              "key": "actionName"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"actionArn\": \"<string>\",\n  \"actionId\": \"<string>\"\n}",
+                      "createdAt": "2026-07-28T10:32:40.000Z",
+                      "updatedAt": "2026-07-28T10:32:40.000Z",
+                      "uid": "35240-2fab9fea-4b29-453a-8e88-72867894d16f"
+                    },
+                    {
+                      "id": "b08c3ce2-6ed0-4cf7-aa55-2d109106820b",
+                      "name": "InvalidRequestException",
+                      "originalRequest": {
+                        "method": "PATCH",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"roleArn\": \"<string>\",\n  \"actionParams\": {\n    \"updateDeviceCertificateParams\": {\n      \"action\": \"DEACTIVATE\"\n    },\n    \"updateCACertificateParams\": {\n      \"action\": \"DEACTIVATE\"\n    },\n    \"addThingsToThingGroupParams\": {\n      \"thingGroupNames\": [\n        \"6R\"\n      ],\n      \"overrideDynamicGroups\": \"<boolean>\"\n    },\n    \"replaceDefaultPolicyVersionParams\": {\n      \"templateName\": \"BLANK_POLICY\"\n    },\n    \"enableIoTLoggingParams\": {\n      \"roleArnForLogging\": \"<string>\",\n      \"logLevel\": \"INFO\"\n    },\n    \"publishFindingToSnsParams\": {\n      \"topicArn\": \"<string>\"\n    }\n  }\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/mitigationactions/actions/:actionName",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "mitigationactions",
+                            "actions",
+                            ":actionName"
+                          ],
+                          "variable": [
+                            {
+                              "key": "actionName"
+                            }
+                          ]
+                        }
+                      },
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-07-28T10:32:40.000Z",
+                      "updatedAt": "2026-07-28T10:32:40.000Z",
+                      "uid": "35240-b08c3ce2-6ed0-4cf7-aa55-2d109106820b"
+                    },
+                    {
+                      "id": "7df98b63-98df-478a-a368-2b2fa6441bb0",
+                      "name": "ResourceNotFoundException",
+                      "originalRequest": {
+                        "method": "PATCH",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"roleArn\": \"<string>\",\n  \"actionParams\": {\n    \"updateDeviceCertificateParams\": {\n      \"action\": \"DEACTIVATE\"\n    },\n    \"updateCACertificateParams\": {\n      \"action\": \"DEACTIVATE\"\n    },\n    \"addThingsToThingGroupParams\": {\n      \"thingGroupNames\": [\n        \"6R\"\n      ],\n      \"overrideDynamicGroups\": \"<boolean>\"\n    },\n    \"replaceDefaultPolicyVersionParams\": {\n      \"templateName\": \"BLANK_POLICY\"\n    },\n    \"enableIoTLoggingParams\": {\n      \"roleArnForLogging\": \"<string>\",\n      \"logLevel\": \"INFO\"\n    },\n    \"publishFindingToSnsParams\": {\n      \"topicArn\": \"<string>\"\n    }\n  }\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/mitigationactions/actions/:actionName",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "mitigationactions",
+                            "actions",
+                            ":actionName"
+                          ],
+                          "variable": [
+                            {
+                              "key": "actionName"
+                            }
+                          ]
+                        }
+                      },
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-07-28T10:32:40.000Z",
+                      "updatedAt": "2026-07-28T10:32:40.000Z",
+                      "uid": "35240-7df98b63-98df-478a-a368-2b2fa6441bb0"
+                    },
+                    {
+                      "id": "58b77808-62a3-4edd-8f5e-bb196e84435a",
+                      "name": "ThrottlingException",
+                      "originalRequest": {
+                        "method": "PATCH",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"roleArn\": \"<string>\",\n  \"actionParams\": {\n    \"updateDeviceCertificateParams\": {\n      \"action\": \"DEACTIVATE\"\n    },\n    \"updateCACertificateParams\": {\n      \"action\": \"DEACTIVATE\"\n    },\n    \"addThingsToThingGroupParams\": {\n      \"thingGroupNames\": [\n        \"6R\"\n      ],\n      \"overrideDynamicGroups\": \"<boolean>\"\n    },\n    \"replaceDefaultPolicyVersionParams\": {\n      \"templateName\": \"BLANK_POLICY\"\n    },\n    \"enableIoTLoggingParams\": {\n      \"roleArnForLogging\": \"<string>\",\n      \"logLevel\": \"INFO\"\n    },\n    \"publishFindingToSnsParams\": {\n      \"topicArn\": \"<string>\"\n    }\n  }\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/mitigationactions/actions/:actionName",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "mitigationactions",
+                            "actions",
+                            ":actionName"
+                          ],
+                          "variable": [
+                            {
+                              "key": "actionName"
+                            }
+                          ]
+                        }
+                      },
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-07-28T10:32:40.000Z",
+                      "updatedAt": "2026-07-28T10:32:40.000Z",
+                      "uid": "35240-58b77808-62a3-4edd-8f5e-bb196e84435a"
+                    },
+                    {
+                      "id": "a6f32185-2347-4d31-ab1d-1c992b659c3f",
+                      "name": "InternalFailureException",
+                      "originalRequest": {
+                        "method": "PATCH",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"roleArn\": \"<string>\",\n  \"actionParams\": {\n    \"updateDeviceCertificateParams\": {\n      \"action\": \"DEACTIVATE\"\n    },\n    \"updateCACertificateParams\": {\n      \"action\": \"DEACTIVATE\"\n    },\n    \"addThingsToThingGroupParams\": {\n      \"thingGroupNames\": [\n        \"6R\"\n      ],\n      \"overrideDynamicGroups\": \"<boolean>\"\n    },\n    \"replaceDefaultPolicyVersionParams\": {\n      \"templateName\": \"BLANK_POLICY\"\n    },\n    \"enableIoTLoggingParams\": {\n      \"roleArnForLogging\": \"<string>\",\n      \"logLevel\": \"INFO\"\n    },\n    \"publishFindingToSnsParams\": {\n      \"topicArn\": \"<string>\"\n    }\n  }\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/mitigationactions/actions/:actionName",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "mitigationactions",
+                            "actions",
+                            ":actionName"
+                          ],
+                          "variable": [
+                            {
+                              "key": "actionName"
+                            }
+                          ]
+                        }
+                      },
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-07-28T10:32:40.000Z",
+                      "updatedAt": "2026-07-28T10:32:40.000Z",
+                      "uid": "35240-a6f32185-2347-4d31-ab1d-1c992b659c3f"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T10:32:40.000Z",
+                  "updatedAt": "2026-07-28T10:32:40.000Z",
+                  "uid": "35240-c7fa04c5-99b0-476f-a442-6563b9dcc284"
+                }
+              ],
+              "id": "086283ec-ce3f-4011-b4ae-8d6edf64ec81",
+              "createdAt": "2026-07-28T10:32:40.000Z",
+              "updatedAt": "2026-07-28T10:32:40.000Z",
+              "uid": "35240-086283ec-ce3f-4011-b4ae-8d6edf64ec81"
+            },
+            {
+              "name": "Amazon IoT Core List Mitigation Actions",
+              "id": "5dc13ad8-d5c9-4b46-92a3-b0e53915ee9c",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/mitigationactions/actions?actionType=PUBLISH_FINDING_TO_SNS&maxResults=<integer>&nextToken=<string>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "mitigationactions",
+                    "actions"
+                  ],
+                  "query": [
+                    {
+                      "description": "Specify a value to limit the result to mitigation actions with a specific action type.",
+                      "key": "actionType",
+                      "value": "PUBLISH_FINDING_TO_SNS"
+                    },
+                    {
+                      "description": "The maximum number of results to return at one time. The default is 25.",
+                      "key": "maxResults",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "The token for the next set of results.",
+                      "key": "nextToken",
+                      "value": "<string>"
+                    }
+                  ]
+                },
+                "description": "<p>Gets a list of all mitigation actions that match the specified filter criteria.</p> <p>Requires permission to access the <a href=\"https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions\">ListMitigationActions</a> action.</p>"
+              },
+              "response": [
+                {
+                  "id": "d1c19e3b-a80f-43e8-b191-4e64ae279ed0",
+                  "name": "Success",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/mitigationactions/actions?actionType=PUBLISH_FINDING_TO_SNS&maxResults=<integer>&nextToken=<string>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "mitigationactions",
+                        "actions"
+                      ],
+                      "query": [
+                        {
+                          "description": "Specify a value to limit the result to mitigation actions with a specific action type.",
+                          "key": "actionType",
+                          "value": "PUBLISH_FINDING_TO_SNS"
+                        },
+                        {
+                          "description": "The maximum number of results to return at one time. The default is 25.",
+                          "key": "maxResults",
+                          "value": "<integer>"
+                        },
+                        {
+                          "description": "The token for the next set of results.",
+                          "key": "nextToken",
+                          "value": "<string>"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"actionIdentifiers\": [\n    {\n      \"actionName\": \"p0LJ0kNBTzc\",\n      \"actionArn\": \"<string>\",\n      \"creationDate\": \"<dateTime>\"\n    },\n    {\n      \"actionName\": \"vw\",\n      \"actionArn\": \"<string>\",\n      \"creationDate\": \"<dateTime>\"\n    }\n  ],\n  \"nextToken\": \"<string>\"\n}",
+                  "createdAt": "2026-07-28T10:32:40.000Z",
+                  "updatedAt": "2026-07-28T10:32:40.000Z",
+                  "uid": "35240-d1c19e3b-a80f-43e8-b191-4e64ae279ed0"
+                },
+                {
+                  "id": "3c667ac3-3ea9-4970-bf5a-36babdcd3c96",
+                  "name": "InvalidRequestException",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/mitigationactions/actions?actionType=PUBLISH_FINDING_TO_SNS&maxResults=<integer>&nextToken=<string>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "mitigationactions",
+                        "actions"
+                      ],
+                      "query": [
+                        {
+                          "description": "Specify a value to limit the result to mitigation actions with a specific action type.",
+                          "key": "actionType",
+                          "value": "PUBLISH_FINDING_TO_SNS"
+                        },
+                        {
+                          "description": "The maximum number of results to return at one time. The default is 25.",
+                          "key": "maxResults",
+                          "value": "<integer>"
+                        },
+                        {
+                          "description": "The token for the next set of results.",
+                          "key": "nextToken",
+                          "value": "<string>"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:32:40.000Z",
+                  "updatedAt": "2026-07-28T10:32:40.000Z",
+                  "uid": "35240-3c667ac3-3ea9-4970-bf5a-36babdcd3c96"
+                },
+                {
+                  "id": "a3b1427d-c71c-4e70-9efd-f4283915a006",
+                  "name": "ThrottlingException",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/mitigationactions/actions?actionType=PUBLISH_FINDING_TO_SNS&maxResults=<integer>&nextToken=<string>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "mitigationactions",
+                        "actions"
+                      ],
+                      "query": [
+                        {
+                          "description": "Specify a value to limit the result to mitigation actions with a specific action type.",
+                          "key": "actionType",
+                          "value": "PUBLISH_FINDING_TO_SNS"
+                        },
+                        {
+                          "description": "The maximum number of results to return at one time. The default is 25.",
+                          "key": "maxResults",
+                          "value": "<integer>"
+                        },
+                        {
+                          "description": "The token for the next set of results.",
+                          "key": "nextToken",
+                          "value": "<string>"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:32:40.000Z",
+                  "updatedAt": "2026-07-28T10:32:40.000Z",
+                  "uid": "35240-a3b1427d-c71c-4e70-9efd-f4283915a006"
+                },
+                {
+                  "id": "ef977277-4e5b-44c0-bd8b-2547903ebd5f",
+                  "name": "InternalFailureException",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/mitigationactions/actions?actionType=PUBLISH_FINDING_TO_SNS&maxResults=<integer>&nextToken=<string>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "mitigationactions",
+                        "actions"
+                      ],
+                      "query": [
+                        {
+                          "description": "Specify a value to limit the result to mitigation actions with a specific action type.",
+                          "key": "actionType",
+                          "value": "PUBLISH_FINDING_TO_SNS"
+                        },
+                        {
+                          "description": "The maximum number of results to return at one time. The default is 25.",
+                          "key": "maxResults",
+                          "value": "<integer>"
+                        },
+                        {
+                          "description": "The token for the next set of results.",
+                          "key": "nextToken",
+                          "value": "<string>"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:32:40.000Z",
+                  "updatedAt": "2026-07-28T10:32:40.000Z",
+                  "uid": "35240-ef977277-4e5b-44c0-bd8b-2547903ebd5f"
+                }
+              ],
+              "createdAt": "2026-07-28T10:32:40.000Z",
+              "updatedAt": "2026-07-28T10:32:40.000Z",
+              "uid": "35240-5dc13ad8-d5c9-4b46-92a3-b0e53915ee9c"
+            }
+          ],
+          "id": "78df3d51-7529-4151-9a36-e313e0a38ada",
+          "createdAt": "2026-07-28T10:32:40.000Z",
+          "updatedAt": "2026-07-28T10:32:40.000Z",
+          "uid": "35240-78df3d51-7529-4151-9a36-e313e0a38ada"
+        }
+      ],
+      "id": "cf6ea075-0049-4c3a-a9b4-542f81c40911",
+      "createdAt": "2026-07-28T10:32:40.000Z",
+      "updatedAt": "2026-07-28T10:32:40.000Z",
+      "uid": "35240-cf6ea075-0049-4c3a-a9b4-542f81c40911"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "http://iot.{{region}}.amazonaws.com"
+    }
+  ]
+}
