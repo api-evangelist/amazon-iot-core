@@ -1,0 +1,44 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "AWS IoT Accept Certificate Transfer Shadows API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Shadows",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Amazon IoT Core Get thing shadow",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://iot.{region}.amazonaws.com/things/:thingName/shadow",
+            "params": [
+              {
+                "name": "thingName",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Gets the shadow for the specified thing."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
