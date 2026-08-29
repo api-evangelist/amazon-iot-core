@@ -1,0 +1,164 @@
+slug: amazon-iot-core
+provider: Amazon IoT Core
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Software & Technology
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 15
+edges:
+- tag: Principal Policies
+  spec_file: amazon-iot-core-principal-policies-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.9
+  evidence: PUT /principal-policies/{policyName}#x-amzn-iot-principal  AttachPrincipalPolicy ... DELETE
+    ... DetachPrincipalPolicy
+  reason: Attaching and detaching authorisation policies to principals is textbook access rights granting/revocation
+    — Identity & Access Management.
+- tag: Policies
+  spec_file: amazon-iot-core-policies-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.85
+  evidence: 'POST /policies/{policyName}  CreatePolicy ... PATCH /policies/{policyName}/version/{policyVersionId}  SetDefaultPolicyVersion
+    — schema: PolicyDocument'
+  reason: 'IAM-style authorisation policy documents governing what devices/principals may do. Homograph
+    guard: this is NOT corporate Policy Management (BC-130.20) but access-control policy, hence Identity
+    & Access Management.'
+- tag: Policy Principals#x Amzn Iot Policy
+  spec_file: amazon-iot-core-policy-principals-x-amzn-iot-policy-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.85
+  evidence: 'GET /policy-principals#x-amzn-iot-policy  ListPolicyPrincipals — schemas: PrincipalArn, Principals'
+  reason: Lists the security principals attached to an authorisation policy — access-control administration,
+    squarely Identity & Access Management.
+- tag: Policy Targets
+  spec_file: amazon-iot-core-policy-targets-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.85
+  evidence: 'POST /policy-targets/{policyName}  ListTargetsForPolicy — schemas: PolicyTarget, PolicyTargets'
+  reason: Enumerates the identities/targets an authorisation policy is attached to; access-control administration
+    under Identity & Access Management.
+- tag: Principal Policies#x Amzn Iot Principal
+  spec_file: amazon-iot-core-principal-policies-x-amzn-iot-principal-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.85
+  evidence: 'GET /principal-policies#x-amzn-iot-principal  ListPrincipalPolicies — schemas: PolicyName,
+    Policies, PolicyArn'
+  reason: Lists the authorisation policies attached to a given principal — access rights review, Identity
+    & Access Management.
+- tag: Authorizer
+  spec_file: amazon-iot-core-authorizer-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.8
+  evidence: '"CreateAuthorizer", "TestInvokeAuthorizer"; schemas AuthorizerFunctionArn, TokenKeyName'
+  reason: Custom authorizers define how device/client credentials are authenticated and authorised, squarely
+    identity & access management.
+- tag: Keys And Certificate
+  spec_file: amazon-iot-core-keys-and-certificate-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.8
+  evidence: 'POST /keys-and-certificate  CreateKeysAndCertificate — schemas: KeyPair, CertificatePem,
+    PrivateKey, PublicKey, CertificateArn'
+  reason: Issues X.509 certificates and key pairs used to authenticate devices — credential issuance,
+    i.e. Identity & Access Management within Cybersecurity. Device credential management is the closest
+    honest fit for this infrastructure devtool.
+- tag: Attached Policies
+  spec_file: amazon-iot-core-attached-policies-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.75
+  evidence: '"POST /attached-policies/{target}  ListAttachedPolicies"; schemas PolicyArn, PolicyName,
+    UnauthorizedException'
+  reason: Enumerating authorisation policies attached to an identity/target is core identity and access
+    management for the IoT platform.
+- tag: Authorizers
+  spec_file: amazon-iot-core-authorizers-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.75
+  evidence: '"GET /authorizers/  ListAuthorizers"; AuthorizerSummary, AuthorizerArn'
+  reason: Listing custom authentication authorizers is part of the same identity and access management
+    surface.
+- tag: Effective Policies
+  spec_file: amazon-iot-core-effective-policies-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.75
+  evidence: 'POST /effective-policies GetEffectivePolicies ... schemas: EffectivePolicy, PolicyDocument,
+    PolicyArn, UnauthorizedException'
+  reason: Retrieving the effective IAM/IoT policies applied to a device identity is access-policy evaluation,
+    aligning with Identity & Access Management.
+- tag: Role Aliases
+  spec_file: amazon-iot-core-role-aliases-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.75
+  evidence: CreateRoleAlias / DescribeRoleAlias; schemas RoleArn, CredentialDurationSeconds
+  reason: Role aliases bind device certificates to IAM roles and control temporary credential duration
+    — plainly identity and access management plumbing for machine identities.
+- tag: Cacertificate
+  spec_file: amazon-iot-core-cacertificate-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.7
+  evidence: '"RegisterCACertificate", "UpdateCACertificate"; schemas CertificatePem, CACertificateStatus,
+    RegistrationConfig'
+  reason: Registering and managing CA certificates used to authenticate devices is credential/PKI lifecycle
+    management within identity & access management.
+- tag: Detect
+  spec_file: amazon-iot-core-detect-api-openapi.yml
+  capability_id: BC-620.30
+  capability_id_l1: BC-620
+  capability_name: Threat Detection & Response Management
+  confidence: 0.7
+  evidence: StartDetectMitigationActionsTask, CancelDetectMitigationActionsTask, ListDetectMitigationActionsExecutions
+    ... PublishFindingToSnsParams, DeviceCertificateUpdateAction, BehaviorName
+  reason: 'Device Defender detect surface: starts and tracks mitigation-action tasks against detected
+    behaviour violations, publishing findings and revoking/updating device certificates — detection and
+    response to security threats.'
+- tag: Mitigationactions
+  spec_file: amazon-iot-core-mitigationactions-api-openapi.yml
+  capability_id: BC-620.30
+  capability_id_l1: BC-620
+  capability_name: Threat Detection & Response Management
+  confidence: 0.7
+  evidence: 'POST /mitigationactions/actions/{actionName}  CreateMitigationAction — schemas: UpdateCACertificateParams,
+    DeviceCertificateUpdateAction, PublishFindingToSnsParams'
+  reason: Defines actions applied in response to IoT Device Defender security audit/detect findings (revoke
+    certificates, publish findings). That is security threat detection & response tooling, not enterprise
+    risk treatment.
+- tag: Security Profiles
+  spec_file: amazon-iot-core-security-profiles-api-openapi.yml
+  capability_id: BC-620.30
+  capability_id_l1: BC-620
+  capability_name: Threat Detection & Response Management
+  confidence: 0.7
+  evidence: POST /security-profiles/{securityProfileName}  CreateSecurityProfile; AttachSecurityProfile;
+    schemas Behaviors, MetricToRetain, ConsecutiveDatapointsToAlarm
+  reason: Security profiles define behavioural detection rules attached to device targets, i.e. threat
+    detection and alarming over the fleet. Some ambiguity versus security governance/policy, hence 0.7.

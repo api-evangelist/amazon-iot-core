@@ -1475,6 +1475,9 @@ apis:
   - type: GraphQL
     url: graphql/amazon-iot-core-graphql.md
 common:
+- type: CapabilityMap
+  url: capabilities/amazon-iot-core-capability-edges.yml
+  name: Amazon IoT Core Business Capability Map
 - type: PostmanWorkspace
   url: https://www.postman.com/kinlaneapi/amazon-iot-core/overview
 - type: AgenticAccess
