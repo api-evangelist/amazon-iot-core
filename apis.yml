@@ -823,7 +823,7 @@ apis:
   humanURL: https://aws.amazon.com/iot-core/
   baseURL: https://iot.amazonaws.com
   tags:
-  - OtaUpdates
+  - OTA Updates
   tags_raw:
   - OtaUpdates
   properties:
