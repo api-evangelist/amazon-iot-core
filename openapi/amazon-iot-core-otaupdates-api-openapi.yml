@@ -1,8 +1,8 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  version: "1.0.0"
+  version: 1.0.0
   x-release: v4
-  title: AWS IoT Accept Certificate Transfer OtaUpdates API
+  title: AWS IoT Accept Certificate Transfer Ota Updates API
   description: '<fullname>IoT</fullname> <p>IoT provides secure, bi-directional communication between Internet-connected devices (such as sensors, actuators, embedded devices, or smart appliances) and the Amazon Web Services cloud. You can discover your custom IoT-Data endpoint to communicate with, configure rules for data processing and integration with other services, organize resources associated with each device (Registry), configure logging, and create and manage policies and credentials to authenticate devices.</p> <p>The service endpoints that expose this API are listed in <a href="https://docs.aws.amazon.com/general/latest/gr/iot-core.html">Amazon Web Services IoT Core Endpoints and Quotas</a>. You must use the endpoint for the region that has the resources you want to access.</p> <p>The service name used by <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Amazon Web Services Signature Version 4</a> to sign the request is: <i>execute-api</i>.</p> <p>For more information about how IoT works, see the <a href="https://docs.aws.amazon.com/iot/latest/developerguide/aws-iot-how-it-works.html">Developer Guide</a>.</p> <p>For information about how to use the credentials provider for IoT, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/authorizing-direct-aws.html">Authorizing Direct Calls to Amazon Web Services Services</a>.</p>'
   x-logo:
     url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
@@ -516,51 +516,60 @@ paths:
       - OtaUpdates
 components:
   schemas:
+    AwsJobAbortCriteriaFailureType:
+      type: string
+      enum:
+      - FAILED
+      - REJECTED
+      - TIMED_OUT
+      - ALL
+    AwsJobRateIncreaseCriteria:
+      type: object
+      properties:
+        numberOfNotifiedThings:
+          allOf:
+          - $ref: '#/components/schemas/AwsJobRateIncreaseCriteriaNumberOfThings'
+          - description: When this number of things have been notified, it will initiate an increase in the rollout rate.
+        numberOfSucceededThings:
+          allOf:
+          - $ref: '#/components/schemas/AwsJobRateIncreaseCriteriaNumberOfThings'
+          - description: When this number of things have succeeded in their job execution, it will initiate an increase in the rollout rate.
+      description: The criteria to initiate the increase in rate of rollout for a job.
     ResourceNotFoundException: {}
-    ThrottlingException: {}
-    FileName:
+    UnauthorizedException: {}
+    Value:
       type: string
-    FileLocation:
+      pattern: '[\s\S]*'
+      minLength: 0
+      maxLength: 4096
+    VersionConflictException: {}
+    CodeSigning:
       type: object
       properties:
-        stream:
+        awsSignerJobId:
           allOf:
-          - $ref: '#/components/schemas/Stream'
-          - description: The stream that contains the OTA update.
-        s3Location:
+          - $ref: '#/components/schemas/SigningJobId'
+          - description: The ID of the <code>AWSSignerJob</code> which was created to sign the file.
+        startSigningJobParameter:
           allOf:
-          - $ref: '#/components/schemas/S3Location'
-          - description: The location of the updated firmware in S3.
-      description: The location of the OTA update.
-    DateType:
+          - $ref: '#/components/schemas/StartSigningJobParameter'
+          - description: Describes the code-signing job.
+        customCodeSigning:
+          allOf:
+          - $ref: '#/components/schemas/CustomCodeSigning'
+          - description: A custom method for code signing a file.
+      description: Describes the method to use when code signing a file.
+    S3Key:
       type: string
-      format: date-time
-    AwsJobRateIncreaseCriteriaNumberOfThings:
-      type: integer
-      minimum: 1
-    ListOTAUpdatesResponse:
+      minLength: 1
+    CodeSigningSignature:
       type: object
       properties:
-        otaUpdates:
+        inlineDocument:
           allOf:
-          - $ref: '#/components/schemas/OTAUpdatesSummary'
-          - description: A list of OTA update jobs.
-        nextToken:
-          allOf:
-          - $ref: '#/components/schemas/NextToken'
-          - description: A token to use to get the next set of results.
-    AwsJobPresignedUrlConfig:
-      type: object
-      properties:
-        expiresInSec:
-          allOf:
-          - $ref: '#/components/schemas/ExpiresInSeconds'
-          - description: How long (in seconds) pre-signed URLs are valid. Valid values are 60 - 3600, the default value is 1800 seconds. Pre-signed URLs are generated when a request for the job document is received.
-      description: Configuration information for pre-signed URLs. Valid when <code>protocols</code> contains HTTP.
-    MaximumPerMinute:
-      type: integer
-      minimum: 1
-      maximum: 1000
+          - $ref: '#/components/schemas/Signature'
+          - description: A base64 encoded binary representation of the code signing signature.
+      description: Describes the signature for a file.
     AwsJobExponentialRolloutRate:
       type: object
       required:
@@ -581,6 +590,8 @@ components:
           - $ref: '#/components/schemas/AwsJobRateIncreaseCriteria'
           - description: <p>The criteria to initiate the increase in rate of rollout for a job.</p> <p>Amazon Web Services IoT Core supports up to one digit after the decimal (for example, 1.5, but not 1.55).</p>
       description: The rate of increase for a job rollout. This parameter allows you to define an exponential rate increase for a job rollout.
+    AwsIotJobId:
+      type: string
     Destination:
       type: object
       properties:
@@ -589,78 +600,6 @@ components:
           - $ref: '#/components/schemas/S3Destination'
           - description: Describes the location in S3 of the updated firmware.
       description: Describes the location of the updated firmware.
-    AwsJobAbortCriteriaList:
-      type: array
-      items:
-        $ref: '#/components/schemas/AwsJobAbortCriteria'
-      minItems: 1
-    S3Destination:
-      type: object
-      properties:
-        bucket:
-          allOf:
-          - $ref: '#/components/schemas/S3Bucket'
-          - description: The S3 bucket that contains the updated firmware.
-        prefix:
-          allOf:
-          - $ref: '#/components/schemas/Prefix'
-          - description: The S3 prefix.
-      description: Describes the location of updated firmware in S3.
-    FileId:
-      type: integer
-      minimum: 0
-      maximum: 255
-    ResourceAlreadyExistsException: {}
-    Code:
-      type: string
-    OTAUpdateFile:
-      type: object
-      properties:
-        fileName:
-          allOf:
-          - $ref: '#/components/schemas/FileName'
-          - description: The name of the file.
-        fileType:
-          allOf:
-          - $ref: '#/components/schemas/FileType'
-          - description: An integer value you can include in the job document to allow your devices to identify the type of file received from the cloud.
-        fileVersion:
-          allOf:
-          - $ref: '#/components/schemas/OTAUpdateFileVersion'
-          - description: The file version.
-        fileLocation:
-          allOf:
-          - $ref: '#/components/schemas/FileLocation'
-          - description: The location of the updated firmware.
-        codeSigning:
-          allOf:
-          - $ref: '#/components/schemas/CodeSigning'
-          - description: The code signing method of the file.
-        attributes:
-          allOf:
-          - $ref: '#/components/schemas/AttributesMap'
-          - description: A list of name/attribute pairs.
-      description: Describes a file to be associated with an OTA update.
-    OTAUpdateDescription:
-      type: string
-      pattern: '[^\p{C}]+'
-      maxLength: 2028
-    CodeSigning:
-      type: object
-      properties:
-        awsSignerJobId:
-          allOf:
-          - $ref: '#/components/schemas/SigningJobId'
-          - description: The ID of the <code>AWSSignerJob</code> which was created to sign the file.
-        startSigningJobParameter:
-          allOf:
-          - $ref: '#/components/schemas/StartSigningJobParameter'
-          - description: Describes the code-signing job.
-        customCodeSigning:
-          allOf:
-          - $ref: '#/components/schemas/CustomCodeSigning'
-          - description: A custom method for code signing a file.
-      description: Describes the method to use when code signing a file.
     OTAUpdateInfo:
       type: object
       properties:
@@ -729,108 +668,140 @@ components:
           - $ref: '#/components/schemas/AdditionalParameterMap'
           - description: A collection of name/value pairs
       description: Information about an OTA update.
-    AwsJobAbortCriteriaAbortAction:
+    TargetSelection:
       type: string
       enum:
-      - CANCEL
-    CertificateName:
-      type: string
-    ErrorInfo:
+      - CONTINUOUS
+      - SNAPSHOT
+    AwsJobExecutionsRolloutConfig:
       type: object
       properties:
-        code:
+        maximumPerMinute:
           allOf:
-          - $ref: '#/components/schemas/Code'
-          - description: The error code.
-        message:
+          - $ref: '#/components/schemas/MaximumPerMinute'
+          - description: The maximum number of OTA update job executions started per minute.
+        exponentialRate:
           allOf:
-          - $ref: '#/components/schemas/OTAUpdateErrorMessage'
-          - description: The error message.
-      description: Error information.
-    CreateOTAUpdateResponse:
+          - $ref: '#/components/schemas/AwsJobExponentialRolloutRate'
+          - description: The rate of increase for a job rollout. This parameter allows you to define an exponential rate increase for a job rollout.
+      description: Configuration for the rollout of OTA updates.
+    CertificateArn:
+      type: string
+    InternalFailureException: {}
+    HashAlgorithm:
+      type: string
+    CodeSigningCertificateChain:
       type: object
       properties:
-        otaUpdateId:
+        certificateName:
           allOf:
-          - $ref: '#/components/schemas/OTAUpdateId'
-          - description: The OTA update ID.
-        awsIotJobId:
+          - $ref: '#/components/schemas/CertificateName'
+          - description: The name of the certificate.
+        inlineDocument:
           allOf:
-          - $ref: '#/components/schemas/AwsIotJobId'
-          - description: The IoT job ID associated with the OTA update.
-        otaUpdateArn:
-          allOf:
-          - $ref: '#/components/schemas/OTAUpdateArn'
-          - description: The OTA update ARN.
-        awsIotJobArn:
-          allOf:
-          - $ref: '#/components/schemas/AwsIotJobArn'
-          - description: The IoT job ARN associated with the OTA update.
-        otaUpdateStatus:
-          allOf:
-          - $ref: '#/components/schemas/OTAUpdateStatus'
-          - description: The OTA update status.
-    Signature:
+          - $ref: '#/components/schemas/InlineDocument'
+          - description: A base64 encoded binary representation of the code signing certificate chain.
+      description: Describes the certificate chain being used when code signing a file.
+    TagValue:
       type: string
-    AwsIotJobArn:
-      type: string
-    CertificatePathOnDevice:
-      type: string
-    OTAUpdateSummary:
-      type: object
-      properties:
-        otaUpdateId:
-          allOf:
-          - $ref: '#/components/schemas/OTAUpdateId'
-          - description: The OTA update ID.
-        otaUpdateArn:
-          allOf:
-          - $ref: '#/components/schemas/OTAUpdateArn'
-          - description: The OTA update ARN.
-        creationDate:
-          allOf:
-          - $ref: '#/components/schemas/DateType'
-          - description: The date when the OTA update was created.
-      description: An OTA update summary.
-    StartSigningJobParameter:
-      type: object
-      properties:
-        signingProfileParameter:
-          allOf:
-          - $ref: '#/components/schemas/SigningProfileParameter'
-          - description: Describes the code-signing profile.
-        signingProfileName:
-          allOf:
-          - $ref: '#/components/schemas/SigningProfileName'
-          - description: The code-signing profile name.
-        destination:
-          allOf:
-          - $ref: '#/components/schemas/Destination'
-          - description: The location to write the code-signed file.
-      description: Information required to start a signing job.
-    Value:
-      type: string
-      pattern: '[\s\S]*'
       minLength: 0
-      maxLength: 4096
-    AwsJobRolloutIncrementFactor:
-      type: number
-      format: double
-    DeleteOTAUpdateResponse:
-      type: object
-      properties: {}
-    NextToken:
+      maxLength: 256
+    LimitExceededException: {}
+    AwsJobAbortCriteriaList:
+      type: array
+      items:
+        $ref: '#/components/schemas/AwsJobAbortCriteria'
+      minItems: 1
+    OTAUpdateArn:
       type: string
+    Targets:
+      type: array
+      items:
+        $ref: '#/components/schemas/Target'
+      minItems: 1
+    TagKey:
+      type: string
+      pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
+      minLength: 1
+      maxLength: 128
+    ExpiresInSeconds:
+      type: integer
+    Stream:
+      type: object
+      properties:
+        streamId:
+          allOf:
+          - $ref: '#/components/schemas/StreamId'
+          - description: The stream ID.
+        fileId:
+          allOf:
+          - $ref: '#/components/schemas/FileId'
+          - description: The ID of a file associated with a stream.
+      description: Describes a group of files that can be streamed.
+    OTAUpdateDescription:
+      type: string
+      pattern: '[^\p{C}]+'
+      maxLength: 2028
+    InvalidRequestException: {}
+    ListOTAUpdatesResponse:
+      type: object
+      properties:
+        otaUpdates:
+          allOf:
+          - $ref: '#/components/schemas/OTAUpdatesSummary'
+          - description: A list of OTA update jobs.
+        nextToken:
+          allOf:
+          - $ref: '#/components/schemas/NextToken'
+          - description: A token to use to get the next set of results.
+    CustomCodeSigning:
+      type: object
+      properties:
+        signature:
+          allOf:
+          - $ref: '#/components/schemas/CodeSigningSignature'
+          - description: The signature for the file.
+        certificateChain:
+          allOf:
+          - $ref: '#/components/schemas/CodeSigningCertificateChain'
+          - description: The certificate chain.
+        hashAlgorithm:
+          allOf:
+          - $ref: '#/components/schemas/HashAlgorithm'
+          - description: The hash algorithm used to code sign the file. You can use a string as the algorithm name if the target over-the-air (OTA) update devices are able to verify the signature that was generated using the same signature algorithm. For example, FreeRTOS uses <code>SHA256</code> or <code>SHA1</code>, so you can pass either of them based on which was used for generating the signature.
+        signatureAlgorithm:
+          allOf:
+          - $ref: '#/components/schemas/SignatureAlgorithm'
+          - description: The signature algorithm used to code sign the file. You can use a string as the algorithm name if the target over-the-air (OTA) update devices are able to verify the signature that was generated using the same signature algorithm. For example, FreeRTOS uses <code>ECDSA</code> or <code>RSA</code>, so you can pass either of them based on which was used for generating the signature.
+      description: Describes a custom method used to code sign a file.
     FileType:
       type: integer
       minimum: 0
       maximum: 255
-    SigningProfileName:
+    Protocols:
+      type: array
+      items:
+        $ref: '#/components/schemas/Protocol'
+      minItems: 1
+      maxItems: 2
+    S3Bucket:
       type: string
-    Prefix:
-      type: string
-    AwsJobTimeoutInProgressTimeoutInMinutes:
+      minLength: 1
+    AwsJobRateIncreaseCriteriaNumberOfThings:
       type: integer
+      minimum: 1
+    Protocol:
+      type: string
+      enum:
+      - MQTT
+      - HTTP
+    Platform:
+      type: string
+    AwsIotJobArn:
+      type: string
+    S3Version:
+      type: string
+    ResourceAlreadyExistsException: {}
     AwsJobAbortCriteria:
       type: object
       required:
@@ -856,38 +827,43 @@ components:
           - $ref: '#/components/schemas/AwsJobAbortCriteriaMinimumNumberOfExecutedThings'
           - description: The minimum number of things which must receive job execution notifications before the job can be aborted.
       description: The criteria that determine when and how a job abort takes place.
-    AwsJobRateIncreaseCriteria:
+    SigningJobId:
+      type: string
+    DeleteOTAUpdateResponse:
+      type: object
+      properties: {}
+    SignatureAlgorithm:
+      type: string
+    StartSigningJobParameter:
       type: object
       properties:
-        numberOfNotifiedThings:
+        signingProfileParameter:
           allOf:
-          - $ref: '#/components/schemas/AwsJobRateIncreaseCriteriaNumberOfThings'
-          - description: When this number of things have been notified, it will initiate an increase in the rollout rate.
-        numberOfSucceededThings:
+          - $ref: '#/components/schemas/SigningProfileParameter'
+          - description: Describes the code-signing profile.
+        signingProfileName:
           allOf:
-          - $ref: '#/components/schemas/AwsJobRateIncreaseCriteriaNumberOfThings'
-          - description: When this number of things have succeeded in their job execution, it will initiate an increase in the rollout rate.
-      description: The criteria to initiate the increase in rate of rollout for a job.
-    S3Key:
-      type: string
-      minLength: 1
-    Protocol:
-      type: string
-      enum:
-      - MQTT
-      - HTTP
-    AdditionalParameterMap:
+          - $ref: '#/components/schemas/SigningProfileName'
+          - description: The code-signing profile name.
+        destination:
+          allOf:
+          - $ref: '#/components/schemas/Destination'
+          - description: The location to write the code-signed file.
+      description: Information required to start a signing job.
+    S3Destination:
       type: object
-      additionalProperties:
-        $ref: '#/components/schemas/Value'
-    S3Bucket:
+      properties:
+        bucket:
+          allOf:
+          - $ref: '#/components/schemas/S3Bucket'
+          - description: The S3 bucket that contains the updated firmware.
+        prefix:
+          allOf:
+          - $ref: '#/components/schemas/Prefix'
+          - description: The S3 prefix.
+      description: Describes the location of updated firmware in S3.
+    SigningProfileName:
       type: string
-      minLength: 1
-    OTAUpdateFiles:
-      type: array
-      items:
-        $ref: '#/components/schemas/OTAUpdateFile'
-      minItems: 1
     S3Location:
       type: object
       properties:
@@ -904,135 +880,10 @@ components:
           - $ref: '#/components/schemas/S3Version'
           - description: The S3 bucket version.
       description: The S3 location.
-    AwsJobAbortCriteriaMinimumNumberOfExecutedThings:
-      type: integer
-      minimum: 1
-    OTAUpdatesSummary:
-      type: array
-      items:
-        $ref: '#/components/schemas/OTAUpdateSummary'
-    TagKey:
+    DateType:
       type: string
-      pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
-      minLength: 1
-      maxLength: 128
-    CodeSigningSignature:
-      type: object
-      properties:
-        inlineDocument:
-          allOf:
-          - $ref: '#/components/schemas/Signature'
-          - description: A base64 encoded binary representation of the code signing signature.
-      description: Describes the signature for a file.
-    Platform:
-      type: string
-    InvalidRequestException: {}
-    OTAUpdateFileVersion:
-      type: string
-    InternalFailureException: {}
-    LimitExceededException: {}
-    Targets:
-      type: array
-      items:
-        $ref: '#/components/schemas/Target'
-      minItems: 1
-    OTAUpdateErrorMessage:
-      type: string
-    HashAlgorithm:
-      type: string
-    AttributesMap:
-      type: object
-      additionalProperties:
-        $ref: '#/components/schemas/Value'
-    AwsJobExecutionsRolloutConfig:
-      type: object
-      properties:
-        maximumPerMinute:
-          allOf:
-          - $ref: '#/components/schemas/MaximumPerMinute'
-          - description: The maximum number of OTA update job executions started per minute.
-        exponentialRate:
-          allOf:
-          - $ref: '#/components/schemas/AwsJobExponentialRolloutRate'
-          - description: The rate of increase for a job rollout. This parameter allows you to define an exponential rate increase for a job rollout.
-      description: Configuration for the rollout of OTA updates.
-    AwsJobRolloutRatePerMinute:
-      type: integer
-      minimum: 1
-      maximum: 1000
-    UnauthorizedException: {}
-    TagValue:
-      type: string
-      minLength: 0
-      maxLength: 256
-    CustomCodeSigning:
-      type: object
-      properties:
-        signature:
-          allOf:
-          - $ref: '#/components/schemas/CodeSigningSignature'
-          - description: The signature for the file.
-        certificateChain:
-          allOf:
-          - $ref: '#/components/schemas/CodeSigningCertificateChain'
-          - description: The certificate chain.
-        hashAlgorithm:
-          allOf:
-          - $ref: '#/components/schemas/HashAlgorithm'
-          - description: The hash algorithm used to code sign the file. You can use a string as the algorithm name if the target over-the-air (OTA) update devices are able to verify the signature that was generated using the same signature algorithm. For example, FreeRTOS uses <code>SHA256</code> or <code>SHA1</code>, so you can pass either of them based on which was used for generating the signature.
-        signatureAlgorithm:
-          allOf:
-          - $ref: '#/components/schemas/SignatureAlgorithm'
-          - description: The signature algorithm used to code sign the file. You can use a string as the algorithm name if the target over-the-air (OTA) update devices are able to verify the signature that was generated using the same signature algorithm. For example, FreeRTOS uses <code>ECDSA</code> or <code>RSA</code>, so you can pass either of them based on which was used for generating the signature.
-      description: Describes a custom method used to code sign a file.
-    VersionConflictException: {}
-    StreamId:
-      type: string
-      pattern: '[a-zA-Z0-9_-]+'
-      minLength: 1
-      maxLength: 128
-    Stream:
-      type: object
-      properties:
-        streamId:
-          allOf:
-          - $ref: '#/components/schemas/StreamId'
-          - description: The stream ID.
-        fileId:
-          allOf:
-          - $ref: '#/components/schemas/FileId'
-          - description: The ID of a file associated with a stream.
-      description: Describes a group of files that can be streamed.
-    OTAUpdateStatus:
-      type: string
-      enum:
-      - CREATE_PENDING
-      - CREATE_IN_PROGRESS
-      - CREATE_COMPLETE
-      - CREATE_FAILED
-      - DELETE_IN_PROGRESS
-      - DELETE_FAILED
-    TargetSelection:
-      type: string
-      enum:
-      - CONTINUOUS
-      - SNAPSHOT
-    InlineDocument:
-      type: string
-    AwsJobAbortCriteriaAbortThresholdPercentage:
-      type: number
-      format: double
-      maximum: 100
-    GetOTAUpdateResponse:
-      type: object
-      properties:
-        otaUpdateInfo:
-          allOf:
-          - $ref: '#/components/schemas/OTAUpdateInfo'
-          - description: The OTA update info.
-    AwsIotJobId:
-      type: string
-    S3Version:
+      format: date-time
+    Code:
       type: string
     Tag:
       type: object
@@ -1048,11 +899,194 @@ components:
           - $ref: '#/components/schemas/TagValue'
           - description: The tag's value.
       description: A set of key/value pairs that are used to manage the resource.
+    CertificatePathOnDevice:
+      type: string
+    OTAUpdateErrorMessage:
+      type: string
+    AwsJobPresignedUrlConfig:
+      type: object
+      properties:
+        expiresInSec:
+          allOf:
+          - $ref: '#/components/schemas/ExpiresInSeconds'
+          - description: How long (in seconds) pre-signed URLs are valid. Valid values are 60 - 3600, the default value is 1800 seconds. Pre-signed URLs are generated when a request for the job document is received.
+      description: Configuration information for pre-signed URLs. Valid when <code>protocols</code> contains HTTP.
+    NextToken:
+      type: string
     OTAUpdateId:
       type: string
       pattern: '[a-zA-Z0-9_-]+'
       minLength: 1
       maxLength: 128
+    GetOTAUpdateResponse:
+      type: object
+      properties:
+        otaUpdateInfo:
+          allOf:
+          - $ref: '#/components/schemas/OTAUpdateInfo'
+          - description: The OTA update info.
+    AwsJobAbortCriteriaAbortAction:
+      type: string
+      enum:
+      - CANCEL
+    ErrorInfo:
+      type: object
+      properties:
+        code:
+          allOf:
+          - $ref: '#/components/schemas/Code'
+          - description: The error code.
+        message:
+          allOf:
+          - $ref: '#/components/schemas/OTAUpdateErrorMessage'
+          - description: The error message.
+      description: Error information.
+    OTAUpdateFile:
+      type: object
+      properties:
+        fileName:
+          allOf:
+          - $ref: '#/components/schemas/FileName'
+          - description: The name of the file.
+        fileType:
+          allOf:
+          - $ref: '#/components/schemas/FileType'
+          - description: An integer value you can include in the job document to allow your devices to identify the type of file received from the cloud.
+        fileVersion:
+          allOf:
+          - $ref: '#/components/schemas/OTAUpdateFileVersion'
+          - description: The file version.
+        fileLocation:
+          allOf:
+          - $ref: '#/components/schemas/FileLocation'
+          - description: The location of the updated firmware.
+        codeSigning:
+          allOf:
+          - $ref: '#/components/schemas/CodeSigning'
+          - description: The code signing method of the file.
+        attributes:
+          allOf:
+          - $ref: '#/components/schemas/AttributesMap'
+          - description: A list of name/attribute pairs.
+      description: Describes a file to be associated with an OTA update.
+    StreamId:
+      type: string
+      pattern: '[a-zA-Z0-9_-]+'
+      minLength: 1
+      maxLength: 128
+    FileName:
+      type: string
+    OTAUpdateStatus:
+      type: string
+      enum:
+      - CREATE_PENDING
+      - CREATE_IN_PROGRESS
+      - CREATE_COMPLETE
+      - CREATE_FAILED
+      - DELETE_IN_PROGRESS
+      - DELETE_FAILED
+    Signature:
+      type: string
+    InlineDocument:
+      type: string
+    AwsJobTimeoutInProgressTimeoutInMinutes:
+      type: integer
+    Target:
+      type: string
+    AttributesMap:
+      type: object
+      additionalProperties:
+        $ref: '#/components/schemas/Value'
+    ThrottlingException: {}
+    AwsJobRolloutRatePerMinute:
+      type: integer
+      minimum: 1
+      maximum: 1000
+    Prefix:
+      type: string
+    AwsJobRolloutIncrementFactor:
+      type: number
+      format: double
+    FileId:
+      type: integer
+      minimum: 0
+      maximum: 255
+    OTAUpdatesSummary:
+      type: array
+      items:
+        $ref: '#/components/schemas/OTAUpdateSummary'
+    CertificateName:
+      type: string
+    AdditionalParameterMap:
+      type: object
+      additionalProperties:
+        $ref: '#/components/schemas/Value'
+    OTAUpdateFileVersion:
+      type: string
+    OTAUpdateFiles:
+      type: array
+      items:
+        $ref: '#/components/schemas/OTAUpdateFile'
+      minItems: 1
+    FileLocation:
+      type: object
+      properties:
+        stream:
+          allOf:
+          - $ref: '#/components/schemas/Stream'
+          - description: The stream that contains the OTA update.
+        s3Location:
+          allOf:
+          - $ref: '#/components/schemas/S3Location'
+          - description: The location of the updated firmware in S3.
+      description: The location of the OTA update.
+    ServiceUnavailableException: {}
+    AwsJobAbortCriteriaMinimumNumberOfExecutedThings:
+      type: integer
+      minimum: 1
+    CreateOTAUpdateResponse:
+      type: object
+      properties:
+        otaUpdateId:
+          allOf:
+          - $ref: '#/components/schemas/OTAUpdateId'
+          - description: The OTA update ID.
+        awsIotJobId:
+          allOf:
+          - $ref: '#/components/schemas/AwsIotJobId'
+          - description: The IoT job ID associated with the OTA update.
+        otaUpdateArn:
+          allOf:
+          - $ref: '#/components/schemas/OTAUpdateArn'
+          - description: The OTA update ARN.
+        awsIotJobArn:
+          allOf:
+          - $ref: '#/components/schemas/AwsIotJobArn'
+          - description: The IoT job ARN associated with the OTA update.
+        otaUpdateStatus:
+          allOf:
+          - $ref: '#/components/schemas/OTAUpdateStatus'
+          - description: The OTA update status.
+    OTAUpdateSummary:
+      type: object
+      properties:
+        otaUpdateId:
+          allOf:
+          - $ref: '#/components/schemas/OTAUpdateId'
+          - description: The OTA update ID.
+        otaUpdateArn:
+          allOf:
+          - $ref: '#/components/schemas/OTAUpdateArn'
+          - description: The OTA update ARN.
+        creationDate:
+          allOf:
+          - $ref: '#/components/schemas/DateType'
+          - description: The date when the OTA update was created.
+      description: An OTA update summary.
+    MaximumPerMinute:
+      type: integer
+      minimum: 1
+      maximum: 1000
     SigningProfileParameter:
       type: object
       properties:
@@ -1069,59 +1103,13 @@ components:
           - $ref: '#/components/schemas/CertificatePathOnDevice'
           - description: The location of the code-signing certificate on your device.
       description: Describes the code-signing profile.
-    CodeSigningCertificateChain:
-      type: object
-      properties:
-        certificateName:
-          allOf:
-          - $ref: '#/components/schemas/CertificateName'
-          - description: The name of the certificate.
-        inlineDocument:
-          allOf:
-          - $ref: '#/components/schemas/InlineDocument'
-          - description: A base64 encoded binary representation of the code signing certificate chain.
-      description: Describes the certificate chain being used when code signing a file.
-    SignatureAlgorithm:
-      type: string
-    Target:
-      type: string
-    AwsJobAbortCriteriaFailureType:
-      type: string
-      enum:
-      - FAILED
-      - REJECTED
-      - TIMED_OUT
-      - ALL
-    ExpiresInSeconds:
-      type: integer
-    CertificateArn:
-      type: string
-    Protocols:
-      type: array
-      items:
-        $ref: '#/components/schemas/Protocol'
-      minItems: 1
-      maxItems: 2
-    OTAUpdateArn:
-      type: string
-    ServiceUnavailableException: {}
-    SigningJobId:
-      type: string
+    AwsJobAbortCriteriaAbortThresholdPercentage:
+      type: number
+      format: double
+      maximum: 100
   parameters:
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
+    X-Amz-Signature:
+      name: X-Amz-Signature
       in: header
       schema:
         type: string
@@ -1132,20 +1120,32 @@ components:
       schema:
         type: string
       required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
     X-Amz-Date:
       name: X-Amz-Date
       in: header
       schema:
         type: string
       required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
       in: header
       schema:
         type: string
       required: false
     X-Amz-Algorithm:
       name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
       in: header
       schema:
         type: string
