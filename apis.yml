@@ -487,27 +487,6 @@ apis:
     url: https://aws.amazon.com/iot-core/faqs/
   - type: GraphQL
     url: graphql/amazon-iot-core-graphql.md
-- aid: amazon-iot-core:amazon-iot-core-domainconfigurations-api
-  name: Amazon IoT Core DomainConfigurations API
-  description: >-
-    The DomainConfigurations API from Amazon IoT Core — 2 operation(s) for domainconfigurations.
-  humanURL: https://aws.amazon.com/iot-core/
-  baseURL: https://iot.amazonaws.com
-  tags:
-  - DomainConfigurations
-  properties:
-  - type: OpenAPI
-    url: openapi/amazon-iot-core-domainconfigurations-api-openapi.yml
-  - type: Documentation
-    url: https://docs.aws.amazon.com/iot/latest/apireference/
-  - type: GettingStarted
-    url: https://docs.aws.amazon.com/iot/latest/developerguide/iot-gs.html
-  - type: Pricing
-    url: https://aws.amazon.com/iot-core/pricing/
-  - type: FAQ
-    url: https://aws.amazon.com/iot-core/faqs/
-  - type: GraphQL
-    url: graphql/amazon-iot-core-graphql.md
 - aid: amazon-iot-core:amazon-iot-core-dynamic-thing-groups-api
   name: Amazon IoT Core Dynamic Thing Groups API
   description: >-
@@ -734,26 +713,6 @@ apis:
     url: https://aws.amazon.com/iot-core/faqs/
   - type: GraphQL
     url: graphql/amazon-iot-core-graphql.md
-- aid: amazon-iot-core:amazon-iot-core-loggingoptions-api
-  name: Amazon IoT Core LoggingOptions API
-  description: The LoggingOptions API from Amazon IoT Core — 1 operation(s) for loggingoptions.
-  humanURL: https://aws.amazon.com/iot-core/
-  baseURL: https://iot.amazonaws.com
-  tags:
-  - LoggingOptions
-  properties:
-  - type: OpenAPI
-    url: openapi/amazon-iot-core-loggingoptions-api-openapi.yml
-  - type: Documentation
-    url: https://docs.aws.amazon.com/iot/latest/apireference/
-  - type: GettingStarted
-    url: https://docs.aws.amazon.com/iot/latest/developerguide/iot-gs.html
-  - type: Pricing
-    url: https://aws.amazon.com/iot-core/pricing/
-  - type: FAQ
-    url: https://aws.amazon.com/iot-core/faqs/
-  - type: GraphQL
-    url: graphql/amazon-iot-core-graphql.md
 - aid: amazon-iot-core:amazon-iot-core-managed-job-templates-api
   name: Amazon IoT Core Managed Job Templates API
   description: >-
@@ -808,28 +767,6 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/amazon-iot-core-mitigationactions-api-openapi.yml
-  - type: Documentation
-    url: https://docs.aws.amazon.com/iot/latest/apireference/
-  - type: GettingStarted
-    url: https://docs.aws.amazon.com/iot/latest/developerguide/iot-gs.html
-  - type: Pricing
-    url: https://aws.amazon.com/iot-core/pricing/
-  - type: FAQ
-    url: https://aws.amazon.com/iot-core/faqs/
-  - type: GraphQL
-    url: graphql/amazon-iot-core-graphql.md
-- aid: amazon-iot-core:amazon-iot-core-otaupdates-api
-  name: Amazon IoT Core OtaUpdates API
-  description: The OtaUpdates API from Amazon IoT Core — 2 operation(s) for otaupdates.
-  humanURL: https://aws.amazon.com/iot-core/
-  baseURL: https://iot.amazonaws.com
-  tags:
-  - OTA Updates
-  tags_raw:
-  - OtaUpdates
-  properties:
-  - type: OpenAPI
-    url: openapi/amazon-iot-core-otaupdates-api-openapi.yml
   - type: Documentation
     url: https://docs.aws.amazon.com/iot/latest/apireference/
   - type: GettingStarted
@@ -1373,26 +1310,6 @@ apis:
     url: https://aws.amazon.com/iot-core/faqs/
   - type: GraphQL
     url: graphql/amazon-iot-core-graphql.md
-- aid: amazon-iot-core:amazon-iot-core-v2logginglevel-api
-  name: Amazon IoT Core V2LoggingLevel API
-  description: The V2LoggingLevel API from Amazon IoT Core — 1 operation(s) for v2logginglevel.
-  humanURL: https://aws.amazon.com/iot-core/
-  baseURL: https://iot.amazonaws.com
-  tags:
-  - V2LoggingLevel
-  properties:
-  - type: OpenAPI
-    url: openapi/amazon-iot-core-v2logginglevel-api-openapi.yml
-  - type: Documentation
-    url: https://docs.aws.amazon.com/iot/latest/apireference/
-  - type: GettingStarted
-    url: https://docs.aws.amazon.com/iot/latest/developerguide/iot-gs.html
-  - type: Pricing
-    url: https://aws.amazon.com/iot-core/pricing/
-  - type: FAQ
-    url: https://aws.amazon.com/iot-core/faqs/
-  - type: GraphQL
-    url: graphql/amazon-iot-core-graphql.md
 - aid: amazon-iot-core:amazon-iot-core-v2logginglevel-targettype-targetname-api
   name: Amazon IoT Core V2LoggingLevel#targetType&targetName API
   description: >-
@@ -1404,26 +1321,6 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/amazon-iot-core-v2logginglevel-targettype-targetname-api-openapi.yml
-  - type: Documentation
-    url: https://docs.aws.amazon.com/iot/latest/apireference/
-  - type: GettingStarted
-    url: https://docs.aws.amazon.com/iot/latest/developerguide/iot-gs.html
-  - type: Pricing
-    url: https://aws.amazon.com/iot-core/pricing/
-  - type: FAQ
-    url: https://aws.amazon.com/iot-core/faqs/
-  - type: GraphQL
-    url: graphql/amazon-iot-core-graphql.md
-- aid: amazon-iot-core:amazon-iot-core-v2loggingoptions-api
-  name: Amazon IoT Core V2LoggingOptions API
-  description: The V2LoggingOptions API from Amazon IoT Core — 1 operation(s) for v2loggingoptions.
-  humanURL: https://aws.amazon.com/iot-core/
-  baseURL: https://iot.amazonaws.com
-  tags:
-  - V2LoggingOptions
-  properties:
-  - type: OpenAPI
-    url: openapi/amazon-iot-core-v2loggingoptions-api-openapi.yml
   - type: Documentation
     url: https://docs.aws.amazon.com/iot/latest/apireference/
   - type: GettingStarted
@@ -1465,6 +1362,107 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/amazon-iot-core-violations-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/iot/latest/apireference/
+  - type: GettingStarted
+    url: https://docs.aws.amazon.com/iot/latest/developerguide/iot-gs.html
+  - type: Pricing
+    url: https://aws.amazon.com/iot-core/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/iot-core/faqs/
+  - type: GraphQL
+    url: graphql/amazon-iot-core-graphql.md
+- aid: amazon-iot-core:amazon-iot-core-domain-configurations-api
+  name: Amazon IoT Core Domain Configurations API
+  description: >-
+    The Domain Configurations API from Amazon IoT Core — 2 operation(s) for domain configurations.
+  humanURL: https://aws.amazon.com/iot-core/
+  baseURL: https://iot.amazonaws.com
+  tags:
+  - Domain Configurations
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-iot-core-domain-configurations-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/iot/latest/apireference/
+  - type: GettingStarted
+    url: https://docs.aws.amazon.com/iot/latest/developerguide/iot-gs.html
+  - type: Pricing
+    url: https://aws.amazon.com/iot-core/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/iot-core/faqs/
+  - type: GraphQL
+    url: graphql/amazon-iot-core-graphql.md
+- aid: amazon-iot-core:amazon-iot-core-logging-options-api
+  name: Amazon IoT Core Logging Options API
+  description: The Logging Options API from Amazon IoT Core — 1 operation(s) for logging options.
+  humanURL: https://aws.amazon.com/iot-core/
+  baseURL: https://iot.amazonaws.com
+  tags:
+  - Logging Options
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-iot-core-logging-options-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/iot/latest/apireference/
+  - type: GettingStarted
+    url: https://docs.aws.amazon.com/iot/latest/developerguide/iot-gs.html
+  - type: Pricing
+    url: https://aws.amazon.com/iot-core/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/iot-core/faqs/
+  - type: GraphQL
+    url: graphql/amazon-iot-core-graphql.md
+- aid: amazon-iot-core:amazon-iot-core-ota-updates-api
+  name: Amazon IoT Core OTA Updates API
+  description: The OTA Updates API from Amazon IoT Core — 2 operation(s) for ota updates.
+  humanURL: https://aws.amazon.com/iot-core/
+  baseURL: https://iot.amazonaws.com
+  tags:
+  - OTA Updates
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-iot-core-ota-updates-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/iot/latest/apireference/
+  - type: GettingStarted
+    url: https://docs.aws.amazon.com/iot/latest/developerguide/iot-gs.html
+  - type: Pricing
+    url: https://aws.amazon.com/iot-core/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/iot-core/faqs/
+  - type: GraphQL
+    url: graphql/amazon-iot-core-graphql.md
+- aid: amazon-iot-core:amazon-iot-core-v2-logging-level-api
+  name: Amazon IoT Core V2 Logging Level API
+  description: The V2 Logging Level API from Amazon IoT Core — 1 operation(s) for v2 logging level.
+  humanURL: https://aws.amazon.com/iot-core/
+  baseURL: https://iot.amazonaws.com
+  tags:
+  - V2 Logging Level
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-iot-core-v2-logging-level-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/iot/latest/apireference/
+  - type: GettingStarted
+    url: https://docs.aws.amazon.com/iot/latest/developerguide/iot-gs.html
+  - type: Pricing
+    url: https://aws.amazon.com/iot-core/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/iot-core/faqs/
+  - type: GraphQL
+    url: graphql/amazon-iot-core-graphql.md
+- aid: amazon-iot-core:amazon-iot-core-v2-logging-options-api
+  name: Amazon IoT Core V2 Logging Options API
+  description: The V2 Logging Options API from Amazon IoT Core — 1 operation(s) for v2 logging options.
+  humanURL: https://aws.amazon.com/iot-core/
+  baseURL: https://iot.amazonaws.com
+  tags:
+  - V2 Logging Options
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-iot-core-v2-logging-options-api-openapi.yml
   - type: Documentation
     url: https://docs.aws.amazon.com/iot/latest/apireference/
   - type: GettingStarted
