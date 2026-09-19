@@ -433,6 +433,8 @@ apis:
   humanURL: https://aws.amazon.com/iot-core/
   baseURL: https://iot.amazonaws.com
   tags:
+  - Destination
+  tags_raw:
   - Destinations
   properties:
   - type: OpenAPI
