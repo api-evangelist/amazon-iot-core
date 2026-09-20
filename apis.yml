@@ -1476,6 +1476,8 @@ apis:
   - type: GraphQL
     url: graphql/amazon-iot-core-graphql.md
 common:
+- type: Plans
+  url: plans/amazon-iot-core-plans-pricing.yml
 - type: CapabilityMap
   url: capabilities/amazon-iot-core-capability-edges.yml
   name: Amazon IoT Core Business Capability Map
