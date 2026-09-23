@@ -1,35 +1,18 @@
 openapi: 3.2.0
 info:
-  version: 1.0.0
-  x-release: v4
-  title: AWS IoT Accept Certificate Transfer Things API
-  description: '<fullname>IoT</fullname> <p>IoT provides secure, bi-directional communication between Internet-connected devices (such as sensors, actuators, embedded devices, or smart appliances) and the Amazon Web Services cloud. You can discover your custom IoT-Data endpoint to communicate with, configure rules for data processing and integration with other services, organize resources associated with each device (Registry), configure logging, and create and manage policies and credentials to authenticate devices.</p> <p>The service endpoints that expose this API are listed in <a href="https://docs.aws.amazon.com/general/latest/gr/iot-core.html">Amazon Web Services IoT Core Endpoints and Quotas</a>. You must use the endpoint for the region that has the resources you want to access.</p> <p>The service name used by <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Amazon Web Services Signature Version 4</a> to sign the request is: <i>execute-api</i>.</p> <p>For more information about how IoT works, see the <a href="https://docs.aws.amazon.com/iot/latest/developerguide/aws-iot-how-it-works.html">Developer Guide</a>.</p> <p>For information about how to use the credentials provider for IoT, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/authorizing-direct-aws.html">Authorizing Direct Calls to Amazon Web Services Services</a>.</p>'
-  x-logo:
-    url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
-    backgroundColor: '#FFFFFF'
-  termsOfService: https://aws.amazon.com/service-terms/
-  contact:
-    name: Mike Ralphson
-    email: mike.ralphson@gmail.com
-    url: https://github.com/mermade/aws2openapi
-    x-twitter: PermittedSoc
-  license:
-    name: Apache 2.0 License
-    url: http://www.apache.org/licenses/
-  x-providerName: amazonaws.com
-  x-serviceName: iot
-  x-aws-signingName: iot
-  x-origin:
-  - contentType: application/json
-    url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/iot-2015-05-28.normal.json
-    converter:
-      url: https://github.com/mermade/aws2openapi
-    x-apisguru-driver: external
-  x-apiClientRegistration:
-    url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
-  x-apisguru-categories:
-  - cloud
-  x-preferred: true
+  title: Amazon Iot Core Things API
+  x-refined-note:
+  - x-apiClientRegistration differs across the merged source definitions and was not carried
+  - x-apisguru-categories differs across the merged source definitions and was not carried
+  - x-aws-signingName differs across the merged source definitions and was not carried
+  - x-logo differs across the merged source definitions and was not carried
+  - x-origin differs across the merged source definitions and was not carried
+  - x-preferred differs across the merged source definitions and was not carried
+  - x-providerName differs across the merged source definitions and was not carried
+  - x-release differs across the merged source definitions and was not carried
+  - x-serviceName differs across the merged source definitions and was not carried
+  version: '1.0'
+  description: 'Operations tagged Things across 2 of this provider''s published API definitions: amazon-iot-core-openapi-original.yml, amazon-iot-core-openapi.yml. Each path carries the servers of the definition it was published in.'
 servers:
 - url: http://iot.{region}.amazonaws.com
   variables:
@@ -109,8 +92,6 @@ servers:
       - cn-northwest-1
       default: cn-north-1
   description: The AWS IoT endpoint for China (Beijing) and China (Ningxia)
-security:
-- hmac: []
 tags:
 - name: Things
 paths:
@@ -125,7 +106,10 @@ paths:
     - $ref: '#/components/parameters/X-Amz-SignedHeaders'
     put:
       operationId: AttachThingPrincipal
-      description: <p>Attaches the specified principal to the specified thing. A principal can be X.509 certificates, Amazon Cognito identities or federated identities.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">AttachThingPrincipal</a> action.</p>
+      description: 'Attaches the specified principal to the specified thing. A principal can be X.509 certificates, Amazon Cognito identities or federated identities.
+
+
+        Requires permission to access the AttachThingPrincipal action.'
       responses:
         '200':
           description: Success
@@ -191,9 +175,17 @@ paths:
         dispatcher: FALLBACK
       tags:
       - Things
+      security:
+      - hmac: []
     delete:
       operationId: DetachThingPrincipal
-      description: <p>Detaches the specified principal from the specified thing. A principal can be X.509 certificates, IAM users, groups, and roles, Amazon Cognito identities or federated identities.</p> <note> <p>This call is asynchronous. It might take several seconds for the detachment to propagate.</p> </note> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DetachThingPrincipal</a> action.</p>
+      description: 'Detaches the specified principal from the specified thing. A principal can be X.509 certificates, IAM users, groups, and roles, Amazon Cognito identities or federated identities.
+
+
+        This call is asynchronous. It might take several seconds for the detachment to propagate.
+
+
+        Requires permission to access the DetachThingPrincipal action.'
       responses:
         '200':
           description: Success
@@ -259,6 +251,87 @@ paths:
         dispatcher: FALLBACK
       tags:
       - Things
+      security:
+      - hmac: []
+    servers:
+    - url: http://iot.{region}.amazonaws.com
+      variables:
+        region:
+          description: The AWS region
+          enum:
+          - us-east-1
+          - us-east-2
+          - us-west-1
+          - us-west-2
+          - us-gov-west-1
+          - us-gov-east-1
+          - ca-central-1
+          - eu-north-1
+          - eu-west-1
+          - eu-west-2
+          - eu-west-3
+          - eu-central-1
+          - eu-south-1
+          - af-south-1
+          - ap-northeast-1
+          - ap-northeast-2
+          - ap-northeast-3
+          - ap-southeast-1
+          - ap-southeast-2
+          - ap-east-1
+          - ap-south-1
+          - sa-east-1
+          - me-south-1
+          default: us-east-1
+      description: The AWS IoT multi-region endpoint
+    - url: https://iot.{region}.amazonaws.com
+      variables:
+        region:
+          description: The AWS region
+          enum:
+          - us-east-1
+          - us-east-2
+          - us-west-1
+          - us-west-2
+          - us-gov-west-1
+          - us-gov-east-1
+          - ca-central-1
+          - eu-north-1
+          - eu-west-1
+          - eu-west-2
+          - eu-west-3
+          - eu-central-1
+          - eu-south-1
+          - af-south-1
+          - ap-northeast-1
+          - ap-northeast-2
+          - ap-northeast-3
+          - ap-southeast-1
+          - ap-southeast-2
+          - ap-east-1
+          - ap-south-1
+          - sa-east-1
+          - me-south-1
+          default: us-east-1
+      description: The AWS IoT multi-region endpoint
+    - url: http://iot.{region}.amazonaws.com.cn
+      variables:
+        region:
+          description: The AWS region
+          enum:
+          - cn-north-1
+          - cn-northwest-1
+          default: cn-north-1
+      description: The AWS IoT endpoint for China (Beijing) and China (Ningxia)
+    - url: https://iot.{region}.amazonaws.com.cn
+      variables:
+        region:
+          description: The AWS region
+          enum:
+          - cn-north-1
+          - cn-northwest-1
+          default: cn-north-1
+      description: The AWS IoT endpoint for China (Beijing) and China (Ningxia)
   /things/{thingName}/jobs/{jobId}/cancel:
     parameters:
     - $ref: '#/components/parameters/X-Amz-Content-Sha256'
@@ -270,7 +343,10 @@ paths:
     - $ref: '#/components/parameters/X-Amz-SignedHeaders'
     put:
       operationId: CancelJobExecution
-      description: <p>Cancels the execution of a job for a given thing.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CancelJobExecution</a> action.</p>
+      description: 'Cancels the execution of a job for a given thing.
+
+
+        Requires permission to access the CancelJobExecution action.'
       responses:
         '200':
           description: Success
@@ -356,6 +432,87 @@ paths:
         dispatcher: FALLBACK
       tags:
       - Things
+      security:
+      - hmac: []
+    servers:
+    - url: http://iot.{region}.amazonaws.com
+      variables:
+        region:
+          description: The AWS region
+          enum:
+          - us-east-1
+          - us-east-2
+          - us-west-1
+          - us-west-2
+          - us-gov-west-1
+          - us-gov-east-1
+          - ca-central-1
+          - eu-north-1
+          - eu-west-1
+          - eu-west-2
+          - eu-west-3
+          - eu-central-1
+          - eu-south-1
+          - af-south-1
+          - ap-northeast-1
+          - ap-northeast-2
+          - ap-northeast-3
+          - ap-southeast-1
+          - ap-southeast-2
+          - ap-east-1
+          - ap-south-1
+          - sa-east-1
+          - me-south-1
+          default: us-east-1
+      description: The AWS IoT multi-region endpoint
+    - url: https://iot.{region}.amazonaws.com
+      variables:
+        region:
+          description: The AWS region
+          enum:
+          - us-east-1
+          - us-east-2
+          - us-west-1
+          - us-west-2
+          - us-gov-west-1
+          - us-gov-east-1
+          - ca-central-1
+          - eu-north-1
+          - eu-west-1
+          - eu-west-2
+          - eu-west-3
+          - eu-central-1
+          - eu-south-1
+          - af-south-1
+          - ap-northeast-1
+          - ap-northeast-2
+          - ap-northeast-3
+          - ap-southeast-1
+          - ap-southeast-2
+          - ap-east-1
+          - ap-south-1
+          - sa-east-1
+          - me-south-1
+          default: us-east-1
+      description: The AWS IoT multi-region endpoint
+    - url: http://iot.{region}.amazonaws.com.cn
+      variables:
+        region:
+          description: The AWS region
+          enum:
+          - cn-north-1
+          - cn-northwest-1
+          default: cn-north-1
+      description: The AWS IoT endpoint for China (Beijing) and China (Ningxia)
+    - url: https://iot.{region}.amazonaws.com.cn
+      variables:
+        region:
+          description: The AWS region
+          enum:
+          - cn-north-1
+          - cn-northwest-1
+          default: cn-north-1
+      description: The AWS IoT endpoint for China (Beijing) and China (Ningxia)
   /things/{thingName}:
     parameters:
     - $ref: '#/components/parameters/X-Amz-Content-Sha256'
@@ -367,7 +524,13 @@ paths:
     - $ref: '#/components/parameters/X-Amz-SignedHeaders'
     post:
       operationId: CreateThing
-      description: <p>Creates a thing record in the registry. If this call is made multiple times using the same thing name and configuration, the call will succeed. If this call is made with the same thing name but different configuration a <code>ResourceAlreadyExistsException</code> is thrown.</p> <note> <p>This is a control plane operation. See <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-authorization.html">Authorization</a> for information about authorizing control plane actions.</p> </note> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateThing</a> action.</p>
+      description: 'Creates a thing record in the registry. If this call is made multiple times using the same thing name and configuration, the call will succeed. If this call is made with the same thing name but different configuration a ResourceAlreadyExistsException is thrown.
+
+
+        This is a control plane operation. See Authorization for information about authorizing control plane actions.
+
+
+        Requires permission to access the CreateThing action.'
       responses:
         '200':
           description: Success
@@ -464,9 +627,14 @@ paths:
         dispatcher: FALLBACK
       tags:
       - Things
+      security:
+      - hmac: []
     delete:
       operationId: DeleteThing
-      description: <p>Deletes the specified thing. Returns successfully with no error if the deletion is successful or you specify a thing that doesn't exist.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteThing</a> action.</p>
+      description: 'Deletes the specified thing. Returns successfully with no error if the deletion is successful or you specify a thing that doesn''t exist.
+
+
+        Requires permission to access the DeleteThing action.'
       responses:
         '200':
           description: Success
@@ -538,9 +706,14 @@ paths:
         dispatcher: FALLBACK
       tags:
       - Things
+      security:
+      - hmac: []
     get:
       operationId: DescribeThing
-      description: <p>Gets information about the specified thing.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeThing</a> action.</p>
+      description: 'Gets information about the specified thing.
+
+
+        Requires permission to access the DescribeThing action.'
       responses:
         '200':
           description: Success
@@ -600,9 +773,14 @@ paths:
         dispatcher: FALLBACK
       tags:
       - Things
+      security:
+      - hmac: []
     patch:
       operationId: UpdateThing
-      description: <p>Updates the data for a thing.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateThing</a> action.</p>
+      description: 'Updates the data for a thing.
+
+
+        Requires permission to access the UpdateThing action.'
       responses:
         '200':
           description: Success
@@ -699,6 +877,8 @@ paths:
         dispatcher: FALLBACK
       tags:
       - Things
+      security:
+      - hmac: []
     put:
       operationId: CreateThing
       summary: Amazon IoT Core Create a thing
@@ -714,6 +894,87 @@ paths:
       responses:
         '200':
           description: Thing created
+      security:
+      - hmac: []
+    servers:
+    - url: http://iot.{region}.amazonaws.com
+      variables:
+        region:
+          description: The AWS region
+          enum:
+          - us-east-1
+          - us-east-2
+          - us-west-1
+          - us-west-2
+          - us-gov-west-1
+          - us-gov-east-1
+          - ca-central-1
+          - eu-north-1
+          - eu-west-1
+          - eu-west-2
+          - eu-west-3
+          - eu-central-1
+          - eu-south-1
+          - af-south-1
+          - ap-northeast-1
+          - ap-northeast-2
+          - ap-northeast-3
+          - ap-southeast-1
+          - ap-southeast-2
+          - ap-east-1
+          - ap-south-1
+          - sa-east-1
+          - me-south-1
+          default: us-east-1
+      description: The AWS IoT multi-region endpoint
+    - url: https://iot.{region}.amazonaws.com
+      variables:
+        region:
+          description: The AWS region
+          enum:
+          - us-east-1
+          - us-east-2
+          - us-west-1
+          - us-west-2
+          - us-gov-west-1
+          - us-gov-east-1
+          - ca-central-1
+          - eu-north-1
+          - eu-west-1
+          - eu-west-2
+          - eu-west-3
+          - eu-central-1
+          - eu-south-1
+          - af-south-1
+          - ap-northeast-1
+          - ap-northeast-2
+          - ap-northeast-3
+          - ap-southeast-1
+          - ap-southeast-2
+          - ap-east-1
+          - ap-south-1
+          - sa-east-1
+          - me-south-1
+          default: us-east-1
+      description: The AWS IoT multi-region endpoint
+    - url: http://iot.{region}.amazonaws.com.cn
+      variables:
+        region:
+          description: The AWS region
+          enum:
+          - cn-north-1
+          - cn-northwest-1
+          default: cn-north-1
+      description: The AWS IoT endpoint for China (Beijing) and China (Ningxia)
+    - url: https://iot.{region}.amazonaws.com.cn
+      variables:
+        region:
+          description: The AWS region
+          enum:
+          - cn-north-1
+          - cn-northwest-1
+          default: cn-north-1
+      description: The AWS IoT endpoint for China (Beijing) and China (Ningxia)
   /things/{thingName}/jobs/{jobId}/executionNumber/{executionNumber}:
     parameters:
     - $ref: '#/components/parameters/X-Amz-Content-Sha256'
@@ -725,7 +986,10 @@ paths:
     - $ref: '#/components/parameters/X-Amz-SignedHeaders'
     delete:
       operationId: DeleteJobExecution
-      description: <p>Deletes a job execution.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteJobExecution</a> action.</p>
+      description: 'Deletes a job execution.
+
+
+        Requires permission to access the DeleteJobExecution action.'
       responses:
         '200':
           description: Success
@@ -803,6 +1067,87 @@ paths:
         dispatcher: FALLBACK
       tags:
       - Things
+      security:
+      - hmac: []
+    servers:
+    - url: http://iot.{region}.amazonaws.com
+      variables:
+        region:
+          description: The AWS region
+          enum:
+          - us-east-1
+          - us-east-2
+          - us-west-1
+          - us-west-2
+          - us-gov-west-1
+          - us-gov-east-1
+          - ca-central-1
+          - eu-north-1
+          - eu-west-1
+          - eu-west-2
+          - eu-west-3
+          - eu-central-1
+          - eu-south-1
+          - af-south-1
+          - ap-northeast-1
+          - ap-northeast-2
+          - ap-northeast-3
+          - ap-southeast-1
+          - ap-southeast-2
+          - ap-east-1
+          - ap-south-1
+          - sa-east-1
+          - me-south-1
+          default: us-east-1
+      description: The AWS IoT multi-region endpoint
+    - url: https://iot.{region}.amazonaws.com
+      variables:
+        region:
+          description: The AWS region
+          enum:
+          - us-east-1
+          - us-east-2
+          - us-west-1
+          - us-west-2
+          - us-gov-west-1
+          - us-gov-east-1
+          - ca-central-1
+          - eu-north-1
+          - eu-west-1
+          - eu-west-2
+          - eu-west-3
+          - eu-central-1
+          - eu-south-1
+          - af-south-1
+          - ap-northeast-1
+          - ap-northeast-2
+          - ap-northeast-3
+          - ap-southeast-1
+          - ap-southeast-2
+          - ap-east-1
+          - ap-south-1
+          - sa-east-1
+          - me-south-1
+          default: us-east-1
+      description: The AWS IoT multi-region endpoint
+    - url: http://iot.{region}.amazonaws.com.cn
+      variables:
+        region:
+          description: The AWS region
+          enum:
+          - cn-north-1
+          - cn-northwest-1
+          default: cn-north-1
+      description: The AWS IoT endpoint for China (Beijing) and China (Ningxia)
+    - url: https://iot.{region}.amazonaws.com.cn
+      variables:
+        region:
+          description: The AWS region
+          enum:
+          - cn-north-1
+          - cn-northwest-1
+          default: cn-north-1
+      description: The AWS IoT endpoint for China (Beijing) and China (Ningxia)
   /things/{thingName}/jobs/{jobId}:
     parameters:
     - $ref: '#/components/parameters/X-Amz-Content-Sha256'
@@ -814,7 +1159,10 @@ paths:
     - $ref: '#/components/parameters/X-Amz-SignedHeaders'
     get:
       operationId: DescribeJobExecution
-      description: <p>Describes a job execution.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeJobExecution</a> action.</p>
+      description: 'Describes a job execution.
+
+
+        Requires permission to access the DescribeJobExecution action.'
       responses:
         '200':
           description: Success
@@ -877,6 +1225,87 @@ paths:
         dispatcher: FALLBACK
       tags:
       - Things
+      security:
+      - hmac: []
+    servers:
+    - url: http://iot.{region}.amazonaws.com
+      variables:
+        region:
+          description: The AWS region
+          enum:
+          - us-east-1
+          - us-east-2
+          - us-west-1
+          - us-west-2
+          - us-gov-west-1
+          - us-gov-east-1
+          - ca-central-1
+          - eu-north-1
+          - eu-west-1
+          - eu-west-2
+          - eu-west-3
+          - eu-central-1
+          - eu-south-1
+          - af-south-1
+          - ap-northeast-1
+          - ap-northeast-2
+          - ap-northeast-3
+          - ap-southeast-1
+          - ap-southeast-2
+          - ap-east-1
+          - ap-south-1
+          - sa-east-1
+          - me-south-1
+          default: us-east-1
+      description: The AWS IoT multi-region endpoint
+    - url: https://iot.{region}.amazonaws.com
+      variables:
+        region:
+          description: The AWS region
+          enum:
+          - us-east-1
+          - us-east-2
+          - us-west-1
+          - us-west-2
+          - us-gov-west-1
+          - us-gov-east-1
+          - ca-central-1
+          - eu-north-1
+          - eu-west-1
+          - eu-west-2
+          - eu-west-3
+          - eu-central-1
+          - eu-south-1
+          - af-south-1
+          - ap-northeast-1
+          - ap-northeast-2
+          - ap-northeast-3
+          - ap-southeast-1
+          - ap-southeast-2
+          - ap-east-1
+          - ap-south-1
+          - sa-east-1
+          - me-south-1
+          default: us-east-1
+      description: The AWS IoT multi-region endpoint
+    - url: http://iot.{region}.amazonaws.com.cn
+      variables:
+        region:
+          description: The AWS region
+          enum:
+          - cn-north-1
+          - cn-northwest-1
+          default: cn-north-1
+      description: The AWS IoT endpoint for China (Beijing) and China (Ningxia)
+    - url: https://iot.{region}.amazonaws.com.cn
+      variables:
+        region:
+          description: The AWS region
+          enum:
+          - cn-north-1
+          - cn-northwest-1
+          default: cn-north-1
+      description: The AWS IoT endpoint for China (Beijing) and China (Ningxia)
   /things/{thingName}/jobs:
     parameters:
     - $ref: '#/components/parameters/X-Amz-Content-Sha256'
@@ -888,7 +1317,10 @@ paths:
     - $ref: '#/components/parameters/X-Amz-SignedHeaders'
     get:
       operationId: ListJobExecutionsForThing
-      description: <p>Lists the job executions for the specified thing.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListJobExecutionsForThing</a> action.</p>
+      description: 'Lists the job executions for the specified thing.
+
+
+        Requires permission to access the ListJobExecutionsForThing action.'
       responses:
         '200':
           description: Success
@@ -981,6 +1413,87 @@ paths:
         dispatcher: FALLBACK
       tags:
       - Things
+      security:
+      - hmac: []
+    servers:
+    - url: http://iot.{region}.amazonaws.com
+      variables:
+        region:
+          description: The AWS region
+          enum:
+          - us-east-1
+          - us-east-2
+          - us-west-1
+          - us-west-2
+          - us-gov-west-1
+          - us-gov-east-1
+          - ca-central-1
+          - eu-north-1
+          - eu-west-1
+          - eu-west-2
+          - eu-west-3
+          - eu-central-1
+          - eu-south-1
+          - af-south-1
+          - ap-northeast-1
+          - ap-northeast-2
+          - ap-northeast-3
+          - ap-southeast-1
+          - ap-southeast-2
+          - ap-east-1
+          - ap-south-1
+          - sa-east-1
+          - me-south-1
+          default: us-east-1
+      description: The AWS IoT multi-region endpoint
+    - url: https://iot.{region}.amazonaws.com
+      variables:
+        region:
+          description: The AWS region
+          enum:
+          - us-east-1
+          - us-east-2
+          - us-west-1
+          - us-west-2
+          - us-gov-west-1
+          - us-gov-east-1
+          - ca-central-1
+          - eu-north-1
+          - eu-west-1
+          - eu-west-2
+          - eu-west-3
+          - eu-central-1
+          - eu-south-1
+          - af-south-1
+          - ap-northeast-1
+          - ap-northeast-2
+          - ap-northeast-3
+          - ap-southeast-1
+          - ap-southeast-2
+          - ap-east-1
+          - ap-south-1
+          - sa-east-1
+          - me-south-1
+          default: us-east-1
+      description: The AWS IoT multi-region endpoint
+    - url: http://iot.{region}.amazonaws.com.cn
+      variables:
+        region:
+          description: The AWS region
+          enum:
+          - cn-north-1
+          - cn-northwest-1
+          default: cn-north-1
+      description: The AWS IoT endpoint for China (Beijing) and China (Ningxia)
+    - url: https://iot.{region}.amazonaws.com.cn
+      variables:
+        region:
+          description: The AWS region
+          enum:
+          - cn-north-1
+          - cn-northwest-1
+          default: cn-north-1
+      description: The AWS IoT endpoint for China (Beijing) and China (Ningxia)
   /things/{thingName}/thing-groups:
     parameters:
     - $ref: '#/components/parameters/X-Amz-Content-Sha256'
@@ -992,7 +1505,10 @@ paths:
     - $ref: '#/components/parameters/X-Amz-SignedHeaders'
     get:
       operationId: ListThingGroupsForThing
-      description: <p>List the thing groups to which the specified thing belongs.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListThingGroupsForThing</a> action.</p>
+      description: 'List the thing groups to which the specified thing belongs.
+
+
+        Requires permission to access the ListThingGroupsForThing action.'
       responses:
         '200':
           description: Success
@@ -1054,6 +1570,87 @@ paths:
         dispatcher: FALLBACK
       tags:
       - Things
+      security:
+      - hmac: []
+    servers:
+    - url: http://iot.{region}.amazonaws.com
+      variables:
+        region:
+          description: The AWS region
+          enum:
+          - us-east-1
+          - us-east-2
+          - us-west-1
+          - us-west-2
+          - us-gov-west-1
+          - us-gov-east-1
+          - ca-central-1
+          - eu-north-1
+          - eu-west-1
+          - eu-west-2
+          - eu-west-3
+          - eu-central-1
+          - eu-south-1
+          - af-south-1
+          - ap-northeast-1
+          - ap-northeast-2
+          - ap-northeast-3
+          - ap-southeast-1
+          - ap-southeast-2
+          - ap-east-1
+          - ap-south-1
+          - sa-east-1
+          - me-south-1
+          default: us-east-1
+      description: The AWS IoT multi-region endpoint
+    - url: https://iot.{region}.amazonaws.com
+      variables:
+        region:
+          description: The AWS region
+          enum:
+          - us-east-1
+          - us-east-2
+          - us-west-1
+          - us-west-2
+          - us-gov-west-1
+          - us-gov-east-1
+          - ca-central-1
+          - eu-north-1
+          - eu-west-1
+          - eu-west-2
+          - eu-west-3
+          - eu-central-1
+          - eu-south-1
+          - af-south-1
+          - ap-northeast-1
+          - ap-northeast-2
+          - ap-northeast-3
+          - ap-southeast-1
+          - ap-southeast-2
+          - ap-east-1
+          - ap-south-1
+          - sa-east-1
+          - me-south-1
+          default: us-east-1
+      description: The AWS IoT multi-region endpoint
+    - url: http://iot.{region}.amazonaws.com.cn
+      variables:
+        region:
+          description: The AWS region
+          enum:
+          - cn-north-1
+          - cn-northwest-1
+          default: cn-north-1
+      description: The AWS IoT endpoint for China (Beijing) and China (Ningxia)
+    - url: https://iot.{region}.amazonaws.com.cn
+      variables:
+        region:
+          description: The AWS region
+          enum:
+          - cn-north-1
+          - cn-northwest-1
+          default: cn-north-1
+      description: The AWS IoT endpoint for China (Beijing) and China (Ningxia)
   /things/{thingName}/principals:
     parameters:
     - $ref: '#/components/parameters/X-Amz-Content-Sha256'
@@ -1065,7 +1662,10 @@ paths:
     - $ref: '#/components/parameters/X-Amz-SignedHeaders'
     get:
       operationId: ListThingPrincipals
-      description: <p>Lists the principals associated with the specified thing. A principal can be X.509 certificates, IAM users, groups, and roles, Amazon Cognito identities or federated identities.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListThingPrincipals</a> action.</p>
+      description: 'Lists the principals associated with the specified thing. A principal can be X.509 certificates, IAM users, groups, and roles, Amazon Cognito identities or federated identities.
+
+
+        Requires permission to access the ListThingPrincipals action.'
       responses:
         '200':
           description: Success
@@ -1139,6 +1739,87 @@ paths:
         dispatcher: FALLBACK
       tags:
       - Things
+      security:
+      - hmac: []
+    servers:
+    - url: http://iot.{region}.amazonaws.com
+      variables:
+        region:
+          description: The AWS region
+          enum:
+          - us-east-1
+          - us-east-2
+          - us-west-1
+          - us-west-2
+          - us-gov-west-1
+          - us-gov-east-1
+          - ca-central-1
+          - eu-north-1
+          - eu-west-1
+          - eu-west-2
+          - eu-west-3
+          - eu-central-1
+          - eu-south-1
+          - af-south-1
+          - ap-northeast-1
+          - ap-northeast-2
+          - ap-northeast-3
+          - ap-southeast-1
+          - ap-southeast-2
+          - ap-east-1
+          - ap-south-1
+          - sa-east-1
+          - me-south-1
+          default: us-east-1
+      description: The AWS IoT multi-region endpoint
+    - url: https://iot.{region}.amazonaws.com
+      variables:
+        region:
+          description: The AWS region
+          enum:
+          - us-east-1
+          - us-east-2
+          - us-west-1
+          - us-west-2
+          - us-gov-west-1
+          - us-gov-east-1
+          - ca-central-1
+          - eu-north-1
+          - eu-west-1
+          - eu-west-2
+          - eu-west-3
+          - eu-central-1
+          - eu-south-1
+          - af-south-1
+          - ap-northeast-1
+          - ap-northeast-2
+          - ap-northeast-3
+          - ap-southeast-1
+          - ap-southeast-2
+          - ap-east-1
+          - ap-south-1
+          - sa-east-1
+          - me-south-1
+          default: us-east-1
+      description: The AWS IoT multi-region endpoint
+    - url: http://iot.{region}.amazonaws.com.cn
+      variables:
+        region:
+          description: The AWS region
+          enum:
+          - cn-north-1
+          - cn-northwest-1
+          default: cn-north-1
+      description: The AWS IoT endpoint for China (Beijing) and China (Ningxia)
+    - url: https://iot.{region}.amazonaws.com.cn
+      variables:
+        region:
+          description: The AWS region
+          enum:
+          - cn-north-1
+          - cn-northwest-1
+          default: cn-north-1
+      description: The AWS IoT endpoint for China (Beijing) and China (Ningxia)
   /things:
     parameters:
     - $ref: '#/components/parameters/X-Amz-Content-Sha256'
@@ -1150,7 +1831,13 @@ paths:
     - $ref: '#/components/parameters/X-Amz-SignedHeaders'
     get:
       operationId: ListThings
-      description: <p>Lists your things. Use the <b>attributeName</b> and <b>attributeValue</b> parameters to filter your things. For example, calling <code>ListThings</code> with attributeName=Color and attributeValue=Red retrieves all things in the registry that contain an attribute <b>Color</b> with the value <b>Red</b>. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/thing-registry.html#list-things">List Things</a> from the <i>Amazon Web Services IoT Core Developer Guide</i>.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListThings</a> action.</p> <note> <p>You will not be charged for calling this API if an <code>Access denied</code> error is returned. You will also not be charged if no attributes or pagination token was provided in request and no pagination token and no results were returned.</p> </note>
+      description: 'Lists your things. Use the attributeName and attributeValue parameters to filter your things. For example, calling ListThings with attributeName=Color and attributeValue=Red retrieves all things in the registry that contain an attribute Color with the value Red. For more information, see List Things from the Amazon Web Services IoT Core Developer Guide.
+
+
+        Requires permission to access the ListThings action.
+
+
+        You will not be charged for calling this API if an Access denied error is returned. You will also not be charged if no attributes or pagination token was provided in request and no pagination token and no results were returned.'
       responses:
         '200':
           description: Success
@@ -1240,9 +1927,14 @@ paths:
         dispatcher: FALLBACK
       tags:
       - Things
+      security:
+      - hmac: []
     post:
       operationId: RegisterThing
-      description: <p>Provisions a thing in the device registry. RegisterThing calls other IoT control plane APIs. These calls might exceed your account level <a href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_iot"> IoT Throttling Limits</a> and cause throttle errors. Please contact <a href="https://console.aws.amazon.com/support/home">Amazon Web Services Customer Support</a> to raise your throttling limits if necessary.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">RegisterThing</a> action.</p>
+      description: 'Provisions a thing in the device registry. RegisterThing calls other IoT control plane APIs. These calls might exceed your account level IoT Throttling Limits and cause throttle errors. Please contact Amazon Web Services Customer Support to raise your throttling limits if necessary.
+
+
+        Requires permission to access the RegisterThing action.'
       responses:
         '200':
           description: Success
@@ -1319,121 +2011,91 @@ paths:
         dispatcher: FALLBACK
       tags:
       - Things
+      security:
+      - hmac: []
+    servers:
+    - url: http://iot.{region}.amazonaws.com
+      variables:
+        region:
+          description: The AWS region
+          enum:
+          - us-east-1
+          - us-east-2
+          - us-west-1
+          - us-west-2
+          - us-gov-west-1
+          - us-gov-east-1
+          - ca-central-1
+          - eu-north-1
+          - eu-west-1
+          - eu-west-2
+          - eu-west-3
+          - eu-central-1
+          - eu-south-1
+          - af-south-1
+          - ap-northeast-1
+          - ap-northeast-2
+          - ap-northeast-3
+          - ap-southeast-1
+          - ap-southeast-2
+          - ap-east-1
+          - ap-south-1
+          - sa-east-1
+          - me-south-1
+          default: us-east-1
+      description: The AWS IoT multi-region endpoint
+    - url: https://iot.{region}.amazonaws.com
+      variables:
+        region:
+          description: The AWS region
+          enum:
+          - us-east-1
+          - us-east-2
+          - us-west-1
+          - us-west-2
+          - us-gov-west-1
+          - us-gov-east-1
+          - ca-central-1
+          - eu-north-1
+          - eu-west-1
+          - eu-west-2
+          - eu-west-3
+          - eu-central-1
+          - eu-south-1
+          - af-south-1
+          - ap-northeast-1
+          - ap-northeast-2
+          - ap-northeast-3
+          - ap-southeast-1
+          - ap-southeast-2
+          - ap-east-1
+          - ap-south-1
+          - sa-east-1
+          - me-south-1
+          default: us-east-1
+      description: The AWS IoT multi-region endpoint
+    - url: http://iot.{region}.amazonaws.com.cn
+      variables:
+        region:
+          description: The AWS region
+          enum:
+          - cn-north-1
+          - cn-northwest-1
+          default: cn-north-1
+      description: The AWS IoT endpoint for China (Beijing) and China (Ningxia)
+    - url: https://iot.{region}.amazonaws.com.cn
+      variables:
+        region:
+          description: The AWS region
+          enum:
+          - cn-north-1
+          - cn-northwest-1
+          default: cn-north-1
+      description: The AWS IoT endpoint for China (Beijing) and China (Ningxia)
 components:
-  parameters:
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
   schemas:
-    ThingAttributeList:
-      type: array
-      items:
-        $ref: '#/components/schemas/ThingAttribute'
-    ListThingsResponse:
-      type: object
-      properties:
-        things:
-          allOf:
-          - $ref: '#/components/schemas/ThingAttributeList'
-          - description: The things.
-        nextToken:
-          allOf:
-          - $ref: '#/components/schemas/NextToken'
-          - description: The token to use to get the next set of results. Will not be returned if operation has returned all results.
-      description: The output from the ListThings operation.
-    ListJobExecutionsForThingResponse:
-      type: object
-      properties:
-        executionSummaries:
-          allOf:
-          - $ref: '#/components/schemas/JobExecutionSummaryForThingList'
-          - description: A list of job execution summaries.
-        nextToken:
-          allOf:
-          - $ref: '#/components/schemas/NextToken'
-          - description: The token for the next set of results, or <b>null</b> if there are no additional results.
-    DetachThingPrincipalResponse:
-      type: object
-      properties: {}
-      description: The output from the DetachThingPrincipal operation.
-    ConflictingResourceUpdateException: {}
-    ResourceArn:
-      type: string
-    VersionNumber:
-      type: integer
-    DateType:
-      type: string
-      format: date-time
     ClientId:
       type: string
-    PrincipalArn:
-      type: string
-    JobExecutionSummaryForThingList:
-      type: array
-      items:
-        $ref: '#/components/schemas/JobExecutionSummaryForThing'
-    ThingGroupName:
-      type: string
-      pattern: '[a-zA-Z0-9:_-]+'
-      minLength: 1
-      maxLength: 128
-    BillingGroupName:
-      type: string
-      pattern: '[a-zA-Z0-9:_-]+'
-      minLength: 1
-      maxLength: 128
-    ThingId:
-      type: string
-    ThrottlingException: {}
-    ThingName:
-      type: string
-      pattern: '[a-zA-Z0-9:_-]+'
-      minLength: 1
-      maxLength: 128
-    Attributes:
-      type: object
-      additionalProperties:
-        $ref: '#/components/schemas/AttributeValue'
-    InvalidRequestException: {}
     CreateThingResponse:
       type: object
       properties:
@@ -1450,15 +2112,17 @@ components:
           - $ref: '#/components/schemas/ThingId'
           - description: The thing ID.
       description: The output of the CreateThing operation.
-    DetailsMap:
-      type: object
-      additionalProperties:
-        $ref: '#/components/schemas/DetailsValue'
     JobId:
       type: string
       pattern: '[a-zA-Z0-9_-]+'
       minLength: 1
       maxLength: 64
+    ThingArn:
+      type: string
+    UpdateThingResponse:
+      type: object
+      properties: {}
+      description: The output from the UpdateThing operation.
     ListThingPrincipalsResponse:
       type: object
       properties:
@@ -1471,10 +2135,116 @@ components:
           - $ref: '#/components/schemas/NextToken'
           - description: The token to use to get the next set of results, or <b>null</b> if there are no additional results.
       description: The output from the ListThingPrincipals operation.
+    ServiceUnavailableException: {}
+    ThingGroupArn:
+      type: string
+    JobExecutionSummary:
+      type: object
+      properties:
+        status:
+          allOf:
+          - $ref: '#/components/schemas/JobExecutionStatus'
+          - description: The status of the job execution.
+        queuedAt:
+          allOf:
+          - $ref: '#/components/schemas/DateType'
+          - description: The time, in seconds since the epoch, when the job execution was queued.
+        startedAt:
+          allOf:
+          - $ref: '#/components/schemas/DateType'
+          - description: The time, in seconds since the epoch, when the job execution started.
+        lastUpdatedAt:
+          allOf:
+          - $ref: '#/components/schemas/DateType'
+          - description: The time, in seconds since the epoch, when the job execution was last updated.
+        executionNumber:
+          allOf:
+          - $ref: '#/components/schemas/ExecutionNumber'
+          - description: A string (consisting of the digits "0" through "9") which identifies this particular job execution on this particular device. It can be used later in commands which return or update job execution information.
+        retryAttempt:
+          allOf:
+          - $ref: '#/components/schemas/RetryAttempt'
+          - description: The number that indicates how many retry attempts have been completed for this job on this device.
+      description: The job execution summary.
+    ResourceNotFoundException: {}
+    Version:
+      type: integer
+    InternalFailureException: {}
+    CertificatePem:
+      type: string
+      pattern: '[\s\S]*'
+      description: The PEM of a certificate.
+      minLength: 1
+      maxLength: 65536
+    GroupNameAndArn:
+      type: object
+      properties:
+        groupName:
+          allOf:
+          - $ref: '#/components/schemas/ThingGroupName'
+          - description: The group name.
+        groupArn:
+          allOf:
+          - $ref: '#/components/schemas/ThingGroupArn'
+          - description: The group ARN.
+      description: The name and ARN of a group.
+    ResourceAlreadyExistsException: {}
+    ThingAttribute:
+      type: object
+      properties:
+        thingName:
+          allOf:
+          - $ref: '#/components/schemas/ThingName'
+          - description: The name of the thing.
+        thingTypeName:
+          allOf:
+          - $ref: '#/components/schemas/ThingTypeName'
+          - description: The name of the thing type, if the thing has been associated with a type.
+        thingArn:
+          allOf:
+          - $ref: '#/components/schemas/ThingArn'
+          - description: The thing ARN.
+        attributes:
+          allOf:
+          - $ref: '#/components/schemas/Attributes'
+          - description: A list of thing attributes which are name-value pairs.
+        version:
+          allOf:
+          - $ref: '#/components/schemas/Version'
+          - description: The version of the thing record in the registry.
+      description: The properties of the thing, including thing name, thing type name, and a list of thing attributes.
+    UnauthorizedException: {}
+    ThingAttributeList:
+      type: array
+      items:
+        $ref: '#/components/schemas/ThingAttribute'
+    Attributes:
+      type: object
+      additionalProperties:
+        $ref: '#/components/schemas/AttributeValue'
+    ListJobExecutionsForThingResponse:
+      type: object
+      properties:
+        executionSummaries:
+          allOf:
+          - $ref: '#/components/schemas/JobExecutionSummaryForThingList'
+          - description: A list of job execution summaries.
+        nextToken:
+          allOf:
+          - $ref: '#/components/schemas/NextToken'
+          - description: The token for the next set of results, or <b>null</b> if there are no additional results.
+    ConflictingResourceUpdateException: {}
     NextToken:
       type: string
-    ApproximateSecondsBeforeTimedOut:
-      type: integer
+    AttributeValue:
+      type: string
+      pattern: '[a-zA-Z0-9_.,@/:#-]*'
+      maxLength: 800
+    BillingGroupName:
+      type: string
+      pattern: '[a-zA-Z0-9:_-]+'
+      minLength: 1
+      maxLength: 128
     JobExecutionStatusDetails:
       type: object
       properties:
@@ -1483,7 +2253,50 @@ components:
           - $ref: '#/components/schemas/DetailsMap'
           - description: The job execution status.
       description: Details of the job execution status.
-    ResourceNotFoundException: {}
+    ListThingsResponse:
+      type: object
+      properties:
+        things:
+          allOf:
+          - $ref: '#/components/schemas/ThingAttributeList'
+          - description: The things.
+        nextToken:
+          allOf:
+          - $ref: '#/components/schemas/NextToken'
+          - description: The token to use to get the next set of results. Will not be returned if operation has returned all results.
+      description: The output from the ListThings operation.
+    DetailsMap:
+      type: object
+      additionalProperties:
+        $ref: '#/components/schemas/DetailsValue'
+    Flag:
+      type: boolean
+    JobExecutionStatus:
+      type: string
+      enum:
+      - QUEUED
+      - IN_PROGRESS
+      - SUCCEEDED
+      - FAILED
+      - TIMED_OUT
+      - REJECTED
+      - REMOVED
+      - CANCELED
+    Forced:
+      type: boolean
+    ResourceArns:
+      type: object
+      additionalProperties:
+        $ref: '#/components/schemas/ResourceArn'
+    InvalidRequestException: {}
+    ThrottlingException: {}
+    ThingId:
+      type: string
+    ThingTypeName:
+      type: string
+      pattern: '[a-zA-Z0-9:_-]+'
+      minLength: 1
+      maxLength: 128
     DescribeThingResponse:
       type: object
       properties:
@@ -1520,29 +2333,6 @@ components:
           - $ref: '#/components/schemas/BillingGroupName'
           - description: The name of the billing group the thing belongs to.
       description: The output from the DescribeThing operation.
-    UnauthorizedException: {}
-    JobExecutionStatus:
-      type: string
-      enum:
-      - QUEUED
-      - IN_PROGRESS
-      - SUCCEEDED
-      - FAILED
-      - TIMED_OUT
-      - REJECTED
-      - REMOVED
-      - CANCELED
-    DeleteThingResponse:
-      type: object
-      properties: {}
-      description: The output of the DeleteThing operation.
-    ThingArn:
-      type: string
-    Value:
-      type: string
-      pattern: '[\s\S]*'
-      minLength: 0
-      maxLength: 4096
     JobExecution:
       type: object
       properties:
@@ -1591,140 +2381,22 @@ components:
           - $ref: '#/components/schemas/ApproximateSecondsBeforeTimedOut'
           - description: The estimated number of seconds that remain before the job execution status will be changed to <code>TIMED_OUT</code>. The timeout interval can be anywhere between 1 minute and 7 days (1 to 10080 minutes). The actual job execution timeout can occur up to 60 seconds later than the estimated duration. This value will not be included if the job execution has reached a terminal status.
       description: The job execution object represents the execution of a job on a particular device.
-    ThingAttribute:
-      type: object
-      properties:
-        thingName:
-          allOf:
-          - $ref: '#/components/schemas/ThingName'
-          - description: The name of the thing.
-        thingTypeName:
-          allOf:
-          - $ref: '#/components/schemas/ThingTypeName'
-          - description: The name of the thing type, if the thing has been associated with a type.
-        thingArn:
-          allOf:
-          - $ref: '#/components/schemas/ThingArn'
-          - description: The thing ARN.
-        attributes:
-          allOf:
-          - $ref: '#/components/schemas/Attributes'
-          - description: A list of thing attributes which are name-value pairs.
-        version:
-          allOf:
-          - $ref: '#/components/schemas/Version'
-          - description: The version of the thing record in the registry.
-      description: The properties of the thing, including thing name, thing type name, and a list of thing attributes.
-    VersionConflictException: {}
-    JobExecutionSummary:
-      type: object
-      properties:
-        status:
-          allOf:
-          - $ref: '#/components/schemas/JobExecutionStatus'
-          - description: The status of the job execution.
-        queuedAt:
-          allOf:
-          - $ref: '#/components/schemas/DateType'
-          - description: The time, in seconds since the epoch, when the job execution was queued.
-        startedAt:
-          allOf:
-          - $ref: '#/components/schemas/DateType'
-          - description: The time, in seconds since the epoch, when the job execution started.
-        lastUpdatedAt:
-          allOf:
-          - $ref: '#/components/schemas/DateType'
-          - description: The time, in seconds since the epoch, when the job execution was last updated.
-        executionNumber:
-          allOf:
-          - $ref: '#/components/schemas/ExecutionNumber'
-          - description: A string (consisting of the digits "0" through "9") which identifies this particular job execution on this particular device. It can be used later in commands which return or update job execution information.
-        retryAttempt:
-          allOf:
-          - $ref: '#/components/schemas/RetryAttempt'
-          - description: The number that indicates how many retry attempts have been completed for this job on this device.
-      description: The job execution summary.
-    Flag:
-      type: boolean
-    ThingTypeName:
-      type: string
-      pattern: '[a-zA-Z0-9:_-]+'
-      minLength: 1
-      maxLength: 128
-    ResourceAlreadyExistsException: {}
-    CertificatePem:
+    Value:
       type: string
       pattern: '[\s\S]*'
-      description: The PEM of a certificate.
-      minLength: 1
-      maxLength: 65536
-    AttributeValue:
-      type: string
-      pattern: '[a-zA-Z0-9_.,@/:#-]*'
-      maxLength: 800
-    Principals:
-      type: array
-      items:
-        $ref: '#/components/schemas/PrincipalArn'
-    ThingGroupNameAndArnList:
-      type: array
-      items:
-        $ref: '#/components/schemas/GroupNameAndArn'
-    ServiceUnavailableException: {}
-    ResourceArns:
-      type: object
-      additionalProperties:
-        $ref: '#/components/schemas/ResourceArn'
-    ThingGroupArn:
-      type: string
-    GroupNameAndArn:
-      type: object
-      properties:
-        groupName:
-          allOf:
-          - $ref: '#/components/schemas/ThingGroupName'
-          - description: The group name.
-        groupArn:
-          allOf:
-          - $ref: '#/components/schemas/ThingGroupArn'
-          - description: The group ARN.
-      description: The name and ARN of a group.
-    ListThingGroupsForThingResponse:
-      type: object
-      properties:
-        thingGroups:
-          allOf:
-          - $ref: '#/components/schemas/ThingGroupNameAndArnList'
-          - description: The thing groups.
-        nextToken:
-          allOf:
-          - $ref: '#/components/schemas/NextToken'
-          - description: The token to use to get the next set of results, or <b>null</b> if there are no additional results.
-    UpdateThingResponse:
-      type: object
-      properties: {}
-      description: The output from the UpdateThing operation.
-    InternalFailureException: {}
-    DescribeJobExecutionResponse:
-      type: object
-      properties:
-        execution:
-          allOf:
-          - $ref: '#/components/schemas/JobExecution'
-          - description: Information about the job execution.
+      minLength: 0
+      maxLength: 4096
     AttachThingPrincipalResponse:
       type: object
       properties: {}
       description: The output from the AttachThingPrincipal operation.
+    VersionConflictException: {}
     InvalidStateTransitionException: {}
-    RetryAttempt:
-      type: integer
-    DetailsValue:
-      type: string
-      pattern: '[^\p{C}]+'
-      minLength: 1
-    Version:
-      type: integer
+    JobExecutionSummaryForThingList:
+      type: array
+      items:
+        $ref: '#/components/schemas/JobExecutionSummaryForThing'
+    ResourceRegistrationFailureException: {}
     JobExecutionSummaryForThing:
       type: object
       properties:
@@ -1737,7 +2409,69 @@ components:
           - $ref: '#/components/schemas/JobExecutionSummary'
           - description: Contains a subset of information about a job execution.
       description: The job execution summary for a thing.
-    ResourceRegistrationFailureException: {}
+    ThingGroupNameAndArnList:
+      type: array
+      items:
+        $ref: '#/components/schemas/GroupNameAndArn'
+    ThingName:
+      type: string
+      pattern: '[a-zA-Z0-9:_-]+'
+      minLength: 1
+      maxLength: 128
+    RetryAttempt:
+      type: integer
+    Principals:
+      type: array
+      items:
+        $ref: '#/components/schemas/PrincipalArn'
+    DateType:
+      type: string
+      format: date-time
+    ResourceArn:
+      type: string
+    PrincipalArn:
+      type: string
+    VersionNumber:
+      type: integer
+    DetailsValue:
+      type: string
+      pattern: '[^\p{C}]+'
+      minLength: 1
+    ApproximateSecondsBeforeTimedOut:
+      type: integer
+    ListThingGroupsForThingResponse:
+      type: object
+      properties:
+        thingGroups:
+          allOf:
+          - $ref: '#/components/schemas/ThingGroupNameAndArnList'
+          - description: The thing groups.
+        nextToken:
+          allOf:
+          - $ref: '#/components/schemas/NextToken'
+          - description: The token to use to get the next set of results, or <b>null</b> if there are no additional results.
+    DeleteThingResponse:
+      type: object
+      properties: {}
+      description: The output of the DeleteThing operation.
+    ThingGroupName:
+      type: string
+      pattern: '[a-zA-Z0-9:_-]+'
+      minLength: 1
+      maxLength: 128
+    DetachThingPrincipalResponse:
+      type: object
+      properties: {}
+      description: The output from the DetachThingPrincipal operation.
+    ExecutionNumber:
+      type: integer
+    DescribeJobExecutionResponse:
+      type: object
+      properties:
+        execution:
+          allOf:
+          - $ref: '#/components/schemas/JobExecution'
+          - description: Information about the job execution.
     RegisterThingResponse:
       type: object
       properties:
@@ -1749,10 +2483,49 @@ components:
           allOf:
           - $ref: '#/components/schemas/ResourceArns'
           - description: ARNs for the generated resources.
-    ExecutionNumber:
-      type: integer
-    Forced:
-      type: boolean
+  parameters:
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
   securitySchemes:
     hmac:
       type: apiKey
@@ -1760,7 +2533,15 @@ components:
       in: header
       description: Amazon Signature authorization v4
       x-amazon-apigateway-authtype: awsSigv4
+    sigv4:
+      type: apiKey
+      name: Authorization
+      in: header
+      description: AWS Signature Version 4 authentication
 externalDocs:
   description: Amazon Web Services documentation
   url: https://docs.aws.amazon.com/iot/
+x-refined-from:
+- amazon-iot-core-openapi-original.yml
+- amazon-iot-core-openapi.yml
 x-hasEquivalentPaths: true

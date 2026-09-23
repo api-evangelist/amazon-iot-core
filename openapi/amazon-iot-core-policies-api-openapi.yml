@@ -1,35 +1,18 @@
 openapi: 3.2.0
 info:
-  version: 1.0.0
-  x-release: v4
-  title: AWS IoT Accept Certificate Transfer Policies API
-  description: '<fullname>IoT</fullname> <p>IoT provides secure, bi-directional communication between Internet-connected devices (such as sensors, actuators, embedded devices, or smart appliances) and the Amazon Web Services cloud. You can discover your custom IoT-Data endpoint to communicate with, configure rules for data processing and integration with other services, organize resources associated with each device (Registry), configure logging, and create and manage policies and credentials to authenticate devices.</p> <p>The service endpoints that expose this API are listed in <a href="https://docs.aws.amazon.com/general/latest/gr/iot-core.html">Amazon Web Services IoT Core Endpoints and Quotas</a>. You must use the endpoint for the region that has the resources you want to access.</p> <p>The service name used by <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Amazon Web Services Signature Version 4</a> to sign the request is: <i>execute-api</i>.</p> <p>For more information about how IoT works, see the <a href="https://docs.aws.amazon.com/iot/latest/developerguide/aws-iot-how-it-works.html">Developer Guide</a>.</p> <p>For information about how to use the credentials provider for IoT, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/authorizing-direct-aws.html">Authorizing Direct Calls to Amazon Web Services Services</a>.</p>'
-  x-logo:
-    url: https://api.apis.guru/v2/cache/logo/https_twitter.com_awscloud_profile_image.png
-    backgroundColor: '#FFFFFF'
-  termsOfService: https://aws.amazon.com/service-terms/
-  contact:
-    name: Mike Ralphson
-    email: mike.ralphson@gmail.com
-    url: https://github.com/mermade/aws2openapi
-    x-twitter: PermittedSoc
-  license:
-    name: Apache 2.0 License
-    url: http://www.apache.org/licenses/
-  x-providerName: amazonaws.com
-  x-serviceName: iot
-  x-aws-signingName: iot
-  x-origin:
-  - contentType: application/json
-    url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/iot-2015-05-28.normal.json
-    converter:
-      url: https://github.com/mermade/aws2openapi
-    x-apisguru-driver: external
-  x-apiClientRegistration:
-    url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
-  x-apisguru-categories:
-  - cloud
-  x-preferred: true
+  title: Amazon Iot Core Policies API
+  x-refined-note:
+  - x-apiClientRegistration differs across the merged source definitions and was not carried
+  - x-apisguru-categories differs across the merged source definitions and was not carried
+  - x-aws-signingName differs across the merged source definitions and was not carried
+  - x-logo differs across the merged source definitions and was not carried
+  - x-origin differs across the merged source definitions and was not carried
+  - x-preferred differs across the merged source definitions and was not carried
+  - x-providerName differs across the merged source definitions and was not carried
+  - x-release differs across the merged source definitions and was not carried
+  - x-serviceName differs across the merged source definitions and was not carried
+  version: '1.0'
+  description: 'Operations tagged Policies across 2 of this provider''s published API definitions: amazon-iot-core-openapi-original.yml, amazon-iot-core-openapi.yml. Each path carries the servers of the definition it was published in.'
 servers:
 - url: http://iot.{region}.amazonaws.com
   variables:
@@ -109,8 +92,6 @@ servers:
       - cn-northwest-1
       default: cn-north-1
   description: The AWS IoT endpoint for China (Beijing) and China (Ningxia)
-security:
-- hmac: []
 tags:
 - name: Policies
 paths:
@@ -125,7 +106,13 @@ paths:
     - $ref: '#/components/parameters/X-Amz-SignedHeaders'
     post:
       operationId: CreatePolicy
-      description: <p>Creates an IoT policy.</p> <p>The created policy is the default version for the policy. This operation creates a policy version with a version identifier of <b>1</b> and sets <b>1</b> as the policy's default version.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreatePolicy</a> action.</p>
+      description: 'Creates an IoT policy.
+
+
+        The created policy is the default version for the policy. This operation creates a policy version with a version identifier of 1 and sets 1 as the policy''s default version.
+
+
+        Requires permission to access the CreatePolicy action.'
       responses:
         '200':
           description: Success
@@ -211,9 +198,26 @@ paths:
         dispatcher: FALLBACK
       tags:
       - Policies
+      security:
+      - hmac: []
     delete:
       operationId: DeletePolicy
-      description: <p>Deletes the specified policy.</p> <p>A policy cannot be deleted if it has non-default versions or it is attached to any certificate.</p> <p>To delete a policy, use the <a>DeletePolicyVersion</a> action to delete all non-default versions of the policy; use the <a>DetachPolicy</a> action to detach the policy from any certificate; and then use the DeletePolicy action to delete the policy.</p> <p>When a policy is deleted using DeletePolicy, its default version is deleted with it.</p> <note> <p>Because of the distributed nature of Amazon Web Services, it can take up to five minutes after a policy is detached before it's ready to be deleted.</p> </note> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeletePolicy</a> action.</p>
+      description: 'Deletes the specified policy.
+
+
+        A policy cannot be deleted if it has non-default versions or it is attached to any certificate.
+
+
+        To delete a policy, use the DeletePolicyVersion action to delete all non-default versions of the policy; use the DetachPolicy action to detach the policy from any certificate; and then use the DeletePolicy action to delete the policy.
+
+
+        When a policy is deleted using DeletePolicy, its default version is deleted with it.
+
+
+        Because of the distributed nature of Amazon Web Services, it can take up to five minutes after a policy is detached before it''s ready to be deleted.
+
+
+        Requires permission to access the DeletePolicy action.'
       responses:
         '200':
           description: Success
@@ -275,9 +279,14 @@ paths:
         dispatcher: FALLBACK
       tags:
       - Policies
+      security:
+      - hmac: []
     get:
       operationId: GetPolicy
-      description: <p>Gets information about the specified policy with the policy document of the default version.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetPolicy</a> action.</p>
+      description: 'Gets information about the specified policy with the policy document of the default version.
+
+
+        Requires permission to access the GetPolicy action.'
       responses:
         '200':
           description: Success
@@ -337,6 +346,87 @@ paths:
         dispatcher: FALLBACK
       tags:
       - Policies
+      security:
+      - hmac: []
+    servers:
+    - url: http://iot.{region}.amazonaws.com
+      variables:
+        region:
+          description: The AWS region
+          enum:
+          - us-east-1
+          - us-east-2
+          - us-west-1
+          - us-west-2
+          - us-gov-west-1
+          - us-gov-east-1
+          - ca-central-1
+          - eu-north-1
+          - eu-west-1
+          - eu-west-2
+          - eu-west-3
+          - eu-central-1
+          - eu-south-1
+          - af-south-1
+          - ap-northeast-1
+          - ap-northeast-2
+          - ap-northeast-3
+          - ap-southeast-1
+          - ap-southeast-2
+          - ap-east-1
+          - ap-south-1
+          - sa-east-1
+          - me-south-1
+          default: us-east-1
+      description: The AWS IoT multi-region endpoint
+    - url: https://iot.{region}.amazonaws.com
+      variables:
+        region:
+          description: The AWS region
+          enum:
+          - us-east-1
+          - us-east-2
+          - us-west-1
+          - us-west-2
+          - us-gov-west-1
+          - us-gov-east-1
+          - ca-central-1
+          - eu-north-1
+          - eu-west-1
+          - eu-west-2
+          - eu-west-3
+          - eu-central-1
+          - eu-south-1
+          - af-south-1
+          - ap-northeast-1
+          - ap-northeast-2
+          - ap-northeast-3
+          - ap-southeast-1
+          - ap-southeast-2
+          - ap-east-1
+          - ap-south-1
+          - sa-east-1
+          - me-south-1
+          default: us-east-1
+      description: The AWS IoT multi-region endpoint
+    - url: http://iot.{region}.amazonaws.com.cn
+      variables:
+        region:
+          description: The AWS region
+          enum:
+          - cn-north-1
+          - cn-northwest-1
+          default: cn-north-1
+      description: The AWS IoT endpoint for China (Beijing) and China (Ningxia)
+    - url: https://iot.{region}.amazonaws.com.cn
+      variables:
+        region:
+          description: The AWS region
+          enum:
+          - cn-north-1
+          - cn-northwest-1
+          default: cn-north-1
+      description: The AWS IoT endpoint for China (Beijing) and China (Ningxia)
   /policies/{policyName}/version:
     parameters:
     - $ref: '#/components/parameters/X-Amz-Content-Sha256'
@@ -348,7 +438,13 @@ paths:
     - $ref: '#/components/parameters/X-Amz-SignedHeaders'
     post:
       operationId: CreatePolicyVersion
-      description: <p>Creates a new version of the specified IoT policy. To update a policy, create a new policy version. A managed policy can have up to five versions. If the policy has five versions, you must use <a>DeletePolicyVersion</a> to delete an existing version before you create a new one.</p> <p>Optionally, you can set the new version as the policy's default version. The default version is the operative version (that is, the version that is in effect for the certificates to which the policy is attached).</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreatePolicyVersion</a> action.</p>
+      description: 'Creates a new version of the specified IoT policy. To update a policy, create a new policy version. A managed policy can have up to five versions. If the policy has five versions, you must use DeletePolicyVersion to delete an existing version before you create a new one.
+
+
+        Optionally, you can set the new version as the policy''s default version. The default version is the operative version (that is, the version that is in effect for the certificates to which the policy is attached).
+
+
+        Requires permission to access the CreatePolicyVersion action.'
       responses:
         '200':
           description: Success
@@ -441,9 +537,14 @@ paths:
         dispatcher: FALLBACK
       tags:
       - Policies
+      security:
+      - hmac: []
     get:
       operationId: ListPolicyVersions
-      description: <p>Lists the versions of the specified policy and identifies the default version.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListPolicyVersions</a> action.</p>
+      description: 'Lists the versions of the specified policy and identifies the default version.
+
+
+        Requires permission to access the ListPolicyVersions action.'
       responses:
         '200':
           description: Success
@@ -503,6 +604,87 @@ paths:
         dispatcher: FALLBACK
       tags:
       - Policies
+      security:
+      - hmac: []
+    servers:
+    - url: http://iot.{region}.amazonaws.com
+      variables:
+        region:
+          description: The AWS region
+          enum:
+          - us-east-1
+          - us-east-2
+          - us-west-1
+          - us-west-2
+          - us-gov-west-1
+          - us-gov-east-1
+          - ca-central-1
+          - eu-north-1
+          - eu-west-1
+          - eu-west-2
+          - eu-west-3
+          - eu-central-1
+          - eu-south-1
+          - af-south-1
+          - ap-northeast-1
+          - ap-northeast-2
+          - ap-northeast-3
+          - ap-southeast-1
+          - ap-southeast-2
+          - ap-east-1
+          - ap-south-1
+          - sa-east-1
+          - me-south-1
+          default: us-east-1
+      description: The AWS IoT multi-region endpoint
+    - url: https://iot.{region}.amazonaws.com
+      variables:
+        region:
+          description: The AWS region
+          enum:
+          - us-east-1
+          - us-east-2
+          - us-west-1
+          - us-west-2
+          - us-gov-west-1
+          - us-gov-east-1
+          - ca-central-1
+          - eu-north-1
+          - eu-west-1
+          - eu-west-2
+          - eu-west-3
+          - eu-central-1
+          - eu-south-1
+          - af-south-1
+          - ap-northeast-1
+          - ap-northeast-2
+          - ap-northeast-3
+          - ap-southeast-1
+          - ap-southeast-2
+          - ap-east-1
+          - ap-south-1
+          - sa-east-1
+          - me-south-1
+          default: us-east-1
+      description: The AWS IoT multi-region endpoint
+    - url: http://iot.{region}.amazonaws.com.cn
+      variables:
+        region:
+          description: The AWS region
+          enum:
+          - cn-north-1
+          - cn-northwest-1
+          default: cn-north-1
+      description: The AWS IoT endpoint for China (Beijing) and China (Ningxia)
+    - url: https://iot.{region}.amazonaws.com.cn
+      variables:
+        region:
+          description: The AWS region
+          enum:
+          - cn-north-1
+          - cn-northwest-1
+          default: cn-north-1
+      description: The AWS IoT endpoint for China (Beijing) and China (Ningxia)
   /policies/{policyName}/version/{policyVersionId}:
     parameters:
     - $ref: '#/components/parameters/X-Amz-Content-Sha256'
@@ -514,7 +696,10 @@ paths:
     - $ref: '#/components/parameters/X-Amz-SignedHeaders'
     delete:
       operationId: DeletePolicyVersion
-      description: <p>Deletes the specified version of the specified policy. You cannot delete the default version of a policy using this action. To delete the default version of a policy, use <a>DeletePolicy</a>. To find out which version of a policy is marked as the default version, use ListPolicyVersions.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeletePolicyVersion</a> action.</p>
+      description: 'Deletes the specified version of the specified policy. You cannot delete the default version of a policy using this action. To delete the default version of a policy, use DeletePolicy. To find out which version of a policy is marked as the default version, use ListPolicyVersions.
+
+
+        Requires permission to access the DeletePolicyVersion action.'
       responses:
         '200':
           description: Success
@@ -583,9 +768,14 @@ paths:
         dispatcher: FALLBACK
       tags:
       - Policies
+      security:
+      - hmac: []
     get:
       operationId: GetPolicyVersion
-      description: <p>Gets information about the specified policy version.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetPolicyVersion</a> action.</p>
+      description: 'Gets information about the specified policy version.
+
+
+        Requires permission to access the GetPolicyVersion action.'
       responses:
         '200':
           description: Success
@@ -652,9 +842,14 @@ paths:
         dispatcher: FALLBACK
       tags:
       - Policies
+      security:
+      - hmac: []
     patch:
       operationId: SetDefaultPolicyVersion
-      description: <p>Sets the specified version of the specified policy as the policy's default (operative) version. This action affects all certificates to which the policy is attached. To list the principals the policy is attached to, use the <a>ListPrincipalPolicies</a> action.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">SetDefaultPolicyVersion</a> action.</p>
+      description: 'Sets the specified version of the specified policy as the policy''s default (operative) version. This action affects all certificates to which the policy is attached. To list the principals the policy is attached to, use the ListPrincipalPolicies action.
+
+
+        Requires permission to access the SetDefaultPolicyVersion action.'
       responses:
         '200':
           description: Success
@@ -717,6 +912,87 @@ paths:
         dispatcher: FALLBACK
       tags:
       - Policies
+      security:
+      - hmac: []
+    servers:
+    - url: http://iot.{region}.amazonaws.com
+      variables:
+        region:
+          description: The AWS region
+          enum:
+          - us-east-1
+          - us-east-2
+          - us-west-1
+          - us-west-2
+          - us-gov-west-1
+          - us-gov-east-1
+          - ca-central-1
+          - eu-north-1
+          - eu-west-1
+          - eu-west-2
+          - eu-west-3
+          - eu-central-1
+          - eu-south-1
+          - af-south-1
+          - ap-northeast-1
+          - ap-northeast-2
+          - ap-northeast-3
+          - ap-southeast-1
+          - ap-southeast-2
+          - ap-east-1
+          - ap-south-1
+          - sa-east-1
+          - me-south-1
+          default: us-east-1
+      description: The AWS IoT multi-region endpoint
+    - url: https://iot.{region}.amazonaws.com
+      variables:
+        region:
+          description: The AWS region
+          enum:
+          - us-east-1
+          - us-east-2
+          - us-west-1
+          - us-west-2
+          - us-gov-west-1
+          - us-gov-east-1
+          - ca-central-1
+          - eu-north-1
+          - eu-west-1
+          - eu-west-2
+          - eu-west-3
+          - eu-central-1
+          - eu-south-1
+          - af-south-1
+          - ap-northeast-1
+          - ap-northeast-2
+          - ap-northeast-3
+          - ap-southeast-1
+          - ap-southeast-2
+          - ap-east-1
+          - ap-south-1
+          - sa-east-1
+          - me-south-1
+          default: us-east-1
+      description: The AWS IoT multi-region endpoint
+    - url: http://iot.{region}.amazonaws.com.cn
+      variables:
+        region:
+          description: The AWS region
+          enum:
+          - cn-north-1
+          - cn-northwest-1
+          default: cn-north-1
+      description: The AWS IoT endpoint for China (Beijing) and China (Ningxia)
+    - url: https://iot.{region}.amazonaws.com.cn
+      variables:
+        region:
+          description: The AWS region
+          enum:
+          - cn-north-1
+          - cn-northwest-1
+          default: cn-north-1
+      description: The AWS IoT endpoint for China (Beijing) and China (Ningxia)
   /policies:
     parameters:
     - $ref: '#/components/parameters/X-Amz-Content-Sha256'
@@ -728,7 +1004,10 @@ paths:
     - $ref: '#/components/parameters/X-Amz-SignedHeaders'
     get:
       operationId: ListPolicies
-      description: <p>Lists your policies.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListPolicies</a> action.</p>
+      description: 'Lists your policies.
+
+
+        Requires permission to access the ListPolicies action.'
       responses:
         '200':
           description: Success
@@ -795,43 +1074,133 @@ paths:
         dispatcher: FALLBACK
       tags:
       - Policies
+      security:
+      - hmac: []
+    servers:
+    - url: http://iot.{region}.amazonaws.com
+      variables:
+        region:
+          description: The AWS region
+          enum:
+          - us-east-1
+          - us-east-2
+          - us-west-1
+          - us-west-2
+          - us-gov-west-1
+          - us-gov-east-1
+          - ca-central-1
+          - eu-north-1
+          - eu-west-1
+          - eu-west-2
+          - eu-west-3
+          - eu-central-1
+          - eu-south-1
+          - af-south-1
+          - ap-northeast-1
+          - ap-northeast-2
+          - ap-northeast-3
+          - ap-southeast-1
+          - ap-southeast-2
+          - ap-east-1
+          - ap-south-1
+          - sa-east-1
+          - me-south-1
+          default: us-east-1
+      description: The AWS IoT multi-region endpoint
+    - url: https://iot.{region}.amazonaws.com
+      variables:
+        region:
+          description: The AWS region
+          enum:
+          - us-east-1
+          - us-east-2
+          - us-west-1
+          - us-west-2
+          - us-gov-west-1
+          - us-gov-east-1
+          - ca-central-1
+          - eu-north-1
+          - eu-west-1
+          - eu-west-2
+          - eu-west-3
+          - eu-central-1
+          - eu-south-1
+          - af-south-1
+          - ap-northeast-1
+          - ap-northeast-2
+          - ap-northeast-3
+          - ap-southeast-1
+          - ap-southeast-2
+          - ap-east-1
+          - ap-south-1
+          - sa-east-1
+          - me-south-1
+          default: us-east-1
+      description: The AWS IoT multi-region endpoint
+    - url: http://iot.{region}.amazonaws.com.cn
+      variables:
+        region:
+          description: The AWS region
+          enum:
+          - cn-north-1
+          - cn-northwest-1
+          default: cn-north-1
+      description: The AWS IoT endpoint for China (Beijing) and China (Ningxia)
+    - url: https://iot.{region}.amazonaws.com.cn
+      variables:
+        region:
+          description: The AWS region
+          enum:
+          - cn-north-1
+          - cn-northwest-1
+          default: cn-north-1
+      description: The AWS IoT endpoint for China (Beijing) and China (Ningxia)
 components:
+  parameters:
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
   schemas:
-    VersionsLimitExceededException: {}
-    DateType:
-      type: string
-      format: date-time
-    PolicyArn:
-      type: string
-    GenerationId:
-      type: string
-    MalformedPolicyException: {}
-    PolicyVersionId:
-      type: string
-      pattern: '[0-9]+'
-    ThrottlingException: {}
-    Tag:
-      type: object
-      required:
-      - Key
-      properties:
-        Key:
-          allOf:
-          - $ref: '#/components/schemas/TagKey'
-          - description: The tag's key.
-        Value:
-          allOf:
-          - $ref: '#/components/schemas/TagValue'
-          - description: The tag's value.
-      description: A set of key/value pairs that are used to manage the resource.
-    TagKey:
-      type: string
-      pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
-      minLength: 1
-      maxLength: 128
-    DeleteConflictException: {}
-    InvalidRequestException: {}
-    Policy:
+    CreatePolicyResponse:
       type: object
       properties:
         policyName:
@@ -842,11 +1211,53 @@ components:
           allOf:
           - $ref: '#/components/schemas/PolicyArn'
           - description: The policy ARN.
-      description: Describes an IoT policy.
+        policyDocument:
+          allOf:
+          - $ref: '#/components/schemas/PolicyDocument'
+          - description: The JSON document that describes the policy.
+        policyVersionId:
+          allOf:
+          - $ref: '#/components/schemas/PolicyVersionId'
+          - description: The policy version ID.
+      description: The output from the CreatePolicy operation.
+    PolicyDocument:
+      type: string
+      pattern: '[\s\S]*'
+      minLength: 0
+      maxLength: 404600
+    ServiceUnavailableException: {}
+    PolicyVersion:
+      type: object
+      properties:
+        versionId:
+          allOf:
+          - $ref: '#/components/schemas/PolicyVersionId'
+          - description: The policy version ID.
+        isDefaultVersion:
+          allOf:
+          - $ref: '#/components/schemas/IsDefaultVersion'
+          - description: Specifies whether the policy version is the default.
+        createDate:
+          allOf:
+          - $ref: '#/components/schemas/DateType'
+          - description: The date and time the policy was created.
+      description: Describes a policy version.
+    ResourceNotFoundException: {}
+    InternalFailureException: {}
+    ResourceAlreadyExistsException: {}
+    UnauthorizedException: {}
+    PolicyName:
+      type: string
+      pattern: '[\w+=,.@-]+'
+      minLength: 1
+      maxLength: 128
     PolicyVersions:
       type: array
       items:
         $ref: '#/components/schemas/PolicyVersion'
+    GenerationId:
+      type: string
+    DeleteConflictException: {}
     ListPoliciesResponse:
       type: object
       properties:
@@ -859,8 +1270,54 @@ components:
           - $ref: '#/components/schemas/Marker'
           - description: The marker for the next set of results, or null if there are no additional results.
       description: The output from the ListPolicies operation.
-    ResourceNotFoundException: {}
-    UnauthorizedException: {}
+    CreatePolicyVersionResponse:
+      type: object
+      properties:
+        policyArn:
+          allOf:
+          - $ref: '#/components/schemas/PolicyArn'
+          - description: The policy ARN.
+        policyDocument:
+          allOf:
+          - $ref: '#/components/schemas/PolicyDocument'
+          - description: The JSON document that describes the policy.
+        policyVersionId:
+          allOf:
+          - $ref: '#/components/schemas/PolicyVersionId'
+          - description: The policy version ID.
+        isDefaultVersion:
+          allOf:
+          - $ref: '#/components/schemas/IsDefaultVersion'
+          - description: Specifies whether the policy version is the default.
+      description: The output of the CreatePolicyVersion operation.
+    ListPolicyVersionsResponse:
+      type: object
+      properties:
+        policyVersions:
+          allOf:
+          - $ref: '#/components/schemas/PolicyVersions'
+          - description: The policy versions.
+      description: The output from the ListPolicyVersions operation.
+    Policy:
+      type: object
+      properties:
+        policyName:
+          allOf:
+          - $ref: '#/components/schemas/PolicyName'
+          - description: The policy name.
+        policyArn:
+          allOf:
+          - $ref: '#/components/schemas/PolicyArn'
+          - description: The policy ARN.
+      description: Describes an IoT policy.
+    ThrottlingException: {}
+    InvalidRequestException: {}
+    IsDefaultVersion:
+      type: boolean
+    Policies:
+      type: array
+      items:
+        $ref: '#/components/schemas/Policy'
     GetPolicyVersionResponse:
       type: object
       properties:
@@ -897,67 +1354,26 @@ components:
           - $ref: '#/components/schemas/GenerationId'
           - description: The generation ID of the policy version.
       description: The output from the GetPolicyVersion operation.
-    PolicyVersion:
-      type: object
-      properties:
-        versionId:
-          allOf:
-          - $ref: '#/components/schemas/PolicyVersionId'
-          - description: The policy version ID.
-        isDefaultVersion:
-          allOf:
-          - $ref: '#/components/schemas/IsDefaultVersion'
-          - description: Specifies whether the policy version is the default.
-        createDate:
-          allOf:
-          - $ref: '#/components/schemas/DateType'
-          - description: The date and time the policy was created.
-      description: Describes a policy version.
-    ListPolicyVersionsResponse:
-      type: object
-      properties:
-        policyVersions:
-          allOf:
-          - $ref: '#/components/schemas/PolicyVersions'
-          - description: The policy versions.
-      description: The output from the ListPolicyVersions operation.
-    PolicyDocument:
+    PolicyVersionId:
       type: string
-      pattern: '[\s\S]*'
-      minLength: 0
-      maxLength: 404600
-    CreatePolicyResponse:
+      pattern: '[0-9]+'
+    PolicyArn:
+      type: string
+    Tag:
       type: object
+      required:
+      - Key
       properties:
-        policyName:
+        Key:
           allOf:
-          - $ref: '#/components/schemas/PolicyName'
-          - description: The policy name.
-        policyArn:
+          - $ref: '#/components/schemas/TagKey'
+          - description: The tag's key.
+        Value:
           allOf:
-          - $ref: '#/components/schemas/PolicyArn'
-          - description: The policy ARN.
-        policyDocument:
-          allOf:
-          - $ref: '#/components/schemas/PolicyDocument'
-          - description: The JSON document that describes the policy.
-        policyVersionId:
-          allOf:
-          - $ref: '#/components/schemas/PolicyVersionId'
-          - description: The policy version ID.
-      description: The output from the CreatePolicy operation.
-    TagValue:
-      type: string
-      minLength: 0
-      maxLength: 256
-    ResourceAlreadyExistsException: {}
-    PolicyName:
-      type: string
-      pattern: '[\w+=,.@-]+'
-      minLength: 1
-      maxLength: 128
-    ServiceUnavailableException: {}
-    InternalFailureException: {}
+          - $ref: '#/components/schemas/TagValue'
+          - description: The tag's value.
+      description: A set of key/value pairs that are used to manage the resource.
+    MalformedPolicyException: {}
     GetPolicyResponse:
       type: object
       properties:
@@ -990,79 +1406,23 @@ components:
           - $ref: '#/components/schemas/GenerationId'
           - description: The generation ID of the policy.
       description: The output from the GetPolicy operation.
-    IsDefaultVersion:
-      type: boolean
     Marker:
       type: string
       pattern: '[A-Za-z0-9+/]+={0,2}'
       maxLength: 1024
-    CreatePolicyVersionResponse:
-      type: object
-      properties:
-        policyArn:
-          allOf:
-          - $ref: '#/components/schemas/PolicyArn'
-          - description: The policy ARN.
-        policyDocument:
-          allOf:
-          - $ref: '#/components/schemas/PolicyDocument'
-          - description: The JSON document that describes the policy.
-        policyVersionId:
-          allOf:
-          - $ref: '#/components/schemas/PolicyVersionId'
-          - description: The policy version ID.
-        isDefaultVersion:
-          allOf:
-          - $ref: '#/components/schemas/IsDefaultVersion'
-          - description: Specifies whether the policy version is the default.
-      description: The output of the CreatePolicyVersion operation.
-    Policies:
-      type: array
-      items:
-        $ref: '#/components/schemas/Policy'
-  parameters:
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
+    TagKey:
+      type: string
+      pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
+      minLength: 1
+      maxLength: 128
+    DateType:
+      type: string
+      format: date-time
+    TagValue:
+      type: string
+      minLength: 0
+      maxLength: 256
+    VersionsLimitExceededException: {}
   securitySchemes:
     hmac:
       type: apiKey
@@ -1070,7 +1430,15 @@ components:
       in: header
       description: Amazon Signature authorization v4
       x-amazon-apigateway-authtype: awsSigv4
+    sigv4:
+      type: apiKey
+      name: Authorization
+      in: header
+      description: AWS Signature Version 4 authentication
 externalDocs:
   description: Amazon Web Services documentation
   url: https://docs.aws.amazon.com/iot/
+x-refined-from:
+- amazon-iot-core-openapi-original.yml
+- amazon-iot-core-openapi.yml
 x-hasEquivalentPaths: true
