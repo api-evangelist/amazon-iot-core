@@ -62,8 +62,6 @@ apis:
     url: https://aws.amazon.com/iot-core/pricing/
   - type: FAQ
     url: https://aws.amazon.com/iot-core/faqs/
-  - type: GraphQL
-    url: graphql/amazon-iot-core-graphql.md
 - aid: amazon-iot-core:amazon-iot-core-active-violations-api
   name: Amazon IoT Core Active Violations API
   description: The Active Violations API from Amazon IoT Core — 1 operation(s) for active violations.
@@ -82,8 +80,6 @@ apis:
     url: https://aws.amazon.com/iot-core/pricing/
   - type: FAQ
     url: https://aws.amazon.com/iot-core/faqs/
-  - type: GraphQL
-    url: graphql/amazon-iot-core-graphql.md
 - aid: amazon-iot-core:amazon-iot-core-attached-policies-api
   name: Amazon IoT Core Attached Policies API
   description: The Attached Policies API from Amazon IoT Core — 1 operation(s) for attached policies.
@@ -102,8 +98,6 @@ apis:
     url: https://aws.amazon.com/iot-core/pricing/
   - type: FAQ
     url: https://aws.amazon.com/iot-core/faqs/
-  - type: GraphQL
-    url: graphql/amazon-iot-core-graphql.md
 - aid: amazon-iot-core:amazon-iot-core-audit-api
   name: Amazon IoT Core Audit API
   description: The Audit API from Amazon IoT Core — 19 operation(s) for audit.
@@ -122,8 +116,6 @@ apis:
     url: https://aws.amazon.com/iot-core/pricing/
   - type: FAQ
     url: https://aws.amazon.com/iot-core/faqs/
-  - type: GraphQL
-    url: graphql/amazon-iot-core-graphql.md
 - aid: amazon-iot-core:amazon-iot-core-authorizer-api
   name: Amazon IoT Core Authorizer API
   description: The Authorizer API from Amazon IoT Core — 2 operation(s) for authorizer.
@@ -142,8 +134,6 @@ apis:
     url: https://aws.amazon.com/iot-core/pricing/
   - type: FAQ
     url: https://aws.amazon.com/iot-core/faqs/
-  - type: GraphQL
-    url: graphql/amazon-iot-core-graphql.md
 - aid: amazon-iot-core:amazon-iot-core-authorizers-api
   name: Amazon IoT Core Authorizers API
   description: The Authorizers API from Amazon IoT Core — 1 operation(s) for authorizers.
@@ -162,8 +152,6 @@ apis:
     url: https://aws.amazon.com/iot-core/pricing/
   - type: FAQ
     url: https://aws.amazon.com/iot-core/faqs/
-  - type: GraphQL
-    url: graphql/amazon-iot-core-graphql.md
 - aid: amazon-iot-core:amazon-iot-core-behavior-model-training-api
   name: Amazon IoT Core Behavior Model Training API
   description: >-
@@ -183,8 +171,6 @@ apis:
     url: https://aws.amazon.com/iot-core/pricing/
   - type: FAQ
     url: https://aws.amazon.com/iot-core/faqs/
-  - type: GraphQL
-    url: graphql/amazon-iot-core-graphql.md
 - aid: amazon-iot-core:amazon-iot-core-billing-groups-api
   name: Amazon IoT Core Billing Groups API
   description: The Billing Groups API from Amazon IoT Core — 5 operation(s) for billing groups.
@@ -203,8 +189,6 @@ apis:
     url: https://aws.amazon.com/iot-core/pricing/
   - type: FAQ
     url: https://aws.amazon.com/iot-core/faqs/
-  - type: GraphQL
-    url: graphql/amazon-iot-core-graphql.md
 - aid: amazon-iot-core:amazon-iot-core-cacertificate-api
   name: Amazon IoT Core Cacertificate API
   description: The Cacertificate API from Amazon IoT Core — 2 operation(s) for cacertificate.
@@ -223,8 +207,6 @@ apis:
     url: https://aws.amazon.com/iot-core/pricing/
   - type: FAQ
     url: https://aws.amazon.com/iot-core/faqs/
-  - type: GraphQL
-    url: graphql/amazon-iot-core-graphql.md
 - aid: amazon-iot-core:amazon-iot-core-cacertificates-api
   name: Amazon IoT Core Cacertificates API
   description: The Cacertificates API from Amazon IoT Core — 1 operation(s) for cacertificates.
@@ -243,8 +225,6 @@ apis:
     url: https://aws.amazon.com/iot-core/pricing/
   - type: FAQ
     url: https://aws.amazon.com/iot-core/faqs/
-  - type: GraphQL
-    url: graphql/amazon-iot-core-graphql.md
 - aid: amazon-iot-core:amazon-iot-core-cancel-certificate-transfer-api
   name: Amazon IoT Core Cancel Certificate Transfer API
   description: >-
@@ -264,8 +244,6 @@ apis:
     url: https://aws.amazon.com/iot-core/pricing/
   - type: FAQ
     url: https://aws.amazon.com/iot-core/faqs/
-  - type: GraphQL
-    url: graphql/amazon-iot-core-graphql.md
 - aid: amazon-iot-core:amazon-iot-core-certificate-api
   name: Amazon IoT Core Certificate API
   description: The Certificate API from Amazon IoT Core — 2 operation(s) for certificate.
@@ -284,8 +262,6 @@ apis:
     url: https://aws.amazon.com/iot-core/pricing/
   - type: FAQ
     url: https://aws.amazon.com/iot-core/faqs/
-  - type: GraphQL
-    url: graphql/amazon-iot-core-graphql.md
 - aid: amazon-iot-core:amazon-iot-core-certificates-api
   name: Amazon IoT Core Certificates API
   description: The Certificates API from Amazon IoT Core — 3 operation(s) for certificates.
@@ -304,8 +280,6 @@ apis:
     url: https://aws.amazon.com/iot-core/pricing/
   - type: FAQ
     url: https://aws.amazon.com/iot-core/faqs/
-  - type: GraphQL
-    url: graphql/amazon-iot-core-graphql.md
 - aid: amazon-iot-core:amazon-iot-core-certificates-by-ca-api
   name: Amazon IoT Core Certificates By Ca API
   description: The Certificates By Ca API from Amazon IoT Core — 1 operation(s) for certificates by ca.
@@ -324,8 +298,6 @@ apis:
     url: https://aws.amazon.com/iot-core/pricing/
   - type: FAQ
     url: https://aws.amazon.com/iot-core/faqs/
-  - type: GraphQL
-    url: graphql/amazon-iot-core-graphql.md
 - aid: amazon-iot-core:amazon-iot-core-certificates-out-going-api
   name: Amazon IoT Core Certificates Out Going API
   description: >-
@@ -345,8 +317,6 @@ apis:
     url: https://aws.amazon.com/iot-core/pricing/
   - type: FAQ
     url: https://aws.amazon.com/iot-core/faqs/
-  - type: GraphQL
-    url: graphql/amazon-iot-core-graphql.md
 - aid: amazon-iot-core:amazon-iot-core-confirmdestination-api
   name: Amazon IoT Core Confirmdestination API
   description: The Confirmdestination API from Amazon IoT Core — 1 operation(s) for confirmdestination.
@@ -365,8 +335,6 @@ apis:
     url: https://aws.amazon.com/iot-core/pricing/
   - type: FAQ
     url: https://aws.amazon.com/iot-core/faqs/
-  - type: GraphQL
-    url: graphql/amazon-iot-core-graphql.md
 - aid: amazon-iot-core:amazon-iot-core-custom-metric-api
   name: Amazon IoT Core Custom Metric API
   description: The Custom Metric API from Amazon IoT Core — 1 operation(s) for custom metric.
@@ -385,8 +353,6 @@ apis:
     url: https://aws.amazon.com/iot-core/pricing/
   - type: FAQ
     url: https://aws.amazon.com/iot-core/faqs/
-  - type: GraphQL
-    url: graphql/amazon-iot-core-graphql.md
 - aid: amazon-iot-core:amazon-iot-core-custom-metrics-api
   name: Amazon IoT Core Custom Metrics API
   description: The Custom Metrics API from Amazon IoT Core — 1 operation(s) for custom metrics.
@@ -405,8 +371,6 @@ apis:
     url: https://aws.amazon.com/iot-core/pricing/
   - type: FAQ
     url: https://aws.amazon.com/iot-core/faqs/
-  - type: GraphQL
-    url: graphql/amazon-iot-core-graphql.md
 - aid: amazon-iot-core:amazon-iot-core-default-authorizer-api
   name: Amazon IoT Core Default Authorizer API
   description: The Default Authorizer API from Amazon IoT Core — 1 operation(s) for default authorizer.
@@ -425,8 +389,6 @@ apis:
     url: https://aws.amazon.com/iot-core/pricing/
   - type: FAQ
     url: https://aws.amazon.com/iot-core/faqs/
-  - type: GraphQL
-    url: graphql/amazon-iot-core-graphql.md
 - aid: amazon-iot-core:amazon-iot-core-destinations-api
   name: Amazon IoT Core Destinations API
   description: The Destinations API from Amazon IoT Core — 2 operation(s) for destinations.
@@ -447,8 +409,6 @@ apis:
     url: https://aws.amazon.com/iot-core/pricing/
   - type: FAQ
     url: https://aws.amazon.com/iot-core/faqs/
-  - type: GraphQL
-    url: graphql/amazon-iot-core-graphql.md
 - aid: amazon-iot-core:amazon-iot-core-detect-api
   name: Amazon IoT Core Detect API
   description: The Detect API from Amazon IoT Core — 4 operation(s) for detect.
@@ -467,8 +427,6 @@ apis:
     url: https://aws.amazon.com/iot-core/pricing/
   - type: FAQ
     url: https://aws.amazon.com/iot-core/faqs/
-  - type: GraphQL
-    url: graphql/amazon-iot-core-graphql.md
 - aid: amazon-iot-core:amazon-iot-core-dimensions-api
   name: Amazon IoT Core Dimensions API
   description: The Dimensions API from Amazon IoT Core — 2 operation(s) for dimensions.
@@ -487,8 +445,6 @@ apis:
     url: https://aws.amazon.com/iot-core/pricing/
   - type: FAQ
     url: https://aws.amazon.com/iot-core/faqs/
-  - type: GraphQL
-    url: graphql/amazon-iot-core-graphql.md
 - aid: amazon-iot-core:amazon-iot-core-dynamic-thing-groups-api
   name: Amazon IoT Core Dynamic Thing Groups API
   description: >-
@@ -508,8 +464,6 @@ apis:
     url: https://aws.amazon.com/iot-core/pricing/
   - type: FAQ
     url: https://aws.amazon.com/iot-core/faqs/
-  - type: GraphQL
-    url: graphql/amazon-iot-core-graphql.md
 - aid: amazon-iot-core:amazon-iot-core-effective-policies-api
   name: Amazon IoT Core Effective Policies API
   description: The Effective Policies API from Amazon IoT Core — 1 operation(s) for effective policies.
@@ -528,8 +482,6 @@ apis:
     url: https://aws.amazon.com/iot-core/pricing/
   - type: FAQ
     url: https://aws.amazon.com/iot-core/faqs/
-  - type: GraphQL
-    url: graphql/amazon-iot-core-graphql.md
 - aid: amazon-iot-core:amazon-iot-core-endpoint-api
   name: Amazon IoT Core Endpoint API
   description: The Endpoint API from Amazon IoT Core — 1 operation(s) for endpoint.
@@ -549,8 +501,6 @@ apis:
     url: https://aws.amazon.com/iot-core/pricing/
   - type: FAQ
     url: https://aws.amazon.com/iot-core/faqs/
-  - type: GraphQL
-    url: graphql/amazon-iot-core-graphql.md
 - aid: amazon-iot-core:amazon-iot-core-event-configurations-api
   name: Amazon IoT Core Event Configurations API
   description: >-
@@ -570,8 +520,6 @@ apis:
     url: https://aws.amazon.com/iot-core/pricing/
   - type: FAQ
     url: https://aws.amazon.com/iot-core/faqs/
-  - type: GraphQL
-    url: graphql/amazon-iot-core-graphql.md
 - aid: amazon-iot-core:amazon-iot-core-fleet-metric-api
   name: Amazon IoT Core Fleet Metric API
   description: The Fleet Metric API from Amazon IoT Core — 1 operation(s) for fleet metric.
@@ -590,8 +538,6 @@ apis:
     url: https://aws.amazon.com/iot-core/pricing/
   - type: FAQ
     url: https://aws.amazon.com/iot-core/faqs/
-  - type: GraphQL
-    url: graphql/amazon-iot-core-graphql.md
 - aid: amazon-iot-core:amazon-iot-core-fleet-metrics-api
   name: Amazon IoT Core Fleet Metrics API
   description: The Fleet Metrics API from Amazon IoT Core — 1 operation(s) for fleet metrics.
@@ -610,8 +556,6 @@ apis:
     url: https://aws.amazon.com/iot-core/pricing/
   - type: FAQ
     url: https://aws.amazon.com/iot-core/faqs/
-  - type: GraphQL
-    url: graphql/amazon-iot-core-graphql.md
 - aid: amazon-iot-core:amazon-iot-core-indexing-api
   name: Amazon IoT Core Indexing API
   description: The Indexing API from Amazon IoT Core — 1 operation(s) for indexing.
@@ -630,8 +574,6 @@ apis:
     url: https://aws.amazon.com/iot-core/pricing/
   - type: FAQ
     url: https://aws.amazon.com/iot-core/faqs/
-  - type: GraphQL
-    url: graphql/amazon-iot-core-graphql.md
 - aid: amazon-iot-core:amazon-iot-core-indices-api
   name: Amazon IoT Core Indices API
   description: The Indices API from Amazon IoT Core — 7 operation(s) for indices.
@@ -650,8 +592,6 @@ apis:
     url: https://aws.amazon.com/iot-core/pricing/
   - type: FAQ
     url: https://aws.amazon.com/iot-core/faqs/
-  - type: GraphQL
-    url: graphql/amazon-iot-core-graphql.md
 - aid: amazon-iot-core:amazon-iot-core-job-templates-api
   name: Amazon IoT Core Job Templates API
   description: The Job Templates API from Amazon IoT Core — 2 operation(s) for job templates.
@@ -670,8 +610,6 @@ apis:
     url: https://aws.amazon.com/iot-core/pricing/
   - type: FAQ
     url: https://aws.amazon.com/iot-core/faqs/
-  - type: GraphQL
-    url: graphql/amazon-iot-core-graphql.md
 - aid: amazon-iot-core:amazon-iot-core-jobs-api
   name: Amazon IoT Core Jobs API
   description: The Jobs API from Amazon IoT Core — 6 operation(s) for jobs.
@@ -692,8 +630,6 @@ apis:
     url: https://aws.amazon.com/iot-core/pricing/
   - type: FAQ
     url: https://aws.amazon.com/iot-core/faqs/
-  - type: GraphQL
-    url: graphql/amazon-iot-core-graphql.md
 - aid: amazon-iot-core:amazon-iot-core-keys-and-certificate-api
   name: Amazon IoT Core Keys And Certificate API
   description: >-
@@ -713,8 +649,6 @@ apis:
     url: https://aws.amazon.com/iot-core/pricing/
   - type: FAQ
     url: https://aws.amazon.com/iot-core/faqs/
-  - type: GraphQL
-    url: graphql/amazon-iot-core-graphql.md
 - aid: amazon-iot-core:amazon-iot-core-managed-job-templates-api
   name: Amazon IoT Core Managed Job Templates API
   description: >-
@@ -734,8 +668,6 @@ apis:
     url: https://aws.amazon.com/iot-core/pricing/
   - type: FAQ
     url: https://aws.amazon.com/iot-core/faqs/
-  - type: GraphQL
-    url: graphql/amazon-iot-core-graphql.md
 - aid: amazon-iot-core:amazon-iot-core-metric-values-thingname-metricname-starttime-endtime-api
   name: Amazon IoT Core Metric Values#thingName&metricName&startTime&endTime API
   description: >-
@@ -757,8 +689,6 @@ apis:
     url: https://aws.amazon.com/iot-core/pricing/
   - type: FAQ
     url: https://aws.amazon.com/iot-core/faqs/
-  - type: GraphQL
-    url: graphql/amazon-iot-core-graphql.md
 - aid: amazon-iot-core:amazon-iot-core-mitigationactions-api
   name: Amazon IoT Core Mitigationactions API
   description: The Mitigationactions API from Amazon IoT Core — 2 operation(s) for mitigationactions.
@@ -777,8 +707,6 @@ apis:
     url: https://aws.amazon.com/iot-core/pricing/
   - type: FAQ
     url: https://aws.amazon.com/iot-core/faqs/
-  - type: GraphQL
-    url: graphql/amazon-iot-core-graphql.md
 - aid: amazon-iot-core:amazon-iot-core-policies-api
   name: Amazon IoT Core Policies API
   description: The Policies API from Amazon IoT Core — 4 operation(s) for policies.
@@ -797,8 +725,6 @@ apis:
     url: https://aws.amazon.com/iot-core/pricing/
   - type: FAQ
     url: https://aws.amazon.com/iot-core/faqs/
-  - type: GraphQL
-    url: graphql/amazon-iot-core-graphql.md
 - aid: amazon-iot-core:amazon-iot-core-policy-principals-x-amzn-iot-policy-api
   name: Amazon IoT Core Policy Principals#x Amzn Iot Policy API
   description: >-
@@ -819,8 +745,6 @@ apis:
     url: https://aws.amazon.com/iot-core/pricing/
   - type: FAQ
     url: https://aws.amazon.com/iot-core/faqs/
-  - type: GraphQL
-    url: graphql/amazon-iot-core-graphql.md
 - aid: amazon-iot-core:amazon-iot-core-policy-targets-api
   name: Amazon IoT Core Policy Targets API
   description: The Policy Targets API from Amazon IoT Core — 1 operation(s) for policy targets.
@@ -839,8 +763,6 @@ apis:
     url: https://aws.amazon.com/iot-core/pricing/
   - type: FAQ
     url: https://aws.amazon.com/iot-core/faqs/
-  - type: GraphQL
-    url: graphql/amazon-iot-core-graphql.md
 - aid: amazon-iot-core:amazon-iot-core-principal-policies-api
   name: Amazon IoT Core Principal Policies API
   description: The Principal Policies API from Amazon IoT Core — 1 operation(s) for principal policies.
@@ -859,8 +781,6 @@ apis:
     url: https://aws.amazon.com/iot-core/pricing/
   - type: FAQ
     url: https://aws.amazon.com/iot-core/faqs/
-  - type: GraphQL
-    url: graphql/amazon-iot-core-graphql.md
 - aid: amazon-iot-core:amazon-iot-core-principal-policies-x-amzn-iot-principal-api
   name: Amazon IoT Core Principal Policies#x Amzn Iot Principal API
   description: >-
@@ -881,8 +801,6 @@ apis:
     url: https://aws.amazon.com/iot-core/pricing/
   - type: FAQ
     url: https://aws.amazon.com/iot-core/faqs/
-  - type: GraphQL
-    url: graphql/amazon-iot-core-graphql.md
 - aid: amazon-iot-core:amazon-iot-core-principals-api
   name: Amazon IoT Core Principals API
   description: The Principals API from Amazon IoT Core — 1 operation(s) for principals.
@@ -901,8 +819,6 @@ apis:
     url: https://aws.amazon.com/iot-core/pricing/
   - type: FAQ
     url: https://aws.amazon.com/iot-core/faqs/
-  - type: GraphQL
-    url: graphql/amazon-iot-core-graphql.md
 - aid: amazon-iot-core:amazon-iot-core-provisioning-templates-api
   name: Amazon IoT Core Provisioning Templates API
   description: >-
@@ -922,8 +838,6 @@ apis:
     url: https://aws.amazon.com/iot-core/pricing/
   - type: FAQ
     url: https://aws.amazon.com/iot-core/faqs/
-  - type: GraphQL
-    url: graphql/amazon-iot-core-graphql.md
 - aid: amazon-iot-core:amazon-iot-core-registrationcode-api
   name: Amazon IoT Core Registrationcode API
   description: The Registrationcode API from Amazon IoT Core — 1 operation(s) for registrationcode.
@@ -942,8 +856,6 @@ apis:
     url: https://aws.amazon.com/iot-core/pricing/
   - type: FAQ
     url: https://aws.amazon.com/iot-core/faqs/
-  - type: GraphQL
-    url: graphql/amazon-iot-core-graphql.md
 - aid: amazon-iot-core:amazon-iot-core-reject-certificate-transfer-api
   name: Amazon IoT Core Reject Certificate Transfer API
   description: >-
@@ -963,8 +875,6 @@ apis:
     url: https://aws.amazon.com/iot-core/pricing/
   - type: FAQ
     url: https://aws.amazon.com/iot-core/faqs/
-  - type: GraphQL
-    url: graphql/amazon-iot-core-graphql.md
 - aid: amazon-iot-core:amazon-iot-core-role-aliases-api
   name: Amazon IoT Core Role Aliases API
   description: The Role Aliases API from Amazon IoT Core — 2 operation(s) for role aliases.
@@ -983,8 +893,6 @@ apis:
     url: https://aws.amazon.com/iot-core/pricing/
   - type: FAQ
     url: https://aws.amazon.com/iot-core/faqs/
-  - type: GraphQL
-    url: graphql/amazon-iot-core-graphql.md
 - aid: amazon-iot-core:amazon-iot-core-rules-api
   name: Amazon IoT Core Rules API
   description: The Rules API from Amazon IoT Core — 4 operation(s) for rules.
@@ -1003,8 +911,6 @@ apis:
     url: https://aws.amazon.com/iot-core/pricing/
   - type: FAQ
     url: https://aws.amazon.com/iot-core/faqs/
-  - type: GraphQL
-    url: graphql/amazon-iot-core-graphql.md
 - aid: amazon-iot-core:amazon-iot-core-security-profile-behaviors-api
   name: Amazon IoT Core Security Profile Behaviors API
   description: >-
@@ -1024,8 +930,6 @@ apis:
     url: https://aws.amazon.com/iot-core/pricing/
   - type: FAQ
     url: https://aws.amazon.com/iot-core/faqs/
-  - type: GraphQL
-    url: graphql/amazon-iot-core-graphql.md
 - aid: amazon-iot-core:amazon-iot-core-security-profiles-api
   name: Amazon IoT Core Security Profiles API
   description: The Security Profiles API from Amazon IoT Core — 4 operation(s) for security profiles.
@@ -1044,8 +948,6 @@ apis:
     url: https://aws.amazon.com/iot-core/pricing/
   - type: FAQ
     url: https://aws.amazon.com/iot-core/faqs/
-  - type: GraphQL
-    url: graphql/amazon-iot-core-graphql.md
 - aid: >-
     amazon-iot-core:amazon-iot-core-security-profiles-for-target-securityprofiletargetarn-api
   name: Amazon IoT Core Security Profiles For Target#securityProfileTargetArn API
@@ -1068,8 +970,6 @@ apis:
     url: https://aws.amazon.com/iot-core/pricing/
   - type: FAQ
     url: https://aws.amazon.com/iot-core/faqs/
-  - type: GraphQL
-    url: graphql/amazon-iot-core-graphql.md
 - aid: amazon-iot-core:amazon-iot-core-shadows-api
   name: Amazon IoT Core Shadows API
   description: Operations for managing device shadows
@@ -1088,8 +988,6 @@ apis:
     url: https://aws.amazon.com/iot-core/pricing/
   - type: FAQ
     url: https://aws.amazon.com/iot-core/faqs/
-  - type: GraphQL
-    url: graphql/amazon-iot-core-graphql.md
 - aid: amazon-iot-core:amazon-iot-core-streams-api
   name: Amazon IoT Core Streams API
   description: The Streams API from Amazon IoT Core — 2 operation(s) for streams.
@@ -1108,8 +1006,6 @@ apis:
     url: https://aws.amazon.com/iot-core/pricing/
   - type: FAQ
     url: https://aws.amazon.com/iot-core/faqs/
-  - type: GraphQL
-    url: graphql/amazon-iot-core-graphql.md
 - aid: amazon-iot-core:amazon-iot-core-tags-api
   name: Amazon IoT Core Tags API
   description: The Tags API from Amazon IoT Core — 1 operation(s) for tags.
@@ -1128,8 +1024,6 @@ apis:
     url: https://aws.amazon.com/iot-core/pricing/
   - type: FAQ
     url: https://aws.amazon.com/iot-core/faqs/
-  - type: GraphQL
-    url: graphql/amazon-iot-core-graphql.md
 - aid: amazon-iot-core:amazon-iot-core-tags-resourcearn-api
   name: Amazon IoT Core Tags#resourceArn API
   description: The Tags#resourceArn API from Amazon IoT Core — 1 operation(s) for tags#resourcearn.
@@ -1148,8 +1042,6 @@ apis:
     url: https://aws.amazon.com/iot-core/pricing/
   - type: FAQ
     url: https://aws.amazon.com/iot-core/faqs/
-  - type: GraphQL
-    url: graphql/amazon-iot-core-graphql.md
 - aid: amazon-iot-core:amazon-iot-core-target-policies-api
   name: Amazon IoT Core Target Policies API
   description: The Target Policies API from Amazon IoT Core — 1 operation(s) for target policies.
@@ -1168,8 +1060,6 @@ apis:
     url: https://aws.amazon.com/iot-core/pricing/
   - type: FAQ
     url: https://aws.amazon.com/iot-core/faqs/
-  - type: GraphQL
-    url: graphql/amazon-iot-core-graphql.md
 - aid: amazon-iot-core:amazon-iot-core-test-authorization-api
   name: Amazon IoT Core Test Authorization API
   description: The Test Authorization API from Amazon IoT Core — 1 operation(s) for test authorization.
@@ -1188,8 +1078,6 @@ apis:
     url: https://aws.amazon.com/iot-core/pricing/
   - type: FAQ
     url: https://aws.amazon.com/iot-core/faqs/
-  - type: GraphQL
-    url: graphql/amazon-iot-core-graphql.md
 - aid: amazon-iot-core:amazon-iot-core-thing-groups-api
   name: Amazon IoT Core Thing Groups API
   description: The Thing Groups API from Amazon IoT Core — 6 operation(s) for thing groups.
@@ -1208,8 +1096,6 @@ apis:
     url: https://aws.amazon.com/iot-core/pricing/
   - type: FAQ
     url: https://aws.amazon.com/iot-core/faqs/
-  - type: GraphQL
-    url: graphql/amazon-iot-core-graphql.md
 - aid: amazon-iot-core:amazon-iot-core-thing-registration-tasks-api
   name: Amazon IoT Core Thing Registration Tasks API
   description: >-
@@ -1229,8 +1115,6 @@ apis:
     url: https://aws.amazon.com/iot-core/pricing/
   - type: FAQ
     url: https://aws.amazon.com/iot-core/faqs/
-  - type: GraphQL
-    url: graphql/amazon-iot-core-graphql.md
 - aid: amazon-iot-core:amazon-iot-core-thing-types-api
   name: Amazon IoT Core Thing Types API
   description: The Thing Types API from Amazon IoT Core — 3 operation(s) for thing types.
@@ -1249,8 +1133,6 @@ apis:
     url: https://aws.amazon.com/iot-core/pricing/
   - type: FAQ
     url: https://aws.amazon.com/iot-core/faqs/
-  - type: GraphQL
-    url: graphql/amazon-iot-core-graphql.md
 - aid: amazon-iot-core:amazon-iot-core-things-api
   name: Amazon IoT Core Things API
   description: The Things API from Amazon IoT Core — 9 operation(s) for things.
@@ -1269,8 +1151,6 @@ apis:
     url: https://aws.amazon.com/iot-core/pricing/
   - type: FAQ
     url: https://aws.amazon.com/iot-core/faqs/
-  - type: GraphQL
-    url: graphql/amazon-iot-core-graphql.md
 - aid: amazon-iot-core:amazon-iot-core-transfer-certificate-api
   name: Amazon IoT Core Transfer Certificate API
   description: >-
@@ -1290,8 +1170,6 @@ apis:
     url: https://aws.amazon.com/iot-core/pricing/
   - type: FAQ
     url: https://aws.amazon.com/iot-core/faqs/
-  - type: GraphQL
-    url: graphql/amazon-iot-core-graphql.md
 - aid: amazon-iot-core:amazon-iot-core-untag-api
   name: Amazon IoT Core Untag API
   description: The Untag API from Amazon IoT Core — 1 operation(s) for untag.
@@ -1310,8 +1188,6 @@ apis:
     url: https://aws.amazon.com/iot-core/pricing/
   - type: FAQ
     url: https://aws.amazon.com/iot-core/faqs/
-  - type: GraphQL
-    url: graphql/amazon-iot-core-graphql.md
 - aid: amazon-iot-core:amazon-iot-core-v2logginglevel-targettype-targetname-api
   name: Amazon IoT Core V2LoggingLevel#targetType&targetName API
   description: >-
@@ -1331,8 +1207,6 @@ apis:
     url: https://aws.amazon.com/iot-core/pricing/
   - type: FAQ
     url: https://aws.amazon.com/iot-core/faqs/
-  - type: GraphQL
-    url: graphql/amazon-iot-core-graphql.md
 - aid: amazon-iot-core:amazon-iot-core-violation-events-starttime-endtime-api
   name: Amazon IoT Core Violation Events#startTime&endTime API
   description: >-
@@ -1352,8 +1226,6 @@ apis:
     url: https://aws.amazon.com/iot-core/pricing/
   - type: FAQ
     url: https://aws.amazon.com/iot-core/faqs/
-  - type: GraphQL
-    url: graphql/amazon-iot-core-graphql.md
 - aid: amazon-iot-core:amazon-iot-core-violations-api
   name: Amazon IoT Core Violations API
   description: The Violations API from Amazon IoT Core — 1 operation(s) for violations.
@@ -1372,8 +1244,6 @@ apis:
     url: https://aws.amazon.com/iot-core/pricing/
   - type: FAQ
     url: https://aws.amazon.com/iot-core/faqs/
-  - type: GraphQL
-    url: graphql/amazon-iot-core-graphql.md
 - aid: amazon-iot-core:amazon-iot-core-domain-configurations-api
   name: Amazon IoT Core Domain Configurations API
   description: >-
@@ -1393,8 +1263,6 @@ apis:
     url: https://aws.amazon.com/iot-core/pricing/
   - type: FAQ
     url: https://aws.amazon.com/iot-core/faqs/
-  - type: GraphQL
-    url: graphql/amazon-iot-core-graphql.md
 - aid: amazon-iot-core:amazon-iot-core-logging-options-api
   name: Amazon IoT Core Logging Options API
   description: The Logging Options API from Amazon IoT Core — 1 operation(s) for logging options.
@@ -1413,8 +1281,6 @@ apis:
     url: https://aws.amazon.com/iot-core/pricing/
   - type: FAQ
     url: https://aws.amazon.com/iot-core/faqs/
-  - type: GraphQL
-    url: graphql/amazon-iot-core-graphql.md
 - aid: amazon-iot-core:amazon-iot-core-ota-updates-api
   name: Amazon IoT Core OTA Updates API
   description: The OTA Updates API from Amazon IoT Core — 2 operation(s) for ota updates.
@@ -1433,8 +1299,6 @@ apis:
     url: https://aws.amazon.com/iot-core/pricing/
   - type: FAQ
     url: https://aws.amazon.com/iot-core/faqs/
-  - type: GraphQL
-    url: graphql/amazon-iot-core-graphql.md
 - aid: amazon-iot-core:amazon-iot-core-v2-logging-level-api
   name: Amazon IoT Core V2 Logging Level API
   description: The V2 Logging Level API from Amazon IoT Core — 1 operation(s) for v2 logging level.
@@ -1453,8 +1317,6 @@ apis:
     url: https://aws.amazon.com/iot-core/pricing/
   - type: FAQ
     url: https://aws.amazon.com/iot-core/faqs/
-  - type: GraphQL
-    url: graphql/amazon-iot-core-graphql.md
 - aid: amazon-iot-core:amazon-iot-core-v2-logging-options-api
   name: Amazon IoT Core V2 Logging Options API
   description: The V2 Logging Options API from Amazon IoT Core — 1 operation(s) for v2 logging options.
@@ -1473,8 +1335,6 @@ apis:
     url: https://aws.amazon.com/iot-core/pricing/
   - type: FAQ
     url: https://aws.amazon.com/iot-core/faqs/
-  - type: GraphQL
-    url: graphql/amazon-iot-core-graphql.md
 common:
 - type: Plans
   url: plans/amazon-iot-core-plans-pricing.yml
@@ -1563,5 +1423,5 @@ common:
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
-x-parent: aws
+x-parent: amazon-web-services
 x-relationship: product
