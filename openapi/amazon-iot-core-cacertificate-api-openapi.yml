@@ -517,83 +517,85 @@ paths:
       tags:
       - Cacertificate
 components:
-  parameters:
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
   schemas:
-    AutoRegistrationStatus:
-      type: string
-      enum:
-      - ENABLE
-      - DISABLE
-    ServiceUnavailableException: {}
-    ResourceNotFoundException: {}
-    InternalFailureException: {}
-    CertificatePem:
-      type: string
-      pattern: '[\s\S]*'
-      description: The PEM of a certificate.
-      minLength: 1
-      maxLength: 65536
-    ResourceAlreadyExistsException: {}
-    UnauthorizedException: {}
-    GenerationId:
-      type: string
+    RegistrationConfig:
+      type: object
+      properties:
+        templateBody:
+          allOf:
+          - $ref: '#/components/schemas/TemplateBody'
+          - description: The template body.
+        roleArn:
+          allOf:
+          - $ref: '#/components/schemas/RoleArn'
+          - description: The ARN of the role.
+        templateName:
+          allOf:
+          - $ref: '#/components/schemas/TemplateName'
+          - description: The name of the provisioning template.
+      description: The registration configuration.
+    LimitExceededException: {}
+    RegisterCACertificateResponse:
+      type: object
+      properties:
+        certificateArn:
+          allOf:
+          - $ref: '#/components/schemas/CertificateArn'
+          - description: The CA certificate ARN.
+        certificateId:
+          allOf:
+          - $ref: '#/components/schemas/CertificateId'
+          - description: The CA certificate identifier.
+      description: The output from the RegisterCACertificateResponse operation.
     CertificateMode:
       type: string
       enum:
       - DEFAULT
       - SNI_ONLY
+    CertificateValidity:
+      type: object
+      properties:
+        notBefore:
+          allOf:
+          - $ref: '#/components/schemas/DateType'
+          - description: The certificate is not valid before this date.
+        notAfter:
+          allOf:
+          - $ref: '#/components/schemas/DateType'
+          - description: The certificate is not valid after this date.
+      description: When the certificate is valid.
+    AutoRegistrationStatus:
+      type: string
+      enum:
+      - ENABLE
+      - DISABLE
     RoleArn:
       type: string
       minLength: 20
       maxLength: 2048
-    TemplateBody:
+    Tag:
+      type: object
+      required:
+      - Key
+      properties:
+        Key:
+          allOf:
+          - $ref: '#/components/schemas/TagKey'
+          - description: The tag's key.
+        Value:
+          allOf:
+          - $ref: '#/components/schemas/TagValue'
+          - description: The tag's value.
+      description: A set of key/value pairs that are used to manage the resource.
+    TagKey:
       type: string
-      pattern: '[\s\S]*'
-      minLength: 0
-      maxLength: 10240
-    RegistrationCodeValidationException: {}
+      pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
+      minLength: 1
+      maxLength: 128
+    CustomerVersion:
+      type: integer
+      minimum: 1
+    ResourceAlreadyExistsException: {}
     DescribeCACertificateResponse:
       type: object
       properties:
@@ -611,84 +613,49 @@ components:
       pattern: ^[0-9A-Za-z_-]+$
       minLength: 1
       maxLength: 36
-    DeleteCACertificateResponse:
-      type: object
-      properties: {}
-      description: The output for the DeleteCACertificate operation.
-    CustomerVersion:
-      type: integer
-      minimum: 1
+    TemplateBody:
+      type: string
+      pattern: '[\s\S]*'
+      minLength: 0
+      maxLength: 10240
+    UnauthorizedException: {}
     ThrottlingException: {}
-    InvalidRequestException: {}
-    RegistrationConfig:
-      type: object
-      properties:
-        templateBody:
-          allOf:
-          - $ref: '#/components/schemas/TemplateBody'
-          - description: The template body.
-        roleArn:
-          allOf:
-          - $ref: '#/components/schemas/RoleArn'
-          - description: The ARN of the role.
-        templateName:
-          allOf:
-          - $ref: '#/components/schemas/TemplateName'
-          - description: The name of the provisioning template.
-      description: The registration configuration.
-    CertificateArn:
+    DateType:
       type: string
-    Tag:
-      type: object
-      required:
-      - Key
-      properties:
-        Key:
-          allOf:
-          - $ref: '#/components/schemas/TagKey'
-          - description: The tag's key.
-        Value:
-          allOf:
-          - $ref: '#/components/schemas/TagValue'
-          - description: The tag's value.
-      description: A set of key/value pairs that are used to manage the resource.
+      format: date-time
+    AwsAccountId:
+      type: string
+      pattern: '[0-9]+'
+      minLength: 12
+      maxLength: 12
+    CertificateStateException: {}
+    InternalFailureException: {}
     CertificateValidationException: {}
-    TagKey:
-      type: string
-      pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
-      minLength: 1
-      maxLength: 128
     CACertificateStatus:
       type: string
       enum:
       - ACTIVE
       - INACTIVE
-    RegisterCACertificateResponse:
-      type: object
-      properties:
-        certificateArn:
-          allOf:
-          - $ref: '#/components/schemas/CertificateArn'
-          - description: The CA certificate ARN.
-        certificateId:
-          allOf:
-          - $ref: '#/components/schemas/CertificateId'
-          - description: The CA certificate identifier.
-      description: The output from the RegisterCACertificateResponse operation.
-    DateType:
+    ResourceNotFoundException: {}
+    GenerationId:
       type: string
-      format: date-time
-    CertificateStateException: {}
+    ServiceUnavailableException: {}
     CertificateId:
       type: string
       pattern: (0x)?[a-fA-F0-9]+
       minLength: 64
       maxLength: 64
+    InvalidRequestException: {}
     TagValue:
       type: string
       minLength: 0
       maxLength: 256
-    LimitExceededException: {}
+    CertificatePem:
+      type: string
+      pattern: '[\s\S]*'
+      description: The PEM of a certificate.
+      minLength: 1
+      maxLength: 65536
     CACertificateDescription:
       type: object
       properties:
@@ -741,23 +708,56 @@ components:
           - $ref: '#/components/schemas/CertificateMode'
           - description: <p>The mode of the CA. </p> <p>All the device certificates that are registered using this CA will be registered in the same mode as the CA. For more information about certificate mode for device certificates, see <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_CertificateDescription.html#iot-Type-CertificateDescription-certificateMode">certificate mode</a>.</p>
       description: Describes a CA certificate.
-    AwsAccountId:
+    CertificateArn:
       type: string
-      pattern: '[0-9]+'
-      minLength: 12
-      maxLength: 12
-    CertificateValidity:
+    RegistrationCodeValidationException: {}
+    DeleteCACertificateResponse:
       type: object
-      properties:
-        notBefore:
-          allOf:
-          - $ref: '#/components/schemas/DateType'
-          - description: The certificate is not valid before this date.
-        notAfter:
-          allOf:
-          - $ref: '#/components/schemas/DateType'
-          - description: The certificate is not valid after this date.
-      description: When the certificate is valid.
+      properties: {}
+      description: The output for the DeleteCACertificate operation.
+  parameters:
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
   securitySchemes:
     hmac:
       type: apiKey

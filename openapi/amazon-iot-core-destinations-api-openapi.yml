@@ -444,87 +444,6 @@ paths:
       - Destinations
 components:
   schemas:
-    SecurityGroupList:
-      type: array
-      items:
-        $ref: '#/components/schemas/SecurityGroupId'
-    Url:
-      type: string
-      maxLength: 2000
-    HttpUrlDestinationProperties:
-      type: object
-      properties:
-        confirmationUrl:
-          allOf:
-          - $ref: '#/components/schemas/Url'
-          - description: The URL used to confirm the HTTP topic rule destination URL.
-      description: HTTP URL destination properties.
-    HttpUrlDestinationSummary:
-      type: object
-      properties:
-        confirmationUrl:
-          allOf:
-          - $ref: '#/components/schemas/Url'
-          - description: The URL used to confirm ownership of or access to the HTTP topic rule destination URL.
-      description: Information about an HTTP URL destination.
-    ListTopicRuleDestinationsResponse:
-      type: object
-      properties:
-        destinationSummaries:
-          allOf:
-          - $ref: '#/components/schemas/TopicRuleDestinationSummaries'
-          - description: Information about a topic rule destination.
-        nextToken:
-          allOf:
-          - $ref: '#/components/schemas/NextToken'
-          - description: The token to use to get the next set of results, or <b>null</b> if there are no additional results.
-    CreateTopicRuleDestinationResponse:
-      type: object
-      properties:
-        topicRuleDestination:
-          allOf:
-          - $ref: '#/components/schemas/TopicRuleDestination'
-          - description: The topic rule destination.
-    ServiceUnavailableException: {}
-    DeleteTopicRuleDestinationResponse:
-      type: object
-      properties: {}
-    ResourceAlreadyExistsException: {}
-    UnauthorizedException: {}
-    String:
-      type: string
-    ConflictingResourceUpdateException: {}
-    VpcDestinationConfiguration:
-      type: object
-      required:
-      - subnetIds
-      - vpcId
-      - roleArn
-      properties:
-        subnetIds:
-          allOf:
-          - $ref: '#/components/schemas/SubnetIdList'
-          - description: The subnet IDs of the VPC destination.
-        securityGroups:
-          allOf:
-          - $ref: '#/components/schemas/SecurityGroupList'
-          - description: The security groups of the VPC destination.
-        vpcId:
-          allOf:
-          - $ref: '#/components/schemas/VpcId'
-          - description: The ID of the VPC.
-        roleArn:
-          allOf:
-          - $ref: '#/components/schemas/AwsArn'
-          - description: The ARN of a role that has permission to create and attach to elastic network interfaces (ENIs).
-      description: The configuration information for a virtual private cloud (VPC) destination.
-    CreatedAtDate:
-      type: string
-      format: date-time
-    NextToken:
-      type: string
-    SecurityGroupId:
-      type: string
     TopicRuleDestinationSummary:
       type: object
       properties:
@@ -557,16 +476,6 @@ components:
           - $ref: '#/components/schemas/VpcDestinationSummary'
           - description: Information about the virtual private cloud (VPC) connection.
       description: Information about the topic rule destination.
-    GetTopicRuleDestinationResponse:
-      type: object
-      properties:
-        topicRuleDestination:
-          allOf:
-          - $ref: '#/components/schemas/TopicRuleDestination'
-          - description: The topic rule destination.
-    InvalidRequestException: {}
-    VpcId:
-      type: string
     VpcDestinationSummary:
       type: object
       properties:
@@ -587,6 +496,104 @@ components:
           - $ref: '#/components/schemas/AwsArn'
           - description: The ARN of a role that has permission to create and attach to elastic network interfaces (ENIs).
       description: The summary of a virtual private cloud (VPC) destination.
+    TopicRuleDestinationSummaries:
+      type: array
+      items:
+        $ref: '#/components/schemas/TopicRuleDestinationSummary'
+    VpcId:
+      type: string
+    LastUpdatedAtDate:
+      type: string
+      format: date-time
+    InternalException: {}
+    HttpUrlDestinationConfiguration:
+      type: object
+      required:
+      - confirmationUrl
+      properties:
+        confirmationUrl:
+          allOf:
+          - $ref: '#/components/schemas/Url'
+          - description: The URL IoT uses to confirm ownership of or access to the topic rule destination URL.
+      description: HTTP URL destination configuration used by the topic rule's HTTP action.
+    HttpUrlDestinationSummary:
+      type: object
+      properties:
+        confirmationUrl:
+          allOf:
+          - $ref: '#/components/schemas/Url'
+          - description: The URL used to confirm ownership of or access to the HTTP topic rule destination URL.
+      description: Information about an HTTP URL destination.
+    ResourceAlreadyExistsException: {}
+    SubnetId:
+      type: string
+    String:
+      type: string
+    CreateTopicRuleDestinationResponse:
+      type: object
+      properties:
+        topicRuleDestination:
+          allOf:
+          - $ref: '#/components/schemas/TopicRuleDestination'
+          - description: The topic rule destination.
+    UnauthorizedException: {}
+    VpcDestinationConfiguration:
+      type: object
+      required:
+      - subnetIds
+      - vpcId
+      - roleArn
+      properties:
+        subnetIds:
+          allOf:
+          - $ref: '#/components/schemas/SubnetIdList'
+          - description: The subnet IDs of the VPC destination.
+        securityGroups:
+          allOf:
+          - $ref: '#/components/schemas/SecurityGroupList'
+          - description: The security groups of the VPC destination.
+        vpcId:
+          allOf:
+          - $ref: '#/components/schemas/VpcId'
+          - description: The ID of the VPC.
+        roleArn:
+          allOf:
+          - $ref: '#/components/schemas/AwsArn'
+          - description: The ARN of a role that has permission to create and attach to elastic network interfaces (ENIs).
+      description: The configuration information for a virtual private cloud (VPC) destination.
+    TopicRuleDestinationStatus:
+      type: string
+      enum:
+      - ENABLED
+      - IN_PROGRESS
+      - DISABLED
+      - ERROR
+      - DELETING
+    UpdateTopicRuleDestinationResponse:
+      type: object
+      properties: {}
+    NextToken:
+      type: string
+    DeleteTopicRuleDestinationResponse:
+      type: object
+      properties: {}
+    AwsArn:
+      type: string
+    CreatedAtDate:
+      type: string
+      format: date-time
+    ConflictingResourceUpdateException: {}
+    ListTopicRuleDestinationsResponse:
+      type: object
+      properties:
+        destinationSummaries:
+          allOf:
+          - $ref: '#/components/schemas/TopicRuleDestinationSummaries'
+          - description: Information about a topic rule destination.
+        nextToken:
+          allOf:
+          - $ref: '#/components/schemas/NextToken'
+          - description: The token to use to get the next set of results, or <b>null</b> if there are no additional results.
     VpcDestinationProperties:
       type: object
       properties:
@@ -607,10 +614,13 @@ components:
           - $ref: '#/components/schemas/AwsArn'
           - description: The ARN of a role that has permission to create and attach to elastic network interfaces (ENIs).
       description: The properties of a virtual private cloud (VPC) destination.
-    TopicRuleDestinationSummaries:
-      type: array
-      items:
-        $ref: '#/components/schemas/TopicRuleDestinationSummary'
+    GetTopicRuleDestinationResponse:
+      type: object
+      properties:
+        topicRuleDestination:
+          allOf:
+          - $ref: '#/components/schemas/TopicRuleDestination'
+          - description: The topic rule destination.
     TopicRuleDestination:
       type: object
       properties:
@@ -643,48 +653,32 @@ components:
           - $ref: '#/components/schemas/VpcDestinationProperties'
           - description: Properties of the virtual private cloud (VPC) connection.
       description: A topic rule destination.
-    SubnetId:
-      type: string
-    AwsArn:
-      type: string
-    UpdateTopicRuleDestinationResponse:
+    HttpUrlDestinationProperties:
       type: object
-      properties: {}
-    InternalException: {}
-    SubnetIdList:
-      type: array
-      items:
-        $ref: '#/components/schemas/SubnetId'
-    LastUpdatedAtDate:
-      type: string
-      format: date-time
-    TopicRuleDestinationStatus:
-      type: string
-      enum:
-      - ENABLED
-      - IN_PROGRESS
-      - DISABLED
-      - ERROR
-      - DELETING
-    HttpUrlDestinationConfiguration:
-      type: object
-      required:
-      - confirmationUrl
       properties:
         confirmationUrl:
           allOf:
           - $ref: '#/components/schemas/Url'
-          - description: The URL IoT uses to confirm ownership of or access to the topic rule destination URL.
-      description: HTTP URL destination configuration used by the topic rule's HTTP action.
+          - description: The URL used to confirm the HTTP topic rule destination URL.
+      description: HTTP URL destination properties.
+    ServiceUnavailableException: {}
+    Url:
+      type: string
+      maxLength: 2000
+    InvalidRequestException: {}
+    SecurityGroupId:
+      type: string
+    SubnetIdList:
+      type: array
+      items:
+        $ref: '#/components/schemas/SubnetId'
+    SecurityGroupList:
+      type: array
+      items:
+        $ref: '#/components/schemas/SecurityGroupId'
   parameters:
     X-Amz-Content-Sha256:
       name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
       in: header
       schema:
         type: string
@@ -695,8 +689,20 @@ components:
       schema:
         type: string
       required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
     X-Amz-SignedHeaders:
       name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
       in: header
       schema:
         type: string
@@ -709,12 +715,6 @@ components:
       required: false
     X-Amz-Date:
       name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
       in: header
       schema:
         type: string

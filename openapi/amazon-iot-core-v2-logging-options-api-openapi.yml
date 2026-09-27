@@ -2,7 +2,7 @@ openapi: 3.2.0
 info:
   version: 2015-05-28
   x-release: v4
-  title: AWS IoT V2 Logging Options API
+  title: AWS IoT V2Logging Options API
   description: 'IoT
 
     IoT provides secure, bi-directional communication between Internet-connected devices (such as sensors, actuators, embedded devices, or smart appliances) and the Amazon Web Services cloud.'
@@ -222,21 +222,13 @@ paths:
       - V2 Logging Options
 components:
   schemas:
-    NotConfiguredException: {}
     DisableAllLogs:
       type: boolean
+    ServiceUnavailableException: {}
     AwsArn:
       type: string
-    InternalException: {}
-    ServiceUnavailableException: {}
-    LogLevel:
-      type: string
-      enum:
-      - DEBUG
-      - INFO
-      - ERROR
-      - WARN
-      - DISABLED
+    InvalidRequestException: {}
+    NotConfiguredException: {}
     GetV2LoggingOptionsResponse:
       type: object
       properties:
@@ -252,8 +244,28 @@ components:
           allOf:
           - $ref: '#/components/schemas/DisableAllLogs'
           - description: Disables all logs.
-    InvalidRequestException: {}
+    InternalException: {}
+    LogLevel:
+      type: string
+      enum:
+      - DEBUG
+      - INFO
+      - ERROR
+      - WARN
+      - DISABLED
   parameters:
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
     X-Amz-Algorithm:
       name: X-Amz-Algorithm
       in: header
@@ -280,18 +292,6 @@ components:
       required: false
     X-Amz-SignedHeaders:
       name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
       in: header
       schema:
         type: string

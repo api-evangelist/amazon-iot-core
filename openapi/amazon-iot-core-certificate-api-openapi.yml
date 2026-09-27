@@ -344,20 +344,26 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
     X-Amz-Credential:
       name: X-Amz-Credential
       in: header
       schema:
         type: string
       required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
     X-Amz-SignedHeaders:
       name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
       in: header
       schema:
         type: string
@@ -374,15 +380,20 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
   schemas:
-    ServiceUnavailableException: {}
-    InternalFailureException: {}
+    RegisterCertificateResponse:
+      type: object
+      properties:
+        certificateArn:
+          allOf:
+          - $ref: '#/components/schemas/CertificateArn'
+          - description: The certificate ARN.
+        certificateId:
+          allOf:
+          - $ref: '#/components/schemas/CertificateId'
+          - description: The certificate identifier.
+      description: The output from the RegisterCertificate operation.
+    CertificateConflictException: {}
     ResourceAlreadyExistsException: {}
     UnauthorizedException: {}
     ThrottlingException: {}
@@ -397,29 +408,18 @@ components:
           allOf:
           - $ref: '#/components/schemas/CertificateId'
           - description: The ID of the registered certificate. (The last part of the certificate ARN contains the certificate ID.
-    InvalidRequestException: {}
-    CertificateArn:
-      type: string
-    CertificateValidationException: {}
-    CertificateConflictException: {}
     CertificateStateException: {}
+    InternalFailureException: {}
+    CertificateValidationException: {}
+    ServiceUnavailableException: {}
     CertificateId:
       type: string
       pattern: (0x)?[a-fA-F0-9]+
       minLength: 64
       maxLength: 64
-    RegisterCertificateResponse:
-      type: object
-      properties:
-        certificateArn:
-          allOf:
-          - $ref: '#/components/schemas/CertificateArn'
-          - description: The certificate ARN.
-        certificateId:
-          allOf:
-          - $ref: '#/components/schemas/CertificateId'
-          - description: The certificate identifier.
-      description: The output from the RegisterCertificate operation.
+    InvalidRequestException: {}
+    CertificateArn:
+      type: string
   securitySchemes:
     hmac:
       type: apiKey

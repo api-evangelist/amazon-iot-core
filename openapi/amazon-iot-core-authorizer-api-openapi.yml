@@ -615,27 +615,102 @@ paths:
       - Authorizer
 components:
   schemas:
-    HttpHeaderValue:
+    AuthorizerName:
+      type: string
+      pattern: '[\w=,@-]+'
+      minLength: 1
+      maxLength: 128
+    LimitExceededException: {}
+    PolicyDocuments:
+      type: array
+      items:
+        $ref: '#/components/schemas/PolicyDocument'
+    IsAuthenticated:
+      type: boolean
+    Tag:
+      type: object
+      required:
+      - Key
+      properties:
+        Key:
+          allOf:
+          - $ref: '#/components/schemas/TagKey'
+          - description: The tag's key.
+        Value:
+          allOf:
+          - $ref: '#/components/schemas/TagValue'
+          - description: The tag's value.
+      description: A set of key/value pairs that are used to manage the resource.
+    PrincipalId:
+      type: string
+      pattern: '[a-zA-Z0-9]+'
+      minLength: 1
+      maxLength: 128
+    TagKey:
+      type: string
+      pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
+      minLength: 1
+      maxLength: 128
+    ResourceAlreadyExistsException: {}
+    AuthorizerArn:
+      type: string
+      maxLength: 2048
+    UnauthorizedException: {}
+    ServerName:
       type: string
       pattern: '[\s\S]*'
       minLength: 1
-      maxLength: 8192
-    AuthorizerStatus:
-      type: string
-      enum:
-      - ACTIVE
-      - INACTIVE
+      maxLength: 253
     PolicyDocument:
       type: string
       pattern: '[\s\S]*'
       minLength: 0
       maxLength: 404600
-    ServiceUnavailableException: {}
-    MqttClientId:
+    DeleteConflictException: {}
+    DeleteAuthorizerResponse:
+      type: object
+      properties: {}
+    MqttPassword:
+      type: string
+      minLength: 1
+      maxLength: 65535
+    BooleanKey:
+      type: boolean
+    ThrottlingException: {}
+    KeyValue:
+      type: string
+      pattern: '[\s\S]*'
+      maxLength: 5120
+    Seconds:
+      type: integer
+    MqttUsername:
       type: string
       pattern: '[\s\S]*'
       minLength: 1
       maxLength: 65535
+    UpdateAuthorizerResponse:
+      type: object
+      properties:
+        authorizerName:
+          allOf:
+          - $ref: '#/components/schemas/AuthorizerName'
+          - description: The authorizer name.
+        authorizerArn:
+          allOf:
+          - $ref: '#/components/schemas/AuthorizerArn'
+          - description: The authorizer ARN.
+    HttpQueryString:
+      type: string
+      pattern: '[\s\S]*'
+      minLength: 1
+      maxLength: 4096
+    InternalFailureException: {}
+    EnableCachingForHttp:
+      type: boolean
+    AuthorizerFunctionArn:
+      type: string
+      pattern: '[\s\S]*'
+      maxLength: 2048
     TestInvokeAuthorizerResponse:
       type: object
       properties:
@@ -659,31 +734,33 @@ components:
           allOf:
           - $ref: '#/components/schemas/Seconds'
           - description: The number of seconds after which the connection is terminated.
-    InternalFailureException: {}
-    ResourceNotFoundException: {}
-    AuthorizerName:
+    TokenKeyName:
       type: string
-      pattern: '[\w=,@-]+'
+      pattern: '[a-zA-Z0-9_-]+'
       minLength: 1
       maxLength: 128
-    UpdateAuthorizerResponse:
-      type: object
-      properties:
-        authorizerName:
-          allOf:
-          - $ref: '#/components/schemas/AuthorizerName'
-          - description: The authorizer name.
-        authorizerArn:
-          allOf:
-          - $ref: '#/components/schemas/AuthorizerArn'
-          - description: The authorizer ARN.
-    ResourceAlreadyExistsException: {}
-    UnauthorizedException: {}
-    DeleteConflictException: {}
+    ResourceNotFoundException: {}
     HttpHeaders:
       type: object
       additionalProperties:
         $ref: '#/components/schemas/HttpHeaderValue'
+    ServiceUnavailableException: {}
+    InvalidRequestException: {}
+    HttpHeaderValue:
+      type: string
+      pattern: '[\s\S]*'
+      minLength: 1
+      maxLength: 8192
+    TagValue:
+      type: string
+      minLength: 0
+      maxLength: 256
+    AuthorizerStatus:
+      type: string
+      enum:
+      - ACTIVE
+      - INACTIVE
+    InvalidResponseException: {}
     DescribeAuthorizerResponse:
       type: object
       properties:
@@ -691,42 +768,10 @@ components:
           allOf:
           - $ref: '#/components/schemas/AuthorizerDescription'
           - description: The authorizer description.
-    IsAuthenticated:
-      type: boolean
-    PolicyDocuments:
-      type: array
-      items:
-        $ref: '#/components/schemas/PolicyDocument'
-    ThrottlingException: {}
-    InvalidRequestException: {}
-    PrincipalId:
-      type: string
-      pattern: '[a-zA-Z0-9]+'
-      minLength: 1
-      maxLength: 128
-    Tag:
+    PublicKeyMap:
       type: object
-      required:
-      - Key
-      properties:
-        Key:
-          allOf:
-          - $ref: '#/components/schemas/TagKey'
-          - description: The tag's key.
-        Value:
-          allOf:
-          - $ref: '#/components/schemas/TagValue'
-          - description: The tag's value.
-      description: A set of key/value pairs that are used to manage the resource.
-    MqttUsername:
-      type: string
-      pattern: '[\s\S]*'
-      minLength: 1
-      maxLength: 65535
-    MqttPassword:
-      type: string
-      minLength: 1
-      maxLength: 65535
+      additionalProperties:
+        $ref: '#/components/schemas/KeyValue'
     CreateAuthorizerResponse:
       type: object
       properties:
@@ -738,11 +783,11 @@ components:
           allOf:
           - $ref: '#/components/schemas/AuthorizerArn'
           - description: The authorizer ARN.
-    ServerName:
+    MqttClientId:
       type: string
       pattern: '[\s\S]*'
       minLength: 1
-      maxLength: 253
+      maxLength: 65535
     AuthorizerDescription:
       type: object
       properties:
@@ -787,63 +832,12 @@ components:
           - $ref: '#/components/schemas/EnableCachingForHttp'
           - description: When <code>true</code>, the result from the authorizer’s Lambda function is cached for the time specified in <code>refreshAfterInSeconds</code>. The cached result is used while the device reuses the same HTTP connection.
       description: The authorizer description.
-    TagKey:
-      type: string
-      pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
-      minLength: 1
-      maxLength: 128
-    InvalidResponseException: {}
-    KeyValue:
-      type: string
-      pattern: '[\s\S]*'
-      maxLength: 5120
-    PublicKeyMap:
-      type: object
-      additionalProperties:
-        $ref: '#/components/schemas/KeyValue'
-    TokenKeyName:
-      type: string
-      pattern: '[a-zA-Z0-9_-]+'
-      minLength: 1
-      maxLength: 128
     DateType:
       type: string
       format: date-time
-    BooleanKey:
-      type: boolean
-    DeleteAuthorizerResponse:
-      type: object
-      properties: {}
-    HttpQueryString:
-      type: string
-      pattern: '[\s\S]*'
-      minLength: 1
-      maxLength: 4096
-    EnableCachingForHttp:
-      type: boolean
-    TagValue:
-      type: string
-      minLength: 0
-      maxLength: 256
-    LimitExceededException: {}
-    Seconds:
-      type: integer
-    AuthorizerFunctionArn:
-      type: string
-      pattern: '[\s\S]*'
-      maxLength: 2048
-    AuthorizerArn:
-      type: string
-      maxLength: 2048
   parameters:
     X-Amz-Content-Sha256:
       name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
       in: header
       schema:
         type: string
@@ -854,20 +848,26 @@ components:
       schema:
         type: string
       required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
     X-Amz-SignedHeaders:
       name: X-Amz-SignedHeaders
       in: header
       schema:
         type: string
       required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
       in: header
       schema:
         type: string
       required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
+    X-Amz-Signature:
+      name: X-Amz-Signature
       in: header
       schema:
         type: string

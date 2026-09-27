@@ -2,7 +2,7 @@ openapi: 3.2.0
 info:
   version: 2015-05-28
   x-release: v4
-  title: AWS IoT Metric Values#thingName&metricName&startTime&endTime…
+  title: AWS IoT Metric Values API
   description: 'IoT
 
     IoT provides secure, bi-directional communication between Internet-connected devices (such as sensors, actuators, embedded devices, or smart appliances) and the Amazon Web Services cloud.'
@@ -115,7 +115,7 @@ servers:
 security:
 - hmac: []
 tags:
-- name: Metric Values#thingName&metricName&startTime&endTime
+- name: Metric Values
 paths:
   /metric-values#thingName&metricName&startTime&endTime:
     parameters:
@@ -226,101 +226,12 @@ paths:
         delay: 0
         dispatcher: FALLBACK
       tags:
-      - Metric Values#thingName&metricName&startTime&endTime
+      - Metric Values
 components:
-  parameters:
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
   schemas:
-    StringList:
-      type: array
-      items:
-        $ref: '#/components/schemas/stringValue'
-    Number:
-      type: number
-      format: double
-    ListMetricValuesResponse:
-      type: object
-      properties:
-        metricDatumList:
-          allOf:
-          - $ref: '#/components/schemas/MetricDatumList'
-          - description: The data the thing reports for the metric during the specified time period.
-        nextToken:
-          allOf:
-          - $ref: '#/components/schemas/NextToken'
-          - description: A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.
-    ResourceNotFoundException: {}
-    InternalFailureException: {}
-    Ports:
-      type: array
-      items:
-        $ref: '#/components/schemas/Port'
-    NumberList:
-      type: array
-      items:
-        $ref: '#/components/schemas/Number'
-    NextToken:
+    Timestamp:
       type: string
-    MetricDatum:
-      type: object
-      properties:
-        timestamp:
-          allOf:
-          - $ref: '#/components/schemas/Timestamp'
-          - description: The time the metric value was reported.
-        value:
-          allOf:
-          - $ref: '#/components/schemas/MetricValue'
-          - description: The value reported for the metric.
-      description: A metric.
-    stringValue:
-      type: string
-    Cidr:
-      type: string
-      pattern: '[a-fA-F0-9:\.\/]+'
-      minLength: 2
-      maxLength: 43
+      format: date-time
     MetricValue:
       type: object
       properties:
@@ -349,26 +260,115 @@ components:
           - $ref: '#/components/schemas/StringList'
           - description: ' The string values of a metric. '
       description: The value to be compared with the <code>metric</code>.
-    InvalidRequestException: {}
-    ThrottlingException: {}
     MetricDatumList:
       type: array
       items:
         $ref: '#/components/schemas/MetricDatum'
-    Port:
-      type: integer
-      minimum: 0
-      maximum: 65535
-    Timestamp:
-      type: string
-      format: date-time
+    NumberList:
+      type: array
+      items:
+        $ref: '#/components/schemas/Number'
     UnsignedLong:
       type: integer
       minimum: 0
+    MetricDatum:
+      type: object
+      properties:
+        timestamp:
+          allOf:
+          - $ref: '#/components/schemas/Timestamp'
+          - description: The time the metric value was reported.
+        value:
+          allOf:
+          - $ref: '#/components/schemas/MetricValue'
+          - description: The value reported for the metric.
+      description: A metric.
     Cidrs:
       type: array
       items:
         $ref: '#/components/schemas/Cidr'
+    ThrottlingException: {}
+    NextToken:
+      type: string
+    StringList:
+      type: array
+      items:
+        $ref: '#/components/schemas/stringValue'
+    Cidr:
+      type: string
+      pattern: '[a-fA-F0-9:\.\/]+'
+      minLength: 2
+      maxLength: 43
+    InternalFailureException: {}
+    stringValue:
+      type: string
+    ResourceNotFoundException: {}
+    Ports:
+      type: array
+      items:
+        $ref: '#/components/schemas/Port'
+    Port:
+      type: integer
+      minimum: 0
+      maximum: 65535
+    InvalidRequestException: {}
+    Number:
+      type: number
+      format: double
+    ListMetricValuesResponse:
+      type: object
+      properties:
+        metricDatumList:
+          allOf:
+          - $ref: '#/components/schemas/MetricDatumList'
+          - description: The data the thing reports for the metric during the specified time period.
+        nextToken:
+          allOf:
+          - $ref: '#/components/schemas/NextToken'
+          - description: A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.
+  parameters:
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
   securitySchemes:
     hmac:
       type: apiKey

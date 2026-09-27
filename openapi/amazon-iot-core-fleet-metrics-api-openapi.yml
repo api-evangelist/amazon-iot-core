@@ -191,73 +191,13 @@ paths:
       tags:
       - Fleet Metrics
 components:
-  parameters:
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
   schemas:
-    FleetMetricArn:
-      type: string
-    ListFleetMetricsResponse:
-      type: object
-      properties:
-        fleetMetrics:
-          allOf:
-          - $ref: '#/components/schemas/FleetMetricNameAndArnList'
-          - description: The list of fleet metrics objects.
-        nextToken:
-          allOf:
-          - $ref: '#/components/schemas/NextToken'
-          - description: The token for the next set of results. Will not be returned if the operation has returned all results.
-    ThrottlingException: {}
-    ServiceUnavailableException: {}
     NextToken:
       type: string
-    FleetMetricName:
+    ServiceUnavailableException: {}
+    InvalidRequestException: {}
+    FleetMetricArn:
       type: string
-      pattern: '[a-zA-Z0-9_\-\.]+'
-      minLength: 1
-      maxLength: 128
-    InternalFailureException: {}
     FleetMetricNameAndArn:
       type: object
       properties:
@@ -270,12 +210,72 @@ components:
           - $ref: '#/components/schemas/FleetMetricArn'
           - description: The fleet metric ARN.
       description: The name and ARN of a fleet metric.
+    FleetMetricName:
+      type: string
+      pattern: '[a-zA-Z0-9_\-\.]+'
+      minLength: 1
+      maxLength: 128
+    UnauthorizedException: {}
+    InternalFailureException: {}
+    ThrottlingException: {}
+    ListFleetMetricsResponse:
+      type: object
+      properties:
+        fleetMetrics:
+          allOf:
+          - $ref: '#/components/schemas/FleetMetricNameAndArnList'
+          - description: The list of fleet metrics objects.
+        nextToken:
+          allOf:
+          - $ref: '#/components/schemas/NextToken'
+          - description: The token for the next set of results. Will not be returned if the operation has returned all results.
     FleetMetricNameAndArnList:
       type: array
       items:
         $ref: '#/components/schemas/FleetMetricNameAndArn'
-    UnauthorizedException: {}
-    InvalidRequestException: {}
+  parameters:
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
   securitySchemes:
     hmac:
       type: apiKey

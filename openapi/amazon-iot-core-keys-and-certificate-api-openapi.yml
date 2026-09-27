@@ -193,20 +193,26 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
     X-Amz-Credential:
       name: X-Amz-Credential
       in: header
       schema:
         type: string
       required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
     X-Amz-SignedHeaders:
       name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
       in: header
       schema:
         type: string
@@ -223,33 +229,7 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
   schemas:
-    ServiceUnavailableException: {}
-    InternalFailureException: {}
-    PrivateKey:
-      type: string
-      minLength: 1
-      format: password
-    CertificatePem:
-      type: string
-      pattern: '[\s\S]*'
-      description: The PEM of a certificate.
-      minLength: 1
-      maxLength: 65536
-    UnauthorizedException: {}
-    PublicKey:
-      type: string
-      minLength: 1
-    ThrottlingException: {}
-    InvalidRequestException: {}
-    CertificateArn:
-      type: string
     KeyPair:
       type: object
       properties:
@@ -262,6 +242,13 @@ components:
           - $ref: '#/components/schemas/PrivateKey'
           - description: The private key.
       description: Describes a key pair.
+    PrivateKey:
+      type: string
+      minLength: 1
+      format: password
+    UnauthorizedException: {}
+    ThrottlingException: {}
+    InternalFailureException: {}
     CreateKeysAndCertificateResponse:
       type: object
       properties:
@@ -282,11 +269,24 @@ components:
           - $ref: '#/components/schemas/KeyPair'
           - description: The generated key pair.
       description: The output of the CreateKeysAndCertificate operation.
+    ServiceUnavailableException: {}
     CertificateId:
       type: string
       pattern: (0x)?[a-fA-F0-9]+
       minLength: 64
       maxLength: 64
+    InvalidRequestException: {}
+    CertificatePem:
+      type: string
+      pattern: '[\s\S]*'
+      description: The PEM of a certificate.
+      minLength: 1
+      maxLength: 65536
+    CertificateArn:
+      type: string
+    PublicKey:
+      type: string
+      minLength: 1
   securitySchemes:
     hmac:
       type: apiKey
