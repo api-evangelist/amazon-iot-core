@@ -74,7 +74,7 @@
     "amazon-iot-core-shadows-api-openapi.yml"
   ],
   "archived": [
-    "deleted 12 superseded output(s) from the previous generation"
+    "deleted 5 superseded output(s) from the previous generation"
   ],
   "errors": [],
   "warnings": [],
@@ -391,8 +391,8 @@
     "tag 'Policies' spans 2 source specs (amazon-iot-core-openapi-original.yml, amazon-iot-core-openapi.yml): per-path servers applied",
     "tag 'Rules' spans 2 source specs (amazon-iot-core-openapi-original.yml, amazon-iot-core-openapi.yml): per-path servers applied",
     "tag 'Things' spans 2 source specs (amazon-iot-core-openapi-original.yml, amazon-iot-core-openapi.yml): per-path servers applied",
-    "superseded outputs removed: amazon-iot-core-domain-configurations-api-openapi.yml, amazon-iot-core-logging-options-api-openapi.yml, amazon-iot-core-metric-values-thingname-metricname-starttime-endtime-api-openapi.yml, amazon-iot-core-ota-updates-api-openapi.yml, amazon-iot-core-policy-principals-x-amzn-iot-policy-api-openapi.yml \u2026",
-    "apis.yml register: written (+9 apis, 67 total)"
+    "superseded outputs removed: amazon-iot-core-domain-configurations-api-openapi.yml, amazon-iot-core-logging-options-api-openapi.yml, amazon-iot-core-ota-updates-api-openapi.yml, amazon-iot-core-v2-logging-level-api-openapi.yml, amazon-iot-core-v2-logging-options-api-openapi.yml",
+    "apis.yml register: written (+5 apis, 67 total)"
   ],
   "skipped": [
     "amazon-iot-core-accept-certificate-transfer-api-openapi.yml: previously refined output, superseded by openapi/_original/",
@@ -431,14 +431,13 @@
     "amazon-iot-core-keys-and-certificate-api-openapi.yml: previously refined output, superseded by openapi/_original/",
     "amazon-iot-core-logging-options-api-openapi.yml: previously refined output, superseded by openapi/_original/",
     "amazon-iot-core-managed-job-templates-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "amazon-iot-core-metric-values-thingname-metricname-starttime-endtime-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "amazon-iot-core-metric-values-api-openapi.yml: previously refined output, superseded by openapi/_original/",
     "amazon-iot-core-mitigationactions-api-openapi.yml: previously refined output, superseded by openapi/_original/",
     "amazon-iot-core-ota-updates-api-openapi.yml: previously refined output, superseded by openapi/_original/",
     "amazon-iot-core-policies-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "amazon-iot-core-policy-principals-x-amzn-iot-policy-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "amazon-iot-core-policy-principals-api-openapi.yml: previously refined output, superseded by openapi/_original/",
     "amazon-iot-core-policy-targets-api-openapi.yml: previously refined output, superseded by openapi/_original/",
     "amazon-iot-core-principal-policies-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "amazon-iot-core-principal-policies-x-amzn-iot-principal-api-openapi.yml: previously refined output, superseded by openapi/_original/",
     "amazon-iot-core-principals-api-openapi.yml: previously refined output, superseded by openapi/_original/",
     "amazon-iot-core-provisioning-templates-api-openapi.yml: previously refined output, superseded by openapi/_original/",
     "amazon-iot-core-registrationcode-api-openapi.yml: previously refined output, superseded by openapi/_original/",
@@ -447,11 +446,10 @@
     "amazon-iot-core-rules-api-openapi.yml: previously refined output, superseded by openapi/_original/",
     "amazon-iot-core-security-profile-behaviors-api-openapi.yml: previously refined output, superseded by openapi/_original/",
     "amazon-iot-core-security-profiles-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "amazon-iot-core-security-profiles-for-target-securityprofiletargetarn-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "amazon-iot-core-security-profiles-for-target-api-openapi.yml: previously refined output, superseded by openapi/_original/",
     "amazon-iot-core-shadows-api-openapi.yml: previously refined output, superseded by openapi/_original/",
     "amazon-iot-core-streams-api-openapi.yml: previously refined output, superseded by openapi/_original/",
     "amazon-iot-core-tags-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "amazon-iot-core-tags-resourcearn-api-openapi.yml: previously refined output, superseded by openapi/_original/",
     "amazon-iot-core-target-policies-api-openapi.yml: previously refined output, superseded by openapi/_original/",
     "amazon-iot-core-test-authorization-api-openapi.yml: previously refined output, superseded by openapi/_original/",
     "amazon-iot-core-thing-groups-api-openapi.yml: previously refined output, superseded by openapi/_original/",
@@ -462,8 +460,7 @@
     "amazon-iot-core-untag-api-openapi.yml: previously refined output, superseded by openapi/_original/",
     "amazon-iot-core-v2-logging-level-api-openapi.yml: previously refined output, superseded by openapi/_original/",
     "amazon-iot-core-v2-logging-options-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "amazon-iot-core-v2logginglevel-targettype-targetname-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "amazon-iot-core-violation-events-starttime-endtime-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "amazon-iot-core-violation-events-api-openapi.yml: previously refined output, superseded by openapi/_original/",
     "amazon-iot-core-violations-api-openapi.yml: previously refined output, superseded by openapi/_original/"
   ]
 }

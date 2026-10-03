@@ -208,7 +208,53 @@ paths:
       tags:
       - Certificates By Ca
 components:
+  parameters:
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
   schemas:
+    InvalidRequestException: {}
+    CertificateArn:
+      type: string
     ListCertificatesByCAResponse:
       type: object
       properties:
@@ -221,11 +267,9 @@ components:
           - $ref: '#/components/schemas/Marker'
           - description: The marker for the next set of results, or null if there are no additional results.
       description: The output of the ListCertificatesByCA operation.
-    CertificateMode:
+    DateType:
       type: string
-      enum:
-      - DEFAULT
-      - SNI_ONLY
+      format: date-time
     UnauthorizedException: {}
     Certificate:
       type: object
@@ -255,6 +299,16 @@ components:
       type: array
       items:
         $ref: '#/components/schemas/Certificate'
+    ServiceUnavailableException: {}
+    Marker:
+      type: string
+      pattern: '[A-Za-z0-9+/]+={0,2}'
+      maxLength: 1024
+    CertificateId:
+      type: string
+      pattern: (0x)?[a-fA-F0-9]+
+      minLength: 64
+      maxLength: 64
     CertificateStatus:
       type: string
       enum:
@@ -264,67 +318,13 @@ components:
       - PENDING_TRANSFER
       - REGISTER_INACTIVE
       - PENDING_ACTIVATION
+    CertificateMode:
+      type: string
+      enum:
+      - DEFAULT
+      - SNI_ONLY
     ThrottlingException: {}
     InternalFailureException: {}
-    Marker:
-      type: string
-      pattern: '[A-Za-z0-9+/]+={0,2}'
-      maxLength: 1024
-    ServiceUnavailableException: {}
-    CertificateId:
-      type: string
-      pattern: (0x)?[a-fA-F0-9]+
-      minLength: 64
-      maxLength: 64
-    InvalidRequestException: {}
-    CertificateArn:
-      type: string
-    DateType:
-      type: string
-      format: date-time
-  parameters:
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
   securitySchemes:
     hmac:
       type: apiKey

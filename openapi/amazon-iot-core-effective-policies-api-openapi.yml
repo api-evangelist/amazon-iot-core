@@ -211,15 +211,51 @@ paths:
       tags:
       - Effective Policies
 components:
+  parameters:
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
   schemas:
     LimitExceededException: {}
-    GetEffectivePoliciesResponse:
-      type: object
-      properties:
-        effectivePolicies:
-          allOf:
-          - $ref: '#/components/schemas/EffectivePolicies'
-          - description: The effective policies.
     EffectivePolicy:
       type: object
       properties:
@@ -237,70 +273,34 @@ components:
           - description: The IAM policy document.
       description: The policy that has the effect on the authorization results.
     UnauthorizedException: {}
+    ServiceUnavailableException: {}
     PolicyDocument:
       type: string
       pattern: '[\s\S]*'
       minLength: 0
       maxLength: 404600
+    ResourceNotFoundException: {}
+    EffectivePolicies:
+      type: array
+      items:
+        $ref: '#/components/schemas/EffectivePolicy'
+    PolicyArn:
+      type: string
     ThrottlingException: {}
+    InternalFailureException: {}
     PolicyName:
       type: string
       pattern: '[\w+=,.@-]+'
       minLength: 1
       maxLength: 128
-    InternalFailureException: {}
-    ResourceNotFoundException: {}
-    PolicyArn:
-      type: string
-    EffectivePolicies:
-      type: array
-      items:
-        $ref: '#/components/schemas/EffectivePolicy'
-    ServiceUnavailableException: {}
+    GetEffectivePoliciesResponse:
+      type: object
+      properties:
+        effectivePolicies:
+          allOf:
+          - $ref: '#/components/schemas/EffectivePolicies'
+          - description: The effective policies.
     InvalidRequestException: {}
-  parameters:
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
   securitySchemes:
     hmac:
       type: apiKey

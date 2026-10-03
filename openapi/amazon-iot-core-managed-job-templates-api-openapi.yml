@@ -256,73 +256,13 @@ paths:
       - Managed Job Templates
 components:
   schemas:
-    DocumentParameters:
+    ManagedJobTemplatesSummaryList:
       type: array
       items:
-        $ref: '#/components/schemas/DocumentParameter'
+        $ref: '#/components/schemas/ManagedJobTemplateSummary'
     ManagedTemplateVersion:
       type: string
       pattern: ^[1-9]+.[0-9]+
-    JobDescription:
-      type: string
-      pattern: '[^\p{C}]+'
-      maxLength: 2028
-    JobDocument:
-      type: string
-      maxLength: 32768
-    ParameterKey:
-      type: string
-      pattern: '[a-zA-Z0-9_-]+'
-      minLength: 1
-      maxLength: 128
-    Environments:
-      type: array
-      items:
-        $ref: '#/components/schemas/Environment'
-    Environment:
-      type: string
-      pattern: '[^\p{C}]+'
-    Example:
-      type: string
-      pattern: '[^\p{C}]+'
-    ManagedJobTemplateSummary:
-      type: object
-      properties:
-        templateArn:
-          allOf:
-          - $ref: '#/components/schemas/JobTemplateArn'
-          - description: The Amazon Resource Name (ARN) for a managed template.
-        templateName:
-          allOf:
-          - $ref: '#/components/schemas/ManagedJobTemplateName'
-          - description: The unique Name for a managed template.
-        description:
-          allOf:
-          - $ref: '#/components/schemas/JobDescription'
-          - description: The description for a managed template.
-        environments:
-          allOf:
-          - $ref: '#/components/schemas/Environments'
-          - description: A list of environments that are supported with the managed job template.
-        templateVersion:
-          allOf:
-          - $ref: '#/components/schemas/ManagedTemplateVersion'
-          - description: The version for a managed template.
-      description: An object that contains information about the managed template.
-    ListManagedJobTemplatesResponse:
-      type: object
-      properties:
-        managedJobTemplates:
-          allOf:
-          - $ref: '#/components/schemas/ManagedJobTemplatesSummaryList'
-          - description: A list of managed job templates that are returned.
-        nextToken:
-          allOf:
-          - $ref: '#/components/schemas/NextToken'
-          - description: The token to retrieve the next set of results.
-    ThrottlingException: {}
-    NextToken:
-      type: string
     DocumentParameter:
       type: object
       properties:
@@ -347,14 +287,47 @@ components:
           - $ref: '#/components/schemas/Optional'
           - description: Specifies whether a pattern that needs to be replaced in a managed template job document schema is optional or required.
       description: <p>A map of key-value pairs containing the patterns that need to be replaced in a managed template job document schema. You can use the description of each key as a guidance to specify the inputs during runtime when creating a job.</p> <note> <p> <code>documentParameters</code> can only be used when creating jobs from Amazon Web Services managed templates. This parameter can't be used with custom job templates or to create jobs from them.</p> </note>
-    Regex:
-      type: string
-    ManagedJobTemplateName:
-      type: string
-      minLength: 1
-      maxLength: 64
-    InternalServerException: {}
-    ResourceNotFoundException: {}
+    DocumentParameters:
+      type: array
+      items:
+        $ref: '#/components/schemas/DocumentParameter'
+    Optional:
+      type: boolean
+    ListManagedJobTemplatesResponse:
+      type: object
+      properties:
+        managedJobTemplates:
+          allOf:
+          - $ref: '#/components/schemas/ManagedJobTemplatesSummaryList'
+          - description: A list of managed job templates that are returned.
+        nextToken:
+          allOf:
+          - $ref: '#/components/schemas/NextToken'
+          - description: The token to retrieve the next set of results.
+    ManagedJobTemplateSummary:
+      type: object
+      properties:
+        templateArn:
+          allOf:
+          - $ref: '#/components/schemas/JobTemplateArn'
+          - description: The Amazon Resource Name (ARN) for a managed template.
+        templateName:
+          allOf:
+          - $ref: '#/components/schemas/ManagedJobTemplateName'
+          - description: The unique Name for a managed template.
+        description:
+          allOf:
+          - $ref: '#/components/schemas/JobDescription'
+          - description: The description for a managed template.
+        environments:
+          allOf:
+          - $ref: '#/components/schemas/Environments'
+          - description: A list of environments that are supported with the managed job template.
+        templateVersion:
+          allOf:
+          - $ref: '#/components/schemas/ManagedTemplateVersion'
+          - description: The version for a managed template.
+      description: An object that contains information about the managed template.
     DescribeManagedJobTemplateResponse:
       type: object
       properties:
@@ -386,39 +359,48 @@ components:
           allOf:
           - $ref: '#/components/schemas/JobDocument'
           - description: The document schema for a managed job template.
-    InvalidRequestException: {}
+    Environment:
+      type: string
+      pattern: '[^\p{C}]+'
+    Example:
+      type: string
+      pattern: '[^\p{C}]+'
+    Regex:
+      type: string
     JobTemplateArn:
       type: string
       pattern: ^arn:[!-~]+$
       minLength: 1
       maxLength: 1600
-    ManagedJobTemplatesSummaryList:
+    InternalServerException: {}
+    NextToken:
+      type: string
+    JobDescription:
+      type: string
+      pattern: '[^\p{C}]+'
+      maxLength: 2028
+    Environments:
       type: array
       items:
-        $ref: '#/components/schemas/ManagedJobTemplateSummary'
-    Optional:
-      type: boolean
+        $ref: '#/components/schemas/Environment'
+    ManagedJobTemplateName:
+      type: string
+      minLength: 1
+      maxLength: 64
+    JobDocument:
+      type: string
+      maxLength: 32768
+    ResourceNotFoundException: {}
+    ThrottlingException: {}
+    ParameterKey:
+      type: string
+      pattern: '[a-zA-Z0-9_-]+'
+      minLength: 1
+      maxLength: 128
+    InvalidRequestException: {}
   parameters:
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
+    X-Amz-Date:
+      name: X-Amz-Date
       in: header
       schema:
         type: string
@@ -435,8 +417,26 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Date:
-      name: X-Amz-Date
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
       in: header
       schema:
         type: string

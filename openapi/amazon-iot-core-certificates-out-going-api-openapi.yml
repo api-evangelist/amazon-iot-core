@@ -200,26 +200,8 @@ paths:
       - Certificates Out Going
 components:
   parameters:
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
+    X-Amz-Date:
+      name: X-Amz-Date
       in: header
       schema:
         type: string
@@ -236,13 +218,40 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Date:
-      name: X-Amz-Date
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
       in: header
       schema:
         type: string
       required: false
   schemas:
+    OutgoingCertificates:
+      type: array
+      items:
+        $ref: '#/components/schemas/OutgoingCertificate'
+    CertificateArn:
+      type: string
+    DateType:
+      type: string
+      format: date-time
     OutgoingCertificate:
       type: object
       properties:
@@ -272,7 +281,20 @@ components:
           - description: The certificate creation date.
       description: A certificate that has been transferred but not yet accepted.
     UnauthorizedException: {}
-    ThrottlingException: {}
+    ServiceUnavailableException: {}
+    Marker:
+      type: string
+      pattern: '[A-Za-z0-9+/]+={0,2}'
+      maxLength: 1024
+    Message:
+      type: string
+      pattern: '[\s\S]*'
+      maxLength: 128
+    CertificateId:
+      type: string
+      pattern: (0x)?[a-fA-F0-9]+
+      minLength: 64
+      maxLength: 64
     ListOutgoingCertificatesResponse:
       type: object
       properties:
@@ -285,36 +307,14 @@ components:
           - $ref: '#/components/schemas/Marker'
           - description: The marker for the next set of results.
       description: The output from the ListOutgoingCertificates operation.
-    Message:
-      type: string
-      pattern: '[\s\S]*'
-      maxLength: 128
+    ThrottlingException: {}
     AwsAccountId:
       type: string
       pattern: '[0-9]+'
       minLength: 12
       maxLength: 12
     InternalFailureException: {}
-    Marker:
-      type: string
-      pattern: '[A-Za-z0-9+/]+={0,2}'
-      maxLength: 1024
-    ServiceUnavailableException: {}
-    CertificateId:
-      type: string
-      pattern: (0x)?[a-fA-F0-9]+
-      minLength: 64
-      maxLength: 64
     InvalidRequestException: {}
-    CertificateArn:
-      type: string
-    OutgoingCertificates:
-      type: array
-      items:
-        $ref: '#/components/schemas/OutgoingCertificate'
-    DateType:
-      type: string
-      format: date-time
   securitySchemes:
     hmac:
       type: apiKey

@@ -208,16 +208,55 @@ paths:
       tags:
       - Authorizers
 components:
+  parameters:
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
   schemas:
-    Authorizers:
-      type: array
-      items:
-        $ref: '#/components/schemas/AuthorizerSummary'
-    Marker:
+    AuthorizerName:
       type: string
-      pattern: '[A-Za-z0-9+/]+={0,2}'
-      maxLength: 1024
-    ServiceUnavailableException: {}
+      pattern: '[\w=,@-]+'
+      minLength: 1
+      maxLength: 128
     AuthorizerSummary:
       type: object
       properties:
@@ -230,17 +269,21 @@ components:
           - $ref: '#/components/schemas/AuthorizerArn'
           - description: The authorizer ARN.
       description: The authorizer summary.
+    ServiceUnavailableException: {}
+    ThrottlingException: {}
+    Authorizers:
+      type: array
+      items:
+        $ref: '#/components/schemas/AuthorizerSummary'
+    InternalFailureException: {}
+    Marker:
+      type: string
+      pattern: '[A-Za-z0-9+/]+={0,2}'
+      maxLength: 1024
     AuthorizerArn:
       type: string
       maxLength: 2048
-    AuthorizerName:
-      type: string
-      pattern: '[\w=,@-]+'
-      minLength: 1
-      maxLength: 128
     InvalidRequestException: {}
-    UnauthorizedException: {}
-    InternalFailureException: {}
     ListAuthorizersResponse:
       type: object
       properties:
@@ -252,50 +295,7 @@ components:
           allOf:
           - $ref: '#/components/schemas/Marker'
           - description: A marker used to get the next set of results.
-    ThrottlingException: {}
-  parameters:
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
+    UnauthorizedException: {}
   securitySchemes:
     hmac:
       type: apiKey

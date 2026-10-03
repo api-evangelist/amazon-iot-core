@@ -338,32 +338,8 @@ paths:
       - Certificate
 components:
   parameters:
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
+    X-Amz-Date:
+      name: X-Amz-Date
       in: header
       schema:
         type: string
@@ -374,13 +350,51 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Date:
-      name: X-Amz-Date
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
       in: header
       schema:
         type: string
       required: false
   schemas:
+    InvalidRequestException: {}
+    CertificateArn:
+      type: string
+    CertificateConflictException: {}
+    CertificateValidationException: {}
+    CertificateStateException: {}
+    UnauthorizedException: {}
+    ServiceUnavailableException: {}
+    CertificateId:
+      type: string
+      pattern: (0x)?[a-fA-F0-9]+
+      minLength: 64
+      maxLength: 64
+    ResourceAlreadyExistsException: {}
     RegisterCertificateResponse:
       type: object
       properties:
@@ -393,10 +407,6 @@ components:
           - $ref: '#/components/schemas/CertificateId'
           - description: The certificate identifier.
       description: The output from the RegisterCertificate operation.
-    CertificateConflictException: {}
-    ResourceAlreadyExistsException: {}
-    UnauthorizedException: {}
-    ThrottlingException: {}
     RegisterCertificateWithoutCAResponse:
       type: object
       properties:
@@ -408,18 +418,8 @@ components:
           allOf:
           - $ref: '#/components/schemas/CertificateId'
           - description: The ID of the registered certificate. (The last part of the certificate ARN contains the certificate ID.
-    CertificateStateException: {}
+    ThrottlingException: {}
     InternalFailureException: {}
-    CertificateValidationException: {}
-    ServiceUnavailableException: {}
-    CertificateId:
-      type: string
-      pattern: (0x)?[a-fA-F0-9]+
-      minLength: 64
-      maxLength: 64
-    InvalidRequestException: {}
-    CertificateArn:
-      type: string
   securitySchemes:
     hmac:
       type: apiKey

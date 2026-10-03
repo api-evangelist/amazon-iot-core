@@ -541,78 +541,12 @@ paths:
       - Streams
 components:
   schemas:
-    LimitExceededException: {}
-    S3Version:
+    StreamArn:
       type: string
-    DescribeStreamResponse:
-      type: object
-      properties:
-        streamInfo:
-          allOf:
-          - $ref: '#/components/schemas/StreamInfo'
-          - description: Information about the stream.
-    StreamSummary:
-      type: object
-      properties:
-        streamId:
-          allOf:
-          - $ref: '#/components/schemas/StreamId'
-          - description: The stream ID.
-        streamArn:
-          allOf:
-          - $ref: '#/components/schemas/StreamArn'
-          - description: The stream ARN.
-        streamVersion:
-          allOf:
-          - $ref: '#/components/schemas/StreamVersion'
-          - description: The stream version.
-        description:
-          allOf:
-          - $ref: '#/components/schemas/StreamDescription'
-          - description: A description of the stream.
-      description: A summary of a stream.
-    StreamFile:
-      type: object
-      properties:
-        fileId:
-          allOf:
-          - $ref: '#/components/schemas/FileId'
-          - description: The file ID.
-        s3Location:
-          allOf:
-          - $ref: '#/components/schemas/S3Location'
-          - description: The location of the file in S3.
-      description: Represents a file to stream.
-    RoleArn:
-      type: string
-      minLength: 20
-      maxLength: 2048
-    Tag:
-      type: object
-      required:
-      - Key
-      properties:
-        Key:
-          allOf:
-          - $ref: '#/components/schemas/TagKey'
-          - description: The tag's key.
-        Value:
-          allOf:
-          - $ref: '#/components/schemas/TagValue'
-          - description: The tag's value.
-      description: A set of key/value pairs that are used to manage the resource.
-    TagKey:
-      type: string
-      pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
-      minLength: 1
-      maxLength: 128
-    DeleteStreamResponse:
-      type: object
-      properties: {}
-    ResourceAlreadyExistsException: {}
-    S3Key:
-      type: string
-      minLength: 1
+    StreamsSummary:
+      type: array
+      items:
+        $ref: '#/components/schemas/StreamSummary'
     StreamInfo:
       type: object
       properties:
@@ -649,6 +583,10 @@ components:
           - $ref: '#/components/schemas/RoleArn'
           - description: An IAM role IoT assumes to access your S3 files.
       description: Information about a stream.
+    LimitExceededException: {}
+    S3Key:
+      type: string
+      minLength: 1
     UpdateStreamResponse:
       type: object
       properties:
@@ -668,7 +606,60 @@ components:
           allOf:
           - $ref: '#/components/schemas/StreamVersion'
           - description: The stream version.
+    StreamId:
+      type: string
+      pattern: '[a-zA-Z0-9_-]+'
+      minLength: 1
+      maxLength: 128
+    Tag:
+      type: object
+      required:
+      - Key
+      properties:
+        Key:
+          allOf:
+          - $ref: '#/components/schemas/TagKey'
+          - description: The tag's key.
+        Value:
+          allOf:
+          - $ref: '#/components/schemas/TagValue'
+          - description: The tag's value.
+      description: A set of key/value pairs that are used to manage the resource.
+    StreamFiles:
+      type: array
+      items:
+        $ref: '#/components/schemas/StreamFile'
+      minItems: 1
+      maxItems: 50
+    DateType:
+      type: string
+      format: date-time
+    RoleArn:
+      type: string
+      minLength: 20
+      maxLength: 2048
+    TagKey:
+      type: string
+      pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
+      minLength: 1
+      maxLength: 128
+    DescribeStreamResponse:
+      type: object
+      properties:
+        streamInfo:
+          allOf:
+          - $ref: '#/components/schemas/StreamInfo'
+          - description: Information about the stream.
     UnauthorizedException: {}
+    TagValue:
+      type: string
+      minLength: 0
+      maxLength: 256
+    S3Version:
+      type: string
+    ServiceUnavailableException: {}
+    NextToken:
+      type: string
     S3Location:
       type: object
       properties:
@@ -685,39 +676,19 @@ components:
           - $ref: '#/components/schemas/S3Version'
           - description: The S3 bucket version.
       description: The S3 location.
-    DeleteConflictException: {}
-    ThrottlingException: {}
-    NextToken:
-      type: string
-    StreamId:
-      type: string
-      pattern: '[a-zA-Z0-9_-]+'
-      minLength: 1
-      maxLength: 128
-    InternalFailureException: {}
-    StreamsSummary:
-      type: array
-      items:
-        $ref: '#/components/schemas/StreamSummary'
-    S3Bucket:
-      type: string
-      minLength: 1
+    DeleteStreamResponse:
+      type: object
+      properties: {}
+    StreamVersion:
+      type: integer
+      minimum: 0
+      maximum: 65535
+    ResourceNotFoundException: {}
     FileId:
       type: integer
       minimum: 0
       maximum: 255
-    ResourceNotFoundException: {}
-    ListStreamsResponse:
-      type: object
-      properties:
-        streams:
-          allOf:
-          - $ref: '#/components/schemas/StreamsSummary'
-          - description: A list of streams.
-        nextToken:
-          allOf:
-          - $ref: '#/components/schemas/NextToken'
-          - description: A token used to get the next set of results.
+    ResourceAlreadyExistsException: {}
     CreateStreamResponse:
       type: object
       properties:
@@ -737,52 +708,63 @@ components:
           allOf:
           - $ref: '#/components/schemas/StreamVersion'
           - description: The version of the stream.
+    StreamFile:
+      type: object
+      properties:
+        fileId:
+          allOf:
+          - $ref: '#/components/schemas/FileId'
+          - description: The file ID.
+        s3Location:
+          allOf:
+          - $ref: '#/components/schemas/S3Location'
+          - description: The location of the file in S3.
+      description: Represents a file to stream.
+    ThrottlingException: {}
+    InternalFailureException: {}
+    ListStreamsResponse:
+      type: object
+      properties:
+        streams:
+          allOf:
+          - $ref: '#/components/schemas/StreamsSummary'
+          - description: A list of streams.
+        nextToken:
+          allOf:
+          - $ref: '#/components/schemas/NextToken'
+          - description: A token used to get the next set of results.
     StreamDescription:
       type: string
       pattern: '[^\p{C}]+'
       maxLength: 2028
-    ServiceUnavailableException: {}
-    StreamVersion:
-      type: integer
-      minimum: 0
-      maximum: 65535
+    DeleteConflictException: {}
+    S3Bucket:
+      type: string
+      minLength: 1
+    StreamSummary:
+      type: object
+      properties:
+        streamId:
+          allOf:
+          - $ref: '#/components/schemas/StreamId'
+          - description: The stream ID.
+        streamArn:
+          allOf:
+          - $ref: '#/components/schemas/StreamArn'
+          - description: The stream ARN.
+        streamVersion:
+          allOf:
+          - $ref: '#/components/schemas/StreamVersion'
+          - description: The stream version.
+        description:
+          allOf:
+          - $ref: '#/components/schemas/StreamDescription'
+          - description: A description of the stream.
+      description: A summary of a stream.
     InvalidRequestException: {}
-    TagValue:
-      type: string
-      minLength: 0
-      maxLength: 256
-    StreamFiles:
-      type: array
-      items:
-        $ref: '#/components/schemas/StreamFile'
-      minItems: 1
-      maxItems: 50
-    StreamArn:
-      type: string
-    DateType:
-      type: string
-      format: date-time
   parameters:
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
+    X-Amz-Date:
+      name: X-Amz-Date
       in: header
       schema:
         type: string
@@ -799,8 +781,26 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Date:
-      name: X-Amz-Date
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
       in: header
       schema:
         type: string

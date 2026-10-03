@@ -227,33 +227,9 @@ paths:
       tags:
       - Registrationcode
 components:
-  schemas:
-    RegistrationCode:
-      type: string
-      pattern: (0x)?[a-fA-F0-9]+
-      minLength: 64
-      maxLength: 64
-    ServiceUnavailableException: {}
-    InvalidRequestException: {}
-    UnauthorizedException: {}
-    InternalFailureException: {}
-    GetRegistrationCodeResponse:
-      type: object
-      properties:
-        registrationCode:
-          allOf:
-          - $ref: '#/components/schemas/RegistrationCode'
-          - description: The CA certificate registration code.
-      description: The output from the GetRegistrationCode operation.
-    DeleteRegistrationCodeResponse:
-      type: object
-      properties: {}
-      description: The output for the DeleteRegistrationCode operation.
-    ResourceNotFoundException: {}
-    ThrottlingException: {}
   parameters:
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
       in: header
       schema:
         type: string
@@ -264,14 +240,8 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
+    X-Amz-Date:
+      name: X-Amz-Date
       in: header
       schema:
         type: string
@@ -282,18 +252,48 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Date:
-      name: X-Amz-Date
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
       in: header
       schema:
         type: string
       required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
       in: header
       schema:
         type: string
       required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+  schemas:
+    RegistrationCode:
+      type: string
+      pattern: (0x)?[a-fA-F0-9]+
+      minLength: 64
+      maxLength: 64
+    ServiceUnavailableException: {}
+    ThrottlingException: {}
+    InternalFailureException: {}
+    GetRegistrationCodeResponse:
+      type: object
+      properties:
+        registrationCode:
+          allOf:
+          - $ref: '#/components/schemas/RegistrationCode'
+          - description: The CA certificate registration code.
+      description: The output from the GetRegistrationCode operation.
+    InvalidRequestException: {}
+    ResourceNotFoundException: {}
+    UnauthorizedException: {}
+    DeleteRegistrationCodeResponse:
+      type: object
+      properties: {}
+      description: The output for the DeleteRegistrationCode operation.
   securitySchemes:
     hmac:
       type: apiKey

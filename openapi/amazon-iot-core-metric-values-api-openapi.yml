@@ -229,9 +229,53 @@ paths:
       - Metric Values
 components:
   schemas:
-    Timestamp:
+    Cidrs:
+      type: array
+      items:
+        $ref: '#/components/schemas/Cidr'
+    NumberList:
+      type: array
+      items:
+        $ref: '#/components/schemas/Number'
+    Number:
+      type: number
+      format: double
+    Port:
+      type: integer
+      minimum: 0
+      maximum: 65535
+    MetricDatumList:
+      type: array
+      items:
+        $ref: '#/components/schemas/MetricDatum'
+    UnsignedLong:
+      type: integer
+      minimum: 0
+    ListMetricValuesResponse:
+      type: object
+      properties:
+        metricDatumList:
+          allOf:
+          - $ref: '#/components/schemas/MetricDatumList'
+          - description: The data the thing reports for the metric during the specified time period.
+        nextToken:
+          allOf:
+          - $ref: '#/components/schemas/NextToken'
+          - description: A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.
+    NextToken:
       type: string
-      format: date-time
+    MetricDatum:
+      type: object
+      properties:
+        timestamp:
+          allOf:
+          - $ref: '#/components/schemas/Timestamp'
+          - description: The time the metric value was reported.
+        value:
+          allOf:
+          - $ref: '#/components/schemas/MetricValue'
+          - description: The value reported for the metric.
+      description: A metric.
     MetricValue:
       type: object
       properties:
@@ -260,93 +304,31 @@ components:
           - $ref: '#/components/schemas/StringList'
           - description: ' The string values of a metric. '
       description: The value to be compared with the <code>metric</code>.
-    MetricDatumList:
-      type: array
-      items:
-        $ref: '#/components/schemas/MetricDatum'
-    NumberList:
-      type: array
-      items:
-        $ref: '#/components/schemas/Number'
-    UnsignedLong:
-      type: integer
-      minimum: 0
-    MetricDatum:
-      type: object
-      properties:
-        timestamp:
-          allOf:
-          - $ref: '#/components/schemas/Timestamp'
-          - description: The time the metric value was reported.
-        value:
-          allOf:
-          - $ref: '#/components/schemas/MetricValue'
-          - description: The value reported for the metric.
-      description: A metric.
-    Cidrs:
-      type: array
-      items:
-        $ref: '#/components/schemas/Cidr'
-    ThrottlingException: {}
-    NextToken:
+    Timestamp:
       type: string
+      format: date-time
+    Ports:
+      type: array
+      items:
+        $ref: '#/components/schemas/Port'
     StringList:
       type: array
       items:
         $ref: '#/components/schemas/stringValue'
+    ResourceNotFoundException: {}
+    stringValue:
+      type: string
+    ThrottlingException: {}
+    InternalFailureException: {}
     Cidr:
       type: string
       pattern: '[a-fA-F0-9:\.\/]+'
       minLength: 2
       maxLength: 43
-    InternalFailureException: {}
-    stringValue:
-      type: string
-    ResourceNotFoundException: {}
-    Ports:
-      type: array
-      items:
-        $ref: '#/components/schemas/Port'
-    Port:
-      type: integer
-      minimum: 0
-      maximum: 65535
     InvalidRequestException: {}
-    Number:
-      type: number
-      format: double
-    ListMetricValuesResponse:
-      type: object
-      properties:
-        metricDatumList:
-          allOf:
-          - $ref: '#/components/schemas/MetricDatumList'
-          - description: The data the thing reports for the metric during the specified time period.
-        nextToken:
-          allOf:
-          - $ref: '#/components/schemas/NextToken'
-          - description: A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.
   parameters:
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
+    X-Amz-Date:
+      name: X-Amz-Date
       in: header
       schema:
         type: string
@@ -363,8 +345,26 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Date:
-      name: X-Amz-Date
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
       in: header
       schema:
         type: string

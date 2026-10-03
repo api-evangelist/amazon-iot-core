@@ -179,42 +179,15 @@ paths:
       tags:
       - Endpoint
 components:
-  schemas:
-    EndpointAddress:
-      type: string
-    InvalidRequestException: {}
-    UnauthorizedException: {}
-    DescribeEndpointResponse:
-      type: object
-      properties:
-        endpointAddress:
-          allOf:
-          - $ref: '#/components/schemas/EndpointAddress'
-          - description: 'The endpoint. The format of the endpoint is as follows: <i>identifier</i>.iot.<i>region</i>.amazonaws.com.'
-      description: The output from the DescribeEndpoint operation.
-    InternalFailureException: {}
-    ThrottlingException: {}
   parameters:
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
       in: header
       schema:
         type: string
       required: false
     X-Amz-Signature:
       name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
       in: header
       schema:
         type: string
@@ -231,12 +204,39 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
       in: header
       schema:
         type: string
       required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+  schemas:
+    DescribeEndpointResponse:
+      type: object
+      properties:
+        endpointAddress:
+          allOf:
+          - $ref: '#/components/schemas/EndpointAddress'
+          - description: 'The endpoint. The format of the endpoint is as follows: <i>identifier</i>.iot.<i>region</i>.amazonaws.com.'
+      description: The output from the DescribeEndpoint operation.
+    ThrottlingException: {}
+    InternalFailureException: {}
+    UnauthorizedException: {}
+    EndpointAddress:
+      type: string
+    InvalidRequestException: {}
   securitySchemes:
     hmac:
       type: apiKey

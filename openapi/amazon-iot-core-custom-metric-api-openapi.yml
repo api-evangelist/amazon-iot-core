@@ -391,6 +391,14 @@ paths:
       - Custom Metric
 components:
   schemas:
+    MetricName:
+      type: string
+      pattern: '[a-zA-Z0-9:_-]+'
+      minLength: 1
+      maxLength: 128
+    CustomMetricArn:
+      type: string
+    LimitExceededException: {}
     DescribeCustomMetricResponse:
       type: object
       properties:
@@ -418,16 +426,16 @@ components:
           allOf:
           - $ref: '#/components/schemas/Timestamp'
           - description: ' The time the custom metric was last modified in milliseconds since epoch. '
-    Timestamp:
+    DeleteCustomMetricResponse:
+      type: object
+      properties: {}
+    CustomMetricType:
       type: string
-      format: date-time
-    CustomMetricDisplayName:
-      type: string
-      pattern: '[\p{Graph}\x20]*'
-      maxLength: 128
-    LimitExceededException: {}
-    CustomMetricArn:
-      type: string
+      enum:
+      - string-list
+      - ip-address-list
+      - number-list
+      - number
     Tag:
       type: object
       required:
@@ -447,10 +455,21 @@ components:
       pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
       minLength: 1
       maxLength: 128
+    TagValue:
+      type: string
+      minLength: 0
+      maxLength: 256
+    CustomMetricDisplayName:
+      type: string
+      pattern: '[\p{Graph}\x20]*'
+      maxLength: 128
+    Timestamp:
+      type: string
+      format: date-time
+    ResourceNotFoundException: {}
     ResourceAlreadyExistsException: {}
-    DeleteCustomMetricResponse:
-      type: object
-      properties: {}
+    ThrottlingException: {}
+    InternalFailureException: {}
     CreateCustomMetricResponse:
       type: object
       properties:
@@ -462,20 +481,6 @@ components:
           allOf:
           - $ref: '#/components/schemas/CustomMetricArn'
           - description: ' The Amazon Resource Number (ARN) of the custom metric. For example, <code>arn:<i>aws-partition</i>:iot:<i>region</i>:<i>accountId</i>:custommetric/<i>metricName</i> </code> '
-    ThrottlingException: {}
-    CustomMetricType:
-      type: string
-      enum:
-      - string-list
-      - ip-address-list
-      - number-list
-      - number
-    MetricName:
-      type: string
-      pattern: '[a-zA-Z0-9:_-]+'
-      minLength: 1
-      maxLength: 128
-    InternalFailureException: {}
     UpdateCustomMetricResponse:
       type: object
       properties:
@@ -503,33 +508,10 @@ components:
           allOf:
           - $ref: '#/components/schemas/Timestamp'
           - description: ' The time the custom metric was last modified in milliseconds since epoch. '
-    ResourceNotFoundException: {}
     InvalidRequestException: {}
-    TagValue:
-      type: string
-      minLength: 0
-      maxLength: 256
   parameters:
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
+    X-Amz-Date:
+      name: X-Amz-Date
       in: header
       schema:
         type: string
@@ -546,8 +528,26 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Date:
-      name: X-Amz-Date
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
       in: header
       schema:
         type: string
