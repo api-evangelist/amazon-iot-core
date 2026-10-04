@@ -222,30 +222,6 @@ paths:
       - V2 Logging Options
 components:
   parameters:
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
     X-Amz-Algorithm:
       name: X-Amz-Algorithm
       in: header
@@ -258,18 +234,42 @@ components:
       schema:
         type: string
       required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
     X-Amz-Content-Sha256:
       name: X-Amz-Content-Sha256
       in: header
       schema:
         type: string
       required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
   schemas:
+    DisableAllLogs:
+      type: boolean
     NotConfiguredException: {}
-    InternalException: {}
     AwsArn:
       type: string
-    ServiceUnavailableException: {}
     LogLevel:
       type: string
       enum:
@@ -278,9 +278,7 @@ components:
       - ERROR
       - WARN
       - DISABLED
-    DisableAllLogs:
-      type: boolean
-    InvalidRequestException: {}
+    InternalException: {}
     GetV2LoggingOptionsResponse:
       type: object
       properties:
@@ -296,6 +294,8 @@ components:
           allOf:
           - $ref: '#/components/schemas/DisableAllLogs'
           - description: Disables all logs.
+    InvalidRequestException: {}
+    ServiceUnavailableException: {}
   securitySchemes:
     hmac:
       type: apiKey

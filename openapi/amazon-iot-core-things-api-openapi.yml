@@ -2096,39 +2096,46 @@ paths:
       description: The AWS IoT endpoint for China (Beijing) and China (Ningxia)
 components:
   schemas:
-    Forced:
-      type: boolean
-    DetachThingPrincipalResponse:
+    ConflictingResourceUpdateException: {}
+    InvalidStateTransitionException: {}
+    ListJobExecutionsForThingResponse:
       type: object
-      properties: {}
-      description: The output from the DetachThingPrincipal operation.
-    ApproximateSecondsBeforeTimedOut:
-      type: integer
+      properties:
+        executionSummaries:
+          allOf:
+          - $ref: '#/components/schemas/JobExecutionSummaryForThingList'
+          - description: A list of job execution summaries.
+        nextToken:
+          allOf:
+          - $ref: '#/components/schemas/NextToken'
+          - description: The token for the next set of results, or <b>null</b> if there are no additional results.
+    PrincipalArn:
+      type: string
     ThingGroupNameAndArnList:
       type: array
       items:
         $ref: '#/components/schemas/GroupNameAndArn'
-    Attributes:
-      type: object
-      additionalProperties:
-        $ref: '#/components/schemas/AttributeValue'
-    AttributeValue:
-      type: string
-      pattern: '[a-zA-Z0-9_.,@/:#-]*'
-      maxLength: 800
-    ResourceArns:
-      type: object
-      additionalProperties:
-        $ref: '#/components/schemas/ResourceArn'
     ResourceRegistrationFailureException: {}
-    Flag:
-      type: boolean
+    DetailsValue:
+      type: string
+      pattern: '[^\p{C}]+'
+      minLength: 1
     AttachThingPrincipalResponse:
       type: object
       properties: {}
       description: The output from the AttachThingPrincipal operation.
-    VersionNumber:
-      type: integer
+    ListThingsResponse:
+      type: object
+      properties:
+        things:
+          allOf:
+          - $ref: '#/components/schemas/ThingAttributeList'
+          - description: The things.
+        nextToken:
+          allOf:
+          - $ref: '#/components/schemas/NextToken'
+          - description: The token to use to get the next set of results. Will not be returned if operation has returned all results.
+      description: The output from the ListThings operation.
     DescribeJobExecutionResponse:
       type: object
       properties:
@@ -2136,42 +2143,17 @@ components:
           allOf:
           - $ref: '#/components/schemas/JobExecution'
           - description: Information about the job execution.
-    PrincipalArn:
+    Version:
+      type: integer
+    ThingGroupName:
       type: string
-    CreateThingResponse:
-      type: object
-      properties:
-        thingName:
-          allOf:
-          - $ref: '#/components/schemas/ThingName'
-          - description: The name of the new thing.
-        thingArn:
-          allOf:
-          - $ref: '#/components/schemas/ThingArn'
-          - description: The ARN of the new thing.
-        thingId:
-          allOf:
-          - $ref: '#/components/schemas/ThingId'
-          - description: The thing ID.
-      description: The output of the CreateThing operation.
+      pattern: '[a-zA-Z0-9:_-]+'
+      minLength: 1
+      maxLength: 128
+    InternalFailureException: {}
     DateType:
       type: string
       format: date-time
-    ResourceArn:
-      type: string
-    ThingArn:
-      type: string
-    Version:
-      type: integer
-    Value:
-      type: string
-      pattern: '[\s\S]*'
-      minLength: 0
-      maxLength: 4096
-    UpdateThingResponse:
-      type: object
-      properties: {}
-      description: The output from the UpdateThing operation.
     JobExecutionSummary:
       type: object
       properties:
@@ -2200,63 +2182,99 @@ components:
           - $ref: '#/components/schemas/RetryAttempt'
           - description: The number that indicates how many retry attempts have been completed for this job on this device.
       description: The job execution summary.
-    JobExecutionSummaryForThing:
+    CreateThingResponse:
       type: object
       properties:
-        jobId:
+        thingName:
           allOf:
-          - $ref: '#/components/schemas/JobId'
-          - description: The unique identifier you assigned to this job when it was created.
-        jobExecutionSummary:
+          - $ref: '#/components/schemas/ThingName'
+          - description: The name of the new thing.
+        thingArn:
           allOf:
-          - $ref: '#/components/schemas/JobExecutionSummary'
-          - description: Contains a subset of information about a job execution.
-      description: The job execution summary for a thing.
-    ThingName:
+          - $ref: '#/components/schemas/ThingArn'
+          - description: The ARN of the new thing.
+        thingId:
+          allOf:
+          - $ref: '#/components/schemas/ThingId'
+          - description: The thing ID.
+      description: The output of the CreateThing operation.
+    DetailsMap:
+      type: object
+      additionalProperties:
+        $ref: '#/components/schemas/DetailsValue'
+    ListThingGroupsForThingResponse:
+      type: object
+      properties:
+        thingGroups:
+          allOf:
+          - $ref: '#/components/schemas/ThingGroupNameAndArnList'
+          - description: The thing groups.
+        nextToken:
+          allOf:
+          - $ref: '#/components/schemas/NextToken'
+          - description: The token to use to get the next set of results, or <b>null</b> if there are no additional results.
+    Attributes:
+      type: object
+      additionalProperties:
+        $ref: '#/components/schemas/AttributeValue'
+    JobExecutionStatusDetails:
+      type: object
+      properties:
+        detailsMap:
+          allOf:
+          - $ref: '#/components/schemas/DetailsMap'
+          - description: The job execution status.
+      description: Details of the job execution status.
+    JobExecutionStatus:
+      type: string
+      enum:
+      - QUEUED
+      - IN_PROGRESS
+      - SUCCEEDED
+      - FAILED
+      - TIMED_OUT
+      - REJECTED
+      - REMOVED
+      - CANCELED
+    AttributeValue:
+      type: string
+      pattern: '[a-zA-Z0-9_.,@/:#-]*'
+      maxLength: 800
+    BillingGroupName:
       type: string
       pattern: '[a-zA-Z0-9:_-]+'
       minLength: 1
       maxLength: 128
-    DescribeThingResponse:
-      type: object
-      properties:
-        defaultClientId:
-          allOf:
-          - $ref: '#/components/schemas/ClientId'
-          - description: <p>The default MQTT client ID. For a typical device, the thing name is also used as the default MQTT client ID. Although we don’t require a mapping between a thing's registry name and its use of MQTT client IDs, certificates, or shadow state, we recommend that you choose a thing name and use it as the MQTT client ID for the registry and the Device Shadow service.</p> <p>This lets you better organize your IoT fleet without removing the flexibility of the underlying device certificate model or shadows.</p>
-        thingName:
-          allOf:
-          - $ref: '#/components/schemas/ThingName'
-          - description: The name of the thing.
-        thingId:
-          allOf:
-          - $ref: '#/components/schemas/ThingId'
-          - description: The ID of the thing to describe.
-        thingArn:
-          allOf:
-          - $ref: '#/components/schemas/ThingArn'
-          - description: The ARN of the thing to describe.
-        thingTypeName:
-          allOf:
-          - $ref: '#/components/schemas/ThingTypeName'
-          - description: The thing type name.
-        attributes:
-          allOf:
-          - $ref: '#/components/schemas/Attributes'
-          - description: The thing attributes.
-        version:
-          allOf:
-          - $ref: '#/components/schemas/Version'
-          - description: <p>The current version of the thing record in the registry.</p> <note> <p>To avoid unintentional changes to the information in the registry, you can pass the version information in the <code>expectedVersion</code> parameter of the <code>UpdateThing</code> and <code>DeleteThing</code> calls.</p> </note>
-        billingGroupName:
-          allOf:
-          - $ref: '#/components/schemas/BillingGroupName'
-          - description: The name of the billing group the thing belongs to.
-      description: The output from the DescribeThing operation.
-    UnauthorizedException: {}
-    ConflictingResourceUpdateException: {}
+    ResourceArn:
+      type: string
     RetryAttempt:
       type: integer
+    ListThingPrincipalsResponse:
+      type: object
+      properties:
+        principals:
+          allOf:
+          - $ref: '#/components/schemas/Principals'
+          - description: The principals associated with the thing.
+        nextToken:
+          allOf:
+          - $ref: '#/components/schemas/NextToken'
+          - description: The token to use to get the next set of results, or <b>null</b> if there are no additional results.
+      description: The output from the ListThingPrincipals operation.
+    ResourceAlreadyExistsException: {}
+    ServiceUnavailableException: {}
+    CertificatePem:
+      type: string
+      pattern: '[\s\S]*'
+      description: The PEM of a certificate.
+      minLength: 1
+      maxLength: 65536
+    ThingArn:
+      type: string
+    NextToken:
+      type: string
+    ThingId:
+      type: string
     JobExecution:
       type: object
       properties:
@@ -2305,19 +2323,53 @@ components:
           - $ref: '#/components/schemas/ApproximateSecondsBeforeTimedOut'
           - description: The estimated number of seconds that remain before the job execution status will be changed to <code>TIMED_OUT</code>. The timeout interval can be anywhere between 1 minute and 7 days (1 to 10080 minutes). The actual job execution timeout can occur up to 60 seconds later than the estimated duration. This value will not be included if the job execution has reached a terminal status.
       description: The job execution object represents the execution of a job on a particular device.
-    JobExecutionStatusDetails:
+    UpdateThingResponse:
+      type: object
+      properties: {}
+      description: The output from the UpdateThing operation.
+    JobExecutionSummaryForThingList:
+      type: array
+      items:
+        $ref: '#/components/schemas/JobExecutionSummaryForThing'
+    DescribeThingResponse:
       type: object
       properties:
-        detailsMap:
+        defaultClientId:
           allOf:
-          - $ref: '#/components/schemas/DetailsMap'
-          - description: The job execution status.
-      description: Details of the job execution status.
-    BillingGroupName:
-      type: string
-      pattern: '[a-zA-Z0-9:_-]+'
-      minLength: 1
-      maxLength: 128
+          - $ref: '#/components/schemas/ClientId'
+          - description: <p>The default MQTT client ID. For a typical device, the thing name is also used as the default MQTT client ID. Although we don’t require a mapping between a thing's registry name and its use of MQTT client IDs, certificates, or shadow state, we recommend that you choose a thing name and use it as the MQTT client ID for the registry and the Device Shadow service.</p> <p>This lets you better organize your IoT fleet without removing the flexibility of the underlying device certificate model or shadows.</p>
+        thingName:
+          allOf:
+          - $ref: '#/components/schemas/ThingName'
+          - description: The name of the thing.
+        thingId:
+          allOf:
+          - $ref: '#/components/schemas/ThingId'
+          - description: The ID of the thing to describe.
+        thingArn:
+          allOf:
+          - $ref: '#/components/schemas/ThingArn'
+          - description: The ARN of the thing to describe.
+        thingTypeName:
+          allOf:
+          - $ref: '#/components/schemas/ThingTypeName'
+          - description: The thing type name.
+        attributes:
+          allOf:
+          - $ref: '#/components/schemas/Attributes'
+          - description: The thing attributes.
+        version:
+          allOf:
+          - $ref: '#/components/schemas/Version'
+          - description: <p>The current version of the thing record in the registry.</p> <note> <p>To avoid unintentional changes to the information in the registry, you can pass the version information in the <code>expectedVersion</code> parameter of the <code>UpdateThing</code> and <code>DeleteThing</code> calls.</p> </note>
+        billingGroupName:
+          allOf:
+          - $ref: '#/components/schemas/BillingGroupName'
+          - description: The name of the billing group the thing belongs to.
+      description: The output from the DescribeThing operation.
+    UnauthorizedException: {}
+    Flag:
+      type: boolean
     ThingAttribute:
       type: object
       properties:
@@ -2342,101 +2394,46 @@ components:
           - $ref: '#/components/schemas/Version'
           - description: The version of the thing record in the registry.
       description: The properties of the thing, including thing name, thing type name, and a list of thing attributes.
-    ThingId:
-      type: string
-    ServiceUnavailableException: {}
-    NextToken:
-      type: string
+    ResourceNotFoundException: {}
     VersionConflictException: {}
-    DetailsMap:
-      type: object
-      additionalProperties:
-        $ref: '#/components/schemas/DetailsValue'
-    Principals:
-      type: array
-      items:
-        $ref: '#/components/schemas/PrincipalArn'
-    ClientId:
+    VersionNumber:
+      type: integer
+    ExecutionNumber:
+      type: integer
+    ThingTypeName:
       type: string
-    JobExecutionSummaryForThingList:
-      type: array
-      items:
-        $ref: '#/components/schemas/JobExecutionSummaryForThing'
-    InvalidStateTransitionException: {}
+      pattern: '[a-zA-Z0-9:_-]+'
+      minLength: 1
+      maxLength: 128
     DeleteThingResponse:
       type: object
       properties: {}
       description: The output of the DeleteThing operation.
-    DetailsValue:
+    ClientId:
       type: string
-      pattern: '[^\p{C}]+'
-      minLength: 1
-    ResourceNotFoundException: {}
-    ThingGroupArn:
+    Principals:
+      type: array
+      items:
+        $ref: '#/components/schemas/PrincipalArn'
+    ApproximateSecondsBeforeTimedOut:
+      type: integer
+    Forced:
+      type: boolean
+    Value:
       type: string
-    ListThingsResponse:
-      type: object
-      properties:
-        things:
-          allOf:
-          - $ref: '#/components/schemas/ThingAttributeList'
-          - description: The things.
-        nextToken:
-          allOf:
-          - $ref: '#/components/schemas/NextToken'
-          - description: The token to use to get the next set of results. Will not be returned if operation has returned all results.
-      description: The output from the ListThings operation.
-    ResourceAlreadyExistsException: {}
-    RegisterThingResponse:
-      type: object
-      properties:
-        certificatePem:
-          allOf:
-          - $ref: '#/components/schemas/CertificatePem'
-          - description: The certificate data, in PEM format.
-        resourceArns:
-          allOf:
-          - $ref: '#/components/schemas/ResourceArns'
-          - description: ARNs for the generated resources.
-    JobExecutionStatus:
-      type: string
-      enum:
-      - QUEUED
-      - IN_PROGRESS
-      - SUCCEEDED
-      - FAILED
-      - TIMED_OUT
-      - REJECTED
-      - REMOVED
-      - CANCELED
+      pattern: '[\s\S]*'
+      minLength: 0
+      maxLength: 4096
     JobId:
       type: string
       pattern: '[a-zA-Z0-9_-]+'
       minLength: 1
       maxLength: 64
-    ListJobExecutionsForThingResponse:
-      type: object
-      properties:
-        executionSummaries:
-          allOf:
-          - $ref: '#/components/schemas/JobExecutionSummaryForThingList'
-          - description: A list of job execution summaries.
-        nextToken:
-          allOf:
-          - $ref: '#/components/schemas/NextToken'
-          - description: The token for the next set of results, or <b>null</b> if there are no additional results.
-    ListThingGroupsForThingResponse:
-      type: object
-      properties:
-        thingGroups:
-          allOf:
-          - $ref: '#/components/schemas/ThingGroupNameAndArnList'
-          - description: The thing groups.
-        nextToken:
-          allOf:
-          - $ref: '#/components/schemas/NextToken'
-          - description: The token to use to get the next set of results, or <b>null</b> if there are no additional results.
-    InternalFailureException: {}
+    ThingName:
+      type: string
+      pattern: '[a-zA-Z0-9:_-]+'
+      minLength: 1
+      maxLength: 128
     GroupNameAndArn:
       type: object
       properties:
@@ -2449,51 +2446,72 @@ components:
           - $ref: '#/components/schemas/ThingGroupArn'
           - description: The group ARN.
       description: The name and ARN of a group.
-    ThingGroupName:
-      type: string
-      pattern: '[a-zA-Z0-9:_-]+'
-      minLength: 1
-      maxLength: 128
-    ExecutionNumber:
-      type: integer
     ThrottlingException: {}
+    ThingGroupArn:
+      type: string
     ThingAttributeList:
       type: array
       items:
         $ref: '#/components/schemas/ThingAttribute'
-    CertificatePem:
-      type: string
-      pattern: '[\s\S]*'
-      description: The PEM of a certificate.
-      minLength: 1
-      maxLength: 65536
-    ListThingPrincipalsResponse:
+    ResourceArns:
+      type: object
+      additionalProperties:
+        $ref: '#/components/schemas/ResourceArn'
+    JobExecutionSummaryForThing:
       type: object
       properties:
-        principals:
+        jobId:
           allOf:
-          - $ref: '#/components/schemas/Principals'
-          - description: The principals associated with the thing.
-        nextToken:
+          - $ref: '#/components/schemas/JobId'
+          - description: The unique identifier you assigned to this job when it was created.
+        jobExecutionSummary:
           allOf:
-          - $ref: '#/components/schemas/NextToken'
-          - description: The token to use to get the next set of results, or <b>null</b> if there are no additional results.
-      description: The output from the ListThingPrincipals operation.
-    ThingTypeName:
-      type: string
-      pattern: '[a-zA-Z0-9:_-]+'
-      minLength: 1
-      maxLength: 128
+          - $ref: '#/components/schemas/JobExecutionSummary'
+          - description: Contains a subset of information about a job execution.
+      description: The job execution summary for a thing.
     InvalidRequestException: {}
+    DetachThingPrincipalResponse:
+      type: object
+      properties: {}
+      description: The output from the DetachThingPrincipal operation.
+    RegisterThingResponse:
+      type: object
+      properties:
+        certificatePem:
+          allOf:
+          - $ref: '#/components/schemas/CertificatePem'
+          - description: The certificate data, in PEM format.
+        resourceArns:
+          allOf:
+          - $ref: '#/components/schemas/ResourceArns'
+          - description: ARNs for the generated resources.
   parameters:
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
     X-Amz-Date:
       name: X-Amz-Date
       in: header
       schema:
         type: string
       required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
       in: header
       schema:
         type: string
@@ -2506,24 +2524,6 @@ components:
       required: false
     X-Amz-Credential:
       name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
       in: header
       schema:
         type: string

@@ -211,73 +211,7 @@ paths:
       tags:
       - Cacertificates
 components:
-  parameters:
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
   schemas:
-    ListCACertificatesResponse:
-      type: object
-      properties:
-        certificates:
-          allOf:
-          - $ref: '#/components/schemas/CACertificates'
-          - description: The CA certificates registered in your Amazon Web Services account.
-        nextMarker:
-          allOf:
-          - $ref: '#/components/schemas/Marker'
-          - description: The current position within the list of CA certificates.
-      description: The output from the ListCACertificates operation.
-    CertificateArn:
-      type: string
-    CACertificateStatus:
-      type: string
-      enum:
-      - ACTIVE
-      - INACTIVE
-    DateType:
-      type: string
-      format: date-time
-    UnauthorizedException: {}
     CACertificate:
       type: object
       properties:
@@ -298,23 +232,89 @@ components:
           - $ref: '#/components/schemas/DateType'
           - description: The date the CA certificate was created.
       description: A CA certificate.
+    InternalFailureException: {}
+    DateType:
+      type: string
+      format: date-time
+    CertificateArn:
+      type: string
+    CACertificateStatus:
+      type: string
+      enum:
+      - ACTIVE
+      - INACTIVE
     ServiceUnavailableException: {}
-    CACertificates:
-      type: array
-      items:
-        $ref: '#/components/schemas/CACertificate'
+    ListCACertificatesResponse:
+      type: object
+      properties:
+        certificates:
+          allOf:
+          - $ref: '#/components/schemas/CACertificates'
+          - description: The CA certificates registered in your Amazon Web Services account.
+        nextMarker:
+          allOf:
+          - $ref: '#/components/schemas/Marker'
+          - description: The current position within the list of CA certificates.
+      description: The output from the ListCACertificates operation.
     Marker:
       type: string
       pattern: '[A-Za-z0-9+/]+={0,2}'
       maxLength: 1024
+    UnauthorizedException: {}
     CertificateId:
       type: string
       pattern: (0x)?[a-fA-F0-9]+
       minLength: 64
       maxLength: 64
     ThrottlingException: {}
-    InternalFailureException: {}
+    CACertificates:
+      type: array
+      items:
+        $ref: '#/components/schemas/CACertificate'
     InvalidRequestException: {}
+  parameters:
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
   securitySchemes:
     hmac:
       type: apiKey

@@ -190,26 +190,8 @@ paths:
       - Untag
 components:
   parameters:
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
       in: header
       schema:
         type: string
@@ -220,8 +202,8 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
+    X-Amz-Signature:
+      name: X-Amz-Signature
       in: header
       schema:
         type: string
@@ -232,18 +214,36 @@ components:
       schema:
         type: string
       required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
   schemas:
-    ThrottlingException: {}
+    ResourceNotFoundException: {}
     InternalFailureException: {}
+    UntagResourceResponse:
+      type: object
+      properties: {}
     TagKey:
       type: string
       pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
       minLength: 1
       maxLength: 128
-    ResourceNotFoundException: {}
-    UntagResourceResponse:
-      type: object
-      properties: {}
+    ThrottlingException: {}
     InvalidRequestException: {}
   securitySchemes:
     hmac:

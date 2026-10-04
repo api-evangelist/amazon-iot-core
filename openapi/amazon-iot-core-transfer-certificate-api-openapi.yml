@@ -238,30 +238,6 @@ paths:
       - Transfer Certificate
 components:
   parameters:
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
     X-Amz-Algorithm:
       name: X-Amz-Algorithm
       in: header
@@ -274,13 +250,41 @@ components:
       schema:
         type: string
       required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
     X-Amz-Content-Sha256:
       name: X-Amz-Content-Sha256
       in: header
       schema:
         type: string
       required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
   schemas:
+    ResourceNotFoundException: {}
+    InternalFailureException: {}
+    CertificateArn:
+      type: string
     TransferCertificateResponse:
       type: object
       properties:
@@ -289,16 +293,12 @@ components:
           - $ref: '#/components/schemas/CertificateArn'
           - description: The ARN of the certificate.
       description: The output from the TransferCertificate operation.
-    CertificateStateException: {}
-    ServiceUnavailableException: {}
-    ThrottlingException: {}
-    InternalFailureException: {}
-    CertificateArn:
-      type: string
-    ResourceNotFoundException: {}
-    InvalidRequestException: {}
     TransferConflictException: {}
+    CertificateStateException: {}
+    ThrottlingException: {}
     UnauthorizedException: {}
+    InvalidRequestException: {}
+    ServiceUnavailableException: {}
   securitySchemes:
     hmac:
       type: apiKey

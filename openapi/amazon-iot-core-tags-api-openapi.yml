@@ -260,15 +260,82 @@ paths:
       tags:
       - Tags
 components:
+  schemas:
+    TagList:
+      type: array
+      items:
+        $ref: '#/components/schemas/Tag'
+    TagKey:
+      type: string
+      pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
+      minLength: 1
+      maxLength: 128
+    LimitExceededException: {}
+    TagValue:
+      type: string
+      minLength: 0
+      maxLength: 256
+    InternalFailureException: {}
+    Tag:
+      type: object
+      required:
+      - Key
+      properties:
+        Key:
+          allOf:
+          - $ref: '#/components/schemas/TagKey'
+          - description: The tag's key.
+        Value:
+          allOf:
+          - $ref: '#/components/schemas/TagValue'
+          - description: The tag's value.
+      description: A set of key/value pairs that are used to manage the resource.
+    TagResourceResponse:
+      type: object
+      properties: {}
+    NextToken:
+      type: string
+    ResourceNotFoundException: {}
+    ListTagsForResourceResponse:
+      type: object
+      properties:
+        tags:
+          allOf:
+          - $ref: '#/components/schemas/TagList'
+          - description: The list of tags assigned to the resource.
+        nextToken:
+          allOf:
+          - $ref: '#/components/schemas/NextToken'
+          - description: The token to use to get the next set of results, or <b>null</b> if there are no additional results.
+    ThrottlingException: {}
+    InvalidRequestException: {}
   parameters:
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
     X-Amz-Date:
       name: X-Amz-Date
       in: header
       schema:
         type: string
       required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
       in: header
       schema:
         type: string
@@ -285,73 +352,6 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-  schemas:
-    LimitExceededException: {}
-    Tag:
-      type: object
-      required:
-      - Key
-      properties:
-        Key:
-          allOf:
-          - $ref: '#/components/schemas/TagKey'
-          - description: The tag's key.
-        Value:
-          allOf:
-          - $ref: '#/components/schemas/TagValue'
-          - description: The tag's value.
-      description: A set of key/value pairs that are used to manage the resource.
-    TagKey:
-      type: string
-      pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
-      minLength: 1
-      maxLength: 128
-    TagValue:
-      type: string
-      minLength: 0
-      maxLength: 256
-    ListTagsForResourceResponse:
-      type: object
-      properties:
-        tags:
-          allOf:
-          - $ref: '#/components/schemas/TagList'
-          - description: The list of tags assigned to the resource.
-        nextToken:
-          allOf:
-          - $ref: '#/components/schemas/NextToken'
-          - description: The token to use to get the next set of results, or <b>null</b> if there are no additional results.
-    NextToken:
-      type: string
-    TagList:
-      type: array
-      items:
-        $ref: '#/components/schemas/Tag'
-    ResourceNotFoundException: {}
-    TagResourceResponse:
-      type: object
-      properties: {}
-    ThrottlingException: {}
-    InternalFailureException: {}
-    InvalidRequestException: {}
   securitySchemes:
     hmac:
       type: apiKey

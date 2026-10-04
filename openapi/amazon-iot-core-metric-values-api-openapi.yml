@@ -229,28 +229,6 @@ paths:
       - Metric Values
 components:
   schemas:
-    Cidrs:
-      type: array
-      items:
-        $ref: '#/components/schemas/Cidr'
-    NumberList:
-      type: array
-      items:
-        $ref: '#/components/schemas/Number'
-    Number:
-      type: number
-      format: double
-    Port:
-      type: integer
-      minimum: 0
-      maximum: 65535
-    MetricDatumList:
-      type: array
-      items:
-        $ref: '#/components/schemas/MetricDatum'
-    UnsignedLong:
-      type: integer
-      minimum: 0
     ListMetricValuesResponse:
       type: object
       properties:
@@ -262,20 +240,19 @@ components:
           allOf:
           - $ref: '#/components/schemas/NextToken'
           - description: A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.
-    NextToken:
+    StringList:
+      type: array
+      items:
+        $ref: '#/components/schemas/stringValue'
+    Cidr:
       type: string
-    MetricDatum:
-      type: object
-      properties:
-        timestamp:
-          allOf:
-          - $ref: '#/components/schemas/Timestamp'
-          - description: The time the metric value was reported.
-        value:
-          allOf:
-          - $ref: '#/components/schemas/MetricValue'
-          - description: The value reported for the metric.
-      description: A metric.
+      pattern: '[a-fA-F0-9:\.\/]+'
+      minLength: 2
+      maxLength: 43
+    Ports:
+      type: array
+      items:
+        $ref: '#/components/schemas/Port'
     MetricValue:
       type: object
       properties:
@@ -304,37 +281,78 @@ components:
           - $ref: '#/components/schemas/StringList'
           - description: ' The string values of a metric. '
       description: The value to be compared with the <code>metric</code>.
+    stringValue:
+      type: string
+    InternalFailureException: {}
+    Port:
+      type: integer
+      minimum: 0
+      maximum: 65535
+    NextToken:
+      type: string
+    NumberList:
+      type: array
+      items:
+        $ref: '#/components/schemas/Number'
+    Cidrs:
+      type: array
+      items:
+        $ref: '#/components/schemas/Cidr'
+    Number:
+      type: number
+      format: double
+    ResourceNotFoundException: {}
     Timestamp:
       type: string
       format: date-time
-    Ports:
+    MetricDatumList:
       type: array
       items:
-        $ref: '#/components/schemas/Port'
-    StringList:
-      type: array
-      items:
-        $ref: '#/components/schemas/stringValue'
-    ResourceNotFoundException: {}
-    stringValue:
-      type: string
+        $ref: '#/components/schemas/MetricDatum'
+    MetricDatum:
+      type: object
+      properties:
+        timestamp:
+          allOf:
+          - $ref: '#/components/schemas/Timestamp'
+          - description: The time the metric value was reported.
+        value:
+          allOf:
+          - $ref: '#/components/schemas/MetricValue'
+          - description: The value reported for the metric.
+      description: A metric.
     ThrottlingException: {}
-    InternalFailureException: {}
-    Cidr:
-      type: string
-      pattern: '[a-fA-F0-9:\.\/]+'
-      minLength: 2
-      maxLength: 43
+    UnsignedLong:
+      type: integer
+      minimum: 0
     InvalidRequestException: {}
   parameters:
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
     X-Amz-Date:
       name: X-Amz-Date
       in: header
       schema:
         type: string
       required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
       in: header
       schema:
         type: string
@@ -347,24 +365,6 @@ components:
       required: false
     X-Amz-Credential:
       name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
       in: header
       schema:
         type: string

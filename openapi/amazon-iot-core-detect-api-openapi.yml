@@ -535,50 +535,20 @@ paths:
       tags:
       - Detect
 components:
-  parameters:
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
   schemas:
+    DeviceDefenderThingName:
+      type: string
+      minLength: 1
+      maxLength: 128
+    GenericLongValue:
+      type: integer
+    ErrorMessage:
+      type: string
+      maxLength: 2048
+    SnsTopicArn:
+      type: string
+      maxLength: 350
+    TaskAlreadyExistsException: {}
     MitigationAction:
       type: object
       properties:
@@ -599,6 +569,208 @@ components:
           - $ref: '#/components/schemas/MitigationActionParams'
           - description: The set of parameters for this mitigation action. The parameters vary, depending on the kind of action you apply.
       description: Describes which changes should be applied as part of a mitigation action.
+    DeviceCertificateUpdateAction:
+      type: string
+      enum:
+      - DEACTIVATE
+    LimitExceededException: {}
+    ReplaceDefaultPolicyVersionParams:
+      type: object
+      required:
+      - templateName
+      properties:
+        templateName:
+          allOf:
+          - $ref: '#/components/schemas/PolicyTemplateName'
+          - description: The name of the template to be applied. The only supported value is <code>BLANK_POLICY</code>.
+      description: Parameters to define a mitigation action that adds a blank policy to restrict permissions.
+    DetectMitigationActionExecutionStatus:
+      type: string
+      enum:
+      - IN_PROGRESS
+      - SUCCESSFUL
+      - FAILED
+      - SKIPPED
+    ThingGroupName:
+      type: string
+      pattern: '[a-zA-Z0-9:_-]+'
+      minLength: 1
+      maxLength: 128
+    InternalFailureException: {}
+    DetectMitigationActionsTaskStatistics:
+      type: object
+      properties:
+        actionsExecuted:
+          allOf:
+          - $ref: '#/components/schemas/GenericLongValue'
+          - description: ' The actions that were performed. '
+        actionsSkipped:
+          allOf:
+          - $ref: '#/components/schemas/GenericLongValue'
+          - description: ' The actions that were skipped. '
+        actionsFailed:
+          allOf:
+          - $ref: '#/components/schemas/GenericLongValue'
+          - description: ' The actions that failed. '
+      description: ' The statistics of a mitigation action task. '
+    DescribeDetectMitigationActionsTaskResponse:
+      type: object
+      properties:
+        taskSummary:
+          allOf:
+          - $ref: '#/components/schemas/DetectMitigationActionsTaskSummary'
+          - description: ' The description of a task. '
+    DetectMitigationActionsTaskSummaryList:
+      type: array
+      items:
+        $ref: '#/components/schemas/DetectMitigationActionsTaskSummary'
+    MitigationActionParams:
+      type: object
+      properties:
+        updateDeviceCertificateParams:
+          allOf:
+          - $ref: '#/components/schemas/UpdateDeviceCertificateParams'
+          - description: Parameters to define a mitigation action that changes the state of the device certificate to inactive.
+        updateCACertificateParams:
+          allOf:
+          - $ref: '#/components/schemas/UpdateCACertificateParams'
+          - description: Parameters to define a mitigation action that changes the state of the CA certificate to inactive.
+        addThingsToThingGroupParams:
+          allOf:
+          - $ref: '#/components/schemas/AddThingsToThingGroupParams'
+          - description: Parameters to define a mitigation action that moves devices associated with a certificate to one or more specified thing groups, typically for quarantine.
+        replaceDefaultPolicyVersionParams:
+          allOf:
+          - $ref: '#/components/schemas/ReplaceDefaultPolicyVersionParams'
+          - description: Parameters to define a mitigation action that adds a blank policy to restrict permissions.
+        enableIoTLoggingParams:
+          allOf:
+          - $ref: '#/components/schemas/EnableIoTLoggingParams'
+          - description: Parameters to define a mitigation action that enables Amazon Web Services IoT Core logging at a specified level of detail.
+        publishFindingToSnsParams:
+          allOf:
+          - $ref: '#/components/schemas/PublishFindingToSnsParams'
+          - description: Parameters to define a mitigation action that publishes findings to Amazon Simple Notification Service (Amazon SNS. You can implement your own custom actions in response to the Amazon SNS messages.
+      description: The set of parameters for this mitigation action. You can specify only one type of parameter (in other words, you can apply only one action for each defined mitigation action).
+    MitigationActionId:
+      type: string
+    BehaviorName:
+      type: string
+      pattern: '[a-zA-Z0-9:_-]+'
+      minLength: 1
+      maxLength: 128
+    StartDetectMitigationActionsTaskResponse:
+      type: object
+      properties:
+        taskId:
+          allOf:
+          - $ref: '#/components/schemas/MitigationActionsTaskId'
+          - description: ' The unique identifier of the task. '
+    AddThingsToThingGroupParams:
+      type: object
+      required:
+      - thingGroupNames
+      properties:
+        thingGroupNames:
+          allOf:
+          - $ref: '#/components/schemas/ThingGroupNames'
+          - description: The list of groups to which you want to add the things that triggered the mitigation action. You can add a thing to a maximum of 10 groups, but you can't add a thing to more than one group in the same hierarchy.
+        overrideDynamicGroups:
+          allOf:
+          - $ref: '#/components/schemas/NullableBoolean'
+          - description: Specifies if this mitigation action can move the things that triggered the mitigation action even if they are part of one or more dynamic thing groups.
+      description: Parameters used when defining a mitigation action that move a set of things to a thing group.
+    ListDetectMitigationActionsExecutionsResponse:
+      type: object
+      properties:
+        actionsExecutions:
+          allOf:
+          - $ref: '#/components/schemas/DetectMitigationActionExecutionList'
+          - description: ' List of actions executions. '
+        nextToken:
+          allOf:
+          - $ref: '#/components/schemas/NextToken'
+          - description: ' A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results. '
+    UpdateDeviceCertificateParams:
+      type: object
+      required:
+      - action
+      properties:
+        action:
+          allOf:
+          - $ref: '#/components/schemas/DeviceCertificateUpdateAction'
+          - description: The action that you want to apply to the device certificate. The only supported value is <code>DEACTIVATE</code>.
+      description: Parameters to define a mitigation action that changes the state of the device certificate to inactive.
+    DetectMitigationActionExecutionErrorCode:
+      type: string
+    RoleArn:
+      type: string
+      minLength: 20
+      maxLength: 2048
+    ThingGroupNames:
+      type: array
+      items:
+        $ref: '#/components/schemas/ThingGroupName'
+      minItems: 1
+      maxItems: 10
+    DetectMitigationActionExecutionList:
+      type: array
+      items:
+        $ref: '#/components/schemas/DetectMitigationActionExecution'
+    DetectMitigationActionsTaskTarget:
+      type: object
+      properties:
+        violationIds:
+          allOf:
+          - $ref: '#/components/schemas/TargetViolationIdsForDetectMitigationActions'
+          - description: ' The unique identifiers of the violations. '
+        securityProfileName:
+          allOf:
+          - $ref: '#/components/schemas/SecurityProfileName'
+          - description: ' The name of the security profile. '
+        behaviorName:
+          allOf:
+          - $ref: '#/components/schemas/BehaviorName'
+          - description: ' The name of the behavior. '
+      description: ' The target of a mitigation action task. '
+    NextToken:
+      type: string
+    LogLevel:
+      type: string
+      enum:
+      - DEBUG
+      - INFO
+      - ERROR
+      - WARN
+      - DISABLED
+    PublishFindingToSnsParams:
+      type: object
+      required:
+      - topicArn
+      properties:
+        topicArn:
+          allOf:
+          - $ref: '#/components/schemas/SnsTopicArn'
+          - description: The ARN of the topic to which you want to publish the findings.
+      description: Parameters to define a mitigation action that publishes findings to Amazon SNS. You can implement your own custom actions in response to the Amazon SNS messages.
+    NullableBoolean:
+      type: boolean
+    MitigationActionsTaskId:
+      type: string
+      pattern: '[a-zA-Z0-9_-]+'
+      minLength: 1
+      maxLength: 128
+    PolicyTemplateName:
+      type: string
+      enum:
+      - BLANK_POLICY
+    DetectMitigationActionsTaskStatus:
+      type: string
+      enum:
+      - IN_PROGRESS
+      - SUCCESSFUL
+      - FAILED
+      - CANCELED
     EnableIoTLoggingParams:
       type: object
       required:
@@ -614,10 +786,37 @@ components:
           - $ref: '#/components/schemas/LogLevel'
           - description: Specifies the type of information to be logged.
       description: Parameters used when defining a mitigation action that enable Amazon Web Services IoT Core logging.
-    DeviceDefenderThingName:
+    CancelDetectMitigationActionsTaskResponse:
+      type: object
+      properties: {}
+    CACertificateUpdateAction:
       type: string
-      minLength: 1
-      maxLength: 128
+      enum:
+      - DEACTIVATE
+    MitigationActionList:
+      type: array
+      items:
+        $ref: '#/components/schemas/MitigationAction'
+    ResourceNotFoundException: {}
+    PrimitiveBoolean:
+      type: boolean
+    ListDetectMitigationActionsTasksResponse:
+      type: object
+      properties:
+        tasks:
+          allOf:
+          - $ref: '#/components/schemas/DetectMitigationActionsTaskSummaryList'
+          - description: ' The collection of ML Detect mitigation tasks that matched the filter criteria. '
+        nextToken:
+          allOf:
+          - $ref: '#/components/schemas/NextToken'
+          - description: ' A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results. '
+    TargetViolationIdsForDetectMitigationActions:
+      type: array
+      items:
+        $ref: '#/components/schemas/ViolationId'
+      minItems: 1
+      maxItems: 25
     DetectMitigationActionExecution:
       type: object
       properties:
@@ -658,127 +857,9 @@ components:
           - $ref: '#/components/schemas/ErrorMessage'
           - description: ' The message of a mitigation action. '
       description: ' Describes which mitigation actions should be executed. '
-    BehaviorName:
+    Timestamp:
       type: string
-      pattern: '[a-zA-Z0-9:_-]+'
-      minLength: 1
-      maxLength: 128
-    LimitExceededException: {}
-    GenericLongValue:
-      type: integer
-    NullableBoolean:
-      type: boolean
-    ListDetectMitigationActionsExecutionsResponse:
-      type: object
-      properties:
-        actionsExecutions:
-          allOf:
-          - $ref: '#/components/schemas/DetectMitigationActionExecutionList'
-          - description: ' List of actions executions. '
-        nextToken:
-          allOf:
-          - $ref: '#/components/schemas/NextToken'
-          - description: ' A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results. '
-    DetectMitigationActionExecutionErrorCode:
-      type: string
-    MitigationActionId:
-      type: string
-    DetectMitigationActionsTaskSummaryList:
-      type: array
-      items:
-        $ref: '#/components/schemas/DetectMitigationActionsTaskSummary'
-    MitigationActionParams:
-      type: object
-      properties:
-        updateDeviceCertificateParams:
-          allOf:
-          - $ref: '#/components/schemas/UpdateDeviceCertificateParams'
-          - description: Parameters to define a mitigation action that changes the state of the device certificate to inactive.
-        updateCACertificateParams:
-          allOf:
-          - $ref: '#/components/schemas/UpdateCACertificateParams'
-          - description: Parameters to define a mitigation action that changes the state of the CA certificate to inactive.
-        addThingsToThingGroupParams:
-          allOf:
-          - $ref: '#/components/schemas/AddThingsToThingGroupParams'
-          - description: Parameters to define a mitigation action that moves devices associated with a certificate to one or more specified thing groups, typically for quarantine.
-        replaceDefaultPolicyVersionParams:
-          allOf:
-          - $ref: '#/components/schemas/ReplaceDefaultPolicyVersionParams'
-          - description: Parameters to define a mitigation action that adds a blank policy to restrict permissions.
-        enableIoTLoggingParams:
-          allOf:
-          - $ref: '#/components/schemas/EnableIoTLoggingParams'
-          - description: Parameters to define a mitigation action that enables Amazon Web Services IoT Core logging at a specified level of detail.
-        publishFindingToSnsParams:
-          allOf:
-          - $ref: '#/components/schemas/PublishFindingToSnsParams'
-          - description: Parameters to define a mitigation action that publishes findings to Amazon Simple Notification Service (Amazon SNS. You can implement your own custom actions in response to the Amazon SNS messages.
-      description: The set of parameters for this mitigation action. You can specify only one type of parameter (in other words, you can apply only one action for each defined mitigation action).
-    UpdateDeviceCertificateParams:
-      type: object
-      required:
-      - action
-      properties:
-        action:
-          allOf:
-          - $ref: '#/components/schemas/DeviceCertificateUpdateAction'
-          - description: The action that you want to apply to the device certificate. The only supported value is <code>DEACTIVATE</code>.
-      description: Parameters to define a mitigation action that changes the state of the device certificate to inactive.
-    AddThingsToThingGroupParams:
-      type: object
-      required:
-      - thingGroupNames
-      properties:
-        thingGroupNames:
-          allOf:
-          - $ref: '#/components/schemas/ThingGroupNames'
-          - description: The list of groups to which you want to add the things that triggered the mitigation action. You can add a thing to a maximum of 10 groups, but you can't add a thing to more than one group in the same hierarchy.
-        overrideDynamicGroups:
-          allOf:
-          - $ref: '#/components/schemas/NullableBoolean'
-          - description: Specifies if this mitigation action can move the things that triggered the mitigation action even if they are part of one or more dynamic thing groups.
-      description: Parameters used when defining a mitigation action that move a set of things to a thing group.
-    ViolationEventOccurrenceRange:
-      type: object
-      required:
-      - startTime
-      - endTime
-      properties:
-        startTime:
-          allOf:
-          - $ref: '#/components/schemas/Timestamp'
-          - description: ' The start date and time of a time period in which violation events occurred. '
-        endTime:
-          allOf:
-          - $ref: '#/components/schemas/Timestamp'
-          - description: ' The end date and time of a time period in which violation events occurred. '
-      description: ' Specifies the time period of which violation events occurred between. '
-    RoleArn:
-      type: string
-      minLength: 20
-      maxLength: 2048
-    ListDetectMitigationActionsTasksResponse:
-      type: object
-      properties:
-        tasks:
-          allOf:
-          - $ref: '#/components/schemas/DetectMitigationActionsTaskSummaryList'
-          - description: ' The collection of ML Detect mitigation tasks that matched the filter criteria. '
-        nextToken:
-          allOf:
-          - $ref: '#/components/schemas/NextToken'
-          - description: ' A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results. '
-    DetectMitigationActionExecutionList:
-      type: array
-      items:
-        $ref: '#/components/schemas/DetectMitigationActionExecution'
-    ThingGroupNames:
-      type: array
-      items:
-        $ref: '#/components/schemas/ThingGroupName'
-      minItems: 1
-      maxItems: 10
+      format: date-time
     DetectMitigationActionsTaskSummary:
       type: object
       properties:
@@ -823,73 +904,30 @@ components:
           - $ref: '#/components/schemas/DetectMitigationActionsTaskStatistics'
           - description: ' The statistics of a mitigation action task. '
       description: ' The summary of the mitigation action tasks. '
-    CACertificateUpdateAction:
-      type: string
-      enum:
-      - DEACTIVATE
-    PublishFindingToSnsParams:
+    ViolationEventOccurrenceRange:
       type: object
       required:
-      - topicArn
+      - startTime
+      - endTime
       properties:
-        topicArn:
+        startTime:
           allOf:
-          - $ref: '#/components/schemas/SnsTopicArn'
-          - description: The ARN of the topic to which you want to publish the findings.
-      description: Parameters to define a mitigation action that publishes findings to Amazon SNS. You can implement your own custom actions in response to the Amazon SNS messages.
-    MitigationActionsTaskId:
+          - $ref: '#/components/schemas/Timestamp'
+          - description: ' The start date and time of a time period in which violation events occurred. '
+        endTime:
+          allOf:
+          - $ref: '#/components/schemas/Timestamp'
+          - description: ' The end date and time of a time period in which violation events occurred. '
+      description: ' Specifies the time period of which violation events occurred between. '
+    MitigationActionName:
       type: string
       pattern: '[a-zA-Z0-9_-]+'
+      maxLength: 128
+    SecurityProfileName:
+      type: string
+      pattern: '[a-zA-Z0-9:_-]+'
       minLength: 1
       maxLength: 128
-    TargetViolationIdsForDetectMitigationActions:
-      type: array
-      items:
-        $ref: '#/components/schemas/ViolationId'
-      minItems: 1
-      maxItems: 25
-    StartDetectMitigationActionsTaskResponse:
-      type: object
-      properties:
-        taskId:
-          allOf:
-          - $ref: '#/components/schemas/MitigationActionsTaskId'
-          - description: ' The unique identifier of the task. '
-    DeviceCertificateUpdateAction:
-      type: string
-      enum:
-      - DEACTIVATE
-    ErrorMessage:
-      type: string
-      maxLength: 2048
-    NextToken:
-      type: string
-    LogLevel:
-      type: string
-      enum:
-      - DEBUG
-      - INFO
-      - ERROR
-      - WARN
-      - DISABLED
-    PrimitiveBoolean:
-      type: boolean
-    ViolationId:
-      type: string
-      pattern: '[a-zA-Z0-9\-]+'
-      minLength: 1
-      maxLength: 128
-    SnsTopicArn:
-      type: string
-      maxLength: 350
-    Timestamp:
-      type: string
-      format: date-time
-    MitigationActionList:
-      type: array
-      items:
-        $ref: '#/components/schemas/MitigationAction'
-    ResourceNotFoundException: {}
     UpdateCACertificateParams:
       type: object
       required:
@@ -900,94 +938,56 @@ components:
           - $ref: '#/components/schemas/CACertificateUpdateAction'
           - description: The action that you want to apply to the CA certificate. The only supported value is <code>DEACTIVATE</code>.
       description: Parameters to define a mitigation action that changes the state of the CA certificate to inactive.
-    CancelDetectMitigationActionsTaskResponse:
-      type: object
-      properties: {}
-    ReplaceDefaultPolicyVersionParams:
-      type: object
-      required:
-      - templateName
-      properties:
-        templateName:
-          allOf:
-          - $ref: '#/components/schemas/PolicyTemplateName'
-          - description: The name of the template to be applied. The only supported value is <code>BLANK_POLICY</code>.
-      description: Parameters to define a mitigation action that adds a blank policy to restrict permissions.
-    PolicyTemplateName:
+    ViolationId:
       type: string
-      enum:
-      - BLANK_POLICY
-    DetectMitigationActionsTaskStatistics:
-      type: object
-      properties:
-        actionsExecuted:
-          allOf:
-          - $ref: '#/components/schemas/GenericLongValue'
-          - description: ' The actions that were performed. '
-        actionsSkipped:
-          allOf:
-          - $ref: '#/components/schemas/GenericLongValue'
-          - description: ' The actions that were skipped. '
-        actionsFailed:
-          allOf:
-          - $ref: '#/components/schemas/GenericLongValue'
-          - description: ' The actions that failed. '
-      description: ' The statistics of a mitigation action task. '
-    SecurityProfileName:
-      type: string
-      pattern: '[a-zA-Z0-9:_-]+'
+      pattern: '[a-zA-Z0-9\-]+'
       minLength: 1
       maxLength: 128
     ThrottlingException: {}
-    MitigationActionName:
-      type: string
-      pattern: '[a-zA-Z0-9_-]+'
-      maxLength: 128
-    InternalFailureException: {}
-    DetectMitigationActionsTaskStatus:
-      type: string
-      enum:
-      - IN_PROGRESS
-      - SUCCESSFUL
-      - FAILED
-      - CANCELED
-    ThingGroupName:
-      type: string
-      pattern: '[a-zA-Z0-9:_-]+'
-      minLength: 1
-      maxLength: 128
-    TaskAlreadyExistsException: {}
-    DescribeDetectMitigationActionsTaskResponse:
-      type: object
-      properties:
-        taskSummary:
-          allOf:
-          - $ref: '#/components/schemas/DetectMitigationActionsTaskSummary'
-          - description: ' The description of a task. '
-    DetectMitigationActionsTaskTarget:
-      type: object
-      properties:
-        violationIds:
-          allOf:
-          - $ref: '#/components/schemas/TargetViolationIdsForDetectMitigationActions'
-          - description: ' The unique identifiers of the violations. '
-        securityProfileName:
-          allOf:
-          - $ref: '#/components/schemas/SecurityProfileName'
-          - description: ' The name of the security profile. '
-        behaviorName:
-          allOf:
-          - $ref: '#/components/schemas/BehaviorName'
-          - description: ' The name of the behavior. '
-      description: ' The target of a mitigation action task. '
-    DetectMitigationActionExecutionStatus:
-      type: string
-      enum:
-      - IN_PROGRESS
-      - SUCCESSFUL
-      - FAILED
-      - SKIPPED
     InvalidRequestException: {}
+  parameters:
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
   securitySchemes:
     hmac:
       type: apiKey

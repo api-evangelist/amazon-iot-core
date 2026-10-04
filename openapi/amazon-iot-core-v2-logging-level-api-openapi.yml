@@ -336,9 +336,9 @@ paths:
       - V2 Logging Level
 components:
   schemas:
-    NotConfiguredException: {}
+    InternalException: {}
     LimitExceededException: {}
-    InvalidRequestException: {}
+    NotConfiguredException: {}
     LogTargetName:
       type: string
     LogTargetConfiguration:
@@ -353,17 +353,6 @@ components:
           - $ref: '#/components/schemas/LogLevel'
           - description: The logging level.
       description: The target configuration.
-    ListV2LoggingLevelsResponse:
-      type: object
-      properties:
-        logTargetConfigurations:
-          allOf:
-          - $ref: '#/components/schemas/LogTargetConfigurations'
-          - description: The logging configuration for a target.
-        nextToken:
-          allOf:
-          - $ref: '#/components/schemas/NextToken'
-          - description: The token to use to get the next set of results, or <b>null</b> if there are no additional results.
     ServiceUnavailableException: {}
     NextToken:
       type: string
@@ -375,19 +364,6 @@ components:
       - ERROR
       - WARN
       - DISABLED
-    LogTargetType:
-      type: string
-      enum:
-      - DEFAULT
-      - THING_GROUP
-      - CLIENT_ID
-      - SOURCE_IP
-      - PRINCIPAL_ID
-    InternalException: {}
-    LogTargetConfigurations:
-      type: array
-      items:
-        $ref: '#/components/schemas/LogTargetConfiguration'
     LogTarget:
       type: object
       required:
@@ -402,9 +378,57 @@ components:
           - $ref: '#/components/schemas/LogTargetName'
           - description: The target name.
       description: A log target.
+    LogTargetType:
+      type: string
+      enum:
+      - DEFAULT
+      - THING_GROUP
+      - CLIENT_ID
+      - SOURCE_IP
+      - PRINCIPAL_ID
+    ListV2LoggingLevelsResponse:
+      type: object
+      properties:
+        logTargetConfigurations:
+          allOf:
+          - $ref: '#/components/schemas/LogTargetConfigurations'
+          - description: The logging configuration for a target.
+        nextToken:
+          allOf:
+          - $ref: '#/components/schemas/NextToken'
+          - description: The token to use to get the next set of results, or <b>null</b> if there are no additional results.
+    LogTargetConfigurations:
+      type: array
+      items:
+        $ref: '#/components/schemas/LogTargetConfiguration'
+    InvalidRequestException: {}
   parameters:
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
     X-Amz-Date:
       name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
       in: header
       schema:
         type: string
@@ -417,30 +441,6 @@ components:
       required: false
     X-Amz-Credential:
       name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
       in: header
       schema:
         type: string
