@@ -11,7 +11,7 @@ capability_model:
   attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
     CC BY 4.0
   notice: NOTICE
-edge_count: 15
+edge_count: 17
 edges:
 - tag: Principal Policies
   spec_file: amazon-iot-core-principal-policies-api-openapi.yml
@@ -120,6 +120,17 @@ edges:
   evidence: CreateRoleAlias / DescribeRoleAlias; schemas RoleArn, CredentialDurationSeconds
   reason: Role aliases bind device certificates to IAM roles and control temporary credential duration
     — plainly identity and access management plumbing for machine identities.
+- tag: Violation Events
+  spec_file: amazon-iot-core-violation-events-api-openapi.yml
+  capability_id: BC-620.30
+  capability_id_l1: BC-620
+  capability_name: Threat Detection & Response Management
+  confidence: 0.72
+  evidence: GET /violation-events ListViolationEvents — schemas "BehaviorCriteria", "MachineLearningDetectionConfig",
+    "VerificationState", "ViolationEvents"
+  reason: Returns security-behaviour violation events produced by ML/criteria-based anomaly detection,
+    with a verification state for triage — that is threat detection and response over the device fleet,
+    not business-rule or compliance violations.
 - tag: Cacertificate
   spec_file: amazon-iot-core-cacertificate-api-openapi.yml
   capability_id: BC-620.20
@@ -152,6 +163,15 @@ edges:
   reason: Defines actions applied in response to IoT Device Defender security audit/detect findings (revoke
     certificates, publish findings). That is security threat detection & response tooling, not enterprise
     risk treatment.
+- tag: Policy Principals
+  spec_file: amazon-iot-core-policy-principals-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.7
+  evidence: GET /policy-principals ListPolicyPrincipals — schemas "PrincipalArn", "Principals", "UnauthorizedException"
+  reason: The operation lists the principals (identities) attached to an authorization policy, which is
+    access-policy/identity administration. Single read-only op keeps confidence moderate.
 - tag: Security Profiles
   spec_file: amazon-iot-core-security-profiles-api-openapi.yml
   capability_id: BC-620.30
