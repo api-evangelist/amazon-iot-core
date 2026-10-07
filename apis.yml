@@ -1271,6 +1271,8 @@ apis:
   - type: FAQ
     url: https://aws.amazon.com/iot-core/faqs/
 common:
+- type: Pricing
+  url: https://aws.amazon.com/iot-core/pricing/
 - type: Plans
   url: plans/amazon-iot-core-plans-pricing.yml
 - type: CapabilityMap
