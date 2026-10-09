@@ -93,3 +93,95 @@ plans:
 rate_limit_statements:
 - You can send and receive messages up to 128 KB in size. Messages are metered in 5 KB increments.
 - devices can send keep-alive (Ping) messages at frequencies ranging from 20 minutes to every 30 seconds
+x-canonical:
+  generated: '2026-10-08'
+  vocabulary: all/0-working/economics/plans-canonical.yml
+  models:
+  - hybrid
+  - subscription
+  units:
+  - compute
+  - credit
+  - data
+  - message
+  plans:
+  - name: Connectivity (Europe Ireland example)
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - compute
+    periods:
+    - other
+  - name: MQTT and HTTP messaging (first one billion messages, Europe Ireland)
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - message
+    periods:
+    - other
+  - name: Device Shadow and registry (Canada Central)
+    access: other
+    model: subscription
+    model_how: derived
+    units:
+    - other
+    periods:
+    - other
+  - name: Rules engine (Canada Central)
+    access: other
+    model: subscription
+    model_how: derived
+    units:
+    - other
+    periods:
+    - other
+  - name: LoRaWAN messaging (first one billion, US East N. Virginia)
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - message
+    periods:
+    - other
+  - name: LoRaWAN Metrics records
+    access: other
+    model: subscription
+    model_how: derived
+    units:
+    - other
+    periods:
+    - other
+  - name: AWS IoT Core for Amazon Sidewalk messaging (US East N. Virginia)
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - message
+    periods:
+    - other
+  - name: Device Location solvers (additional BLE lookups)
+    access: other
+    model: subscription
+    model_how: derived
+    units:
+    - other
+    periods:
+    - other
+  - name: Semtech Advanced Transport data (first 50 MB)
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - data
+    periods:
+    - other
+  - name: AWS Free Tier credits (new accounts)
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - credit
+    periods:
+    - one-time
