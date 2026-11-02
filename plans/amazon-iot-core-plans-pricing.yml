@@ -1,0 +1,187 @@
+# Pricing transcribed from the provider's own page — see provenance. Numbers are quoted, not derived.
+generated: '2026-09-20'
+method: searched
+source: https://aws.amazon.com/iot-core/pricing/
+sources:
+- https://aws.amazon.com/iot-core/pricing/
+provenance:
+  tool: planning/api-economics/harvest_pricing.py
+  run: 20260920T120546
+  grounding: every price_text was found verbatim in the fetched page text
+audience: developer-api
+pricing_basis: per-call
+delivery:
+  delivery: managed
+  method: page
+  read: '2026-09-20'
+published: true
+note: 'Many region-specific prices on the page are unrendered template tokens ({priceOf!...}); captured
+  prices come from stated examples and the US East Sidewalk/location sections. Sidewalk BLE deployments
+  over 10,000 devices: contact us for additional pricing options.'
+plan_count: 10
+currency: USD
+plans:
+- name: Connectivity (Europe Ireland example)
+  price_text: $0.08/1,000,000 minutes of connection
+  price: 0.08
+  currency: USD
+  period: per-use
+  unit: per 1,000,000 minutes of connection
+  included_quota: 2,250,000 minutes of connection free (Free Tier, 12 months)
+- name: MQTT and HTTP messaging (first one billion messages, Europe Ireland)
+  price_text: $1/1,000,000 messages
+  price: 1
+  currency: USD
+  period: per-use
+  unit: per 1,000,000 messages
+  included_quota: 500,000 messages free (Free Tier)
+- name: Device Shadow and registry (Canada Central)
+  price_text: $1.25/1,000,000 operations
+  price: 1.25
+  currency: USD
+  period: per-use
+  unit: per 1,000,000 operations
+  included_quota: 225,000 Registry or Device Shadow operations free
+- name: Rules engine (Canada Central)
+  price_text: $0.15 (per million rules initiated / per million actions applied)
+  price: 0.15
+  currency: USD
+  period: per-use
+  unit: per million rules/actions
+  included_quota: 250,000 rules triggered and 250,000 actions applied free
+- name: LoRaWAN messaging (first one billion, US East N. Virginia)
+  price_text: $2.3/1,000,000 messages
+  price: 2.3
+  currency: USD
+  period: per-use
+  unit: per 1,000,000 messages
+- name: LoRaWAN Metrics records
+  price_text: $2/1,000,000 records
+  price: 2
+  currency: USD
+  period: per-use
+  unit: per 1,000,000 records
+  included_quota: The First 500,000 Metric records and 225,000 Metric queries are free
+- name: AWS IoT Core for Amazon Sidewalk messaging (US East N. Virginia)
+  price_text: $6 (per million messages)
+  price: 6
+  currency: USD
+  period: per-use
+  unit: per million messages
+  included_quota: up to 100,000 messages free during first 6 months
+- name: Device Location solvers (additional BLE lookups)
+  price_text: starting at $1.00 per 1K locations
+  price: 1
+  currency: USD
+  period: per-use
+  unit: per 1,000 locations
+  included_quota: 835 BLE location lookups per month per account; 1,000 locations free in first 12 months
+- name: Semtech Advanced Transport data (first 50 MB)
+  price_text: $0.145 per MB
+  price: 0.145
+  currency: USD
+  period: per-use
+  unit: per MB
+  overage: if above 50 MB, the cost will be $0.116 per MB
+- name: AWS Free Tier credits (new accounts)
+  price_text: up to $200 in AWS Free Tier credits
+  price: 200
+  currency: USD
+  period: one-time
+  unit: credits
+  included_quota: free plan available 6 months after account creation
+rate_limit_statements:
+- You can send and receive messages up to 128 KB in size. Messages are metered in 5 KB increments.
+- devices can send keep-alive (Ping) messages at frequencies ranging from 20 minutes to every 30 seconds
+x-canonical:
+  generated: '2026-11-01'
+  vocabulary: engine/economics/plans-canonical.yml
+  models:
+  - hybrid
+  - subscription
+  units:
+  - compute
+  - credit
+  - data
+  - message
+  plans:
+  - name: Connectivity (Europe Ireland example)
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - compute
+    periods:
+    - other
+  - name: MQTT and HTTP messaging (first one billion messages, Europe Ireland)
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - message
+    periods:
+    - other
+  - name: Device Shadow and registry (Canada Central)
+    access: other
+    model: subscription
+    model_how: derived
+    units:
+    - other
+    periods:
+    - other
+  - name: Rules engine (Canada Central)
+    access: other
+    model: subscription
+    model_how: derived
+    units:
+    - other
+    periods:
+    - other
+  - name: LoRaWAN messaging (first one billion, US East N. Virginia)
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - message
+    periods:
+    - other
+  - name: LoRaWAN Metrics records
+    access: other
+    model: subscription
+    model_how: derived
+    units:
+    - other
+    periods:
+    - other
+  - name: AWS IoT Core for Amazon Sidewalk messaging (US East N. Virginia)
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - message
+    periods:
+    - other
+  - name: Device Location solvers (additional BLE lookups)
+    access: other
+    model: subscription
+    model_how: derived
+    units:
+    - other
+    periods:
+    - other
+  - name: Semtech Advanced Transport data (first 50 MB)
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - data
+    periods:
+    - other
+  - name: AWS Free Tier credits (new accounts)
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - credit
+    periods:
+    - one-time
