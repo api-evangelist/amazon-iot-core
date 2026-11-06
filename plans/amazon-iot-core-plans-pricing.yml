@@ -94,7 +94,7 @@ rate_limit_statements:
 - You can send and receive messages up to 128 KB in size. Messages are metered in 5 KB increments.
 - devices can send keep-alive (Ping) messages at frequencies ranging from 20 minutes to every 30 seconds
 x-canonical:
-  generated: '2026-11-02'
+  generated: '2026-11-06'
   vocabulary: engine/economics/plans-canonical.yml
   models:
   - hybrid
